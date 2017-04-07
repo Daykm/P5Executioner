@@ -2,15 +2,9 @@ package com.daykm.p5executioner
 
 import android.app.Application
 import android.content.Context
-import com.daykm.p5executioner.json.ArcanaAdapter
-import com.daykm.p5executioner.json.Persona
-import com.squareup.moshi.JsonAdapter
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
 import dagger.Component
 import dagger.Module
 import dagger.Provides
-import okio.Okio
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
@@ -35,20 +29,6 @@ class App : Application() {
 
 
 
-    val moshi = Moshi.Builder().add(ArcanaAdapter()).build()
-    val adapter: JsonAdapter<List<Persona>> =
-        Moshi.Builder()
-            .add(ArcanaAdapter())
-            .build()
-            .adapter(
-                Types.newParameterizedType(List::class.java, Persona::class.java))
-
-    val personas: List<Persona> = adapter.fromJson(
-        Okio.buffer(Okio.source(assets.open("personae.json"))))
-
-    for(persona in personas) {
-      Timber.i("Name: %s, Level: %d, Arcana: %s", persona.name, persona.level, persona.arcana.jsonVal)
-    }
   }
 }
 
