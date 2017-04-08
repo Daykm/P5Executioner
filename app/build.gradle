@@ -11,12 +11,26 @@ android {
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    resConfig "en"
   }
   buildTypes {
     release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.debug
     }
+  }
+  signingConfigs {
+    debug {
+      keyAlias 'key'
+      keyPassword 'password'
+      storeFile file('C:/Users/daykm/Documents/GitHub/P5Executioner/debug.jks')
+      storePassword 'password'
+    }
+  }
+  dataBinding {
+    enabled = true
   }
   sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
@@ -25,23 +39,58 @@ android {
   kapt {
     generateStubs = true
   }
-
 }
 
+ext.ver = [
+
+    anko      : '0.9.1',
+    sup       : '25.3.1',
+    dagger    : '2.10',
+    constraint: '1.0.2',
+    timber    : '4.5.1',
+    rxJava    : '2.0.8',
+    rxAndroid : '2.0.1',
+    snapHelper: '1.1',
+    moshi     : '1.4.0'
+
+]
+
+ext.lib = [
+
+    ankoSdk15  : "org.jetbrains.anko:anko-sdk15:$ver.anko",
+    ankoCard   : "org.jetbrains.anko:anko-cardview-v7:$ver.anko",
+    ankoRecycle: "org.jetbrains.anko:anko-recyclerview-v7:$ver.anko",
+    ankoDesign : "org.jetbrains.anko:anko-design:$ver.anko",
+    //TODO wait for this to come out
+    // ankoConstraint: "org.jetbrains.anko:anko-constraint:$ver.anko",
+    dagger     : "com.google.dagger:dagger:$ver.dagger",
+    supDesign  : "com.android.support:design:$ver.sup",
+    constraint : "com.android.support.constraint:constraint-layout:$ver.constraint",
+    cardView   : "com.android.support:cardview-v7:$ver.sup",
+    timber     : "com.jakewharton.timber:timber:$ver.timber",
+    rxJava     : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
+    rxAndroid  : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
+    snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
+    moshi      : "com.squareup.moshi:moshi:$ver.moshi",
+    kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin"
+
+]
+
+ext.apts = [
+
+    dagger     : "com.google.dagger:dagger-compiler:$ver.dagger",
+    databinding: "com.android.databinding:compiler:$buildVer.androidGradle"
+
+]
+
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile 'com.android.support.constraint:constraint-layout:1.0.2'
-  compile 'com.android.support:design:25.3.1'
-  compile 'com.google.dagger:dagger:2.10'
-  compile 'com.jakewharton.timber:timber:4.5.1'
-  kapt 'com.google.dagger:dagger-compiler:2.10'
-  compile 'com.squareup.moshi:moshi:1.4.0'
   testCompile 'junit:junit:4.12'
-  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  lib.each { entry -> compile entry.value
+  }
+  apts.each { entry -> kapt entry.value
+  }
 }
-repositories {
-  mavenCentral()
-}
+

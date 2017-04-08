@@ -3,14 +3,11 @@ package com.daykm.p5executioner
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.Adapter
 import android.support.v7.widget.RecyclerView.ViewHolder
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.daykm.p5executioner.json.Persona
 import dagger.Module
 import dagger.Subcomponent
 import javax.inject.Inject
@@ -24,9 +21,9 @@ class PersonaPickerView : RecyclerView {
   constructor(context: Context?, attrs: AttributeSet?, defStyle: Int) : super(context, attrs,
       defStyle)
 
-  @Inject @JvmField var pAdapter : PAdapter? = null
+  @Inject @JvmField var pAdapter: PAdapter? = null
 
-  fun inject(component : PersonaComponent) {
+  fun inject(component: PersonaComponent) {
     component.inject(this)
     // inject here
     adapter = pAdapter
@@ -43,18 +40,21 @@ class VH(parent: ViewGroup) : ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.persona_item, parent, false)
 ) {
 
-  val label : TextView = itemView as TextView
+  val name: TextView = itemView.findViewById(R.id.name) as TextView
+  val level: TextView = itemView.findViewById(R.id.level) as TextView
+  val arcana: TextView = itemView.findViewById(R.id.arcana) as TextView
 
   fun bind(persona: Persona) {
-    label.text = persona.name
+    name.text = persona.name
+    level.text = persona.level.toString()
+    arcana.text = persona.arcana.label
   }
 }
-
 
 @Module class PersonaModule
 
 @Subcomponent(modules = arrayOf(PersonaModule::class)) interface PersonaComponent {
 
-  fun inject(view : PersonaPickerView)
+  fun inject(view: PersonaPickerView)
 
 }

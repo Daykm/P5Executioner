@@ -1,8 +1,6 @@
 package com.daykm.p5executioner
 
 import android.content.Context
-import com.daykm.p5executioner.json.ArcanaAdapter
-import com.daykm.p5executioner.json.Persona
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
@@ -12,29 +10,37 @@ import javax.inject.Inject
 
 class DataRepo @Inject constructor(val ctx: Context) {
 
-  var personas: List<Persona>? = null
+  var personae: List<Persona>
 
-  fun getPersonae() : List<Persona> {
+  var combos: List<Combo>
 
-    val moshi = Moshi.Builder().add(ArcanaAdapter()).build()
-    val adapter: JsonAdapter<List<Persona>> =
-        Moshi.Builder()
-            .add(ArcanaAdapter())
-            .build()
-            .adapter(
-                Types.newParameterizedType(List::class.java, Persona::class.java))
+  val moshi =
+      Moshi.Builder()
+          .add(ArcanaAdapter())
+          .add(SourcesAdapter())
+          .build()
 
-    if (personas != null) {
-      return personas!!
-    }
+  init {
+    val personaAdapter: JsonAdapter<List<Persona>> =
+        moshi.adapter(
+            Types.newParameterizedType(List::class.java, Persona::class.java))
 
-    personas = adapter.fromJson(
+    personae = personaAdapter.fromJson(
         Okio.buffer(Okio.source(ctx.assets.open("personae.json"))))
 
-    personas?.forEach {
-      Timber.i("Name: %s, Level: %d, Arcana: %s", it.name, it.level, it.arcana.jsonVal)
+    personae?.forEach {
+      Timber.i("Name: %s, Level: %d, Arcana: %s", it.name, it.level, it.arcana.label)
     }
 
-    return personas!!
+    val comboAdapter: JsonAdapter<List<Combo>> = moshi.adapter(
+        Types.newParameterizedType(List::class.java, Combo::class.java))
+
+    combos = comboAdapter.fromJson(
+        Okio.buffer(Okio.source(ctx.assets.open("combos.json"))))
+
+    combos?.forEach {
+      Timber.i("One: %s, Two: %s, Result: %s",
+          it.source.one.label, it.source.one.label, it.result.label)
+    }
   }
 }

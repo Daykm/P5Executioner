@@ -15,7 +15,7 @@ class App : Application() {
       private set
   }
 
-  lateinit var component : AppComponent
+  lateinit var component: AppComponent
 
   override fun onCreate() {
     super.onCreate()
@@ -28,19 +28,17 @@ class App : Application() {
     component = DaggerAppComponent.builder().appModule(AppModule(this)).build()
 
 
-
   }
 }
 
+@Module class AppModule(val app: App) {
 
-@Module class AppModule(val app : App) {
-
-  @Provides fun ctx() : Context {
+  @Provides fun ctx(): Context {
     return app
   }
 
 }
 
 @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
-  fun persona() : PersonaComponent
+  fun persona(): PersonaComponent
 }
