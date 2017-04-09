@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import dagger.Module
 import dagger.Subcomponent
+import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
 class PersonaPickerView : RecyclerView {
@@ -22,6 +23,9 @@ class PersonaPickerView : RecyclerView {
       defStyle)
 
   @Inject @JvmField var pAdapter: PAdapter? = null
+
+
+  val firstPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
 
   fun inject(component: PersonaComponent) {
     component.inject(this)

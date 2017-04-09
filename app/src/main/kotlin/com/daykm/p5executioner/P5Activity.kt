@@ -24,13 +24,13 @@ class P5Activity : Activity() {
 		firstPersonaView.setHasFixedSize(true)
 		firstPersonaView.recycledViewPool = pool
 		GravitySnapHelper(Gravity.START).attachToRecyclerView(firstPersonaView)
-		firstPersonaView.inject(App.instance.component.persona())
+		firstPersonaView.inject(App.INSTANCE.component.persona())
 
 		val secondPersonaView = activityBinding.secondPersona
 		secondPersonaView.setHasFixedSize(true)
 		secondPersonaView.recycledViewPool = pool
 		GravitySnapHelper(Gravity.START).attachToRecyclerView(secondPersonaView)
-		secondPersonaView.inject(App.instance.component.persona())
+		secondPersonaView.inject(App.INSTANCE.component.persona())
 
 
 	}

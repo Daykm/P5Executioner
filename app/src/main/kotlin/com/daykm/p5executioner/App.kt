@@ -11,7 +11,7 @@ import timber.log.Timber.DebugTree
 class App : Application() {
 
   companion object {
-    lateinit var instance: App
+    lateinit var INSTANCE: App
       private set
   }
 
@@ -19,7 +19,7 @@ class App : Application() {
 
   override fun onCreate() {
     super.onCreate()
-    instance = this
+    INSTANCE = this
 
     if (BuildConfig.DEBUG) {
       Timber.plant(DebugTree())
@@ -41,4 +41,6 @@ class App : Application() {
 
 @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
   fun persona(): PersonaComponent
+
+  fun component(): ComponentComponent
 }
