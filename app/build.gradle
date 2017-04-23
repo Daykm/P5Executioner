@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion 25
@@ -36,9 +37,6 @@ android {
     main.java.srcDirs += 'src/main/kotlin'
     test.java.srcDirs += 'src/test/kotlin'
   }
-  kapt {
-    generateStubs = true
-  }
 }
 
 ext.ver = [
@@ -51,7 +49,9 @@ ext.ver = [
     rxJava    : '2.0.8',
     rxAndroid : '2.0.1',
     snapHelper: '1.1',
-    moshi     : '1.4.0'
+    moshi     : '1.4.0',
+    epoxy     : '2.0.0',
+    leakCanary: '1.5'
 
 ]
 
@@ -72,7 +72,15 @@ ext.lib = [
     rxAndroid  : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
     snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
     moshi      : "com.squareup.moshi:moshi:$ver.moshi",
-    kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin"
+    kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
+    epoxy      : "com.airbnb.android:epoxy:$ver.epoxy"
+
+]
+
+ext.leakCanary = [
+
+    leakCanary    : "com.squareup.leakcanary:leakcanary-android:$ver.leakCanary",
+    leakCanaryNoOp: "com.squareup.leakcanary:leakcanary-android-no-op:$ver.leakCanary"
 
 ]
 
@@ -88,9 +96,10 @@ dependencies {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
   testCompile 'junit:junit:4.12'
-  lib.each { entry -> compile entry.value
-  }
-  apts.each { entry -> kapt entry.value
-  }
+  lib.each { entry -> compile entry.value }
+  apts.each { entry -> kapt entry.value }
+  debugCompile leakCanary.leakCanary
+  releaseCompile leakCanary.leakCanaryNoOp
+  testCompile leakCanary.leakCanaryNoOp
 }
 
