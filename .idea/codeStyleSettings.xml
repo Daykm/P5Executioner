@@ -10,8 +10,8 @@
             <option name="INDENT_SIZE" value="2" />
             <option name="CONTINUATION_INDENT_SIZE" value="4" />
             <option name="TAB_SIZE" value="2" />
-            <option name="USE_TAB_CHARACTER" value="true" />
-            <option name="SMART_TABS" value="true" />
+            <option name="USE_TAB_CHARACTER" value="false" />
+            <option name="SMART_TABS" value="false" />
             <option name="LABEL_INDENT_SIZE" value="0" />
             <option name="LABEL_INDENT_ABSOLUTE" value="false" />
             <option name="USE_RELATIVE_INDENTS" value="false" />
@@ -78,6 +78,7 @@
           <option name="LAYOUT_SETTINGS">
             <value>
               <option name="INSERT_BLANK_LINE_BEFORE_TAG" value="false" />
+              <option name="INSERT_LINE_BREAK_AFTER_LAST_ATTRIBUTE" value="true" />
             </value>
           </option>
         </AndroidXmlCodeStyleSettings>
@@ -163,14 +164,6 @@
             <option name="INDENT_SIZE" value="2" />
             <option name="CONTINUATION_INDENT_SIZE" value="4" />
             <option name="TAB_SIZE" value="2" />
-            <option name="USE_TAB_CHARACTER" value="true" />
-            <option name="SMART_TABS" value="true" />
-          </indentOptions>
-        </codeStyleSettings>
-        <codeStyleSettings language="HTML">
-          <indentOptions>
-            <option name="USE_TAB_CHARACTER" value="true" />
-            <option name="SMART_TABS" value="true" />
           </indentOptions>
         </codeStyleSettings>
         <codeStyleSettings language="JAVA">
@@ -217,30 +210,18 @@
             <option name="CONTINUATION_INDENT_SIZE" value="4" />
             <option name="TAB_SIZE" value="2" />
             <option name="USE_TAB_CHARACTER" value="true" />
-            <option name="SMART_TABS" value="true" />
           </indentOptions>
         </codeStyleSettings>
         <codeStyleSettings language="JSON">
           <option name="KEEP_LINE_BREAKS" value="false" />
           <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
           <option name="PARENT_SETTINGS_INSTALLED" value="true" />
-          <indentOptions>
-            <option name="USE_TAB_CHARACTER" value="true" />
-          </indentOptions>
-        </codeStyleSettings>
-        <codeStyleSettings language="ObjectiveC">
-          <indentOptions>
-            <option name="USE_TAB_CHARACTER" value="true" />
-            <option name="SMART_TABS" value="true" />
-          </indentOptions>
         </codeStyleSettings>
         <codeStyleSettings language="XML">
           <indentOptions>
             <option name="INDENT_SIZE" value="2" />
             <option name="CONTINUATION_INDENT_SIZE" value="4" />
             <option name="TAB_SIZE" value="2" />
-            <option name="USE_TAB_CHARACTER" value="true" />
-            <option name="SMART_TABS" value="true" />
           </indentOptions>
           <arrangement>
             <rules>
@@ -361,8 +342,6 @@
             <option name="INDENT_SIZE" value="2" />
             <option name="CONTINUATION_INDENT_SIZE" value="4" />
             <option name="TAB_SIZE" value="2" />
-            <option name="USE_TAB_CHARACTER" value="true" />
-            <option name="SMART_TABS" value="true" />
           </indentOptions>
         </codeStyleSettings>
       </value>

@@ -2,4 +2,8 @@
 	<string name="app_name">"P5Executioner "</string>
 	<string name="action_settings">Settings</string>
 	<string name="title_activity_p5">P5Activity</string>
+  <string name="nav_fusion">Fusion</string>
+  <string name="nav_second">Second</string>
+  <string name="nav_third">Third</string>
+  <string name="nav_settings">Settings</string>
 </resources>

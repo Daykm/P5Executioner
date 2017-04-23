@@ -2,6 +2,7 @@ package com.daykm.p5executioner
 
 import android.app.Application
 import android.content.Context
+import com.squareup.leakcanary.LeakCanary
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -24,10 +25,11 @@ class App : Application() {
     if (BuildConfig.DEBUG) {
       Timber.plant(DebugTree())
     }
-
     component = DaggerAppComponent.builder().appModule(AppModule(this)).build()
 
-
+    if (!LeakCanary.isInAnalyzerProcess(this)) {
+      LeakCanary.install(this)
+    }
   }
 }
 
@@ -41,6 +43,4 @@ class App : Application() {
 
 @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
   fun persona(): PersonaComponent
-
-  fun component(): ComponentComponent
 }
