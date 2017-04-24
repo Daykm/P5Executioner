@@ -1,0 +1,25 @@
+syntax = "proto3";
+package p5;
+
+option optimize_for = LITE_RUNTIME;
+
+option java_package = "com.daykm.p5executioner.data";
+
+
+message Combo {
+    repeated string sources = 1;
+    string arcana = 2;
+}
+
+message Combos {
+    repeated Combo list = 1;
+}
+
+
+message RareCombo {
+    repeated sint32 combos = 1;
+}
+
+message RareCombos {
+    map<string, RareCombo> combos = 1;
+}
