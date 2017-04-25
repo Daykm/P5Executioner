@@ -1,4 +1,4 @@
-package com.daykm.p5executioner.data;
+package com.daykm.p5executioner.json;
 
 public class CombosJson {
 	public Combo[] data;

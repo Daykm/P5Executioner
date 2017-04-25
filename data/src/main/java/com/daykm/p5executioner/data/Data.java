@@ -4,1750 +4,5828 @@
 package com.daykm.p5executioner.data;
 
 public final class Data {
-	private Data() {
-	}
-
-	public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {
-	}
-
-	public interface ComboOrBuilder extends
-			// @@protoc_insertion_point(interface_extends:p5.Combo)
-			com.google.protobuf.MessageLiteOrBuilder {
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		java.util.List<String> getSourcesList();
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		int getSourcesCount();
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		String getSources(int index);
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		com.google.protobuf.ByteString getSourcesBytes(int index);
-
-		/**
-		 * <code>string arcana = 2;</code>
-		 */
-		String getArcana();
-
-		/**
-		 * <code>string arcana = 2;</code>
-		 */
-		com.google.protobuf.ByteString getArcanaBytes();
-	}
-
-	/**
-	 * Protobuf type {@code p5.Combo}
-	 */
-	public static final class Combo
-			extends com.google.protobuf.GeneratedMessageLite<Combo, Combo.Builder> implements
-			// @@protoc_insertion_point(message_implements:p5.Combo)
-			ComboOrBuilder {
-		private Combo() {
-			sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
-			arcana_ = "";
-		}
-
-		private int bitField0_;
-		public static final int SOURCES_FIELD_NUMBER = 1;
-		private com.google.protobuf.Internal.ProtobufList<String> sources_;
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		public java.util.List<String> getSourcesList() {
-			return sources_;
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		public int getSourcesCount() {
-			return sources_.size();
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		public String getSources(int index) {
-			return sources_.get(index);
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		public com.google.protobuf.ByteString getSourcesBytes(int index) {
-			return com.google.protobuf.ByteString.copyFromUtf8(sources_.get(index));
-		}
-
-		private void ensureSourcesIsMutable() {
-			if (!sources_.isModifiable()) {
-				sources_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
-			}
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		private void setSources(int index, String value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-			ensureSourcesIsMutable();
-			sources_.set(index, value);
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		private void addSources(String value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-			ensureSourcesIsMutable();
-			sources_.add(value);
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		private void addAllSources(Iterable<String> values) {
-			ensureSourcesIsMutable();
-			com.google.protobuf.AbstractMessageLite.addAll(values, sources_);
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		private void clearSources() {
-			sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
-		}
-
-		/**
-		 * <code>repeated string sources = 1;</code>
-		 */
-		private void addSourcesBytes(com.google.protobuf.ByteString value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-			checkByteStringIsUtf8(value);
-			ensureSourcesIsMutable();
-			sources_.add(value.toStringUtf8());
-		}
-
-		public static final int ARCANA_FIELD_NUMBER = 2;
-		private String arcana_;
-
-		/**
-		 * <code>string arcana = 2;</code>
-		 */
-		public String getArcana() {
-			return arcana_;
-		}
-
-		/**
-		 * <code>string arcana = 2;</code>
-		 */
-		public com.google.protobuf.ByteString getArcanaBytes() {
-			return com.google.protobuf.ByteString.copyFromUtf8(arcana_);
-		}
-
-		/**
-		 * <code>string arcana = 2;</code>
-		 */
-		private void setArcana(String value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-
-			arcana_ = value;
-		}
-
-		/**
-		 * <code>string arcana = 2;</code>
-		 */
-		private void clearArcana() {
-
-			arcana_ = getDefaultInstance().getArcana();
-		}
-
-		/**
-		 * <code>string arcana = 2;</code>
-		 */
-		private void setArcanaBytes(com.google.protobuf.ByteString value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-			checkByteStringIsUtf8(value);
-
-			arcana_ = value.toStringUtf8();
-		}
-
-		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-			for (int i = 0; i < sources_.size(); i++) {
-				output.writeString(1, sources_.get(i));
-			}
-			if (!arcana_.isEmpty()) {
-				output.writeString(2, getArcana());
-			}
-		}
-
-		public int getSerializedSize() {
-			int size = memoizedSerializedSize;
-			if (size != -1) return size;
-
-			size = 0;
-			{
-				int dataSize = 0;
-				for (int i = 0; i < sources_.size(); i++) {
-					dataSize += com.google.protobuf.CodedOutputStream.computeStringSizeNoTag(sources_.get(i));
-				}
-				size += dataSize;
-				size += 1 * getSourcesList().size();
-			}
-			if (!arcana_.isEmpty()) {
-				size += com.google.protobuf.CodedOutputStream.computeStringSize(2, getArcana());
-			}
-			memoizedSerializedSize = size;
-			return size;
-		}
-
-		public static Combo parseFrom(com.google.protobuf.ByteString data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static Combo parseFrom(com.google.protobuf.ByteString data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static Combo parseFrom(byte[] data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static Combo parseFrom(byte[] data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static Combo parseFrom(java.io.InputStream input) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static Combo parseFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static Combo parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static Combo parseDelimitedFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-		}
-
-		public static Combo parseFrom(com.google.protobuf.CodedInputStream input)
-				throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static Combo parseFrom(com.google.protobuf.CodedInputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static Builder newBuilder() {
-			return DEFAULT_INSTANCE.toBuilder();
-		}
-
-		public static Builder newBuilder(Combo prototype) {
-			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-		}
-
-		/**
-		 * Protobuf type {@code p5.Combo}
-		 */
-		public static final class Builder
-				extends com.google.protobuf.GeneratedMessageLite.Builder<Combo, Builder> implements
-				// @@protoc_insertion_point(builder_implements:p5.Combo)
-				ComboOrBuilder {
-			// Construct using com.daykm.p5executioner.data.Data.Combo.newBuilder()
-			private Builder() {
-				super(DEFAULT_INSTANCE);
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public java.util.List<String> getSourcesList() {
-				return java.util.Collections.unmodifiableList(instance.getSourcesList());
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public int getSourcesCount() {
-				return instance.getSourcesCount();
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public String getSources(int index) {
-				return instance.getSources(index);
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public com.google.protobuf.ByteString getSourcesBytes(int index) {
-				return instance.getSourcesBytes(index);
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public Builder setSources(int index, String value) {
-				copyOnWrite();
-				instance.setSources(index, value);
-				return this;
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public Builder addSources(String value) {
-				copyOnWrite();
-				instance.addSources(value);
-				return this;
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public Builder addAllSources(Iterable<String> values) {
-				copyOnWrite();
-				instance.addAllSources(values);
-				return this;
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public Builder clearSources() {
-				copyOnWrite();
-				instance.clearSources();
-				return this;
-			}
-
-			/**
-			 * <code>repeated string sources = 1;</code>
-			 */
-			public Builder addSourcesBytes(com.google.protobuf.ByteString value) {
-				copyOnWrite();
-				instance.addSourcesBytes(value);
-				return this;
-			}
-
-			/**
-			 * <code>string arcana = 2;</code>
-			 */
-			public String getArcana() {
-				return instance.getArcana();
-			}
-
-			/**
-			 * <code>string arcana = 2;</code>
-			 */
-			public com.google.protobuf.ByteString getArcanaBytes() {
-				return instance.getArcanaBytes();
-			}
-
-			/**
-			 * <code>string arcana = 2;</code>
-			 */
-			public Builder setArcana(String value) {
-				copyOnWrite();
-				instance.setArcana(value);
-				return this;
-			}
-
-			/**
-			 * <code>string arcana = 2;</code>
-			 */
-			public Builder clearArcana() {
-				copyOnWrite();
-				instance.clearArcana();
-				return this;
-			}
-
-			/**
-			 * <code>string arcana = 2;</code>
-			 */
-			public Builder setArcanaBytes(com.google.protobuf.ByteString value) {
-				copyOnWrite();
-				instance.setArcanaBytes(value);
-				return this;
-			}
-
-			// @@protoc_insertion_point(builder_scope:p5.Combo)
-		}
-
-		protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
-			switch (method) {
-				case NEW_MUTABLE_INSTANCE: {
-					return new Combo();
-				}
-				case IS_INITIALIZED: {
-					return DEFAULT_INSTANCE;
-				}
-				case MAKE_IMMUTABLE: {
-					sources_.makeImmutable();
-					return null;
-				}
-				case NEW_BUILDER: {
-					return new Builder();
-				}
-				case VISIT: {
-					Visitor visitor = (Visitor) arg0;
-					Combo other = (Combo) arg1;
-					sources_ = visitor.visitList(sources_, other.sources_);
-					arcana_ = visitor.visitString(!arcana_.isEmpty(), arcana_, !other.arcana_.isEmpty(),
-							other.arcana_);
-					if (visitor == MergeFromVisitor.INSTANCE) {
-						bitField0_ |= other.bitField0_;
-					}
-					return this;
-				}
-				case MERGE_FROM_STREAM: {
-					com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
-					com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-							(com.google.protobuf.ExtensionRegistryLite) arg1;
-					try {
-						boolean done = false;
-						while (!done) {
-							int tag = input.readTag();
-							switch (tag) {
-								case 0:
-									done = true;
-									break;
-								default: {
-									if (!input.skipField(tag)) {
-										done = true;
-									}
-									break;
-								}
-								case 10: {
-									String s = input.readStringRequireUtf8();
-									if (!sources_.isModifiable()) {
-										sources_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
-									}
-									sources_.add(s);
-									break;
-								}
-								case 18: {
-									String s = input.readStringRequireUtf8();
-
-									arcana_ = s;
-									break;
-								}
-							}
-						}
-					} catch (com.google.protobuf.InvalidProtocolBufferException e) {
-						throw new RuntimeException(e.setUnfinishedMessage(this));
-					} catch (java.io.IOException e) {
-						throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
-								e.getMessage()).setUnfinishedMessage(this));
-					} finally {
-					}
-				}
-				case GET_DEFAULT_INSTANCE: {
-					return DEFAULT_INSTANCE;
-				}
-				case GET_PARSER: {
-					if (PARSER == null) {
-						synchronized (Combo.class) {
-							if (PARSER == null) {
-								PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-							}
-						}
-					}
-					return PARSER;
-				}
-			}
-			throw new UnsupportedOperationException();
-		}
-
-		// @@protoc_insertion_point(class_scope:p5.Combo)
-		private static final Combo DEFAULT_INSTANCE;
-
-		static {
-			DEFAULT_INSTANCE = new Combo();
-			DEFAULT_INSTANCE.makeImmutable();
-		}
-
-		public static Combo getDefaultInstance() {
-			return DEFAULT_INSTANCE;
-		}
-
-		private static volatile com.google.protobuf.Parser<Combo> PARSER;
-
-		public static com.google.protobuf.Parser<Combo> parser() {
-			return DEFAULT_INSTANCE.getParserForType();
-		}
-	}
-
-	public interface CombosOrBuilder extends
-			// @@protoc_insertion_point(interface_extends:p5.Combos)
-			com.google.protobuf.MessageLiteOrBuilder {
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		java.util.List<Combo> getListList();
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		Combo getList(int index);
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		int getListCount();
-	}
-
-	/**
-	 * Protobuf type {@code p5.Combos}
-	 */
-	public static final class Combos
-			extends com.google.protobuf.GeneratedMessageLite<Combos, Combos.Builder> implements
-			// @@protoc_insertion_point(message_implements:p5.Combos)
-			CombosOrBuilder {
-		private Combos() {
-			list_ = emptyProtobufList();
-		}
-
-		public static final int LIST_FIELD_NUMBER = 1;
-		private com.google.protobuf.Internal.ProtobufList<Combo> list_;
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		public java.util.List<Combo> getListList() {
-			return list_;
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		public java.util.List<? extends ComboOrBuilder> getListOrBuilderList() {
-			return list_;
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		public int getListCount() {
-			return list_.size();
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		public Combo getList(int index) {
-			return list_.get(index);
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		public ComboOrBuilder getListOrBuilder(int index) {
-			return list_.get(index);
-		}
-
-		private void ensureListIsMutable() {
-			if (!list_.isModifiable()) {
-				list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
-			}
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void setList(int index, Combo value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-			ensureListIsMutable();
-			list_.set(index, value);
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void setList(int index, Combo.Builder builderForValue) {
-			ensureListIsMutable();
-			list_.set(index, builderForValue.build());
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void addList(Combo value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-			ensureListIsMutable();
-			list_.add(value);
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void addList(int index, Combo value) {
-			if (value == null) {
-				throw new NullPointerException();
-			}
-			ensureListIsMutable();
-			list_.add(index, value);
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void addList(Combo.Builder builderForValue) {
-			ensureListIsMutable();
-			list_.add(builderForValue.build());
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void addList(int index, Combo.Builder builderForValue) {
-			ensureListIsMutable();
-			list_.add(index, builderForValue.build());
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void addAllList(Iterable<? extends Combo> values) {
-			ensureListIsMutable();
-			com.google.protobuf.AbstractMessageLite.addAll(values, list_);
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void clearList() {
-			list_ = emptyProtobufList();
-		}
-
-		/**
-		 * <code>repeated .p5.Combo list = 1;</code>
-		 */
-		private void removeList(int index) {
-			ensureListIsMutable();
-			list_.remove(index);
-		}
-
-		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-			for (int i = 0; i < list_.size(); i++) {
-				output.writeMessage(1, list_.get(i));
-			}
-		}
-
-		public int getSerializedSize() {
-			int size = memoizedSerializedSize;
-			if (size != -1) return size;
-
-			size = 0;
-			for (int i = 0; i < list_.size(); i++) {
-				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, list_.get(i));
-			}
-			memoizedSerializedSize = size;
-			return size;
-		}
-
-		public static Combos parseFrom(com.google.protobuf.ByteString data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static Combos parseFrom(com.google.protobuf.ByteString data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static Combos parseFrom(byte[] data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static Combos parseFrom(byte[] data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static Combos parseFrom(java.io.InputStream input) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static Combos parseFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static Combos parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static Combos parseDelimitedFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-		}
-
-		public static Combos parseFrom(com.google.protobuf.CodedInputStream input)
-				throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static Combos parseFrom(com.google.protobuf.CodedInputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static Builder newBuilder() {
-			return DEFAULT_INSTANCE.toBuilder();
-		}
-
-		public static Builder newBuilder(Combos prototype) {
-			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-		}
-
-		/**
-		 * Protobuf type {@code p5.Combos}
-		 */
-		public static final class Builder
-				extends com.google.protobuf.GeneratedMessageLite.Builder<Combos, Builder> implements
-				// @@protoc_insertion_point(builder_implements:p5.Combos)
-				CombosOrBuilder {
-			// Construct using com.daykm.p5executioner.data.Data.Combos.newBuilder()
-			private Builder() {
-				super(DEFAULT_INSTANCE);
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public java.util.List<Combo> getListList() {
-				return java.util.Collections.unmodifiableList(instance.getListList());
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public int getListCount() {
-				return instance.getListCount();
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Combo getList(int index) {
-				return instance.getList(index);
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder setList(int index, Combo value) {
-				copyOnWrite();
-				instance.setList(index, value);
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder setList(int index, Combo.Builder builderForValue) {
-				copyOnWrite();
-				instance.setList(index, builderForValue);
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder addList(Combo value) {
-				copyOnWrite();
-				instance.addList(value);
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder addList(int index, Combo value) {
-				copyOnWrite();
-				instance.addList(index, value);
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder addList(Combo.Builder builderForValue) {
-				copyOnWrite();
-				instance.addList(builderForValue);
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder addList(int index, Combo.Builder builderForValue) {
-				copyOnWrite();
-				instance.addList(index, builderForValue);
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder addAllList(Iterable<? extends Combo> values) {
-				copyOnWrite();
-				instance.addAllList(values);
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder clearList() {
-				copyOnWrite();
-				instance.clearList();
-				return this;
-			}
-
-			/**
-			 * <code>repeated .p5.Combo list = 1;</code>
-			 */
-			public Builder removeList(int index) {
-				copyOnWrite();
-				instance.removeList(index);
-				return this;
-			}
-
-			// @@protoc_insertion_point(builder_scope:p5.Combos)
-		}
-
-		protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
-			switch (method) {
-				case NEW_MUTABLE_INSTANCE: {
-					return new Combos();
-				}
-				case IS_INITIALIZED: {
-					return DEFAULT_INSTANCE;
-				}
-				case MAKE_IMMUTABLE: {
-					list_.makeImmutable();
-					return null;
-				}
-				case NEW_BUILDER: {
-					return new Builder();
-				}
-				case VISIT: {
-					Visitor visitor = (Visitor) arg0;
-					Combos other = (Combos) arg1;
-					list_ = visitor.visitList(list_, other.list_);
-					if (visitor == MergeFromVisitor.INSTANCE) {
-					}
-					return this;
-				}
-				case MERGE_FROM_STREAM: {
-					com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
-					com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-							(com.google.protobuf.ExtensionRegistryLite) arg1;
-					try {
-						boolean done = false;
-						while (!done) {
-							int tag = input.readTag();
-							switch (tag) {
-								case 0:
-									done = true;
-									break;
-								default: {
-									if (!input.skipField(tag)) {
-										done = true;
-									}
-									break;
-								}
-								case 10: {
-									if (!list_.isModifiable()) {
-										list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
-									}
-									list_.add(input.readMessage(Combo.parser(), extensionRegistry));
-									break;
-								}
-							}
-						}
-					} catch (com.google.protobuf.InvalidProtocolBufferException e) {
-						throw new RuntimeException(e.setUnfinishedMessage(this));
-					} catch (java.io.IOException e) {
-						throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
-								e.getMessage()).setUnfinishedMessage(this));
-					} finally {
-					}
-				}
-				case GET_DEFAULT_INSTANCE: {
-					return DEFAULT_INSTANCE;
-				}
-				case GET_PARSER: {
-					if (PARSER == null) {
-						synchronized (Combos.class) {
-							if (PARSER == null) {
-								PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-							}
-						}
-					}
-					return PARSER;
-				}
-			}
-			throw new UnsupportedOperationException();
-		}
-
-		// @@protoc_insertion_point(class_scope:p5.Combos)
-		private static final Combos DEFAULT_INSTANCE;
-
-		static {
-			DEFAULT_INSTANCE = new Combos();
-			DEFAULT_INSTANCE.makeImmutable();
-		}
-
-		public static Combos getDefaultInstance() {
-			return DEFAULT_INSTANCE;
-		}
-
-		private static volatile com.google.protobuf.Parser<Combos> PARSER;
-
-		public static com.google.protobuf.Parser<Combos> parser() {
-			return DEFAULT_INSTANCE.getParserForType();
-		}
-	}
-
-	public interface RareComboOrBuilder extends
-			// @@protoc_insertion_point(interface_extends:p5.RareCombo)
-			com.google.protobuf.MessageLiteOrBuilder {
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		java.util.List<Integer> getCombosList();
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		int getCombosCount();
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		int getCombos(int index);
-	}
-
-	/**
-	 * Protobuf type {@code p5.RareCombo}
-	 */
-	public static final class RareCombo
-			extends com.google.protobuf.GeneratedMessageLite<RareCombo, RareCombo.Builder> implements
-			// @@protoc_insertion_point(message_implements:p5.RareCombo)
-			RareComboOrBuilder {
-		private RareCombo() {
-			combos_ = emptyIntList();
-		}
-
-		public static final int COMBOS_FIELD_NUMBER = 1;
-		private com.google.protobuf.Internal.IntList combos_;
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		public java.util.List<Integer> getCombosList() {
-			return combos_;
-		}
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		public int getCombosCount() {
-			return combos_.size();
-		}
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		public int getCombos(int index) {
-			return combos_.getInt(index);
-		}
-
-		private void ensureCombosIsMutable() {
-			if (!combos_.isModifiable()) {
-				combos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(combos_);
-			}
-		}
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		private void setCombos(int index, int value) {
-			ensureCombosIsMutable();
-			combos_.setInt(index, value);
-		}
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		private void addCombos(int value) {
-			ensureCombosIsMutable();
-			combos_.addInt(value);
-		}
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		private void addAllCombos(Iterable<? extends Integer> values) {
-			ensureCombosIsMutable();
-			com.google.protobuf.AbstractMessageLite.addAll(values, combos_);
-		}
-
-		/**
-		 * <code>repeated sint32 combos = 1;</code>
-		 */
-		private void clearCombos() {
-			combos_ = emptyIntList();
-		}
-
-		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-			getSerializedSize();
-			for (int i = 0; i < combos_.size(); i++) {
-				output.writeSInt32(1, combos_.getInt(i));
-			}
-		}
-
-		public int getSerializedSize() {
-			int size = memoizedSerializedSize;
-			if (size != -1) return size;
-
-			size = 0;
-			{
-				int dataSize = 0;
-				for (int i = 0; i < combos_.size(); i++) {
-					dataSize +=
-							com.google.protobuf.CodedOutputStream.computeSInt32SizeNoTag(combos_.getInt(i));
-				}
-				size += dataSize;
-				size += 1 * getCombosList().size();
-			}
-			memoizedSerializedSize = size;
-			return size;
-		}
-
-		public static RareCombo parseFrom(com.google.protobuf.ByteString data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static RareCombo parseFrom(com.google.protobuf.ByteString data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static RareCombo parseFrom(byte[] data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static RareCombo parseFrom(byte[] data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static RareCombo parseFrom(java.io.InputStream input) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static RareCombo parseFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static RareCombo parseDelimitedFrom(java.io.InputStream input)
-				throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static RareCombo parseDelimitedFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-		}
-
-		public static RareCombo parseFrom(com.google.protobuf.CodedInputStream input)
-				throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static RareCombo parseFrom(com.google.protobuf.CodedInputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static Builder newBuilder() {
-			return DEFAULT_INSTANCE.toBuilder();
-		}
-
-		public static Builder newBuilder(RareCombo prototype) {
-			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-		}
-
-		/**
-		 * Protobuf type {@code p5.RareCombo}
-		 */
-		public static final class Builder
-				extends com.google.protobuf.GeneratedMessageLite.Builder<RareCombo, Builder> implements
-				// @@protoc_insertion_point(builder_implements:p5.RareCombo)
-				RareComboOrBuilder {
-			// Construct using com.daykm.p5executioner.data.Data.RareCombo.newBuilder()
-			private Builder() {
-				super(DEFAULT_INSTANCE);
-			}
-
-			/**
-			 * <code>repeated sint32 combos = 1;</code>
-			 */
-			public java.util.List<Integer> getCombosList() {
-				return java.util.Collections.unmodifiableList(instance.getCombosList());
-			}
-
-			/**
-			 * <code>repeated sint32 combos = 1;</code>
-			 */
-			public int getCombosCount() {
-				return instance.getCombosCount();
-			}
-
-			/**
-			 * <code>repeated sint32 combos = 1;</code>
-			 */
-			public int getCombos(int index) {
-				return instance.getCombos(index);
-			}
-
-			/**
-			 * <code>repeated sint32 combos = 1;</code>
-			 */
-			public Builder setCombos(int index, int value) {
-				copyOnWrite();
-				instance.setCombos(index, value);
-				return this;
-			}
-
-			/**
-			 * <code>repeated sint32 combos = 1;</code>
-			 */
-			public Builder addCombos(int value) {
-				copyOnWrite();
-				instance.addCombos(value);
-				return this;
-			}
-
-			/**
-			 * <code>repeated sint32 combos = 1;</code>
-			 */
-			public Builder addAllCombos(Iterable<? extends Integer> values) {
-				copyOnWrite();
-				instance.addAllCombos(values);
-				return this;
-			}
-
-			/**
-			 * <code>repeated sint32 combos = 1;</code>
-			 */
-			public Builder clearCombos() {
-				copyOnWrite();
-				instance.clearCombos();
-				return this;
-			}
-
-			// @@protoc_insertion_point(builder_scope:p5.RareCombo)
-		}
-
-		protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
-			switch (method) {
-				case NEW_MUTABLE_INSTANCE: {
-					return new RareCombo();
-				}
-				case IS_INITIALIZED: {
-					return DEFAULT_INSTANCE;
-				}
-				case MAKE_IMMUTABLE: {
-					combos_.makeImmutable();
-					return null;
-				}
-				case NEW_BUILDER: {
-					return new Builder();
-				}
-				case VISIT: {
-					Visitor visitor = (Visitor) arg0;
-					RareCombo other = (RareCombo) arg1;
-					combos_ = visitor.visitIntList(combos_, other.combos_);
-					if (visitor == MergeFromVisitor.INSTANCE) {
-					}
-					return this;
-				}
-				case MERGE_FROM_STREAM: {
-					com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
-					com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-							(com.google.protobuf.ExtensionRegistryLite) arg1;
-					try {
-						boolean done = false;
-						while (!done) {
-							int tag = input.readTag();
-							switch (tag) {
-								case 0:
-									done = true;
-									break;
-								default: {
-									if (!input.skipField(tag)) {
-										done = true;
-									}
-									break;
-								}
-								case 8: {
-									if (!combos_.isModifiable()) {
-										combos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(combos_);
-									}
-									combos_.addInt(input.readSInt32());
-									break;
-								}
-								case 10: {
-									int length = input.readRawVarint32();
-									int limit = input.pushLimit(length);
-									if (!combos_.isModifiable() && input.getBytesUntilLimit() > 0) {
-										combos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(combos_);
-									}
-									while (input.getBytesUntilLimit() > 0) {
-										combos_.addInt(input.readSInt32());
-									}
-									input.popLimit(limit);
-									break;
-								}
-							}
-						}
-					} catch (com.google.protobuf.InvalidProtocolBufferException e) {
-						throw new RuntimeException(e.setUnfinishedMessage(this));
-					} catch (java.io.IOException e) {
-						throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
-								e.getMessage()).setUnfinishedMessage(this));
-					} finally {
-					}
-				}
-				case GET_DEFAULT_INSTANCE: {
-					return DEFAULT_INSTANCE;
-				}
-				case GET_PARSER: {
-					if (PARSER == null) {
-						synchronized (RareCombo.class) {
-							if (PARSER == null) {
-								PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-							}
-						}
-					}
-					return PARSER;
-				}
-			}
-			throw new UnsupportedOperationException();
-		}
-
-		// @@protoc_insertion_point(class_scope:p5.RareCombo)
-		private static final RareCombo DEFAULT_INSTANCE;
-
-		static {
-			DEFAULT_INSTANCE = new RareCombo();
-			DEFAULT_INSTANCE.makeImmutable();
-		}
-
-		public static RareCombo getDefaultInstance() {
-			return DEFAULT_INSTANCE;
-		}
-
-		private static volatile com.google.protobuf.Parser<RareCombo> PARSER;
-
-		public static com.google.protobuf.Parser<RareCombo> parser() {
-			return DEFAULT_INSTANCE.getParserForType();
-		}
-	}
-
-	public interface RareCombosOrBuilder extends
-			// @@protoc_insertion_point(interface_extends:p5.RareCombos)
-			com.google.protobuf.MessageLiteOrBuilder {
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-		int getCombosCount();
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-		boolean containsCombos(String key);
-
-		/**
-		 * Use {@link #getCombosMap()} instead.
-		 */
-		@Deprecated java.util.Map<String, RareCombo> getCombos();
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-		java.util.Map<String, RareCombo> getCombosMap();
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-
-		RareCombo getCombosOrDefault(String key, RareCombo defaultValue);
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-
-		RareCombo getCombosOrThrow(String key);
-	}
-
-	/**
-	 * Protobuf type {@code p5.RareCombos}
-	 */
-	public static final class RareCombos
-			extends com.google.protobuf.GeneratedMessageLite<RareCombos, RareCombos.Builder> implements
-			// @@protoc_insertion_point(message_implements:p5.RareCombos)
-			RareCombosOrBuilder {
-		private RareCombos() {
-		}
-
-		public static final int COMBOS_FIELD_NUMBER = 1;
-
-		private static final class CombosDefaultEntryHolder {
-			static final com.google.protobuf.MapEntryLite<String, RareCombo> defaultEntry =
-					com.google.protobuf.MapEntryLite.<String, RareCombo>newDefaultInstance(
-							com.google.protobuf.WireFormat.FieldType.STRING, "",
-							com.google.protobuf.WireFormat.FieldType.MESSAGE, RareCombo.getDefaultInstance());
-		}
-
-		private com.google.protobuf.MapFieldLite<String, RareCombo> combos_ =
-				com.google.protobuf.MapFieldLite.emptyMapField();
-
-		private com.google.protobuf.MapFieldLite<String, RareCombo> internalGetCombos() {
-			return combos_;
-		}
-
-		private com.google.protobuf.MapFieldLite<String, RareCombo> internalGetMutableCombos() {
-			if (!combos_.isMutable()) {
-				combos_ = combos_.mutableCopy();
-			}
-			return combos_;
-		}
-
-		public int getCombosCount() {
-			return internalGetCombos().size();
-		}
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-
-		public boolean containsCombos(String key) {
-			if (key == null) {
-				throw new NullPointerException();
-			}
-			return internalGetCombos().containsKey(key);
-		}
-
-		/**
-		 * Use {@link #getCombosMap()} instead.
-		 */
-		@Deprecated public java.util.Map<String, RareCombo> getCombos() {
-			return getCombosMap();
-		}
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-
-		public java.util.Map<String, RareCombo> getCombosMap() {
-			return java.util.Collections.unmodifiableMap(internalGetCombos());
-		}
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-
-		public RareCombo getCombosOrDefault(String key, RareCombo defaultValue) {
-			if (key == null) {
-				throw new NullPointerException();
-			}
-			java.util.Map<String, RareCombo> map = internalGetCombos();
-			return map.containsKey(key) ? map.get(key) : defaultValue;
-		}
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-
-		public RareCombo getCombosOrThrow(String key) {
-			if (key == null) {
-				throw new NullPointerException();
-			}
-			java.util.Map<String, RareCombo> map = internalGetCombos();
-			if (!map.containsKey(key)) {
-				throw new IllegalArgumentException();
-			}
-			return map.get(key);
-		}
-
-		/**
-		 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-		 */
-		private java.util.Map<String, RareCombo> getMutableCombosMap() {
-			return internalGetMutableCombos();
-		}
-
-		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-			for (java.util.Map.Entry<String, RareCombo> entry : internalGetCombos().entrySet()) {
-				CombosDefaultEntryHolder.defaultEntry.serializeTo(output, 1, entry.getKey(),
-						entry.getValue());
-			}
-		}
-
-		public int getSerializedSize() {
-			int size = memoizedSerializedSize;
-			if (size != -1) return size;
-
-			size = 0;
-			for (java.util.Map.Entry<String, RareCombo> entry : internalGetCombos().entrySet()) {
-				size += CombosDefaultEntryHolder.defaultEntry.computeMessageSize(1, entry.getKey(),
-						entry.getValue());
-			}
-			memoizedSerializedSize = size;
-			return size;
-		}
-
-		public static RareCombos parseFrom(com.google.protobuf.ByteString data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static RareCombos parseFrom(com.google.protobuf.ByteString data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static RareCombos parseFrom(byte[] data)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
-		}
-
-		public static RareCombos parseFrom(byte[] data,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-				throws com.google.protobuf.InvalidProtocolBufferException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-					extensionRegistry);
-		}
-
-		public static RareCombos parseFrom(java.io.InputStream input) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static RareCombos parseFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static RareCombos parseDelimitedFrom(java.io.InputStream input)
-				throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static RareCombos parseDelimitedFrom(java.io.InputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-		}
-
-		public static RareCombos parseFrom(com.google.protobuf.CodedInputStream input)
-				throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
-		}
-
-		public static RareCombos parseFrom(com.google.protobuf.CodedInputStream input,
-				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-			return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-					extensionRegistry);
-		}
-
-		public static Builder newBuilder() {
-			return DEFAULT_INSTANCE.toBuilder();
-		}
-
-		public static Builder newBuilder(RareCombos prototype) {
-			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-		}
-
-		/**
-		 * Protobuf type {@code p5.RareCombos}
-		 */
-		public static final class Builder
-				extends com.google.protobuf.GeneratedMessageLite.Builder<RareCombos, Builder> implements
-				// @@protoc_insertion_point(builder_implements:p5.RareCombos)
-				RareCombosOrBuilder {
-			// Construct using com.daykm.p5executioner.data.Data.RareCombos.newBuilder()
-			private Builder() {
-				super(DEFAULT_INSTANCE);
-			}
-
-			public int getCombosCount() {
-				return instance.getCombosMap().size();
-			}
-
-			/**
-			 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-			 */
-
-			public boolean containsCombos(String key) {
-				if (key == null) {
-					throw new NullPointerException();
-				}
-				return instance.getCombosMap().containsKey(key);
-			}
-
-			public Builder clearCombos() {
-				copyOnWrite();
-				instance.getMutableCombosMap().clear();
-				return this;
-			}
-
-			/**
-			 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-			 */
-
-			public Builder removeCombos(String key) {
-				if (key == null) {
-					throw new NullPointerException();
-				}
-				copyOnWrite();
-				instance.getMutableCombosMap().remove(key);
-				return this;
-			}
-
-			/**
-			 * Use {@link #getCombosMap()} instead.
-			 */
-			@Deprecated public java.util.Map<String, RareCombo> getCombos() {
-				return getCombosMap();
-			}
-
-			/**
-			 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-			 */
-			public java.util.Map<String, RareCombo> getCombosMap() {
-				return java.util.Collections.unmodifiableMap(instance.getCombosMap());
-			}
-
-			/**
-			 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-			 */
-
-			public RareCombo getCombosOrDefault(String key, RareCombo defaultValue) {
-				if (key == null) {
-					throw new NullPointerException();
-				}
-				java.util.Map<String, RareCombo> map = instance.getCombosMap();
-				return map.containsKey(key) ? map.get(key) : defaultValue;
-			}
-
-			/**
-			 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-			 */
-
-			public RareCombo getCombosOrThrow(String key) {
-				if (key == null) {
-					throw new NullPointerException();
-				}
-				java.util.Map<String, RareCombo> map = instance.getCombosMap();
-				if (!map.containsKey(key)) {
-					throw new IllegalArgumentException();
-				}
-				return map.get(key);
-			}
-
-			/**
-			 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-			 */
-			public Builder putCombos(String key, RareCombo value) {
-				if (key == null) {
-					throw new NullPointerException();
-				}
-				if (value == null) {
-					throw new NullPointerException();
-				}
-				copyOnWrite();
-				instance.getMutableCombosMap().put(key, value);
-				return this;
-			}
-
-			/**
-			 * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
-			 */
-			public Builder putAllCombos(java.util.Map<String, RareCombo> values) {
-				copyOnWrite();
-				instance.getMutableCombosMap().putAll(values);
-				return this;
-			}
-
-			// @@protoc_insertion_point(builder_scope:p5.RareCombos)
-		}
-
-		protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
-			switch (method) {
-				case NEW_MUTABLE_INSTANCE: {
-					return new RareCombos();
-				}
-				case IS_INITIALIZED: {
-					return DEFAULT_INSTANCE;
-				}
-				case MAKE_IMMUTABLE: {
-					combos_.makeImmutable();
-					return null;
-				}
-				case NEW_BUILDER: {
-					return new Builder();
-				}
-				case VISIT: {
-					Visitor visitor = (Visitor) arg0;
-					RareCombos other = (RareCombos) arg1;
-					combos_ = visitor.visitMap(combos_, other.internalGetCombos());
-					if (visitor == MergeFromVisitor.INSTANCE) {
-					}
-					return this;
-				}
-				case MERGE_FROM_STREAM: {
-					com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
-					com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-							(com.google.protobuf.ExtensionRegistryLite) arg1;
-					try {
-						boolean done = false;
-						while (!done) {
-							int tag = input.readTag();
-							switch (tag) {
-								case 0:
-									done = true;
-									break;
-								default: {
-									if (!input.skipField(tag)) {
-										done = true;
-									}
-									break;
-								}
-								case 10: {
-									if (!combos_.isMutable()) {
-										combos_ = combos_.mutableCopy();
-									}
-									CombosDefaultEntryHolder.defaultEntry.parseInto(combos_, input,
-											extensionRegistry);
-									break;
-								}
-							}
-						}
-					} catch (com.google.protobuf.InvalidProtocolBufferException e) {
-						throw new RuntimeException(e.setUnfinishedMessage(this));
-					} catch (java.io.IOException e) {
-						throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
-								e.getMessage()).setUnfinishedMessage(this));
-					} finally {
-					}
-				}
-				case GET_DEFAULT_INSTANCE: {
-					return DEFAULT_INSTANCE;
-				}
-				case GET_PARSER: {
-					if (PARSER == null) {
-						synchronized (RareCombos.class) {
-							if (PARSER == null) {
-								PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-							}
-						}
-					}
-					return PARSER;
-				}
-			}
-			throw new UnsupportedOperationException();
-		}
-
-		// @@protoc_insertion_point(class_scope:p5.RareCombos)
-		private static final RareCombos DEFAULT_INSTANCE;
-
-		static {
-			DEFAULT_INSTANCE = new RareCombos();
-			DEFAULT_INSTANCE.makeImmutable();
-		}
-
-		public static RareCombos getDefaultInstance() {
-			return DEFAULT_INSTANCE;
-		}
-
-		private static volatile com.google.protobuf.Parser<RareCombos> PARSER;
-
-		public static com.google.protobuf.Parser<RareCombos> parser() {
-			return DEFAULT_INSTANCE.getParserForType();
-		}
-	}
-
-	static {
-	}
-
-	// @@protoc_insertion_point(outer_class_scope)
+  private Data() {
+  }
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public interface ComboOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.Combo)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    java.util.List<String> getSourcesList();
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    int getSourcesCount();
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    String getSources(int index);
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    com.google.protobuf.ByteString getSourcesBytes(int index);
+
+    /**
+     * <code>string arcana = 2;</code>
+     */
+    String getArcana();
+
+    /**
+     * <code>string arcana = 2;</code>
+     */
+    com.google.protobuf.ByteString getArcanaBytes();
+  }
+
+  /**
+   * Protobuf type {@code p5.Combo}
+   */
+  public static final class Combo
+      extends com.google.protobuf.GeneratedMessageLite<Combo, Combo.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.Combo)
+      ComboOrBuilder {
+    private Combo() {
+      sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+      arcana_ = "";
+    }
+
+    private int bitField0_;
+    public static final int SOURCES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<String> sources_;
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    public java.util.List<String> getSourcesList() {
+      return sources_;
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    public int getSourcesCount() {
+      return sources_.size();
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    public String getSources(int index) {
+      return sources_.get(index);
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    public com.google.protobuf.ByteString getSourcesBytes(int index) {
+      return com.google.protobuf.ByteString.copyFromUtf8(sources_.get(index));
+    }
+
+    private void ensureSourcesIsMutable() {
+      if (!sources_.isModifiable()) {
+        sources_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
+      }
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    private void setSources(int index, String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourcesIsMutable();
+      sources_.set(index, value);
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    private void addSources(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourcesIsMutable();
+      sources_.add(value);
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    private void addAllSources(Iterable<String> values) {
+      ensureSourcesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, sources_);
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    private void clearSources() {
+      sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+
+    /**
+     * <code>repeated string sources = 1;</code>
+     */
+    private void addSourcesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSourcesIsMutable();
+      sources_.add(value.toStringUtf8());
+    }
+
+    public static final int ARCANA_FIELD_NUMBER = 2;
+    private String arcana_;
+
+    /**
+     * <code>string arcana = 2;</code>
+     */
+    public String getArcana() {
+      return arcana_;
+    }
+
+    /**
+     * <code>string arcana = 2;</code>
+     */
+    public com.google.protobuf.ByteString getArcanaBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(arcana_);
+    }
+
+    /**
+     * <code>string arcana = 2;</code>
+     */
+    private void setArcana(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      arcana_ = value;
+    }
+
+    /**
+     * <code>string arcana = 2;</code>
+     */
+    private void clearArcana() {
+
+      arcana_ = getDefaultInstance().getArcana();
+    }
+
+    /**
+     * <code>string arcana = 2;</code>
+     */
+    private void setArcanaBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      arcana_ = value.toStringUtf8();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < sources_.size(); i++) {
+        output.writeString(1, sources_.get(i));
+      }
+      if (!arcana_.isEmpty()) {
+        output.writeString(2, getArcana());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sources_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream.computeStringSizeNoTag(sources_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getSourcesList().size();
+      }
+      if (!arcana_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeStringSize(2, getArcana());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static Combo parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Combo parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Combo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Combo parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Combo parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Combo parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Combo parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Combo parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Combo parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Combo parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(Combo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.Combo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<Combo, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.Combo)
+        ComboOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.Combo.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public java.util.List<String> getSourcesList() {
+        return java.util.Collections.unmodifiableList(instance.getSourcesList());
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public int getSourcesCount() {
+        return instance.getSourcesCount();
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public String getSources(int index) {
+        return instance.getSources(index);
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public com.google.protobuf.ByteString getSourcesBytes(int index) {
+        return instance.getSourcesBytes(index);
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public Builder setSources(int index, String value) {
+        copyOnWrite();
+        instance.setSources(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public Builder addSources(String value) {
+        copyOnWrite();
+        instance.addSources(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public Builder addAllSources(Iterable<String> values) {
+        copyOnWrite();
+        instance.addAllSources(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public Builder clearSources() {
+        copyOnWrite();
+        instance.clearSources();
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 1;</code>
+       */
+      public Builder addSourcesBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.addSourcesBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>string arcana = 2;</code>
+       */
+      public String getArcana() {
+        return instance.getArcana();
+      }
+
+      /**
+       * <code>string arcana = 2;</code>
+       */
+      public com.google.protobuf.ByteString getArcanaBytes() {
+        return instance.getArcanaBytes();
+      }
+
+      /**
+       * <code>string arcana = 2;</code>
+       */
+      public Builder setArcana(String value) {
+        copyOnWrite();
+        instance.setArcana(value);
+        return this;
+      }
+
+      /**
+       * <code>string arcana = 2;</code>
+       */
+      public Builder clearArcana() {
+        copyOnWrite();
+        instance.clearArcana();
+        return this;
+      }
+
+      /**
+       * <code>string arcana = 2;</code>
+       */
+      public Builder setArcanaBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setArcanaBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.Combo)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new Combo();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          sources_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          Combo other = (Combo) arg1;
+          sources_ = visitor.visitList(sources_, other.sources_);
+          arcana_ = visitor.visitString(!arcana_.isEmpty(), arcana_, !other.arcana_.isEmpty(),
+              other.arcana_);
+          if (visitor == MergeFromVisitor.INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+                  if (!sources_.isModifiable()) {
+                    sources_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
+                  }
+                  sources_.add(s);
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  arcana_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (Combo.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.Combo)
+    private static final Combo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new Combo();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static Combo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Combo> PARSER;
+
+    public static com.google.protobuf.Parser<Combo> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface CombosOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.Combos)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    java.util.List<Combo> getListList();
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    Combo getList(int index);
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    int getListCount();
+  }
+
+  /**
+   * Protobuf type {@code p5.Combos}
+   */
+  public static final class Combos
+      extends com.google.protobuf.GeneratedMessageLite<Combos, Combos.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.Combos)
+      CombosOrBuilder {
+    private Combos() {
+      list_ = emptyProtobufList();
+    }
+
+    public static final int LIST_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<Combo> list_;
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    public java.util.List<Combo> getListList() {
+      return list_;
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    public java.util.List<? extends ComboOrBuilder> getListOrBuilderList() {
+      return list_;
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    public int getListCount() {
+      return list_.size();
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    public Combo getList(int index) {
+      return list_.get(index);
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    public ComboOrBuilder getListOrBuilder(int index) {
+      return list_.get(index);
+    }
+
+    private void ensureListIsMutable() {
+      if (!list_.isModifiable()) {
+        list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+      }
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void setList(int index, Combo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.set(index, value);
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void setList(int index, Combo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.set(index, builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void addList(Combo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(value);
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void addList(int index, Combo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(index, value);
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void addList(Combo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void addList(int index, Combo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(index, builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void addAllList(Iterable<? extends Combo> values) {
+      ensureListIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, list_);
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void clearList() {
+      list_ = emptyProtobufList();
+    }
+
+    /**
+     * <code>repeated .p5.Combo list = 1;</code>
+     */
+    private void removeList(int index) {
+      ensureListIsMutable();
+      list_.remove(index);
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < list_.size(); i++) {
+        output.writeMessage(1, list_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < list_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, list_.get(i));
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static Combos parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Combos parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Combos parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Combos parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Combos parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Combos parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Combos parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Combos parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Combos parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Combos parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(Combos prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.Combos}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<Combos, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.Combos)
+        CombosOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.Combos.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public java.util.List<Combo> getListList() {
+        return java.util.Collections.unmodifiableList(instance.getListList());
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public int getListCount() {
+        return instance.getListCount();
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Combo getList(int index) {
+        return instance.getList(index);
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder setList(int index, Combo value) {
+        copyOnWrite();
+        instance.setList(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder setList(int index, Combo.Builder builderForValue) {
+        copyOnWrite();
+        instance.setList(index, builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder addList(Combo value) {
+        copyOnWrite();
+        instance.addList(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder addList(int index, Combo value) {
+        copyOnWrite();
+        instance.addList(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder addList(Combo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder addList(int index, Combo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(index, builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder addAllList(Iterable<? extends Combo> values) {
+        copyOnWrite();
+        instance.addAllList(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder clearList() {
+        copyOnWrite();
+        instance.clearList();
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.Combo list = 1;</code>
+       */
+      public Builder removeList(int index) {
+        copyOnWrite();
+        instance.removeList(index);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.Combos)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new Combos();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          list_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          Combos other = (Combos) arg1;
+          list_ = visitor.visitList(list_, other.list_);
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!list_.isModifiable()) {
+                    list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+                  }
+                  list_.add(input.readMessage(Combo.parser(), extensionRegistry));
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (Combos.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.Combos)
+    private static final Combos DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new Combos();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static Combos getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Combos> PARSER;
+
+    public static com.google.protobuf.Parser<Combos> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface RareComboOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.RareCombo)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    java.util.List<Integer> getCombosList();
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    int getCombosCount();
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    int getCombos(int index);
+  }
+
+  /**
+   * Protobuf type {@code p5.RareCombo}
+   */
+  public static final class RareCombo
+      extends com.google.protobuf.GeneratedMessageLite<RareCombo, RareCombo.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.RareCombo)
+      RareComboOrBuilder {
+    private RareCombo() {
+      combos_ = emptyIntList();
+    }
+
+    public static final int COMBOS_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.IntList combos_;
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    public java.util.List<Integer> getCombosList() {
+      return combos_;
+    }
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    public int getCombosCount() {
+      return combos_.size();
+    }
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    public int getCombos(int index) {
+      return combos_.getInt(index);
+    }
+
+    private void ensureCombosIsMutable() {
+      if (!combos_.isModifiable()) {
+        combos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(combos_);
+      }
+    }
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    private void setCombos(int index, int value) {
+      ensureCombosIsMutable();
+      combos_.setInt(index, value);
+    }
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    private void addCombos(int value) {
+      ensureCombosIsMutable();
+      combos_.addInt(value);
+    }
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    private void addAllCombos(Iterable<? extends Integer> values) {
+      ensureCombosIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, combos_);
+    }
+
+    /**
+     * <code>repeated sint32 combos = 1;</code>
+     */
+    private void clearCombos() {
+      combos_ = emptyIntList();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < combos_.size(); i++) {
+        output.writeSInt32(1, combos_.getInt(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < combos_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeSInt32SizeNoTag(combos_.getInt(i));
+        }
+        size += dataSize;
+        size += 1 * getCombosList().size();
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static RareCombo parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static RareCombo parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static RareCombo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static RareCombo parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static RareCombo parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static RareCombo parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static RareCombo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static RareCombo parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static RareCombo parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static RareCombo parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(RareCombo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.RareCombo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<RareCombo, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.RareCombo)
+        RareComboOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.RareCombo.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>repeated sint32 combos = 1;</code>
+       */
+      public java.util.List<Integer> getCombosList() {
+        return java.util.Collections.unmodifiableList(instance.getCombosList());
+      }
+
+      /**
+       * <code>repeated sint32 combos = 1;</code>
+       */
+      public int getCombosCount() {
+        return instance.getCombosCount();
+      }
+
+      /**
+       * <code>repeated sint32 combos = 1;</code>
+       */
+      public int getCombos(int index) {
+        return instance.getCombos(index);
+      }
+
+      /**
+       * <code>repeated sint32 combos = 1;</code>
+       */
+      public Builder setCombos(int index, int value) {
+        copyOnWrite();
+        instance.setCombos(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated sint32 combos = 1;</code>
+       */
+      public Builder addCombos(int value) {
+        copyOnWrite();
+        instance.addCombos(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated sint32 combos = 1;</code>
+       */
+      public Builder addAllCombos(Iterable<? extends Integer> values) {
+        copyOnWrite();
+        instance.addAllCombos(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated sint32 combos = 1;</code>
+       */
+      public Builder clearCombos() {
+        copyOnWrite();
+        instance.clearCombos();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.RareCombo)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new RareCombo();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          combos_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          RareCombo other = (RareCombo) arg1;
+          combos_ = visitor.visitIntList(combos_, other.combos_);
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  if (!combos_.isModifiable()) {
+                    combos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(combos_);
+                  }
+                  combos_.addInt(input.readSInt32());
+                  break;
+                }
+                case 10: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!combos_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    combos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(combos_);
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    combos_.addInt(input.readSInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (RareCombo.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.RareCombo)
+    private static final RareCombo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new RareCombo();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static RareCombo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<RareCombo> PARSER;
+
+    public static com.google.protobuf.Parser<RareCombo> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface RareCombosOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.RareCombos)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+    int getCombosCount();
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+    boolean containsCombos(String key);
+
+    /**
+     * Use {@link #getCombosMap()} instead.
+     */
+    @Deprecated java.util.Map<String, RareCombo> getCombos();
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+    java.util.Map<String, RareCombo> getCombosMap();
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+
+    RareCombo getCombosOrDefault(String key, RareCombo defaultValue);
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+
+    RareCombo getCombosOrThrow(String key);
+  }
+
+  /**
+   * Protobuf type {@code p5.RareCombos}
+   */
+  public static final class RareCombos
+      extends com.google.protobuf.GeneratedMessageLite<RareCombos, RareCombos.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.RareCombos)
+      RareCombosOrBuilder {
+    private RareCombos() {
+    }
+
+    public static final int COMBOS_FIELD_NUMBER = 1;
+
+    private static final class CombosDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<String, RareCombo> defaultEntry =
+          com.google.protobuf.MapEntryLite.<String, RareCombo>newDefaultInstance(
+              com.google.protobuf.WireFormat.FieldType.STRING, "",
+              com.google.protobuf.WireFormat.FieldType.MESSAGE, RareCombo.getDefaultInstance());
+    }
+
+    private com.google.protobuf.MapFieldLite<String, RareCombo> combos_ =
+        com.google.protobuf.MapFieldLite.emptyMapField();
+
+    private com.google.protobuf.MapFieldLite<String, RareCombo> internalGetCombos() {
+      return combos_;
+    }
+
+    private com.google.protobuf.MapFieldLite<String, RareCombo> internalGetMutableCombos() {
+      if (!combos_.isMutable()) {
+        combos_ = combos_.mutableCopy();
+      }
+      return combos_;
+    }
+
+    public int getCombosCount() {
+      return internalGetCombos().size();
+    }
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+
+    public boolean containsCombos(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      return internalGetCombos().containsKey(key);
+    }
+
+    /**
+     * Use {@link #getCombosMap()} instead.
+     */
+    @Deprecated public java.util.Map<String, RareCombo> getCombos() {
+      return getCombosMap();
+    }
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+
+    public java.util.Map<String, RareCombo> getCombosMap() {
+      return java.util.Collections.unmodifiableMap(internalGetCombos());
+    }
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+
+    public RareCombo getCombosOrDefault(String key, RareCombo defaultValue) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, RareCombo> map = internalGetCombos();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+
+    public RareCombo getCombosOrThrow(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, RareCombo> map = internalGetCombos();
+      if (!map.containsKey(key)) {
+        throw new IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    /**
+     * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+     */
+    private java.util.Map<String, RareCombo> getMutableCombosMap() {
+      return internalGetMutableCombos();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (java.util.Map.Entry<String, RareCombo> entry : internalGetCombos().entrySet()) {
+        CombosDefaultEntryHolder.defaultEntry.serializeTo(output, 1, entry.getKey(),
+            entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<String, RareCombo> entry : internalGetCombos().entrySet()) {
+        size += CombosDefaultEntryHolder.defaultEntry.computeMessageSize(1, entry.getKey(),
+            entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static RareCombos parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static RareCombos parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static RareCombos parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static RareCombos parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static RareCombos parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static RareCombos parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static RareCombos parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static RareCombos parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static RareCombos parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static RareCombos parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(RareCombos prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.RareCombos}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<RareCombos, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.RareCombos)
+        RareCombosOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.RareCombos.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      public int getCombosCount() {
+        return instance.getCombosMap().size();
+      }
+
+      /**
+       * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+       */
+
+      public boolean containsCombos(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        return instance.getCombosMap().containsKey(key);
+      }
+
+      public Builder clearCombos() {
+        copyOnWrite();
+        instance.getMutableCombosMap().clear();
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+       */
+
+      public Builder removeCombos(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutableCombosMap().remove(key);
+        return this;
+      }
+
+      /**
+       * Use {@link #getCombosMap()} instead.
+       */
+      @Deprecated public java.util.Map<String, RareCombo> getCombos() {
+        return getCombosMap();
+      }
+
+      /**
+       * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+       */
+      public java.util.Map<String, RareCombo> getCombosMap() {
+        return java.util.Collections.unmodifiableMap(instance.getCombosMap());
+      }
+
+      /**
+       * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+       */
+
+      public RareCombo getCombosOrDefault(String key, RareCombo defaultValue) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, RareCombo> map = instance.getCombosMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+       */
+
+      public RareCombo getCombosOrThrow(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, RareCombo> map = instance.getCombosMap();
+        if (!map.containsKey(key)) {
+          throw new IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      /**
+       * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+       */
+      public Builder putCombos(String key, RareCombo value) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutableCombosMap().put(key, value);
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.RareCombo&gt; combos = 1;</code>
+       */
+      public Builder putAllCombos(java.util.Map<String, RareCombo> values) {
+        copyOnWrite();
+        instance.getMutableCombosMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.RareCombos)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new RareCombos();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          combos_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          RareCombos other = (RareCombos) arg1;
+          combos_ = visitor.visitMap(combos_, other.internalGetCombos());
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!combos_.isMutable()) {
+                    combos_ = combos_.mutableCopy();
+                  }
+                  CombosDefaultEntryHolder.defaultEntry.parseInto(combos_, input,
+                      extensionRegistry);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (RareCombos.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.RareCombos)
+    private static final RareCombos DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new RareCombos();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static RareCombos getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<RareCombos> PARSER;
+
+    public static com.google.protobuf.Parser<RareCombos> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SpecialComboOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.SpecialCombo)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    String getResult();
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    com.google.protobuf.ByteString getResultBytes();
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    java.util.List<String> getSourcesList();
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    int getSourcesCount();
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    String getSources(int index);
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    com.google.protobuf.ByteString getSourcesBytes(int index);
+  }
+
+  /**
+   * Protobuf type {@code p5.SpecialCombo}
+   */
+  public static final class SpecialCombo
+      extends com.google.protobuf.GeneratedMessageLite<SpecialCombo, SpecialCombo.Builder>
+      implements
+      // @@protoc_insertion_point(message_implements:p5.SpecialCombo)
+      SpecialComboOrBuilder {
+    private SpecialCombo() {
+      result_ = "";
+      sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+
+    private int bitField0_;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private String result_;
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    public String getResult() {
+      return result_;
+    }
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    public com.google.protobuf.ByteString getResultBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(result_);
+    }
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    private void setResult(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      result_ = value;
+    }
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    private void clearResult() {
+
+      result_ = getDefaultInstance().getResult();
+    }
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    private void setResultBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      result_ = value.toStringUtf8();
+    }
+
+    public static final int SOURCES_FIELD_NUMBER = 2;
+    private com.google.protobuf.Internal.ProtobufList<String> sources_;
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public java.util.List<String> getSourcesList() {
+      return sources_;
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public int getSourcesCount() {
+      return sources_.size();
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public String getSources(int index) {
+      return sources_.get(index);
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public com.google.protobuf.ByteString getSourcesBytes(int index) {
+      return com.google.protobuf.ByteString.copyFromUtf8(sources_.get(index));
+    }
+
+    private void ensureSourcesIsMutable() {
+      if (!sources_.isModifiable()) {
+        sources_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
+      }
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void setSources(int index, String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourcesIsMutable();
+      sources_.set(index, value);
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void addSources(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourcesIsMutable();
+      sources_.add(value);
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void addAllSources(Iterable<String> values) {
+      ensureSourcesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, sources_);
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void clearSources() {
+      sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void addSourcesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSourcesIsMutable();
+      sources_.add(value.toStringUtf8());
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!result_.isEmpty()) {
+        output.writeString(1, getResult());
+      }
+      for (int i = 0; i < sources_.size(); i++) {
+        output.writeString(2, sources_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!result_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeStringSize(1, getResult());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sources_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream.computeStringSizeNoTag(sources_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getSourcesList().size();
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static SpecialCombo parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static SpecialCombo parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static SpecialCombo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static SpecialCombo parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static SpecialCombo parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SpecialCombo parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static SpecialCombo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SpecialCombo parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static SpecialCombo parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SpecialCombo parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(SpecialCombo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.SpecialCombo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<SpecialCombo, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.SpecialCombo)
+        SpecialComboOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.SpecialCombo.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>string result = 1;</code>
+       */
+      public String getResult() {
+        return instance.getResult();
+      }
+
+      /**
+       * <code>string result = 1;</code>
+       */
+      public com.google.protobuf.ByteString getResultBytes() {
+        return instance.getResultBytes();
+      }
+
+      /**
+       * <code>string result = 1;</code>
+       */
+      public Builder setResult(String value) {
+        copyOnWrite();
+        instance.setResult(value);
+        return this;
+      }
+
+      /**
+       * <code>string result = 1;</code>
+       */
+      public Builder clearResult() {
+        copyOnWrite();
+        instance.clearResult();
+        return this;
+      }
+
+      /**
+       * <code>string result = 1;</code>
+       */
+      public Builder setResultBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setResultBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public java.util.List<String> getSourcesList() {
+        return java.util.Collections.unmodifiableList(instance.getSourcesList());
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public int getSourcesCount() {
+        return instance.getSourcesCount();
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public String getSources(int index) {
+        return instance.getSources(index);
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public com.google.protobuf.ByteString getSourcesBytes(int index) {
+        return instance.getSourcesBytes(index);
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder setSources(int index, String value) {
+        copyOnWrite();
+        instance.setSources(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder addSources(String value) {
+        copyOnWrite();
+        instance.addSources(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder addAllSources(Iterable<String> values) {
+        copyOnWrite();
+        instance.addAllSources(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder clearSources() {
+        copyOnWrite();
+        instance.clearSources();
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder addSourcesBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.addSourcesBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.SpecialCombo)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new SpecialCombo();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          sources_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          SpecialCombo other = (SpecialCombo) arg1;
+          result_ = visitor.visitString(!result_.isEmpty(), result_, !other.result_.isEmpty(),
+              other.result_);
+          sources_ = visitor.visitList(sources_, other.sources_);
+          if (visitor == MergeFromVisitor.INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  result_ = s;
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+                  if (!sources_.isModifiable()) {
+                    sources_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
+                  }
+                  sources_.add(s);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (SpecialCombo.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.SpecialCombo)
+    private static final SpecialCombo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new SpecialCombo();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static SpecialCombo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<SpecialCombo> PARSER;
+
+    public static com.google.protobuf.Parser<SpecialCombo> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SpecialCombosOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.SpecialCombos)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    java.util.List<SpecialCombo> getListList();
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    SpecialCombo getList(int index);
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    int getListCount();
+  }
+
+  /**
+   * Protobuf type {@code p5.SpecialCombos}
+   */
+  public static final class SpecialCombos
+      extends com.google.protobuf.GeneratedMessageLite<SpecialCombos, SpecialCombos.Builder>
+      implements
+      // @@protoc_insertion_point(message_implements:p5.SpecialCombos)
+      SpecialCombosOrBuilder {
+    private SpecialCombos() {
+      list_ = emptyProtobufList();
+    }
+
+    public static final int LIST_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<SpecialCombo> list_;
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public java.util.List<SpecialCombo> getListList() {
+      return list_;
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public java.util.List<? extends SpecialComboOrBuilder> getListOrBuilderList() {
+      return list_;
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public int getListCount() {
+      return list_.size();
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public SpecialCombo getList(int index) {
+      return list_.get(index);
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public SpecialComboOrBuilder getListOrBuilder(int index) {
+      return list_.get(index);
+    }
+
+    private void ensureListIsMutable() {
+      if (!list_.isModifiable()) {
+        list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+      }
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void setList(int index, SpecialCombo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.set(index, value);
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void setList(int index, SpecialCombo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.set(index, builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(SpecialCombo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(value);
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(int index, SpecialCombo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(index, value);
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(SpecialCombo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(int index, SpecialCombo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(index, builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addAllList(Iterable<? extends SpecialCombo> values) {
+      ensureListIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, list_);
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void clearList() {
+      list_ = emptyProtobufList();
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void removeList(int index) {
+      ensureListIsMutable();
+      list_.remove(index);
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < list_.size(); i++) {
+        output.writeMessage(1, list_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < list_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, list_.get(i));
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static SpecialCombos parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static SpecialCombos parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static SpecialCombos parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static SpecialCombos parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static SpecialCombos parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SpecialCombos parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static SpecialCombos parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SpecialCombos parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static SpecialCombos parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SpecialCombos parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(SpecialCombos prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.SpecialCombos}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<SpecialCombos, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.SpecialCombos)
+        SpecialCombosOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.SpecialCombos.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public java.util.List<SpecialCombo> getListList() {
+        return java.util.Collections.unmodifiableList(instance.getListList());
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public int getListCount() {
+        return instance.getListCount();
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public SpecialCombo getList(int index) {
+        return instance.getList(index);
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder setList(int index, SpecialCombo value) {
+        copyOnWrite();
+        instance.setList(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder setList(int index, SpecialCombo.Builder builderForValue) {
+        copyOnWrite();
+        instance.setList(index, builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(SpecialCombo value) {
+        copyOnWrite();
+        instance.addList(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(int index, SpecialCombo value) {
+        copyOnWrite();
+        instance.addList(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(SpecialCombo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(int index, SpecialCombo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(index, builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addAllList(Iterable<? extends SpecialCombo> values) {
+        copyOnWrite();
+        instance.addAllList(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder clearList() {
+        copyOnWrite();
+        instance.clearList();
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder removeList(int index) {
+        copyOnWrite();
+        instance.removeList(index);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.SpecialCombos)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new SpecialCombos();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          list_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          SpecialCombos other = (SpecialCombos) arg1;
+          list_ = visitor.visitList(list_, other.list_);
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!list_.isModifiable()) {
+                    list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+                  }
+                  list_.add(input.readMessage(SpecialCombo.parser(), extensionRegistry));
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (SpecialCombos.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.SpecialCombos)
+    private static final SpecialCombos DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new SpecialCombos();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static SpecialCombos getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<SpecialCombos> PARSER;
+
+    public static com.google.protobuf.Parser<SpecialCombos> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface DLCPersonaSeriesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.DLCPersonaSeries)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    java.util.List<String> getSeriesList();
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    int getSeriesCount();
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    String getSeries(int index);
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    com.google.protobuf.ByteString getSeriesBytes(int index);
+  }
+
+  /**
+   * Protobuf type {@code p5.DLCPersonaSeries}
+   */
+  public static final class DLCPersonaSeries
+      extends com.google.protobuf.GeneratedMessageLite<DLCPersonaSeries, DLCPersonaSeries.Builder>
+      implements
+      // @@protoc_insertion_point(message_implements:p5.DLCPersonaSeries)
+      DLCPersonaSeriesOrBuilder {
+    private DLCPersonaSeries() {
+      series_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+
+    public static final int SERIES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<String> series_;
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public java.util.List<String> getSeriesList() {
+      return series_;
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public int getSeriesCount() {
+      return series_.size();
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public String getSeries(int index) {
+      return series_.get(index);
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public com.google.protobuf.ByteString getSeriesBytes(int index) {
+      return com.google.protobuf.ByteString.copyFromUtf8(series_.get(index));
+    }
+
+    private void ensureSeriesIsMutable() {
+      if (!series_.isModifiable()) {
+        series_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(series_);
+      }
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void setSeries(int index, String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSeriesIsMutable();
+      series_.set(index, value);
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void addSeries(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSeriesIsMutable();
+      series_.add(value);
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void addAllSeries(Iterable<String> values) {
+      ensureSeriesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, series_);
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void clearSeries() {
+      series_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void addSeriesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSeriesIsMutable();
+      series_.add(value.toStringUtf8());
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < series_.size(); i++) {
+        output.writeString(1, series_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < series_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream.computeStringSizeNoTag(series_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getSeriesList().size();
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static DLCPersonaSeries parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static DLCPersonaSeries parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static DLCPersonaSeries parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static DLCPersonaSeries parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static DLCPersonaSeries parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static DLCPersonaSeries parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static DLCPersonaSeries parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static DLCPersonaSeries parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static DLCPersonaSeries parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static DLCPersonaSeries parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(DLCPersonaSeries prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.DLCPersonaSeries}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<DLCPersonaSeries, Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:p5.DLCPersonaSeries)
+        DLCPersonaSeriesOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.DLCPersonaSeries.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public java.util.List<String> getSeriesList() {
+        return java.util.Collections.unmodifiableList(instance.getSeriesList());
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public int getSeriesCount() {
+        return instance.getSeriesCount();
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public String getSeries(int index) {
+        return instance.getSeries(index);
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public com.google.protobuf.ByteString getSeriesBytes(int index) {
+        return instance.getSeriesBytes(index);
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder setSeries(int index, String value) {
+        copyOnWrite();
+        instance.setSeries(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder addSeries(String value) {
+        copyOnWrite();
+        instance.addSeries(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder addAllSeries(Iterable<String> values) {
+        copyOnWrite();
+        instance.addAllSeries(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder clearSeries() {
+        copyOnWrite();
+        instance.clearSeries();
+        return this;
+      }
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder addSeriesBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.addSeriesBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.DLCPersonaSeries)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new DLCPersonaSeries();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          series_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          DLCPersonaSeries other = (DLCPersonaSeries) arg1;
+          series_ = visitor.visitList(series_, other.series_);
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+                  if (!series_.isModifiable()) {
+                    series_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(series_);
+                  }
+                  series_.add(s);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (DLCPersonaSeries.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.DLCPersonaSeries)
+    private static final DLCPersonaSeries DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new DLCPersonaSeries();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static DLCPersonaSeries getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<DLCPersonaSeries> PARSER;
+
+    public static com.google.protobuf.Parser<DLCPersonaSeries> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface DLCPersonaeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.DLCPersonae)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    java.util.List<DLCPersonaSeries> getListList();
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    DLCPersonaSeries getList(int index);
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    int getListCount();
+  }
+
+  /**
+   * Protobuf type {@code p5.DLCPersonae}
+   */
+  public static final class DLCPersonae
+      extends com.google.protobuf.GeneratedMessageLite<DLCPersonae, DLCPersonae.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.DLCPersonae)
+      DLCPersonaeOrBuilder {
+    private DLCPersonae() {
+      list_ = emptyProtobufList();
+    }
+
+    public static final int LIST_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<DLCPersonaSeries> list_;
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public java.util.List<DLCPersonaSeries> getListList() {
+      return list_;
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public java.util.List<? extends DLCPersonaSeriesOrBuilder> getListOrBuilderList() {
+      return list_;
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public int getListCount() {
+      return list_.size();
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public DLCPersonaSeries getList(int index) {
+      return list_.get(index);
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public DLCPersonaSeriesOrBuilder getListOrBuilder(int index) {
+      return list_.get(index);
+    }
+
+    private void ensureListIsMutable() {
+      if (!list_.isModifiable()) {
+        list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+      }
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void setList(int index, DLCPersonaSeries value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.set(index, value);
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void setList(int index, DLCPersonaSeries.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.set(index, builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(DLCPersonaSeries value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(value);
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(int index, DLCPersonaSeries value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(index, value);
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(DLCPersonaSeries.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(int index, DLCPersonaSeries.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(index, builderForValue.build());
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addAllList(Iterable<? extends DLCPersonaSeries> values) {
+      ensureListIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, list_);
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void clearList() {
+      list_ = emptyProtobufList();
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void removeList(int index) {
+      ensureListIsMutable();
+      list_.remove(index);
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < list_.size(); i++) {
+        output.writeMessage(1, list_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < list_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, list_.get(i));
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static DLCPersonae parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static DLCPersonae parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static DLCPersonae parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static DLCPersonae parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static DLCPersonae parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static DLCPersonae parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static DLCPersonae parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static DLCPersonae parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static DLCPersonae parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static DLCPersonae parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(DLCPersonae prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.DLCPersonae}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<DLCPersonae, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.DLCPersonae)
+        DLCPersonaeOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.DLCPersonae.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public java.util.List<DLCPersonaSeries> getListList() {
+        return java.util.Collections.unmodifiableList(instance.getListList());
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public int getListCount() {
+        return instance.getListCount();
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public DLCPersonaSeries getList(int index) {
+        return instance.getList(index);
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder setList(int index, DLCPersonaSeries value) {
+        copyOnWrite();
+        instance.setList(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder setList(int index, DLCPersonaSeries.Builder builderForValue) {
+        copyOnWrite();
+        instance.setList(index, builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(DLCPersonaSeries value) {
+        copyOnWrite();
+        instance.addList(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(int index, DLCPersonaSeries value) {
+        copyOnWrite();
+        instance.addList(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(DLCPersonaSeries.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(int index, DLCPersonaSeries.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(index, builderForValue);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addAllList(Iterable<? extends DLCPersonaSeries> values) {
+        copyOnWrite();
+        instance.addAllList(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder clearList() {
+        copyOnWrite();
+        instance.clearList();
+        return this;
+      }
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder removeList(int index) {
+        copyOnWrite();
+        instance.removeList(index);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.DLCPersonae)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new DLCPersonae();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          list_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          DLCPersonae other = (DLCPersonae) arg1;
+          list_ = visitor.visitList(list_, other.list_);
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!list_.isModifiable()) {
+                    list_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+                  }
+                  list_.add(input.readMessage(DLCPersonaSeries.parser(), extensionRegistry));
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (DLCPersonae.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.DLCPersonae)
+    private static final DLCPersonae DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new DLCPersonae();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static DLCPersonae getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<DLCPersonae> PARSER;
+
+    public static com.google.protobuf.Parser<DLCPersonae> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface PersonaDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.PersonaDetail)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    String getArcana();
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    com.google.protobuf.ByteString getArcanaBytes();
+
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    int getLevel();
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    java.util.List<Integer> getStatsList();
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    int getStatsCount();
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    int getStats(int index);
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    int getSkillsCount();
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    boolean containsSkills(String key);
+
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @Deprecated java.util.Map<String, Integer> getSkills();
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    java.util.Map<String, Integer> getSkillsMap();
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    int getSkillsOrDefault(String key, int defaultValue);
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    int getSkillsOrThrow(String key);
+  }
+
+  /**
+   * Protobuf type {@code p5.PersonaDetail}
+   */
+  public static final class PersonaDetail
+      extends com.google.protobuf.GeneratedMessageLite<PersonaDetail, PersonaDetail.Builder>
+      implements
+      // @@protoc_insertion_point(message_implements:p5.PersonaDetail)
+      PersonaDetailOrBuilder {
+    private PersonaDetail() {
+      arcana_ = "";
+      stats_ = emptyIntList();
+    }
+
+    private int bitField0_;
+    public static final int ARCANA_FIELD_NUMBER = 1;
+    private String arcana_;
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    public String getArcana() {
+      return arcana_;
+    }
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    public com.google.protobuf.ByteString getArcanaBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(arcana_);
+    }
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    private void setArcana(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      arcana_ = value;
+    }
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    private void clearArcana() {
+
+      arcana_ = getDefaultInstance().getArcana();
+    }
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    private void setArcanaBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      arcana_ = value.toStringUtf8();
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 2;
+    private int level_;
+
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    public int getLevel() {
+      return level_;
+    }
+
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    private void setLevel(int value) {
+
+      level_ = value;
+    }
+
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    private void clearLevel() {
+
+      level_ = 0;
+    }
+
+    public static final int STATS_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList stats_;
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    public java.util.List<Integer> getStatsList() {
+      return stats_;
+    }
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    public int getStatsCount() {
+      return stats_.size();
+    }
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    public int getStats(int index) {
+      return stats_.getInt(index);
+    }
+
+    private void ensureStatsIsMutable() {
+      if (!stats_.isModifiable()) {
+        stats_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
+      }
+    }
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void setStats(int index, int value) {
+      ensureStatsIsMutable();
+      stats_.setInt(index, value);
+    }
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void addStats(int value) {
+      ensureStatsIsMutable();
+      stats_.addInt(value);
+    }
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void addAllStats(Iterable<? extends Integer> values) {
+      ensureStatsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(values, stats_);
+    }
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void clearStats() {
+      stats_ = emptyIntList();
+    }
+
+    public static final int SKILLS_FIELD_NUMBER = 4;
+
+    private static final class SkillsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<String, Integer> defaultEntry =
+          com.google.protobuf.MapEntryLite.<String, Integer>newDefaultInstance(
+              com.google.protobuf.WireFormat.FieldType.STRING, "",
+              com.google.protobuf.WireFormat.FieldType.UINT32, 0);
+    }
+
+    private com.google.protobuf.MapFieldLite<String, Integer> skills_ =
+        com.google.protobuf.MapFieldLite.emptyMapField();
+
+    private com.google.protobuf.MapFieldLite<String, Integer> internalGetSkills() {
+      return skills_;
+    }
+
+    private com.google.protobuf.MapFieldLite<String, Integer> internalGetMutableSkills() {
+      if (!skills_.isMutable()) {
+        skills_ = skills_.mutableCopy();
+      }
+      return skills_;
+    }
+
+    public int getSkillsCount() {
+      return internalGetSkills().size();
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public boolean containsSkills(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      return internalGetSkills().containsKey(key);
+    }
+
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @Deprecated public java.util.Map<String, Integer> getSkills() {
+      return getSkillsMap();
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public java.util.Map<String, Integer> getSkillsMap() {
+      return java.util.Collections.unmodifiableMap(internalGetSkills());
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public int getSkillsOrDefault(String key, int defaultValue) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, Integer> map = internalGetSkills();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public int getSkillsOrThrow(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, Integer> map = internalGetSkills();
+      if (!map.containsKey(key)) {
+        throw new IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    private java.util.Map<String, Integer> getMutableSkillsMap() {
+      return internalGetMutableSkills();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (!arcana_.isEmpty()) {
+        output.writeString(1, getArcana());
+      }
+      if (level_ != 0) {
+        output.writeUInt32(2, level_);
+      }
+      for (int i = 0; i < stats_.size(); i++) {
+        output.writeUInt32(3, stats_.getInt(i));
+      }
+      for (java.util.Map.Entry<String, Integer> entry : internalGetSkills().entrySet()) {
+        SkillsDefaultEntryHolder.defaultEntry.serializeTo(output, 4, entry.getKey(),
+            entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!arcana_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeStringSize(1, getArcana());
+      }
+      if (level_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, level_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < stats_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(stats_.getInt(i));
+        }
+        size += dataSize;
+        size += 1 * getStatsList().size();
+      }
+      for (java.util.Map.Entry<String, Integer> entry : internalGetSkills().entrySet()) {
+        size += SkillsDefaultEntryHolder.defaultEntry.computeMessageSize(4, entry.getKey(),
+            entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static PersonaDetail parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static PersonaDetail parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static PersonaDetail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static PersonaDetail parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static PersonaDetail parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static PersonaDetail parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static PersonaDetail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static PersonaDetail parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static PersonaDetail parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static PersonaDetail parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(PersonaDetail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.PersonaDetail}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<PersonaDetail, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.PersonaDetail)
+        PersonaDetailOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.PersonaDetail.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public String getArcana() {
+        return instance.getArcana();
+      }
+
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public com.google.protobuf.ByteString getArcanaBytes() {
+        return instance.getArcanaBytes();
+      }
+
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public Builder setArcana(String value) {
+        copyOnWrite();
+        instance.setArcana(value);
+        return this;
+      }
+
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public Builder clearArcana() {
+        copyOnWrite();
+        instance.clearArcana();
+        return this;
+      }
+
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public Builder setArcanaBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setArcanaBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>uint32 level = 2;</code>
+       */
+      public int getLevel() {
+        return instance.getLevel();
+      }
+
+      /**
+       * <code>uint32 level = 2;</code>
+       */
+      public Builder setLevel(int value) {
+        copyOnWrite();
+        instance.setLevel(value);
+        return this;
+      }
+
+      /**
+       * <code>uint32 level = 2;</code>
+       */
+      public Builder clearLevel() {
+        copyOnWrite();
+        instance.clearLevel();
+        return this;
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public java.util.List<Integer> getStatsList() {
+        return java.util.Collections.unmodifiableList(instance.getStatsList());
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public int getStatsCount() {
+        return instance.getStatsCount();
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public int getStats(int index) {
+        return instance.getStats(index);
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder setStats(int index, int value) {
+        copyOnWrite();
+        instance.setStats(index, value);
+        return this;
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder addStats(int value) {
+        copyOnWrite();
+        instance.addStats(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder addAllStats(Iterable<? extends Integer> values) {
+        copyOnWrite();
+        instance.addAllStats(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder clearStats() {
+        copyOnWrite();
+        instance.clearStats();
+        return this;
+      }
+
+      public int getSkillsCount() {
+        return instance.getSkillsMap().size();
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public boolean containsSkills(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        return instance.getSkillsMap().containsKey(key);
+      }
+
+      public Builder clearSkills() {
+        copyOnWrite();
+        instance.getMutableSkillsMap().clear();
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public Builder removeSkills(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutableSkillsMap().remove(key);
+        return this;
+      }
+
+      /**
+       * Use {@link #getSkillsMap()} instead.
+       */
+      @Deprecated public java.util.Map<String, Integer> getSkills() {
+        return getSkillsMap();
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+      public java.util.Map<String, Integer> getSkillsMap() {
+        return java.util.Collections.unmodifiableMap(instance.getSkillsMap());
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public int getSkillsOrDefault(String key, int defaultValue) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, Integer> map = instance.getSkillsMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public int getSkillsOrThrow(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, Integer> map = instance.getSkillsMap();
+        if (!map.containsKey(key)) {
+          throw new IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+      public Builder putSkills(String key, int value) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+
+        copyOnWrite();
+        instance.getMutableSkillsMap().put(key, value);
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+      public Builder putAllSkills(java.util.Map<String, Integer> values) {
+        copyOnWrite();
+        instance.getMutableSkillsMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.PersonaDetail)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new PersonaDetail();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          stats_.makeImmutable();
+          skills_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          PersonaDetail other = (PersonaDetail) arg1;
+          arcana_ = visitor.visitString(!arcana_.isEmpty(), arcana_, !other.arcana_.isEmpty(),
+              other.arcana_);
+          level_ = visitor.visitInt(level_ != 0, level_, other.level_ != 0, other.level_);
+          stats_ = visitor.visitIntList(stats_, other.stats_);
+          skills_ = visitor.visitMap(skills_, other.internalGetSkills());
+          if (visitor == MergeFromVisitor.INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  arcana_ = s;
+                  break;
+                }
+                case 16: {
+
+                  level_ = input.readUInt32();
+                  break;
+                }
+                case 24: {
+                  if (!stats_.isModifiable()) {
+                    stats_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
+                  }
+                  stats_.addInt(input.readUInt32());
+                  break;
+                }
+                case 26: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!stats_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    stats_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    stats_.addInt(input.readUInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+                case 34: {
+                  if (!skills_.isMutable()) {
+                    skills_ = skills_.mutableCopy();
+                  }
+                  SkillsDefaultEntryHolder.defaultEntry.parseInto(skills_, input,
+                      extensionRegistry);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (PersonaDetail.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.PersonaDetail)
+    private static final PersonaDetail DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new PersonaDetail();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static PersonaDetail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<PersonaDetail> PARSER;
+
+    public static com.google.protobuf.Parser<PersonaDetail> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface PersonaeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.Personae)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    int getPersonaeCount();
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    boolean containsPersonae(String key);
+
+    /**
+     * Use {@link #getPersonaeMap()} instead.
+     */
+    @Deprecated java.util.Map<String, PersonaDetail> getPersonae();
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    java.util.Map<String, PersonaDetail> getPersonaeMap();
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    PersonaDetail getPersonaeOrDefault(String key, PersonaDetail defaultValue);
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    PersonaDetail getPersonaeOrThrow(String key);
+  }
+
+  /**
+   * Protobuf type {@code p5.Personae}
+   */
+  public static final class Personae
+      extends com.google.protobuf.GeneratedMessageLite<Personae, Personae.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.Personae)
+      PersonaeOrBuilder {
+    private Personae() {
+    }
+
+    public static final int PERSONAE_FIELD_NUMBER = 1;
+
+    private static final class PersonaeDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<String, PersonaDetail> defaultEntry =
+          com.google.protobuf.MapEntryLite.<String, PersonaDetail>newDefaultInstance(
+              com.google.protobuf.WireFormat.FieldType.STRING, "",
+              com.google.protobuf.WireFormat.FieldType.MESSAGE, PersonaDetail.getDefaultInstance());
+    }
+
+    private com.google.protobuf.MapFieldLite<String, PersonaDetail> personae_ =
+        com.google.protobuf.MapFieldLite.emptyMapField();
+
+    private com.google.protobuf.MapFieldLite<String, PersonaDetail> internalGetPersonae() {
+      return personae_;
+    }
+
+    private com.google.protobuf.MapFieldLite<String, PersonaDetail> internalGetMutablePersonae() {
+      if (!personae_.isMutable()) {
+        personae_ = personae_.mutableCopy();
+      }
+      return personae_;
+    }
+
+    public int getPersonaeCount() {
+      return internalGetPersonae().size();
+    }
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public boolean containsPersonae(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      return internalGetPersonae().containsKey(key);
+    }
+
+    /**
+     * Use {@link #getPersonaeMap()} instead.
+     */
+    @Deprecated public java.util.Map<String, PersonaDetail> getPersonae() {
+      return getPersonaeMap();
+    }
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public java.util.Map<String, PersonaDetail> getPersonaeMap() {
+      return java.util.Collections.unmodifiableMap(internalGetPersonae());
+    }
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public PersonaDetail getPersonaeOrDefault(String key, PersonaDetail defaultValue) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, PersonaDetail> map = internalGetPersonae();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public PersonaDetail getPersonaeOrThrow(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, PersonaDetail> map = internalGetPersonae();
+      if (!map.containsKey(key)) {
+        throw new IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    private java.util.Map<String, PersonaDetail> getMutablePersonaeMap() {
+      return internalGetMutablePersonae();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (java.util.Map.Entry<String, PersonaDetail> entry : internalGetPersonae().entrySet()) {
+        PersonaeDefaultEntryHolder.defaultEntry.serializeTo(output, 1, entry.getKey(),
+            entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<String, PersonaDetail> entry : internalGetPersonae().entrySet()) {
+        size += PersonaeDefaultEntryHolder.defaultEntry.computeMessageSize(1, entry.getKey(),
+            entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static Personae parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Personae parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Personae parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Personae parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Personae parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Personae parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Personae parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Personae parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Personae parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Personae parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(Personae prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.Personae}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<Personae, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.Personae)
+        PersonaeOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.Personae.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      public int getPersonaeCount() {
+        return instance.getPersonaeMap().size();
+      }
+
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public boolean containsPersonae(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        return instance.getPersonaeMap().containsKey(key);
+      }
+
+      public Builder clearPersonae() {
+        copyOnWrite();
+        instance.getMutablePersonaeMap().clear();
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public Builder removePersonae(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutablePersonaeMap().remove(key);
+        return this;
+      }
+
+      /**
+       * Use {@link #getPersonaeMap()} instead.
+       */
+      @Deprecated public java.util.Map<String, PersonaDetail> getPersonae() {
+        return getPersonaeMap();
+      }
+
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+      public java.util.Map<String, PersonaDetail> getPersonaeMap() {
+        return java.util.Collections.unmodifiableMap(instance.getPersonaeMap());
+      }
+
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public PersonaDetail getPersonaeOrDefault(String key, PersonaDetail defaultValue) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, PersonaDetail> map = instance.getPersonaeMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public PersonaDetail getPersonaeOrThrow(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, PersonaDetail> map = instance.getPersonaeMap();
+        if (!map.containsKey(key)) {
+          throw new IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+      public Builder putPersonae(String key, PersonaDetail value) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutablePersonaeMap().put(key, value);
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+      public Builder putAllPersonae(java.util.Map<String, PersonaDetail> values) {
+        copyOnWrite();
+        instance.getMutablePersonaeMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.Personae)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new Personae();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          personae_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          Personae other = (Personae) arg1;
+          personae_ = visitor.visitMap(personae_, other.internalGetPersonae());
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!personae_.isMutable()) {
+                    personae_ = personae_.mutableCopy();
+                  }
+                  PersonaeDefaultEntryHolder.defaultEntry.parseInto(personae_, input,
+                      extensionRegistry);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (Personae.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.Personae)
+    private static final Personae DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new Personae();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static Personae getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Personae> PARSER;
+
+    public static com.google.protobuf.Parser<Personae> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SkillsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.Skills)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    int getSkillsCount();
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    boolean containsSkills(String key);
+
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @Deprecated java.util.Map<String, SkillDetail> getSkills();
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    java.util.Map<String, SkillDetail> getSkillsMap();
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    SkillDetail getSkillsOrDefault(String key, SkillDetail defaultValue);
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    SkillDetail getSkillsOrThrow(String key);
+  }
+
+  /**
+   * Protobuf type {@code p5.Skills}
+   */
+  public static final class Skills
+      extends com.google.protobuf.GeneratedMessageLite<Skills, Skills.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.Skills)
+      SkillsOrBuilder {
+    private Skills() {
+    }
+
+    public static final int SKILLS_FIELD_NUMBER = 1;
+
+    private static final class SkillsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<String, SkillDetail> defaultEntry =
+          com.google.protobuf.MapEntryLite.<String, SkillDetail>newDefaultInstance(
+              com.google.protobuf.WireFormat.FieldType.STRING, "",
+              com.google.protobuf.WireFormat.FieldType.MESSAGE, SkillDetail.getDefaultInstance());
+    }
+
+    private com.google.protobuf.MapFieldLite<String, SkillDetail> skills_ =
+        com.google.protobuf.MapFieldLite.emptyMapField();
+
+    private com.google.protobuf.MapFieldLite<String, SkillDetail> internalGetSkills() {
+      return skills_;
+    }
+
+    private com.google.protobuf.MapFieldLite<String, SkillDetail> internalGetMutableSkills() {
+      if (!skills_.isMutable()) {
+        skills_ = skills_.mutableCopy();
+      }
+      return skills_;
+    }
+
+    public int getSkillsCount() {
+      return internalGetSkills().size();
+    }
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public boolean containsSkills(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      return internalGetSkills().containsKey(key);
+    }
+
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @Deprecated public java.util.Map<String, SkillDetail> getSkills() {
+      return getSkillsMap();
+    }
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public java.util.Map<String, SkillDetail> getSkillsMap() {
+      return java.util.Collections.unmodifiableMap(internalGetSkills());
+    }
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public SkillDetail getSkillsOrDefault(String key, SkillDetail defaultValue) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, SkillDetail> map = internalGetSkills();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public SkillDetail getSkillsOrThrow(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, SkillDetail> map = internalGetSkills();
+      if (!map.containsKey(key)) {
+        throw new IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    private java.util.Map<String, SkillDetail> getMutableSkillsMap() {
+      return internalGetMutableSkills();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (java.util.Map.Entry<String, SkillDetail> entry : internalGetSkills().entrySet()) {
+        SkillsDefaultEntryHolder.defaultEntry.serializeTo(output, 1, entry.getKey(),
+            entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<String, SkillDetail> entry : internalGetSkills().entrySet()) {
+        size += SkillsDefaultEntryHolder.defaultEntry.computeMessageSize(1, entry.getKey(),
+            entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static Skills parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Skills parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Skills parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static Skills parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static Skills parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Skills parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Skills parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Skills parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Skills parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static Skills parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(Skills prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.Skills}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<Skills, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.Skills)
+        SkillsOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.Skills.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      public int getSkillsCount() {
+        return instance.getSkillsMap().size();
+      }
+
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public boolean containsSkills(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        return instance.getSkillsMap().containsKey(key);
+      }
+
+      public Builder clearSkills() {
+        copyOnWrite();
+        instance.getMutableSkillsMap().clear();
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public Builder removeSkills(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutableSkillsMap().remove(key);
+        return this;
+      }
+
+      /**
+       * Use {@link #getSkillsMap()} instead.
+       */
+      @Deprecated public java.util.Map<String, SkillDetail> getSkills() {
+        return getSkillsMap();
+      }
+
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+      public java.util.Map<String, SkillDetail> getSkillsMap() {
+        return java.util.Collections.unmodifiableMap(instance.getSkillsMap());
+      }
+
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public SkillDetail getSkillsOrDefault(String key, SkillDetail defaultValue) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, SkillDetail> map = instance.getSkillsMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public SkillDetail getSkillsOrThrow(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, SkillDetail> map = instance.getSkillsMap();
+        if (!map.containsKey(key)) {
+          throw new IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+      public Builder putSkills(String key, SkillDetail value) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutableSkillsMap().put(key, value);
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+      public Builder putAllSkills(java.util.Map<String, SkillDetail> values) {
+        copyOnWrite();
+        instance.getMutableSkillsMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.Skills)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new Skills();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          skills_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          Skills other = (Skills) arg1;
+          skills_ = visitor.visitMap(skills_, other.internalGetSkills());
+          if (visitor == MergeFromVisitor.INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!skills_.isMutable()) {
+                    skills_ = skills_.mutableCopy();
+                  }
+                  SkillsDefaultEntryHolder.defaultEntry.parseInto(skills_, input,
+                      extensionRegistry);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (Skills.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.Skills)
+    private static final Skills DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new Skills();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static Skills getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Skills> PARSER;
+
+    public static com.google.protobuf.Parser<Skills> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SkillDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.SkillDetail)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    String getEffect();
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    com.google.protobuf.ByteString getEffectBytes();
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    String getElement();
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    com.google.protobuf.ByteString getElementBytes();
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    int getPersonaCount();
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    boolean containsPersona(String key);
+
+    /**
+     * Use {@link #getPersonaMap()} instead.
+     */
+    @Deprecated java.util.Map<String, Integer> getPersona();
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    java.util.Map<String, Integer> getPersonaMap();
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    int getPersonaOrDefault(String key, int defaultValue);
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    int getPersonaOrThrow(String key);
+  }
+
+  /**
+   * Protobuf type {@code p5.SkillDetail}
+   */
+  public static final class SkillDetail
+      extends com.google.protobuf.GeneratedMessageLite<SkillDetail, SkillDetail.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.SkillDetail)
+      SkillDetailOrBuilder {
+    private SkillDetail() {
+      effect_ = "";
+      element_ = "";
+    }
+
+    private int bitField0_;
+    public static final int EFFECT_FIELD_NUMBER = 1;
+    private String effect_;
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    public String getEffect() {
+      return effect_;
+    }
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    public com.google.protobuf.ByteString getEffectBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(effect_);
+    }
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    private void setEffect(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      effect_ = value;
+    }
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    private void clearEffect() {
+
+      effect_ = getDefaultInstance().getEffect();
+    }
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    private void setEffectBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      effect_ = value.toStringUtf8();
+    }
+
+    public static final int ELEMENT_FIELD_NUMBER = 2;
+    private String element_;
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    public String getElement() {
+      return element_;
+    }
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    public com.google.protobuf.ByteString getElementBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(element_);
+    }
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    private void setElement(String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      element_ = value;
+    }
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    private void clearElement() {
+
+      element_ = getDefaultInstance().getElement();
+    }
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    private void setElementBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      element_ = value.toStringUtf8();
+    }
+
+    public static final int PERSONA_FIELD_NUMBER = 3;
+
+    private static final class PersonaDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<String, Integer> defaultEntry =
+          com.google.protobuf.MapEntryLite.<String, Integer>newDefaultInstance(
+              com.google.protobuf.WireFormat.FieldType.STRING, "",
+              com.google.protobuf.WireFormat.FieldType.UINT32, 0);
+    }
+
+    private com.google.protobuf.MapFieldLite<String, Integer> persona_ =
+        com.google.protobuf.MapFieldLite.emptyMapField();
+
+    private com.google.protobuf.MapFieldLite<String, Integer> internalGetPersona() {
+      return persona_;
+    }
+
+    private com.google.protobuf.MapFieldLite<String, Integer> internalGetMutablePersona() {
+      if (!persona_.isMutable()) {
+        persona_ = persona_.mutableCopy();
+      }
+      return persona_;
+    }
+
+    public int getPersonaCount() {
+      return internalGetPersona().size();
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public boolean containsPersona(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      return internalGetPersona().containsKey(key);
+    }
+
+    /**
+     * Use {@link #getPersonaMap()} instead.
+     */
+    @Deprecated public java.util.Map<String, Integer> getPersona() {
+      return getPersonaMap();
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public java.util.Map<String, Integer> getPersonaMap() {
+      return java.util.Collections.unmodifiableMap(internalGetPersona());
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public int getPersonaOrDefault(String key, int defaultValue) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, Integer> map = internalGetPersona();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public int getPersonaOrThrow(String key) {
+      if (key == null) {
+        throw new NullPointerException();
+      }
+      java.util.Map<String, Integer> map = internalGetPersona();
+      if (!map.containsKey(key)) {
+        throw new IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    private java.util.Map<String, Integer> getMutablePersonaMap() {
+      return internalGetMutablePersona();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!effect_.isEmpty()) {
+        output.writeString(1, getEffect());
+      }
+      if (!element_.isEmpty()) {
+        output.writeString(2, getElement());
+      }
+      for (java.util.Map.Entry<String, Integer> entry : internalGetPersona().entrySet()) {
+        PersonaDefaultEntryHolder.defaultEntry.serializeTo(output, 3, entry.getKey(),
+            entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!effect_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeStringSize(1, getEffect());
+      }
+      if (!element_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeStringSize(2, getElement());
+      }
+      for (java.util.Map.Entry<String, Integer> entry : internalGetPersona().entrySet()) {
+        size += PersonaDefaultEntryHolder.defaultEntry.computeMessageSize(3, entry.getKey(),
+            entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static SkillDetail parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static SkillDetail parseFrom(com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static SkillDetail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+    }
+
+    public static SkillDetail parseFrom(byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
+          extensionRegistry);
+    }
+
+    public static SkillDetail parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SkillDetail parseFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static SkillDetail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SkillDetail parseDelimitedFrom(java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static SkillDetail parseFrom(com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+    }
+
+    public static SkillDetail parseFrom(com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
+          extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(SkillDetail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.SkillDetail}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageLite.Builder<SkillDetail, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.SkillDetail)
+        SkillDetailOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.SkillDetail.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public String getEffect() {
+        return instance.getEffect();
+      }
+
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public com.google.protobuf.ByteString getEffectBytes() {
+        return instance.getEffectBytes();
+      }
+
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public Builder setEffect(String value) {
+        copyOnWrite();
+        instance.setEffect(value);
+        return this;
+      }
+
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public Builder clearEffect() {
+        copyOnWrite();
+        instance.clearEffect();
+        return this;
+      }
+
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public Builder setEffectBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setEffectBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>string element = 2;</code>
+       */
+      public String getElement() {
+        return instance.getElement();
+      }
+
+      /**
+       * <code>string element = 2;</code>
+       */
+      public com.google.protobuf.ByteString getElementBytes() {
+        return instance.getElementBytes();
+      }
+
+      /**
+       * <code>string element = 2;</code>
+       */
+      public Builder setElement(String value) {
+        copyOnWrite();
+        instance.setElement(value);
+        return this;
+      }
+
+      /**
+       * <code>string element = 2;</code>
+       */
+      public Builder clearElement() {
+        copyOnWrite();
+        instance.clearElement();
+        return this;
+      }
+
+      /**
+       * <code>string element = 2;</code>
+       */
+      public Builder setElementBytes(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setElementBytes(value);
+        return this;
+      }
+
+      public int getPersonaCount() {
+        return instance.getPersonaMap().size();
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public boolean containsPersona(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        return instance.getPersonaMap().containsKey(key);
+      }
+
+      public Builder clearPersona() {
+        copyOnWrite();
+        instance.getMutablePersonaMap().clear();
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public Builder removePersona(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        copyOnWrite();
+        instance.getMutablePersonaMap().remove(key);
+        return this;
+      }
+
+      /**
+       * Use {@link #getPersonaMap()} instead.
+       */
+      @Deprecated public java.util.Map<String, Integer> getPersona() {
+        return getPersonaMap();
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+      public java.util.Map<String, Integer> getPersonaMap() {
+        return java.util.Collections.unmodifiableMap(instance.getPersonaMap());
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public int getPersonaOrDefault(String key, int defaultValue) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, Integer> map = instance.getPersonaMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public int getPersonaOrThrow(String key) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+        java.util.Map<String, Integer> map = instance.getPersonaMap();
+        if (!map.containsKey(key)) {
+          throw new IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+      public Builder putPersona(String key, int value) {
+        if (key == null) {
+          throw new NullPointerException();
+        }
+
+        copyOnWrite();
+        instance.getMutablePersonaMap().put(key, value);
+        return this;
+      }
+
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+      public Builder putAllPersona(java.util.Map<String, Integer> values) {
+        copyOnWrite();
+        instance.getMutablePersonaMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.SkillDetail)
+    }
+
+    protected final Object dynamicMethod(MethodToInvoke method, Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new SkillDetail();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          persona_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          SkillDetail other = (SkillDetail) arg1;
+          effect_ = visitor.visitString(!effect_.isEmpty(), effect_, !other.effect_.isEmpty(),
+              other.effect_);
+          element_ = visitor.visitString(!element_.isEmpty(), element_, !other.element_.isEmpty(),
+              other.element_);
+          persona_ = visitor.visitMap(persona_, other.internalGetPersona());
+          if (visitor == MergeFromVisitor.INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  effect_ = s;
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  element_ = s;
+                  break;
+                }
+                case 26: {
+                  if (!persona_.isMutable()) {
+                    persona_ = persona_.mutableCopy();
+                  }
+                  PersonaDefaultEntryHolder.defaultEntry.parseInto(persona_, input,
+                      extensionRegistry);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {
+            synchronized (SkillDetail.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+    // @@protoc_insertion_point(class_scope:p5.SkillDetail)
+    private static final SkillDetail DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new SkillDetail();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static SkillDetail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<SkillDetail> PARSER;
+
+    public static com.google.protobuf.Parser<SkillDetail> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  static {
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

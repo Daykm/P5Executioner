@@ -1766,6 +1766,4114 @@ public final class Data {
     }
   }
 
+  public interface SpecialComboOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.SpecialCombo)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>string result = 1;</code>
+     */
+    java.lang.String getResult();
+    /**
+     * <code>string result = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultBytes();
+
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    java.util.List<String>
+        getSourcesList();
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    int getSourcesCount();
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    java.lang.String getSources(int index);
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSourcesBytes(int index);
+  }
+  /**
+   * Protobuf type {@code p5.SpecialCombo}
+   */
+  public  static final class SpecialCombo extends
+      com.google.protobuf.GeneratedMessageLite<
+          SpecialCombo, SpecialCombo.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.SpecialCombo)
+      SpecialComboOrBuilder {
+    private SpecialCombo() {
+      result_ = "";
+      sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+    private int bitField0_;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private java.lang.String result_;
+    /**
+     * <code>string result = 1;</code>
+     */
+    public java.lang.String getResult() {
+      return result_;
+    }
+    /**
+     * <code>string result = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(result_);
+    }
+    /**
+     * <code>string result = 1;</code>
+     */
+    private void setResult(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      result_ = value;
+    }
+    /**
+     * <code>string result = 1;</code>
+     */
+    private void clearResult() {
+      
+      result_ = getDefaultInstance().getResult();
+    }
+    /**
+     * <code>string result = 1;</code>
+     */
+    private void setResultBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      result_ = value.toStringUtf8();
+    }
+
+    public static final int SOURCES_FIELD_NUMBER = 2;
+    private com.google.protobuf.Internal.ProtobufList<String> sources_;
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public java.util.List<String> getSourcesList() {
+      return sources_;
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public int getSourcesCount() {
+      return sources_.size();
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public java.lang.String getSources(int index) {
+      return sources_.get(index);
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSourcesBytes(int index) {
+      return com.google.protobuf.ByteString.copyFromUtf8(
+          sources_.get(index));
+    }
+    private void ensureSourcesIsMutable() {
+      if (!sources_.isModifiable()) {
+        sources_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
+       }
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void setSources(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSourcesIsMutable();
+      sources_.set(index, value);
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void addSources(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSourcesIsMutable();
+      sources_.add(value);
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void addAllSources(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureSourcesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, sources_);
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void clearSources() {
+      sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+    /**
+     * <code>repeated string sources = 2;</code>
+     */
+    private void addSourcesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureSourcesIsMutable();
+      sources_.add(value.toStringUtf8());
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!result_.isEmpty()) {
+        output.writeString(1, getResult());
+      }
+      for (int i = 0; i < sources_.size(); i++) {
+        output.writeString(2, sources_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!result_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getResult());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sources_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeStringSizeNoTag(sources_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getSourcesList().size();
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.SpecialCombo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.SpecialCombo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.SpecialCombo, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.SpecialCombo)
+        com.daykm.p5executioner.data.Data.SpecialComboOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.SpecialCombo.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>string result = 1;</code>
+       */
+      public java.lang.String getResult() {
+        return instance.getResult();
+      }
+      /**
+       * <code>string result = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultBytes() {
+        return instance.getResultBytes();
+      }
+      /**
+       * <code>string result = 1;</code>
+       */
+      public Builder setResult(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setResult(value);
+        return this;
+      }
+      /**
+       * <code>string result = 1;</code>
+       */
+      public Builder clearResult() {
+        copyOnWrite();
+        instance.clearResult();
+        return this;
+      }
+      /**
+       * <code>string result = 1;</code>
+       */
+      public Builder setResultBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setResultBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public java.util.List<String>
+          getSourcesList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getSourcesList());
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public int getSourcesCount() {
+        return instance.getSourcesCount();
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public java.lang.String getSources(int index) {
+        return instance.getSources(index);
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSourcesBytes(int index) {
+        return instance.getSourcesBytes(index);
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder setSources(
+          int index, java.lang.String value) {
+        copyOnWrite();
+        instance.setSources(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder addSources(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.addSources(value);
+        return this;
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder addAllSources(
+          java.lang.Iterable<java.lang.String> values) {
+        copyOnWrite();
+        instance.addAllSources(values);
+        return this;
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder clearSources() {
+        copyOnWrite();
+        instance.clearSources();
+        return this;
+      }
+      /**
+       * <code>repeated string sources = 2;</code>
+       */
+      public Builder addSourcesBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.addSourcesBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.SpecialCombo)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.SpecialCombo();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          sources_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.SpecialCombo other = (com.daykm.p5executioner.data.Data.SpecialCombo) arg1;
+          result_ = visitor.visitString(!result_.isEmpty(), result_,
+              !other.result_.isEmpty(), other.result_);
+          sources_= visitor.visitList(sources_, other.sources_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  result_ = s;
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+                  if (!sources_.isModifiable()) {
+                    sources_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(sources_);
+                  }
+                  sources_.add(s);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.SpecialCombo.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.SpecialCombo)
+    private static final com.daykm.p5executioner.data.Data.SpecialCombo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SpecialCombo();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.SpecialCombo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<SpecialCombo> PARSER;
+
+    public static com.google.protobuf.Parser<SpecialCombo> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SpecialCombosOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.SpecialCombos)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    java.util.List<com.daykm.p5executioner.data.Data.SpecialCombo> 
+        getListList();
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    com.daykm.p5executioner.data.Data.SpecialCombo getList(int index);
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    int getListCount();
+  }
+  /**
+   * Protobuf type {@code p5.SpecialCombos}
+   */
+  public  static final class SpecialCombos extends
+      com.google.protobuf.GeneratedMessageLite<
+          SpecialCombos, SpecialCombos.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.SpecialCombos)
+      SpecialCombosOrBuilder {
+    private SpecialCombos() {
+      list_ = emptyProtobufList();
+    }
+    public static final int LIST_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.data.Data.SpecialCombo> list_;
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public java.util.List<com.daykm.p5executioner.data.Data.SpecialCombo> getListList() {
+      return list_;
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public java.util.List<? extends com.daykm.p5executioner.data.Data.SpecialComboOrBuilder> 
+        getListOrBuilderList() {
+      return list_;
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public int getListCount() {
+      return list_.size();
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public com.daykm.p5executioner.data.Data.SpecialCombo getList(int index) {
+      return list_.get(index);
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    public com.daykm.p5executioner.data.Data.SpecialComboOrBuilder getListOrBuilder(
+        int index) {
+      return list_.get(index);
+    }
+    private void ensureListIsMutable() {
+      if (!list_.isModifiable()) {
+        list_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+       }
+    }
+
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void setList(
+        int index, com.daykm.p5executioner.data.Data.SpecialCombo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.set(index, value);
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void setList(
+        int index, com.daykm.p5executioner.data.Data.SpecialCombo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(com.daykm.p5executioner.data.Data.SpecialCombo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(value);
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(
+        int index, com.daykm.p5executioner.data.Data.SpecialCombo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(index, value);
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(
+        com.daykm.p5executioner.data.Data.SpecialCombo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addList(
+        int index, com.daykm.p5executioner.data.Data.SpecialCombo.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void addAllList(
+        java.lang.Iterable<? extends com.daykm.p5executioner.data.Data.SpecialCombo> values) {
+      ensureListIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, list_);
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void clearList() {
+      list_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .p5.SpecialCombo list = 1;</code>
+     */
+    private void removeList(int index) {
+      ensureListIsMutable();
+      list_.remove(index);
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < list_.size(); i++) {
+        output.writeMessage(1, list_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < list_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, list_.get(i));
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SpecialCombos parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.SpecialCombos prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.SpecialCombos}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.SpecialCombos, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.SpecialCombos)
+        com.daykm.p5executioner.data.Data.SpecialCombosOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.SpecialCombos.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public java.util.List<com.daykm.p5executioner.data.Data.SpecialCombo> getListList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getListList());
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public int getListCount() {
+        return instance.getListCount();
+      }/**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public com.daykm.p5executioner.data.Data.SpecialCombo getList(int index) {
+        return instance.getList(index);
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder setList(
+          int index, com.daykm.p5executioner.data.Data.SpecialCombo value) {
+        copyOnWrite();
+        instance.setList(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder setList(
+          int index, com.daykm.p5executioner.data.Data.SpecialCombo.Builder builderForValue) {
+        copyOnWrite();
+        instance.setList(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(com.daykm.p5executioner.data.Data.SpecialCombo value) {
+        copyOnWrite();
+        instance.addList(value);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(
+          int index, com.daykm.p5executioner.data.Data.SpecialCombo value) {
+        copyOnWrite();
+        instance.addList(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(
+          com.daykm.p5executioner.data.Data.SpecialCombo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addList(
+          int index, com.daykm.p5executioner.data.Data.SpecialCombo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder addAllList(
+          java.lang.Iterable<? extends com.daykm.p5executioner.data.Data.SpecialCombo> values) {
+        copyOnWrite();
+        instance.addAllList(values);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder clearList() {
+        copyOnWrite();
+        instance.clearList();
+        return this;
+      }
+      /**
+       * <code>repeated .p5.SpecialCombo list = 1;</code>
+       */
+      public Builder removeList(int index) {
+        copyOnWrite();
+        instance.removeList(index);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.SpecialCombos)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.SpecialCombos();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          list_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.SpecialCombos other = (com.daykm.p5executioner.data.Data.SpecialCombos) arg1;
+          list_= visitor.visitList(list_, other.list_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!list_.isModifiable()) {
+                    list_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+                  }
+                  list_.add(
+                      input.readMessage(com.daykm.p5executioner.data.Data.SpecialCombo.parser(), extensionRegistry));
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.SpecialCombos.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.SpecialCombos)
+    private static final com.daykm.p5executioner.data.Data.SpecialCombos DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SpecialCombos();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.SpecialCombos getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<SpecialCombos> PARSER;
+
+    public static com.google.protobuf.Parser<SpecialCombos> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface DLCPersonaSeriesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.DLCPersonaSeries)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    java.util.List<String>
+        getSeriesList();
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    int getSeriesCount();
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    java.lang.String getSeries(int index);
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSeriesBytes(int index);
+  }
+  /**
+   * Protobuf type {@code p5.DLCPersonaSeries}
+   */
+  public  static final class DLCPersonaSeries extends
+      com.google.protobuf.GeneratedMessageLite<
+          DLCPersonaSeries, DLCPersonaSeries.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.DLCPersonaSeries)
+      DLCPersonaSeriesOrBuilder {
+    private DLCPersonaSeries() {
+      series_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+    public static final int SERIES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<String> series_;
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public java.util.List<String> getSeriesList() {
+      return series_;
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public int getSeriesCount() {
+      return series_.size();
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public java.lang.String getSeries(int index) {
+      return series_.get(index);
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSeriesBytes(int index) {
+      return com.google.protobuf.ByteString.copyFromUtf8(
+          series_.get(index));
+    }
+    private void ensureSeriesIsMutable() {
+      if (!series_.isModifiable()) {
+        series_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(series_);
+       }
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void setSeries(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSeriesIsMutable();
+      series_.set(index, value);
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void addSeries(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSeriesIsMutable();
+      series_.add(value);
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void addAllSeries(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureSeriesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, series_);
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void clearSeries() {
+      series_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+    /**
+     * <code>repeated string series = 1;</code>
+     */
+    private void addSeriesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureSeriesIsMutable();
+      series_.add(value.toStringUtf8());
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < series_.size(); i++) {
+        output.writeString(1, series_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < series_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeStringSizeNoTag(series_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getSeriesList().size();
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.DLCPersonaSeries prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.DLCPersonaSeries}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.DLCPersonaSeries, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.DLCPersonaSeries)
+        com.daykm.p5executioner.data.Data.DLCPersonaSeriesOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.DLCPersonaSeries.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public java.util.List<String>
+          getSeriesList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getSeriesList());
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public int getSeriesCount() {
+        return instance.getSeriesCount();
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public java.lang.String getSeries(int index) {
+        return instance.getSeries(index);
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSeriesBytes(int index) {
+        return instance.getSeriesBytes(index);
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder setSeries(
+          int index, java.lang.String value) {
+        copyOnWrite();
+        instance.setSeries(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder addSeries(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.addSeries(value);
+        return this;
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder addAllSeries(
+          java.lang.Iterable<java.lang.String> values) {
+        copyOnWrite();
+        instance.addAllSeries(values);
+        return this;
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder clearSeries() {
+        copyOnWrite();
+        instance.clearSeries();
+        return this;
+      }
+      /**
+       * <code>repeated string series = 1;</code>
+       */
+      public Builder addSeriesBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.addSeriesBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.DLCPersonaSeries)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.DLCPersonaSeries();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          series_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.DLCPersonaSeries other = (com.daykm.p5executioner.data.Data.DLCPersonaSeries) arg1;
+          series_= visitor.visitList(series_, other.series_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+                  if (!series_.isModifiable()) {
+                    series_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(series_);
+                  }
+                  series_.add(s);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.DLCPersonaSeries.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.DLCPersonaSeries)
+    private static final com.daykm.p5executioner.data.Data.DLCPersonaSeries DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new DLCPersonaSeries();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.DLCPersonaSeries getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<DLCPersonaSeries> PARSER;
+
+    public static com.google.protobuf.Parser<DLCPersonaSeries> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface DLCPersonaeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.DLCPersonae)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    java.util.List<com.daykm.p5executioner.data.Data.DLCPersonaSeries> 
+        getListList();
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    com.daykm.p5executioner.data.Data.DLCPersonaSeries getList(int index);
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    int getListCount();
+  }
+  /**
+   * Protobuf type {@code p5.DLCPersonae}
+   */
+  public  static final class DLCPersonae extends
+      com.google.protobuf.GeneratedMessageLite<
+          DLCPersonae, DLCPersonae.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.DLCPersonae)
+      DLCPersonaeOrBuilder {
+    private DLCPersonae() {
+      list_ = emptyProtobufList();
+    }
+    public static final int LIST_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.data.Data.DLCPersonaSeries> list_;
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public java.util.List<com.daykm.p5executioner.data.Data.DLCPersonaSeries> getListList() {
+      return list_;
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public java.util.List<? extends com.daykm.p5executioner.data.Data.DLCPersonaSeriesOrBuilder> 
+        getListOrBuilderList() {
+      return list_;
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public int getListCount() {
+      return list_.size();
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public com.daykm.p5executioner.data.Data.DLCPersonaSeries getList(int index) {
+      return list_.get(index);
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    public com.daykm.p5executioner.data.Data.DLCPersonaSeriesOrBuilder getListOrBuilder(
+        int index) {
+      return list_.get(index);
+    }
+    private void ensureListIsMutable() {
+      if (!list_.isModifiable()) {
+        list_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+       }
+    }
+
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void setList(
+        int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.set(index, value);
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void setList(
+        int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(com.daykm.p5executioner.data.Data.DLCPersonaSeries value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(value);
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(
+        int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureListIsMutable();
+      list_.add(index, value);
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(
+        com.daykm.p5executioner.data.Data.DLCPersonaSeries.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addList(
+        int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries.Builder builderForValue) {
+      ensureListIsMutable();
+      list_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void addAllList(
+        java.lang.Iterable<? extends com.daykm.p5executioner.data.Data.DLCPersonaSeries> values) {
+      ensureListIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, list_);
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void clearList() {
+      list_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+     */
+    private void removeList(int index) {
+      ensureListIsMutable();
+      list_.remove(index);
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < list_.size(); i++) {
+        output.writeMessage(1, list_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < list_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, list_.get(i));
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.DLCPersonae parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.DLCPersonae prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.DLCPersonae}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.DLCPersonae, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.DLCPersonae)
+        com.daykm.p5executioner.data.Data.DLCPersonaeOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.DLCPersonae.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public java.util.List<com.daykm.p5executioner.data.Data.DLCPersonaSeries> getListList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getListList());
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public int getListCount() {
+        return instance.getListCount();
+      }/**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public com.daykm.p5executioner.data.Data.DLCPersonaSeries getList(int index) {
+        return instance.getList(index);
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder setList(
+          int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries value) {
+        copyOnWrite();
+        instance.setList(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder setList(
+          int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries.Builder builderForValue) {
+        copyOnWrite();
+        instance.setList(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(com.daykm.p5executioner.data.Data.DLCPersonaSeries value) {
+        copyOnWrite();
+        instance.addList(value);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(
+          int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries value) {
+        copyOnWrite();
+        instance.addList(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(
+          com.daykm.p5executioner.data.Data.DLCPersonaSeries.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addList(
+          int index, com.daykm.p5executioner.data.Data.DLCPersonaSeries.Builder builderForValue) {
+        copyOnWrite();
+        instance.addList(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder addAllList(
+          java.lang.Iterable<? extends com.daykm.p5executioner.data.Data.DLCPersonaSeries> values) {
+        copyOnWrite();
+        instance.addAllList(values);
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder clearList() {
+        copyOnWrite();
+        instance.clearList();
+        return this;
+      }
+      /**
+       * <code>repeated .p5.DLCPersonaSeries list = 1;</code>
+       */
+      public Builder removeList(int index) {
+        copyOnWrite();
+        instance.removeList(index);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.DLCPersonae)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.DLCPersonae();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          list_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.DLCPersonae other = (com.daykm.p5executioner.data.Data.DLCPersonae) arg1;
+          list_= visitor.visitList(list_, other.list_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!list_.isModifiable()) {
+                    list_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(list_);
+                  }
+                  list_.add(
+                      input.readMessage(com.daykm.p5executioner.data.Data.DLCPersonaSeries.parser(), extensionRegistry));
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.DLCPersonae.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.DLCPersonae)
+    private static final com.daykm.p5executioner.data.Data.DLCPersonae DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new DLCPersonae();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.DLCPersonae getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<DLCPersonae> PARSER;
+
+    public static com.google.protobuf.Parser<DLCPersonae> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface PersonaDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.PersonaDetail)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    java.lang.String getArcana();
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getArcanaBytes();
+
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    int getLevel();
+
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    java.util.List<java.lang.Integer> getStatsList();
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    int getStatsCount();
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    int getStats(int index);
+
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    int getSkillsCount();
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    boolean containsSkills(
+        java.lang.String key);
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Integer>
+    getSkills();
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Integer>
+    getSkillsMap();
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    int getSkillsOrDefault(
+        java.lang.String key,
+        int defaultValue);
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    int getSkillsOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code p5.PersonaDetail}
+   */
+  public  static final class PersonaDetail extends
+      com.google.protobuf.GeneratedMessageLite<
+          PersonaDetail, PersonaDetail.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.PersonaDetail)
+      PersonaDetailOrBuilder {
+    private PersonaDetail() {
+      arcana_ = "";
+      stats_ = emptyIntList();
+    }
+    private int bitField0_;
+    public static final int ARCANA_FIELD_NUMBER = 1;
+    private java.lang.String arcana_;
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    public java.lang.String getArcana() {
+      return arcana_;
+    }
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getArcanaBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(arcana_);
+    }
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    private void setArcana(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      arcana_ = value;
+    }
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    private void clearArcana() {
+      
+      arcana_ = getDefaultInstance().getArcana();
+    }
+    /**
+     * <code>string arcana = 1;</code>
+     */
+    private void setArcanaBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      arcana_ = value.toStringUtf8();
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 2;
+    private int level_;
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    public int getLevel() {
+      return level_;
+    }
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    private void setLevel(int value) {
+      
+      level_ = value;
+    }
+    /**
+     * <code>uint32 level = 2;</code>
+     */
+    private void clearLevel() {
+      
+      level_ = 0;
+    }
+
+    public static final int STATS_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList stats_;
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getStatsList() {
+      return stats_;
+    }
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    public int getStatsCount() {
+      return stats_.size();
+    }
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    public int getStats(int index) {
+      return stats_.getInt(index);
+    }
+    private void ensureStatsIsMutable() {
+      if (!stats_.isModifiable()) {
+        stats_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
+       }
+    }
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void setStats(
+        int index, int value) {
+      ensureStatsIsMutable();
+      stats_.setInt(index, value);
+    }
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void addStats(int value) {
+      ensureStatsIsMutable();
+      stats_.addInt(value);
+    }
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void addAllStats(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureStatsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, stats_);
+    }
+    /**
+     * <code>repeated uint32 stats = 3;</code>
+     */
+    private void clearStats() {
+      stats_ = emptyIntList();
+    }
+
+    public static final int SKILLS_FIELD_NUMBER = 4;
+    private static final class SkillsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<
+          java.lang.String, java.lang.Integer> defaultEntry =
+              com.google.protobuf.MapEntryLite
+              .<java.lang.String, java.lang.Integer>newDefaultInstance(
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0);
+    }
+    private com.google.protobuf.MapFieldLite<
+        java.lang.String, java.lang.Integer> skills_ =
+            com.google.protobuf.MapFieldLite.emptyMapField();
+    private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.Integer>
+    internalGetSkills() {
+      return skills_;
+    }
+    private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.Integer>
+    internalGetMutableSkills() {
+      if (!skills_.isMutable()) {
+        skills_ = skills_.mutableCopy();
+      }
+      return skills_;
+    }
+
+    public int getSkillsCount() {
+      return internalGetSkills().size();
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public boolean containsSkills(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetSkills().containsKey(key);
+    }
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getSkills() {
+      return getSkillsMap();
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.Integer> getSkillsMap() {
+      return java.util.Collections.unmodifiableMap(
+          internalGetSkills());
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public int getSkillsOrDefault(
+        java.lang.String key,
+        int defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetSkills();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+
+    public int getSkillsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetSkills();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; skills = 4;</code>
+     */
+    private java.util.Map<java.lang.String, java.lang.Integer>
+    getMutableSkillsMap() {
+      return internalGetMutableSkills();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (!arcana_.isEmpty()) {
+        output.writeString(1, getArcana());
+      }
+      if (level_ != 0) {
+        output.writeUInt32(2, level_);
+      }
+      for (int i = 0; i < stats_.size(); i++) {
+        output.writeUInt32(3, stats_.getInt(i));
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+           : internalGetSkills().entrySet()) {
+        SkillsDefaultEntryHolder.defaultEntry.serializeTo(
+            output, 4, entry.getKey(), entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!arcana_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getArcana());
+      }
+      if (level_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, level_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < stats_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(stats_.getInt(i));
+        }
+        size += dataSize;
+        size += 1 * getStatsList().size();
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+           : internalGetSkills().entrySet()) {
+        size += SkillsDefaultEntryHolder.defaultEntry.computeMessageSize(
+          4, entry.getKey(), entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.PersonaDetail parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.PersonaDetail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.PersonaDetail}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.PersonaDetail, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.PersonaDetail)
+        com.daykm.p5executioner.data.Data.PersonaDetailOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.PersonaDetail.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public java.lang.String getArcana() {
+        return instance.getArcana();
+      }
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getArcanaBytes() {
+        return instance.getArcanaBytes();
+      }
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public Builder setArcana(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setArcana(value);
+        return this;
+      }
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public Builder clearArcana() {
+        copyOnWrite();
+        instance.clearArcana();
+        return this;
+      }
+      /**
+       * <code>string arcana = 1;</code>
+       */
+      public Builder setArcanaBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setArcanaBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>uint32 level = 2;</code>
+       */
+      public int getLevel() {
+        return instance.getLevel();
+      }
+      /**
+       * <code>uint32 level = 2;</code>
+       */
+      public Builder setLevel(int value) {
+        copyOnWrite();
+        instance.setLevel(value);
+        return this;
+      }
+      /**
+       * <code>uint32 level = 2;</code>
+       */
+      public Builder clearLevel() {
+        copyOnWrite();
+        instance.clearLevel();
+        return this;
+      }
+
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getStatsList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getStatsList());
+      }
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public int getStatsCount() {
+        return instance.getStatsCount();
+      }
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public int getStats(int index) {
+        return instance.getStats(index);
+      }
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder setStats(
+          int index, int value) {
+        copyOnWrite();
+        instance.setStats(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder addStats(int value) {
+        copyOnWrite();
+        instance.addStats(value);
+        return this;
+      }
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder addAllStats(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        copyOnWrite();
+        instance.addAllStats(values);
+        return this;
+      }
+      /**
+       * <code>repeated uint32 stats = 3;</code>
+       */
+      public Builder clearStats() {
+        copyOnWrite();
+        instance.clearStats();
+        return this;
+      }
+
+
+      public int getSkillsCount() {
+        return instance.getSkillsMap().size();
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public boolean containsSkills(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return instance.getSkillsMap().containsKey(key);
+      }
+
+      public Builder clearSkills() {
+        copyOnWrite();
+        instance.getMutableSkillsMap().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public Builder removeSkills(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        copyOnWrite();
+        instance.getMutableSkillsMap().remove(key);
+        return this;
+      }
+      /**
+       * Use {@link #getSkillsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer> getSkills() {
+        return getSkillsMap();
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+      public java.util.Map<java.lang.String, java.lang.Integer> getSkillsMap() {
+        return java.util.Collections.unmodifiableMap(
+            instance.getSkillsMap());
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public int getSkillsOrDefault(
+          java.lang.String key,
+          int defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+            instance.getSkillsMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+
+      public int getSkillsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+            instance.getSkillsMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+      public Builder putSkills(
+          java.lang.String key,
+          int value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        copyOnWrite();
+        instance.getMutableSkillsMap().put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; skills = 4;</code>
+       */
+      public Builder putAllSkills(
+          java.util.Map<java.lang.String, java.lang.Integer> values) {
+        copyOnWrite();
+        instance.getMutableSkillsMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.PersonaDetail)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.PersonaDetail();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          stats_.makeImmutable();
+          skills_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.PersonaDetail other = (com.daykm.p5executioner.data.Data.PersonaDetail) arg1;
+          arcana_ = visitor.visitString(!arcana_.isEmpty(), arcana_,
+              !other.arcana_.isEmpty(), other.arcana_);
+          level_ = visitor.visitInt(level_ != 0, level_,
+              other.level_ != 0, other.level_);
+          stats_= visitor.visitIntList(stats_, other.stats_);
+          skills_ = visitor.visitMap(
+              skills_, other.internalGetSkills());
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  arcana_ = s;
+                  break;
+                }
+                case 16: {
+
+                  level_ = input.readUInt32();
+                  break;
+                }
+                case 24: {
+                  if (!stats_.isModifiable()) {
+                    stats_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
+                  }
+                  stats_.addInt(input.readUInt32());
+                  break;
+                }
+                case 26: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!stats_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    stats_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    stats_.addInt(input.readUInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+                case 34: {
+                  if (!skills_.isMutable()) {
+                    skills_ = skills_.mutableCopy();
+                  }
+                  SkillsDefaultEntryHolder.defaultEntry.parseInto(skills_, input, extensionRegistry);  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.PersonaDetail.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.PersonaDetail)
+    private static final com.daykm.p5executioner.data.Data.PersonaDetail DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new PersonaDetail();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.PersonaDetail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<PersonaDetail> PARSER;
+
+    public static com.google.protobuf.Parser<PersonaDetail> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface PersonaeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.Personae)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    int getPersonaeCount();
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    boolean containsPersonae(
+        java.lang.String key);
+    /**
+     * Use {@link #getPersonaeMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail>
+    getPersonae();
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail>
+    getPersonaeMap();
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    com.daykm.p5executioner.data.Data.PersonaDetail getPersonaeOrDefault(
+        java.lang.String key,
+        com.daykm.p5executioner.data.Data.PersonaDetail defaultValue);
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    com.daykm.p5executioner.data.Data.PersonaDetail getPersonaeOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code p5.Personae}
+   */
+  public  static final class Personae extends
+      com.google.protobuf.GeneratedMessageLite<
+          Personae, Personae.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.Personae)
+      PersonaeOrBuilder {
+    private Personae() {
+    }
+    public static final int PERSONAE_FIELD_NUMBER = 1;
+    private static final class PersonaeDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<
+          java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> defaultEntry =
+              com.google.protobuf.MapEntryLite
+              .<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail>newDefaultInstance(
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  com.daykm.p5executioner.data.Data.PersonaDetail.getDefaultInstance());
+    }
+    private com.google.protobuf.MapFieldLite<
+        java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> personae_ =
+            com.google.protobuf.MapFieldLite.emptyMapField();
+    private com.google.protobuf.MapFieldLite<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail>
+    internalGetPersonae() {
+      return personae_;
+    }
+    private com.google.protobuf.MapFieldLite<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail>
+    internalGetMutablePersonae() {
+      if (!personae_.isMutable()) {
+        personae_ = personae_.mutableCopy();
+      }
+      return personae_;
+    }
+
+    public int getPersonaeCount() {
+      return internalGetPersonae().size();
+    }
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public boolean containsPersonae(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetPersonae().containsKey(key);
+    }
+    /**
+     * Use {@link #getPersonaeMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> getPersonae() {
+      return getPersonaeMap();
+    }
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> getPersonaeMap() {
+      return java.util.Collections.unmodifiableMap(
+          internalGetPersonae());
+    }
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public com.daykm.p5executioner.data.Data.PersonaDetail getPersonaeOrDefault(
+        java.lang.String key,
+        com.daykm.p5executioner.data.Data.PersonaDetail defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> map =
+          internalGetPersonae();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+
+    public com.daykm.p5executioner.data.Data.PersonaDetail getPersonaeOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> map =
+          internalGetPersonae();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+     */
+    private java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail>
+    getMutablePersonaeMap() {
+      return internalGetMutablePersonae();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (java.util.Map.Entry<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> entry
+           : internalGetPersonae().entrySet()) {
+        PersonaeDefaultEntryHolder.defaultEntry.serializeTo(
+            output, 1, entry.getKey(), entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> entry
+           : internalGetPersonae().entrySet()) {
+        size += PersonaeDefaultEntryHolder.defaultEntry.computeMessageSize(
+          1, entry.getKey(), entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.Personae parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.Personae prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.Personae}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.Personae, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.Personae)
+        com.daykm.p5executioner.data.Data.PersonaeOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.Personae.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+
+      public int getPersonaeCount() {
+        return instance.getPersonaeMap().size();
+      }
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public boolean containsPersonae(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return instance.getPersonaeMap().containsKey(key);
+      }
+
+      public Builder clearPersonae() {
+        copyOnWrite();
+        instance.getMutablePersonaeMap().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public Builder removePersonae(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        copyOnWrite();
+        instance.getMutablePersonaeMap().remove(key);
+        return this;
+      }
+      /**
+       * Use {@link #getPersonaeMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> getPersonae() {
+        return getPersonaeMap();
+      }
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+      public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> getPersonaeMap() {
+        return java.util.Collections.unmodifiableMap(
+            instance.getPersonaeMap());
+      }
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public com.daykm.p5executioner.data.Data.PersonaDetail getPersonaeOrDefault(
+          java.lang.String key,
+          com.daykm.p5executioner.data.Data.PersonaDetail defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> map =
+            instance.getPersonaeMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+
+      public com.daykm.p5executioner.data.Data.PersonaDetail getPersonaeOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> map =
+            instance.getPersonaeMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+      public Builder putPersonae(
+          java.lang.String key,
+          com.daykm.p5executioner.data.Data.PersonaDetail value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        copyOnWrite();
+        instance.getMutablePersonaeMap().put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .p5.PersonaDetail&gt; personae = 1;</code>
+       */
+      public Builder putAllPersonae(
+          java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.PersonaDetail> values) {
+        copyOnWrite();
+        instance.getMutablePersonaeMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.Personae)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.Personae();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          personae_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.Personae other = (com.daykm.p5executioner.data.Data.Personae) arg1;
+          personae_ = visitor.visitMap(
+              personae_, other.internalGetPersonae());
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!personae_.isMutable()) {
+                    personae_ = personae_.mutableCopy();
+                  }
+                  PersonaeDefaultEntryHolder.defaultEntry.parseInto(personae_, input, extensionRegistry);  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.Personae.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.Personae)
+    private static final com.daykm.p5executioner.data.Data.Personae DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Personae();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.Personae getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Personae> PARSER;
+
+    public static com.google.protobuf.Parser<Personae> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SkillsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.Skills)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    int getSkillsCount();
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    boolean containsSkills(
+        java.lang.String key);
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail>
+    getSkills();
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail>
+    getSkillsMap();
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    com.daykm.p5executioner.data.Data.SkillDetail getSkillsOrDefault(
+        java.lang.String key,
+        com.daykm.p5executioner.data.Data.SkillDetail defaultValue);
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    com.daykm.p5executioner.data.Data.SkillDetail getSkillsOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code p5.Skills}
+   */
+  public  static final class Skills extends
+      com.google.protobuf.GeneratedMessageLite<
+          Skills, Skills.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.Skills)
+      SkillsOrBuilder {
+    private Skills() {
+    }
+    public static final int SKILLS_FIELD_NUMBER = 1;
+    private static final class SkillsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<
+          java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> defaultEntry =
+              com.google.protobuf.MapEntryLite
+              .<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail>newDefaultInstance(
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  com.daykm.p5executioner.data.Data.SkillDetail.getDefaultInstance());
+    }
+    private com.google.protobuf.MapFieldLite<
+        java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> skills_ =
+            com.google.protobuf.MapFieldLite.emptyMapField();
+    private com.google.protobuf.MapFieldLite<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail>
+    internalGetSkills() {
+      return skills_;
+    }
+    private com.google.protobuf.MapFieldLite<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail>
+    internalGetMutableSkills() {
+      if (!skills_.isMutable()) {
+        skills_ = skills_.mutableCopy();
+      }
+      return skills_;
+    }
+
+    public int getSkillsCount() {
+      return internalGetSkills().size();
+    }
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public boolean containsSkills(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetSkills().containsKey(key);
+    }
+    /**
+     * Use {@link #getSkillsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> getSkills() {
+      return getSkillsMap();
+    }
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> getSkillsMap() {
+      return java.util.Collections.unmodifiableMap(
+          internalGetSkills());
+    }
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public com.daykm.p5executioner.data.Data.SkillDetail getSkillsOrDefault(
+        java.lang.String key,
+        com.daykm.p5executioner.data.Data.SkillDetail defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> map =
+          internalGetSkills();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+
+    public com.daykm.p5executioner.data.Data.SkillDetail getSkillsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> map =
+          internalGetSkills();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+     */
+    private java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail>
+    getMutableSkillsMap() {
+      return internalGetMutableSkills();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (java.util.Map.Entry<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> entry
+           : internalGetSkills().entrySet()) {
+        SkillsDefaultEntryHolder.defaultEntry.serializeTo(
+            output, 1, entry.getKey(), entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> entry
+           : internalGetSkills().entrySet()) {
+        size += SkillsDefaultEntryHolder.defaultEntry.computeMessageSize(
+          1, entry.getKey(), entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.Skills parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.Skills prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.Skills}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.Skills, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.Skills)
+        com.daykm.p5executioner.data.Data.SkillsOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.Skills.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+
+      public int getSkillsCount() {
+        return instance.getSkillsMap().size();
+      }
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public boolean containsSkills(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return instance.getSkillsMap().containsKey(key);
+      }
+
+      public Builder clearSkills() {
+        copyOnWrite();
+        instance.getMutableSkillsMap().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public Builder removeSkills(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        copyOnWrite();
+        instance.getMutableSkillsMap().remove(key);
+        return this;
+      }
+      /**
+       * Use {@link #getSkillsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> getSkills() {
+        return getSkillsMap();
+      }
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+      public java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> getSkillsMap() {
+        return java.util.Collections.unmodifiableMap(
+            instance.getSkillsMap());
+      }
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public com.daykm.p5executioner.data.Data.SkillDetail getSkillsOrDefault(
+          java.lang.String key,
+          com.daykm.p5executioner.data.Data.SkillDetail defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> map =
+            instance.getSkillsMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+
+      public com.daykm.p5executioner.data.Data.SkillDetail getSkillsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> map =
+            instance.getSkillsMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+      public Builder putSkills(
+          java.lang.String key,
+          com.daykm.p5executioner.data.Data.SkillDetail value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        copyOnWrite();
+        instance.getMutableSkillsMap().put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .p5.SkillDetail&gt; skills = 1;</code>
+       */
+      public Builder putAllSkills(
+          java.util.Map<java.lang.String, com.daykm.p5executioner.data.Data.SkillDetail> values) {
+        copyOnWrite();
+        instance.getMutableSkillsMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.Skills)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.Skills();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          skills_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.Skills other = (com.daykm.p5executioner.data.Data.Skills) arg1;
+          skills_ = visitor.visitMap(
+              skills_, other.internalGetSkills());
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  if (!skills_.isMutable()) {
+                    skills_ = skills_.mutableCopy();
+                  }
+                  SkillsDefaultEntryHolder.defaultEntry.parseInto(skills_, input, extensionRegistry);  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.Skills.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.Skills)
+    private static final com.daykm.p5executioner.data.Data.Skills DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Skills();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.Skills getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Skills> PARSER;
+
+    public static com.google.protobuf.Parser<Skills> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SkillDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:p5.SkillDetail)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>string effect = 1;</code>
+     */
+    java.lang.String getEffect();
+    /**
+     * <code>string effect = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getEffectBytes();
+
+    /**
+     * <code>string element = 2;</code>
+     */
+    java.lang.String getElement();
+    /**
+     * <code>string element = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getElementBytes();
+
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    int getPersonaCount();
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    boolean containsPersona(
+        java.lang.String key);
+    /**
+     * Use {@link #getPersonaMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Integer>
+    getPersona();
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Integer>
+    getPersonaMap();
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    int getPersonaOrDefault(
+        java.lang.String key,
+        int defaultValue);
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    int getPersonaOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code p5.SkillDetail}
+   */
+  public  static final class SkillDetail extends
+      com.google.protobuf.GeneratedMessageLite<
+          SkillDetail, SkillDetail.Builder> implements
+      // @@protoc_insertion_point(message_implements:p5.SkillDetail)
+      SkillDetailOrBuilder {
+    private SkillDetail() {
+      effect_ = "";
+      element_ = "";
+    }
+    private int bitField0_;
+    public static final int EFFECT_FIELD_NUMBER = 1;
+    private java.lang.String effect_;
+    /**
+     * <code>string effect = 1;</code>
+     */
+    public java.lang.String getEffect() {
+      return effect_;
+    }
+    /**
+     * <code>string effect = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEffectBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(effect_);
+    }
+    /**
+     * <code>string effect = 1;</code>
+     */
+    private void setEffect(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      effect_ = value;
+    }
+    /**
+     * <code>string effect = 1;</code>
+     */
+    private void clearEffect() {
+      
+      effect_ = getDefaultInstance().getEffect();
+    }
+    /**
+     * <code>string effect = 1;</code>
+     */
+    private void setEffectBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      effect_ = value.toStringUtf8();
+    }
+
+    public static final int ELEMENT_FIELD_NUMBER = 2;
+    private java.lang.String element_;
+    /**
+     * <code>string element = 2;</code>
+     */
+    public java.lang.String getElement() {
+      return element_;
+    }
+    /**
+     * <code>string element = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getElementBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(element_);
+    }
+    /**
+     * <code>string element = 2;</code>
+     */
+    private void setElement(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      element_ = value;
+    }
+    /**
+     * <code>string element = 2;</code>
+     */
+    private void clearElement() {
+      
+      element_ = getDefaultInstance().getElement();
+    }
+    /**
+     * <code>string element = 2;</code>
+     */
+    private void setElementBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      element_ = value.toStringUtf8();
+    }
+
+    public static final int PERSONA_FIELD_NUMBER = 3;
+    private static final class PersonaDefaultEntryHolder {
+      static final com.google.protobuf.MapEntryLite<
+          java.lang.String, java.lang.Integer> defaultEntry =
+              com.google.protobuf.MapEntryLite
+              .<java.lang.String, java.lang.Integer>newDefaultInstance(
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0);
+    }
+    private com.google.protobuf.MapFieldLite<
+        java.lang.String, java.lang.Integer> persona_ =
+            com.google.protobuf.MapFieldLite.emptyMapField();
+    private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.Integer>
+    internalGetPersona() {
+      return persona_;
+    }
+    private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.Integer>
+    internalGetMutablePersona() {
+      if (!persona_.isMutable()) {
+        persona_ = persona_.mutableCopy();
+      }
+      return persona_;
+    }
+
+    public int getPersonaCount() {
+      return internalGetPersona().size();
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public boolean containsPersona(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetPersona().containsKey(key);
+    }
+    /**
+     * Use {@link #getPersonaMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getPersona() {
+      return getPersonaMap();
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.Integer> getPersonaMap() {
+      return java.util.Collections.unmodifiableMap(
+          internalGetPersona());
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public int getPersonaOrDefault(
+        java.lang.String key,
+        int defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetPersona();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+
+    public int getPersonaOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetPersona();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, uint32&gt; persona = 3;</code>
+     */
+    private java.util.Map<java.lang.String, java.lang.Integer>
+    getMutablePersonaMap() {
+      return internalGetMutablePersona();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!effect_.isEmpty()) {
+        output.writeString(1, getEffect());
+      }
+      if (!element_.isEmpty()) {
+        output.writeString(2, getElement());
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+           : internalGetPersona().entrySet()) {
+        PersonaDefaultEntryHolder.defaultEntry.serializeTo(
+            output, 3, entry.getKey(), entry.getValue());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!effect_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getEffect());
+      }
+      if (!element_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getElement());
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+           : internalGetPersona().entrySet()) {
+        size += PersonaDefaultEntryHolder.defaultEntry.computeMessageSize(
+          3, entry.getKey(), entry.getValue());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.daykm.p5executioner.data.Data.SkillDetail parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.daykm.p5executioner.data.Data.SkillDetail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code p5.SkillDetail}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.daykm.p5executioner.data.Data.SkillDetail, Builder> implements
+        // @@protoc_insertion_point(builder_implements:p5.SkillDetail)
+        com.daykm.p5executioner.data.Data.SkillDetailOrBuilder {
+      // Construct using com.daykm.p5executioner.data.Data.SkillDetail.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public java.lang.String getEffect() {
+        return instance.getEffect();
+      }
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEffectBytes() {
+        return instance.getEffectBytes();
+      }
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public Builder setEffect(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setEffect(value);
+        return this;
+      }
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public Builder clearEffect() {
+        copyOnWrite();
+        instance.clearEffect();
+        return this;
+      }
+      /**
+       * <code>string effect = 1;</code>
+       */
+      public Builder setEffectBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setEffectBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>string element = 2;</code>
+       */
+      public java.lang.String getElement() {
+        return instance.getElement();
+      }
+      /**
+       * <code>string element = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getElementBytes() {
+        return instance.getElementBytes();
+      }
+      /**
+       * <code>string element = 2;</code>
+       */
+      public Builder setElement(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setElement(value);
+        return this;
+      }
+      /**
+       * <code>string element = 2;</code>
+       */
+      public Builder clearElement() {
+        copyOnWrite();
+        instance.clearElement();
+        return this;
+      }
+      /**
+       * <code>string element = 2;</code>
+       */
+      public Builder setElementBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setElementBytes(value);
+        return this;
+      }
+
+
+      public int getPersonaCount() {
+        return instance.getPersonaMap().size();
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public boolean containsPersona(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return instance.getPersonaMap().containsKey(key);
+      }
+
+      public Builder clearPersona() {
+        copyOnWrite();
+        instance.getMutablePersonaMap().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public Builder removePersona(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        copyOnWrite();
+        instance.getMutablePersonaMap().remove(key);
+        return this;
+      }
+      /**
+       * Use {@link #getPersonaMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer> getPersona() {
+        return getPersonaMap();
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+      public java.util.Map<java.lang.String, java.lang.Integer> getPersonaMap() {
+        return java.util.Collections.unmodifiableMap(
+            instance.getPersonaMap());
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public int getPersonaOrDefault(
+          java.lang.String key,
+          int defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+            instance.getPersonaMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+
+      public int getPersonaOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+            instance.getPersonaMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+      public Builder putPersona(
+          java.lang.String key,
+          int value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        copyOnWrite();
+        instance.getMutablePersonaMap().put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, uint32&gt; persona = 3;</code>
+       */
+      public Builder putAllPersona(
+          java.util.Map<java.lang.String, java.lang.Integer> values) {
+        copyOnWrite();
+        instance.getMutablePersonaMap().putAll(values);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:p5.SkillDetail)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.daykm.p5executioner.data.Data.SkillDetail();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          persona_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.daykm.p5executioner.data.Data.SkillDetail other = (com.daykm.p5executioner.data.Data.SkillDetail) arg1;
+          effect_ = visitor.visitString(!effect_.isEmpty(), effect_,
+              !other.effect_.isEmpty(), other.effect_);
+          element_ = visitor.visitString(!element_.isEmpty(), element_,
+              !other.element_.isEmpty(), other.element_);
+          persona_ = visitor.visitMap(
+              persona_, other.internalGetPersona());
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  effect_ = s;
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  element_ = s;
+                  break;
+                }
+                case 26: {
+                  if (!persona_.isMutable()) {
+                    persona_ = persona_.mutableCopy();
+                  }
+                  PersonaDefaultEntryHolder.defaultEntry.parseInto(persona_, input, extensionRegistry);  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.daykm.p5executioner.data.Data.SkillDetail.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:p5.SkillDetail)
+    private static final com.daykm.p5executioner.data.Data.SkillDetail DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SkillDetail();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.daykm.p5executioner.data.Data.SkillDetail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<SkillDetail> PARSER;
+
+    public static com.google.protobuf.Parser<SkillDetail> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
 
   static {
   }
