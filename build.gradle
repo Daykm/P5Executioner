@@ -3,8 +3,9 @@
 buildscript {
   ext.buildVer = [
 
-      kotlin       : '1.1.1',
-      androidGradle: '2.3.1'
+      kotlin       : '1.1.2',
+      androidGradle: '2.3.1',
+      protobufGradle:'0.8.1'
 
   ]
 
@@ -14,6 +15,7 @@ buildscript {
   dependencies {
     classpath "com.android.tools.build:gradle:$buildVer.androidGradle"
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$buildVer.kotlin"
+    classpath "com.google.protobuf:protobuf-gradle-plugin:$buildVer.protobufGradle"
   }
 }
 

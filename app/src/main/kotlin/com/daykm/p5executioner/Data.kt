@@ -20,7 +20,8 @@ class ArcanaAdapter {
     val INSTANCE = ArcanaAdapter()
   }
 
-  @ToJson @Keep fun toJson(arcana: Arcana): String {
+  @ToJson @Keep fun toJson(
+      arcana: Arcana): String {
     throw RuntimeException("Don't do this")
   }
 

@@ -1,6 +1,4 @@
-package com.example;
-
-import com.daykm.p5executioner.data.Data;
+package com.daykm.p5executioner;
 import com.daykm.p5executioner.json.Combo;
 import com.daykm.p5executioner.json.CombosJson;
 import com.daykm.p5executioner.json.PersonaDetail;

@@ -91,6 +91,12 @@ ext.apts = [
 
 ]
 
+ext.proj = [
+
+    ':gen',
+    ':data'
+
+]
 dependencies {
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
@@ -98,6 +104,7 @@ dependencies {
   testCompile 'junit:junit:4.12'
   lib.each { entry -> compile entry.value }
   apts.each { entry -> kapt entry.value }
+  proj.each { entry -> compile(project(entry)) }
   debugCompile leakCanary.leakCanary
   releaseCompile leakCanary.leakCanaryNoOp
   testCompile leakCanary.leakCanaryNoOp

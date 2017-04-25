@@ -3,6 +3,7 @@ package com.daykm.p5executioner;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -17,6 +18,8 @@ import static org.junit.Assert.*;
 	@Test public void useAppContext() throws Exception {
 		// Context of the app under test.
 		Context appContext = InstrumentationRegistry.getTargetContext();
+
+		Log.i("Test", "Bytes available: " + appContext.getAssets().open("combos.bin").available());
 
 		assertEquals("com.daykm.p5executioner", appContext.getPackageName());
 	}
