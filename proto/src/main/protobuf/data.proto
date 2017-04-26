@@ -5,6 +5,7 @@ option optimize_for = LITE_RUNTIME;
 
 option java_package = "com.daykm.p5executioner.data";
 
+/*
 
 message Combo {
     repeated string sources = 1;
@@ -59,4 +60,4 @@ message SkillDetail {
     string effect = 1;
     string element = 2;
     map<string, uint32> persona = 3;
-}
+}*/

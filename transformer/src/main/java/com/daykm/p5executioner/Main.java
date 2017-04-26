@@ -1,4 +1,6 @@
 package com.daykm.p5executioner;
+
+import com.daykm.p5executioner.data.Data;
 import com.daykm.p5executioner.json.Combo;
 import com.daykm.p5executioner.json.CombosJson;
 import com.daykm.p5executioner.json.PersonaDetail;
@@ -19,6 +21,10 @@ import okio.Okio;
 import okio.Source;
 
 public class Main {
+
+	private static final String OUTPUT = "gen/src/main/assets/";
+	private static final String INPUT = "transformer/json/";
+
 	public static void main(String[] args) throws Exception {
 		System.out.println("Working Directory = " + System.getProperty("user.dir"));
 
@@ -37,7 +43,7 @@ public class Main {
 				Types.newParameterizedType(List.class, String.class)));
 
 		List<List<String>> serieses =
-				adapter.fromJson(Okio.buffer(Okio.source(new File("data/proto/json/dlcPersonae.json"))));
+				adapter.fromJson(Okio.buffer(Okio.source(new File(INPUT + "dlcPersonae.json"))));
 
 		Data.DLCPersonae.Builder builder = Data.DLCPersonae.newBuilder();
 
@@ -45,10 +51,10 @@ public class Main {
 			builder.addList(Data.DLCPersonaSeries.newBuilder().addAllSeries(series));
 		}
 
-		Files.write(Paths.get("data/proto/out/dlcPersonae.bin"), builder.build().toByteArray());
+		Files.write(Paths.get(OUTPUT + "dlcPersonae.pb"), builder.build().toByteArray());
 
 		Data.DLCPersonae out =
-				Data.DLCPersonae.parseFrom(Files.readAllBytes(Paths.get("data/proto/out/dlcPersonae.bin")));
+				Data.DLCPersonae.parseFrom(Files.readAllBytes(Paths.get(OUTPUT + "dlcPersonae.pb")));
 
 		for (Data.DLCPersonaSeries combo : out.getListList()) {
 			System.out.println(combo.getSeriesList());
@@ -61,7 +67,8 @@ public class Main {
 				moshi.adapter(Types.newParameterizedType(List.class, SpecialCombo.class));
 
 		List<SpecialCombo> combos =
-				adapter.fromJson(Okio.buffer(Okio.source(new File("data/proto/json/specialCombos.json"))));
+				adapter.fromJson(Okio.buffer(Okio.source(new File(INPUT + "specialCombos.json"))));
+
 
 		Data.SpecialCombos.Builder builder = Data.SpecialCombos.newBuilder();
 
@@ -70,10 +77,10 @@ public class Main {
 					Data.SpecialCombo.newBuilder().setResult(combo.result).addAllSources(combo.sources));
 		}
 
-		Files.write(Paths.get("data/proto/out/specialCombos.bin"), builder.build().toByteArray());
+		Files.write(Paths.get(OUTPUT + "specialCombos.pb"), builder.build().toByteArray());
 
 		Data.SpecialCombos out = Data.SpecialCombos.parseFrom(
-				Files.readAllBytes(Paths.get("data/proto/out/specialCombos.bin")));
+				Files.readAllBytes(Paths.get(OUTPUT + "specialCombos.pb")));
 
 		for (Data.SpecialCombo combo : out.getListList()) {
 			System.out.println("First: "
@@ -90,7 +97,7 @@ public class Main {
 		JsonAdapter<CombosJson> adapter = moshi.adapter(CombosJson.class);
 
 		CombosJson json =
-				adapter.fromJson(Okio.buffer(Okio.source(new File("data/proto/json/arcanaCombos.json"))));
+				adapter.fromJson(Okio.buffer(Okio.source(new File(INPUT + "arcanaCombos.json"))));
 
 		List<Data.Combo> combos = new ArrayList<>(json.data.length);
 
@@ -103,10 +110,9 @@ public class Main {
 
 		byte[] bytes = Data.Combos.newBuilder().addAllList(combos).build().toByteArray();
 
-		Files.write(Paths.get("data/proto/out/combos.bin"), bytes);
+		Files.write(Paths.get(OUTPUT + "combos.pb"), bytes);
 
-		Data.Combos out =
-				Data.Combos.parseFrom(Files.readAllBytes(Paths.get("data/proto/out/combos.bin")));
+		Data.Combos out = Data.Combos.parseFrom(Files.readAllBytes(Paths.get(OUTPUT + "combos.pb")));
 
 		for (Data.Combo combo : out.getListList()) {
 			System.out.println("First: "
@@ -124,7 +130,7 @@ public class Main {
 
 		JsonAdapter<Map<String, SkillDetail>> adapter = moshi.adapter(type);
 
-		Source source = Okio.source(new File("data/proto/json/skills.json"));
+		Source source = Okio.source(new File(INPUT + "skills.json"));
 		Map<String, SkillDetail> skills = adapter.fromJson(Okio.buffer(source));
 
 		Data.Skills.Builder builder = Data.Skills.newBuilder();
@@ -138,10 +144,9 @@ public class Main {
 					.build());
 		}
 
-		Files.write(Paths.get("data/proto/out/skills.bin"), builder.build().toByteArray());
+		Files.write(Paths.get(OUTPUT + "skills.pb"), builder.build().toByteArray());
 
-		Data.Skills out =
-				Data.Skills.parseFrom(Files.readAllBytes(Paths.get("data/proto/out/skills.bin")));
+		Data.Skills out = Data.Skills.parseFrom(Files.readAllBytes(Paths.get(OUTPUT + "skills.pb")));
 
 		System.out.println("Rare combos count: " + out.getSkillsMap().toString());
 	}
@@ -153,7 +158,7 @@ public class Main {
 
 		JsonAdapter<Map<String, List<Integer>>> adapter = moshi.adapter(type);
 
-		Source source = Okio.source(new File("data/proto/json/rareCombos.json"));
+		Source source = Okio.source(new File(INPUT + "rareCombos.json"));
 		Map<String, List<Integer>> rareCombos = adapter.fromJson(Okio.buffer(source));
 
 		Data.RareCombos.Builder builder = Data.RareCombos.newBuilder();
@@ -162,10 +167,10 @@ public class Main {
 			builder.putCombos(key, Data.RareCombo.newBuilder().addAllCombos(rareCombos.get(key)).build());
 		}
 
-		Files.write(Paths.get("data/proto/out/rareCombos.bin"), builder.build().toByteArray());
+		Files.write(Paths.get(OUTPUT + "rareCombos.pb"), builder.build().toByteArray());
 
 		Data.RareCombos out =
-				Data.RareCombos.parseFrom(Files.readAllBytes(Paths.get("data/proto/out/rareCombos.bin")));
+				Data.RareCombos.parseFrom(Files.readAllBytes(Paths.get(OUTPUT + "rareCombos.pb")));
 
 		System.out.println("Rare combos count: " + out.getCombosCount());
 	}
@@ -176,7 +181,7 @@ public class Main {
 
 		JsonAdapter<Map<String, PersonaDetail>> adapter = moshi.adapter(type);
 
-		Source source = Okio.source(new File("data/proto/json/personae.json"));
+		Source source = Okio.source(new File(INPUT + "personae.json"));
 
 		Map<String, PersonaDetail> personae = adapter.fromJson(Okio.buffer(source));
 
@@ -192,10 +197,10 @@ public class Main {
 					.build());
 		}
 
-		Files.write(Paths.get("data/proto/out/personae.bin"), builder.build().toByteArray());
+		Files.write(Paths.get(OUTPUT + "personae.pb"), builder.build().toByteArray());
 
 		Data.Personae out =
-				Data.Personae.parseFrom(Files.readAllBytes(Paths.get("data/proto/out/personae.bin")));
+				Data.Personae.parseFrom(Files.readAllBytes(Paths.get(OUTPUT + "personae.pb")));
 
 		System.out.println(out.getPersonaeMap().toString());
 	}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package p5;
+
+option optimize_for = LITE_RUNTIME;
+
+option java_package = "com.daykm.p5executioner.proto";
+
+import "arcana.proto";
+
+message ArcanaCombo {
+    Arcana first = 1;
+    Arcana second = 2;
+    Arcana result = 3;
+}

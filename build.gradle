@@ -3,8 +3,8 @@
 buildscript {
   ext.buildVer = [
 
-      kotlin       : '1.1.2',
-      androidGradle: '2.3.1',
+      kotlin        : '1.1.1',
+      androidGradle : '2.3.1',
       protobufGradle:'0.8.1'
 
   ]

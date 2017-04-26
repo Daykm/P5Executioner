@@ -94,7 +94,6 @@ ext.apts = [
 ext.proj = [
 
     ':gen',
-    ':data'
 
 ]
 dependencies {
@@ -108,5 +107,6 @@ dependencies {
   debugCompile leakCanary.leakCanary
   releaseCompile leakCanary.leakCanaryNoOp
   testCompile leakCanary.leakCanaryNoOp
+  androidTestCompile project(path: ':proto')
 }
 

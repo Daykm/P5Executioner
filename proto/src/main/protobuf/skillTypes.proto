@@ -1,0 +1,24 @@
+syntax = "proto3";
+package p5;
+
+option optimize_for = LITE_RUNTIME;
+
+option java_package = "com.daykm.p5executioner.proto";
+
+enum SkillElement {
+    BLESS = 0;
+    CURSE = 1;
+    PHYS = 2;
+    AILMENT = 3;
+    FIRE = 4;
+    NUCLEAR = 5;
+    SUPPORT = 6;
+    GUN = 7;
+    ICE = 8;
+    PASSIVE = 9;
+    ALMIGHTY = 10;
+    PSY = 11;
+    HEALING = 12;
+    WIND = 13;
+    ELECTRIC = 14;
+}
