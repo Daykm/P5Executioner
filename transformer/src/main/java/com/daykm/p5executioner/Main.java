@@ -1,8 +1,6 @@
 package com.daykm.p5executioner;
 
-import com.daykm.p5executioner.data.Data;
 import com.daykm.p5executioner.json.Combo;
-import com.daykm.p5executioner.json.CombosJson;
 import com.daykm.p5executioner.json.PersonaDetail;
 import com.daykm.p5executioner.json.SkillDetail;
 import com.daykm.p5executioner.json.SpecialCombo;
@@ -94,12 +92,12 @@ public class Main {
 
 	public static void createArcanaCombos(Moshi moshi) throws Exception {
 
-		JsonAdapter<CombosJson> adapter = moshi.adapter(CombosJson.class);
+		JsonAdapter<List<Combo>> adapter = moshi.adapter(Types.newParameterizedType(List.class, Combo.class));
 
-		CombosJson json =
+		List<Combo> json =
 				adapter.fromJson(Okio.buffer(Okio.source(new File(INPUT + "arcanaCombos.json"))));
 
-		List<Data.Combo> combos = new ArrayList<>(json.data.length);
+		List<Data.Combo> combos = new ArrayList<>(json.size());
 
 		for (Combo combo : json.data) {
 			combos.add(Data.Combo.newBuilder()

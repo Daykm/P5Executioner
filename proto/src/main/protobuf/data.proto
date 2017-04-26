@@ -1,63 +1,140 @@
 syntax = "proto3";
 package p5;
-
 option optimize_for = LITE_RUNTIME;
+option java_package = "com.daykm.p5executioner.proto";
+option java_multiple_files = true;
 
-option java_package = "com.daykm.p5executioner.data";
+message Skill {
+    string name = 1;
+    string effect = 2;
+    Element element = 3;
+    repeated PersonaAndLevel personaeWhoLearn = 4;
+    uint32 cost = 5;
+    repeated string talks = 6;
 
-/*
+    enum Element {
+        BLESS = 0;
+        CURSE = 1;
+        PHYS = 2;
+        AILMENT = 3;
+        FIRE = 4;
+        NUCLEAR = 5;
+        SUPPORT = 6;
+        GUN = 7;
+        ICE = 8;
+        PASSIVE = 9;
+        ALMIGHTY = 10;
+        PSY = 11;
+        HEALING = 12;
+        WIND = 13;
+        ELECTRIC = 14;
+    }
 
-message Combo {
-    repeated string sources = 1;
-    string arcana = 2;
+    message PersonaAndLevel {
+        string persona = 1;
+        uint32 level = 2;
+    }
 }
 
-message Combos {
-    repeated Combo list = 1;
+enum Arcana {
+    FOOL = 0;
+    MAGICIAN = 1;
+    PRIESTESSS = 2;
+    EMPRESS = 3;
+    EMPEROR = 4;
+    HIEROPHANT = 5;
+    LOVERS = 6;
+    CHARIOT = 7;
+    JUSTICE = 8;
+    HERMIT = 9;
+    FORTUNE = 10;
+    STRENGTH = 11;
+    HANGEDMAN = 12;
+    DEATH = 13;
+    TEMPERANCE = 14;
+    DEVIL = 15;
+    TOWER = 16;
+    STAR = 17;
+    MOON = 18;
+    SUN = 19;
+    JUDGEMENT = 20;
 }
 
-message RareCombo {
-    repeated sint32 combos = 1;
+message RareComboModifier {
+    Arcana arcana = 1;
+    repeated uint32 modifiers = 2;
 }
-
-message RareCombos {
-    map<string, RareCombo> combos = 1;
-}
-
-message SpecialCombo {
+message SpecialCombos {
     string result = 1;
     repeated string sources = 2;
 }
 
-message SpecialCombos {
-    repeated SpecialCombo list = 1;
+message ArcanaCombo {
+    Arcana first = 1;
+    Arcana second = 2;
+    Arcana result = 3;
 }
 
-message DLCPersonaSeries {
-    repeated string series = 1;
-}
+message Persona {
+    string name = 1;
+    Arcana arcana = 2;
+    uint32 level = 3;
+    Stats stats = 4;
+    Affinities affinities = 5;
+    repeated LearnedSkills skills = 6;
 
-message DLCPersonae {
-    repeated DLCPersonaSeries list = 1;
-}
+    enum StatNames {
+        STRENGTH = 0;
+        MAGIC = 1;
+        ENDURANCE = 2;
+        AGILITY = 3;
+        LUCK = 4;
+    }
 
-message PersonaDetail {
-    string arcana = 1;
-    uint32 level = 2;
-    repeated uint32 stats = 3;
-    map<string, uint32> skills = 4;
-}
+    message Affinities {
+        enum AffinityName {
+            PHYSICAL = 0;
+            GUN = 1;
+            FIRE = 2;
+            ICE = 3;
+            ELECTRIC = 4;
+            WIND = 5;
+            PSYCHIC = 6;
+            NUCLEAR = 7;
+            BLESS = 8;
+            CURSE = 9;
+        }
+        enum AffinityOption {
+            NONE = 0;
+            WEAK = 1;
+            ABSORB = 2;
+            RESIST = 3;
+            NULL = 4;
+            REPEL = 5;
+        }
 
-message Personae {
-    map<string, PersonaDetail> personae = 1;
-}
+        AffinityOption physical = 1;
+        AffinityOption gun = 2;
+        AffinityOption fire = 3;
+        AffinityOption ice = 4;
+        AffinityOption electric = 5;
+        AffinityOption wind = 6;
+        AffinityOption psychic = 7;
+        AffinityOption nuclear = 8;
+        AffinityOption bless = 9;
+        AffinityOption curse = 10;
+    }
 
-message Skills {
-    map<string, SkillDetail> skills = 1;
-}
+    message Stats {
+        uint32 strength = 1;
+        uint32 magic = 2;
+        uint32 endurance = 3;
+        uint32 agility = 4;
+        uint32 luck = 5;
+    }
 
-message SkillDetail {
-    string effect = 1;
-    string element = 2;
-    map<string, uint32> persona = 3;
-}*/
+    message LearnedSkills {
+        string name = 1;
+        uint32 level = 2;
+    }
+}
