@@ -21,6 +21,13 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
       signingConfig signingConfigs.debug
     }
+    debug {
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'),
+          'proguard-rules.pro',
+          'proguard-rules-debug.pro'
+    }
   }
   signingConfigs {
     debug {
@@ -71,7 +78,7 @@ ext.lib = [
     rxJava     : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
     rxAndroid  : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
     snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
-    moshi      : "com.squareup.moshi:moshi:$ver.moshi",
+    //moshi      : "com.squareup.moshi:moshi:$ver.moshi",
     kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
     epoxy      : "com.airbnb.android:epoxy:$ver.epoxy"
 
@@ -91,6 +98,11 @@ ext.apts = [
 
 ]
 
+ext.proj = [
+
+    ':gen', ':proto'
+
+]
 dependencies {
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
@@ -98,8 +110,10 @@ dependencies {
   testCompile 'junit:junit:4.12'
   lib.each { entry -> compile entry.value }
   apts.each { entry -> kapt entry.value }
+  proj.each { entry -> compile(project(entry)) }
   debugCompile leakCanary.leakCanary
   releaseCompile leakCanary.leakCanaryNoOp
   testCompile leakCanary.leakCanaryNoOp
+  androidTestCompile project(path: ':proto')
 }
 

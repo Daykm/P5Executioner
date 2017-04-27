@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.Provides
 import timber.log.Timber
 import timber.log.Timber.DebugTree
+import javax.inject.Singleton
 
 class App : Application() {
 
@@ -41,6 +42,6 @@ class App : Application() {
 
 }
 
-@Component(modules = arrayOf(AppModule::class)) interface AppComponent {
+@Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
   fun persona(): PersonaComponent
 }
