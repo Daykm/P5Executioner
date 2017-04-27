@@ -9,6 +9,8 @@ import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.databinding.PersonaItemBinding
 import com.daykm.p5executioner.proto.Data
 import com.daykm.p5executioner.proto.Persona
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.onClick
 import timber.log.Timber
@@ -19,11 +21,18 @@ class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : EpoxyContro
 
   val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
   var personas: List<Persona>? = null
+  var personaModels: MutableList<PersonaModel>? = null
 
   override fun buildModels() {
     Timber.i("Building model")
+    personaModels?.forEach { it.destroy() }
+    personaModels?.clear()
     personas?.forEach { persona ->
-      PersonaModel(persona, selectedPersona).addTo(this)
+      run {
+        val model = PersonaModel(persona, selectedPersona)
+        personaModels?.add(model)
+        model.addTo(this)
+      }
     }
   }
 
@@ -37,7 +46,7 @@ class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : EpoxyContro
   }
 
   fun bind() {
-    repo.DATA.subscribe { data: Data ->
+    repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribe { data: Data ->
       run {
         personas = data.personasList
         requestModelBuild()
@@ -51,8 +60,10 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
 
   var selected = false
 
+  val disposable = CompositeDisposable()
+
   init {
-    subject.subscribe { selected = it == persona }
+    disposable.add(subject.subscribe { selected = it == persona })
     id(persona.name + persona.arcana + selected.toString())
   }
 
@@ -66,6 +77,10 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
 
   override fun bind(holder: PersonaHolder) {
     holder.bind(this)
+  }
+
+  fun destroy() {
+    disposable.dispose()
   }
 }
 
