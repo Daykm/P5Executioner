@@ -25,3 +25,4 @@
 #-renamesourcefileattribute SourceFile
 
 -dontwarn okio.**
+-dontwarn com.google.protobuf.*

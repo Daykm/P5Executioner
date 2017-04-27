@@ -7,6 +7,8 @@ import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.databinding.PersonaItemBinding
+import com.daykm.p5executioner.proto.Data
+import com.daykm.p5executioner.proto.Persona
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.onClick
 import timber.log.Timber
@@ -35,9 +37,9 @@ class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : EpoxyContro
   }
 
   fun bind() {
-    repo.PERSONAE.subscribe { list ->
+    repo.DATA.subscribe { data: Data ->
       run {
-        personas = list
+        personas = data.personasList
         requestModelBuild()
       }
     }
@@ -75,7 +77,7 @@ class PersonaHolder(val subject: BehaviorSubject<Persona>) : EpoxyHolder() {
   fun bind(model: PersonaModel) {
     binding.name.text = model.persona.name
     binding.level.text = model.persona.level.toString()
-    binding.arcana.text = model.persona.arcana.label
+    binding.arcana.text = model.persona.arcana.name
     if (model.selected) {
       binding.persona.setCardBackgroundColor(
           ContextCompat.getColor(binding.root.context, R.color.colorPrimaryDark))

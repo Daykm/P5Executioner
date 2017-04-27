@@ -4,6 +4,19 @@ option optimize_for = LITE_RUNTIME;
 option java_package = "com.daykm.p5executioner.proto";
 option java_multiple_files = true;
 
+message Data {
+    repeated SpecialCombo specialCombos = 1;
+    repeated Skill skills = 2;
+    repeated ArcanaCombo arcanaCombos = 3;
+    repeated Persona personas = 4;
+    repeated RareComboModifier rareModifiers = 5;
+    repeated DLCPersona dlcPersonae = 6;
+}
+
+message DLCPersona {
+    repeated string personaeInSeries = 1;
+}
+
 message Skill {
     string name = 1;
     string effect = 2;
@@ -39,7 +52,7 @@ message Skill {
 enum Arcana {
     FOOL = 0;
     MAGICIAN = 1;
-    PRIESTESSS = 2;
+    PRIESTESS = 2;
     EMPRESS = 3;
     EMPEROR = 4;
     HIEROPHANT = 5;
@@ -64,7 +77,7 @@ message RareComboModifier {
     Arcana arcana = 1;
     repeated uint32 modifiers = 2;
 }
-message SpecialCombos {
+message SpecialCombo {
     string result = 1;
     repeated string sources = 2;
 }

@@ -1,6 +1,6 @@
 package com.daykm.p5executioner.json;
 
-public class Combo {
+public class JsonCombo {
 	public String[] source;
 	public String result;
 }

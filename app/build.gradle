@@ -21,6 +21,13 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
       signingConfig signingConfigs.debug
     }
+    debug {
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'),
+          'proguard-rules.pro',
+          'proguard-rules-debug.pro'
+    }
   }
   signingConfigs {
     debug {
@@ -71,7 +78,7 @@ ext.lib = [
     rxJava     : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
     rxAndroid  : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
     snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
-    moshi      : "com.squareup.moshi:moshi:$ver.moshi",
+    //moshi      : "com.squareup.moshi:moshi:$ver.moshi",
     kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
     epoxy      : "com.airbnb.android:epoxy:$ver.epoxy"
 
@@ -93,7 +100,7 @@ ext.apts = [
 
 ext.proj = [
 
-    ':gen',
+    ':gen', ':proto'
 
 ]
 dependencies {

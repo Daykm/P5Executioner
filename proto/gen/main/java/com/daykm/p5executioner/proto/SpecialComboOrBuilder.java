@@ -3,9 +3,9 @@
 
 package com.daykm.p5executioner.proto;
 
-public interface SpecialCombosOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:p5.SpecialCombos)
-    com.google.protobuf.MessageLiteOrBuilder {
+public interface SpecialComboOrBuilder extends
+		// @@protoc_insertion_point(interface_extends:p5.SpecialCombo)
+		com.google.protobuf.MessageLiteOrBuilder {
 
   /**
    * <code>string result = 1;</code>

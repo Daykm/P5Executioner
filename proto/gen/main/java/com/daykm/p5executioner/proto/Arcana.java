@@ -17,10 +17,9 @@ public enum Arcana
    */
   MAGICIAN(1),
   /**
-   * <code>PRIESTESSS = 2;</code>
-   */
-  PRIESTESSS(2),
-  /**
+	 * <code>PRIESTESS = 2;</code>
+	 */
+	PRIESTESS(2), /**
    * <code>EMPRESS = 3;</code>
    */
   EMPRESS(3),
@@ -104,10 +103,10 @@ public enum Arcana
    */
   public static final int MAGICIAN_VALUE = 1;
   /**
-   * <code>PRIESTESSS = 2;</code>
-   */
-  public static final int PRIESTESSS_VALUE = 2;
-  /**
+	 * <code>PRIESTESS = 2;</code>
+	 */
+	public static final int PRIESTESS_VALUE = 2;
+	/**
    * <code>EMPRESS = 3;</code>
    */
   public static final int EMPRESS_VALUE = 3;
@@ -197,8 +196,9 @@ public enum Arcana
     switch (value) {
       case 0: return FOOL;
       case 1: return MAGICIAN;
-      case 2: return PRIESTESSS;
-      case 3: return EMPRESS;
+			case 2:
+				return PRIESTESS;
+			case 3: return EMPRESS;
       case 4: return EMPEROR;
       case 5: return HIEROPHANT;
       case 6: return LOVERS;

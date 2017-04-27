@@ -4,14 +4,12 @@
 package com.daykm.p5executioner.proto;
 
 /**
- * Protobuf type {@code p5.SpecialCombos}
+ * Protobuf type {@code p5.SpecialCombo}
  */
-public  final class SpecialCombos extends
-    com.google.protobuf.GeneratedMessageLite<
-        SpecialCombos, SpecialCombos.Builder> implements
-    // @@protoc_insertion_point(message_implements:p5.SpecialCombos)
-    SpecialCombosOrBuilder {
-  private SpecialCombos() {
+public final class SpecialCombo extends com.google.protobuf.GeneratedMessageLite<SpecialCombo, SpecialCombo.Builder> implements
+		// @@protoc_insertion_point(message_implements:p5.SpecialCombo)
+		SpecialComboOrBuilder {
+	private SpecialCombo() {
     result_ = "";
     sources_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
   }
@@ -178,61 +176,62 @@ public  final class SpecialCombos extends
     return size;
   }
 
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(
-      com.google.protobuf.ByteString data)
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(
-      com.google.protobuf.ByteString data,
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data, extensionRegistry);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(
-      byte[] data,
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data, extensionRegistry);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(java.io.InputStream input)
+			throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, input);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(
-      java.io.InputStream input,
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, input, extensionRegistry);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseDelimitedFrom(
+			java.io.InputStream input) throws java.io.IOException {
     return parseDelimitedFrom(DEFAULT_INSTANCE, input);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseDelimitedFrom(
-      java.io.InputStream input,
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseDelimitedFrom(java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, input);
   }
-  public static com.daykm.p5executioner.proto.SpecialCombos parseFrom(
-      com.google.protobuf.CodedInputStream input,
+
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -242,19 +241,20 @@ public  final class SpecialCombos extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.daykm.p5executioner.proto.SpecialCombos prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+
+	public static Builder newBuilder(com.daykm.p5executioner.proto.SpecialCombo prototype) {
+		return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
   /**
-   * Protobuf type {@code p5.SpecialCombos}
-   */
+	 * Protobuf type {@code p5.SpecialCombo}
+	 */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageLite.Builder<
-        com.daykm.p5executioner.proto.SpecialCombos, Builder> implements
-      // @@protoc_insertion_point(builder_implements:p5.SpecialCombos)
-      com.daykm.p5executioner.proto.SpecialCombosOrBuilder {
-    // Construct using com.daykm.p5executioner.proto.SpecialCombos.newBuilder()
+      com.google.protobuf.GeneratedMessageLite.Builder<com.daykm.p5executioner.proto.SpecialCombo, Builder>
+			implements
+			// @@protoc_insertion_point(builder_implements:p5.SpecialCombo)
+			com.daykm.p5executioner.proto.SpecialComboOrBuilder {
+		// Construct using com.daykm.p5executioner.proto.SpecialCombo.newBuilder()
     private Builder() {
       super(DEFAULT_INSTANCE);
     }
@@ -372,15 +372,15 @@ public  final class SpecialCombos extends
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:p5.SpecialCombos)
-  }
+		// @@protoc_insertion_point(builder_scope:p5.SpecialCombo)
+	}
   protected final Object dynamicMethod(
       com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
       Object arg0, Object arg1) {
     switch (method) {
       case NEW_MUTABLE_INSTANCE: {
-        return new com.daykm.p5executioner.proto.SpecialCombos();
-      }
+				return new com.daykm.p5executioner.proto.SpecialCombo();
+			}
       case IS_INITIALIZED: {
         return DEFAULT_INSTANCE;
       }
@@ -393,8 +393,9 @@ public  final class SpecialCombos extends
       }
       case VISIT: {
         Visitor visitor = (Visitor) arg0;
-        com.daykm.p5executioner.proto.SpecialCombos other = (com.daykm.p5executioner.proto.SpecialCombos) arg1;
-        result_ = visitor.visitString(!result_.isEmpty(), result_,
+				com.daykm.p5executioner.proto.SpecialCombo other =
+						(com.daykm.p5executioner.proto.SpecialCombo) arg1;
+				result_ = visitor.visitString(!result_.isEmpty(), result_,
             !other.result_.isEmpty(), other.result_);
         sources_= visitor.visitList(sources_, other.sources_);
         if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
@@ -452,8 +453,9 @@ public  final class SpecialCombos extends
         return DEFAULT_INSTANCE;
       }
       case GET_PARSER: {
-        if (PARSER == null) {    synchronized (com.daykm.p5executioner.proto.SpecialCombos.class) {
-            if (PARSER == null) {
+				if (PARSER == null) {
+					synchronized (com.daykm.p5executioner.proto.SpecialCombo.class) {
+						if (PARSER == null) {
               PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
             }
           }
@@ -464,22 +466,22 @@ public  final class SpecialCombos extends
     throw new UnsupportedOperationException();
   }
 
+	// @@protoc_insertion_point(class_scope:p5.SpecialCombo)
+	private static final com.daykm.p5executioner.proto.SpecialCombo DEFAULT_INSTANCE;
 
-  // @@protoc_insertion_point(class_scope:p5.SpecialCombos)
-  private static final com.daykm.p5executioner.proto.SpecialCombos DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new SpecialCombos();
-    DEFAULT_INSTANCE.makeImmutable();
+	static {
+		DEFAULT_INSTANCE = new SpecialCombo();
+		DEFAULT_INSTANCE.makeImmutable();
   }
 
-  public static com.daykm.p5executioner.proto.SpecialCombos getDefaultInstance() {
-    return DEFAULT_INSTANCE;
+	public static com.daykm.p5executioner.proto.SpecialCombo getDefaultInstance() {
+		return DEFAULT_INSTANCE;
   }
 
-  private static volatile com.google.protobuf.Parser<SpecialCombos> PARSER;
+	private static volatile com.google.protobuf.Parser<SpecialCombo> PARSER;
 
-  public static com.google.protobuf.Parser<SpecialCombos> parser() {
-    return DEFAULT_INSTANCE.getParserForType();
+	public static com.google.protobuf.Parser<SpecialCombo> parser() {
+		return DEFAULT_INSTANCE.getParserForType();
   }
 }
 

@@ -680,7 +680,7 @@
     }
   },
   "Attis": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 82,
     "stats": [
       56,
@@ -1622,7 +1622,7 @@
     "personality": "Unknown"
   },
   "Emperor's Amulet": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 35,
     "stats": [
       35,
@@ -2078,7 +2078,7 @@
     "personality": "Unknown"
   },
   "Hecatoncheir": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 42,
     "stats": [
       29,
@@ -2241,7 +2241,7 @@
     }
   },
   "Hua Po": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 9,
     "stats": [
       4,
@@ -2304,7 +2304,7 @@
     "personality": "Timid"
   },
   "Inugami": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 14,
     "stats": [
       11,
@@ -3967,7 +3967,7 @@
     "personality": "Gloomy"
   },
   "Moloch": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 60,
     "stats": [
       32,
@@ -4715,7 +4715,7 @@
     "dlc": true
   },
   "Orthrus": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 21,
     "stats": [
       16,
@@ -6038,7 +6038,7 @@
     }
   },
   "Take-Minakata": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 29,
     "stats": [
       20,
@@ -6496,7 +6496,7 @@
     }
   },
   "Vasuki": {
-    "arcana": "Hanged Man",
+    "arcana": "HangedMan",
     "level": 68,
     "stats": [
       41,
