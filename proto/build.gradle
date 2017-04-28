@@ -22,6 +22,7 @@ idea {
     sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/grpc");
   }
 }
+
 sourceSets {
   main {
     proto {

@@ -25,7 +25,7 @@ class P5Activity : Activity() {
     val component = App.INSTANCE.component.persona()
 
     pager = RecyclerPagerController(
-        arrayOf(component.fusion(), PlaceholderController(), PlaceholderController(),
+        arrayOf(component.fusion(), component.list(), PlaceholderController(),
             PlaceholderController())).apply {
       activityBinding.recyclerPager.adapter = adapter
       requestModelBuild()
@@ -41,7 +41,7 @@ class P5Activity : Activity() {
       Timber.i("Menu item '%s' selected", it.title)
       when (it.itemId) {
         R.id.nav_fusion -> activityBinding.recyclerPager.smoothScrollToPosition(0)
-        R.id.nav_second -> activityBinding.recyclerPager.smoothScrollToPosition(1)
+        R.id.nav_by_persona -> activityBinding.recyclerPager.smoothScrollToPosition(1)
         R.id.nav_third -> activityBinding.recyclerPager.smoothScrollToPosition(2)
         R.id.nav_settings -> activityBinding.recyclerPager.smoothScrollToPosition(3)
       }
@@ -59,4 +59,5 @@ class P5Activity : Activity() {
 
 @ActivityScope @Subcomponent(modules = arrayOf(PersonaModule::class)) interface PersonaComponent {
   fun fusion(): PersonaFusionAdapter
+  fun list(): PersonaListAdapter
 }

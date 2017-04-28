@@ -3,9 +3,9 @@ package com.daykm.p5executioner
 import android.app.Application
 import android.content.Context
 import com.squareup.leakcanary.LeakCanary
+import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
-import dagger.Provides
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import javax.inject.Singleton
@@ -26,7 +26,8 @@ class App : Application() {
     if (BuildConfig.DEBUG) {
       Timber.plant(DebugTree())
     }
-    component = DaggerAppComponent.builder().appModule(AppModule(this)).build()
+
+    component = DaggerAppComponent.builder().ctx(this).build()
 
     if (!LeakCanary.isInAnalyzerProcess(this)) {
       LeakCanary.install(this)
@@ -34,14 +35,13 @@ class App : Application() {
   }
 }
 
-@Module class AppModule(val app: App) {
-
-  @Provides fun ctx(): Context {
-    return app
-  }
-
-}
+@Module abstract class AppModule
 
 @Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
   fun persona(): PersonaComponent
+
+  @Component.Builder interface Builder {
+    fun build(): AppComponent
+    @BindsInstance fun ctx(ctx: Context): Builder
+  }
 }
