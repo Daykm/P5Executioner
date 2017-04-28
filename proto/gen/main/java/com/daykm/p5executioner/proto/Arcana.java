@@ -22,9 +22,8 @@ public enum Arcana
 	PRIESTESS(2), /**
 	 * <code>EMPRESS = 3;</code>
 	 */
-	EMPRESS(3),
-  /**
-   * <code>EMPEROR = 4;</code>
+	EMPRESS(3), /**
+	 * <code>EMPEROR = 4;</code>
    */
   EMPEROR(4),
   /**
@@ -110,8 +109,8 @@ public enum Arcana
 	 * <code>EMPRESS = 3;</code>
 	 */
 	public static final int EMPRESS_VALUE = 3;
-  /**
-   * <code>EMPEROR = 4;</code>
+	/**
+	 * <code>EMPEROR = 4;</code>
    */
   public static final int EMPEROR_VALUE = 4;
   /**
@@ -202,8 +201,9 @@ public enum Arcana
 				return EMPRESS;
 			case 4:
 				return EMPEROR;
-			case 5: return HIEROPHANT;
-      case 6: return LOVERS;
+			case 5:
+				return HIEROPHANT;
+			case 6: return LOVERS;
       case 7: return CHARIOT;
       case 8: return JUSTICE;
       case 9: return HERMIT;

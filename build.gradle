@@ -1,5 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+apply from: 'config.gradle'
 buildscript {
   ext.buildVer = [
 
@@ -23,13 +23,6 @@ allprojects {
   repositories {
     jcenter()
   }
-}
-
-ext {
-  minSdk = 22
-  targetSdk = 25
-  compileSdk = 25
-  buildTools = '25.0.2'
 }
 
 task clean(type: Delete) {

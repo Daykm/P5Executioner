@@ -65,7 +65,7 @@ class ListModel(val persona: Persona, val ctx: Context) : EpoxyModelWithHolder<L
             Pair(it.bless, R.color.icon_bless),
             Pair(it.curse, R.color.icon_curse))
       }.forEach {
-        append(affinity(it.first, ctx), ForegroundColorSpan(ContextCompat.getColor(ctx, it.second)))
+        append(affinity(it.first), ForegroundColorSpan(ContextCompat.getColor(ctx, it.second)))
       }
     }.build()
 
@@ -93,16 +93,14 @@ class ListModel(val persona: Persona, val ctx: Context) : EpoxyModelWithHolder<L
     }
   }
 
-  fun affinity(option: AffinityOption, ctx: Context): String {
-    return when (option) {
-      Persona.Affinities.AffinityOption.NONE -> ctx.getString(R.string.effect_none)
-      Persona.Affinities.AffinityOption.WEAK -> ctx.getString(R.string.effect_weak)
-      Persona.Affinities.AffinityOption.ABSORB -> ctx.getString(R.string.effect_drain)
-      Persona.Affinities.AffinityOption.RESIST -> ctx.getString(R.string.effect_strong)
-      Persona.Affinities.AffinityOption.NULL -> ctx.getString(R.string.effect_null)
-      Persona.Affinities.AffinityOption.REPEL -> ctx.getString(R.string.effect_repel)
-      Persona.Affinities.AffinityOption.UNRECOGNIZED -> throw RuntimeException("Invalid affinity")
-    }
+  fun affinity(option: AffinityOption): String = when (option) {
+    Persona.Affinities.AffinityOption.NONE -> ctx.getString(R.string.effect_none)
+    Persona.Affinities.AffinityOption.WEAK -> ctx.getString(R.string.effect_weak)
+    Persona.Affinities.AffinityOption.ABSORB -> ctx.getString(R.string.effect_drain)
+    Persona.Affinities.AffinityOption.RESIST -> ctx.getString(R.string.effect_strong)
+    Persona.Affinities.AffinityOption.NULL -> ctx.getString(R.string.effect_null)
+    Persona.Affinities.AffinityOption.REPEL -> ctx.getString(R.string.effect_repel)
+    Persona.Affinities.AffinityOption.UNRECOGNIZED -> throw RuntimeException("Invalid affinity")
   }
 
   override fun getDefaultLayout(): Int {

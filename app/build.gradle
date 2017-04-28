@@ -1,14 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-
 android {
-  compileSdkVersion rootProject.ext.compileSdk
-  buildToolsVersion rootProject.ext.buildTools
+  compileSdkVersion buildConfig.compileSdkVer
+  buildToolsVersion buildConfig.buildToolsVer
   defaultConfig {
     applicationId "com.daykm.p5executioner"
-    minSdkVersion rootProject.ext.minSdk
-    targetSdkVersion rootProject.ext.targetSdk
+    minSdkVersion buildConfig.minSdkVer
+    targetSdkVersion buildConfig.targetSdkVer
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
