@@ -1,4 +1,4 @@
-package com.daykm.p5executioner.skills
+package com.daykm.p5executioner.personas
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -6,20 +6,20 @@ import android.support.v7.widget.RecyclerView.Adapter
 import android.support.v7.widget.RecyclerView.LayoutManager
 import com.airbnb.epoxy.EpoxyController
 import com.daykm.p5executioner.data.DataRepo
-import com.daykm.p5executioner.proto.Skill
+import com.daykm.p5executioner.proto.Persona
 import com.daykm.p5executioner.util.Pageable
 import io.reactivex.functions.Consumer
 import javax.inject.Inject
 
+class PersonaListAdapter
+@Inject constructor(val repo: DataRepo, val ctx: Context)
+    : EpoxyController(), Pageable {
 
-class SkillsAdapter @Inject constructor(val repo: DataRepo,
-                                        val ctx: Context) : EpoxyController(), Pageable {
-
-    lateinit var skills: List<Skill>
+    lateinit var personae: List<Persona>
 
     override fun buildModels() {
-        skills.forEach {
-            SkillItemModel(it, ctx).id(it.name).addTo(this)
+        personae.forEach {
+            PersonaListItemModel(it, ctx).id(it.name).addTo(this)
         }
     }
 
@@ -31,7 +31,7 @@ class SkillsAdapter @Inject constructor(val repo: DataRepo,
 
     override fun attach() {
         repo.DATA.subscribe(Consumer {
-            skills = it.skillsList
+            personae = it.personasList
             requestModelBuild()
         })
     }
@@ -40,3 +40,4 @@ class SkillsAdapter @Inject constructor(val repo: DataRepo,
         return adapter
     }
 }
+

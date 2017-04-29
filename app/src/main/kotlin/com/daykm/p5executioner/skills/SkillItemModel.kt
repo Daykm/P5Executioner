@@ -20,11 +20,11 @@ class SkillItemModel(val skill: Skill, val ctx: Context) : EpoxyModelWithHolder<
     }
 
     override fun bind(holder: SkillItemHolder) {
-        holder.binding.let {
-            it.skillCost.text = skillCost
-            it.skillDescription.text = skill.effect
-            it.skillElement.text = skill.element.name
-            it.skillName.text = skill.name
+        holder.let {
+            it.cost.text = skillCost
+            it.effect.text = skill.effect
+            it.element.text = skill.element.name
+            it.name.text = skill.name
         }
     }
 

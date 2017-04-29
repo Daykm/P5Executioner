@@ -28,6 +28,9 @@ android {
                     'proguard-rules-debug.pro'
         }
     }
+    dataBinding {
+        enabled = false
+    }
     signingConfigs {
         debug {
             keyAlias 'key'
@@ -36,12 +39,13 @@ android {
             storePassword 'password'
         }
     }
-    dataBinding {
-        enabled = true
-    }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
@@ -58,30 +62,32 @@ ext.ver = [
         moshi     : '1.4.0',
         epoxy     : '2.0.0',
         leakCanary: '1.5',
-        callig    : '2.2.0'
+        callig    : '2.2.0',
+        butter    : '8.5.1'
 
 ]
 
 ext.lib = [
 
-        ankoSdk15  : "org.jetbrains.anko:anko-sdk15:$ver.anko",
-        ankoCard   : "org.jetbrains.anko:anko-cardview-v7:$ver.anko",
-        ankoRecycle: "org.jetbrains.anko:anko-recyclerview-v7:$ver.anko",
-        ankoDesign : "org.jetbrains.anko:anko-design:$ver.anko",
+        //ankoSdk15  : "org.jetbrains.anko:anko-sdk15:$ver.anko",
+        //ankoCard   : "org.jetbrains.anko:anko-cardview-v7:$ver.anko",
+        //ankoRecycle: "org.jetbrains.anko:anko-recyclerview-v7:$ver.anko",
+        //ankoDesign : "org.jetbrains.anko:anko-design:$ver.anko",
         //TODO wait for this to come out
         // ankoConstraint: "org.jetbrains.anko:anko-constraint:$ver.anko",
-        dagger     : "com.google.dagger:dagger:$ver.dagger",
-        supDesign  : "com.android.support:design:$ver.sup",
-        constraint : "com.android.support.constraint:constraint-layout:$ver.constraint",
-        cardView   : "com.android.support:cardview-v7:$ver.sup",
-        timber     : "com.jakewharton.timber:timber:$ver.timber",
-        rxJava     : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
-        rxAndroid  : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
-        snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
+        dagger    : "com.google.dagger:dagger:$ver.dagger",
+        //supDesign  : "com.android.support:design:$ver.sup",
+        constraint: "com.android.support.constraint:constraint-layout:$ver.constraint",
+        //cardView   : "com.android.support:cardview-v7:$ver.sup",
+        timber    : "com.jakewharton.timber:timber:$ver.timber",
+        rxJava    : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
+        rxAndroid : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
+        //snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
         //moshi      : "com.squareup.moshi:moshi:$ver.moshi",
-        kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
-        epoxy      : "com.airbnb.android:epoxy:$ver.epoxy",
+        kotlin    : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
+        epoxy     : "com.airbnb.android:epoxy:$ver.epoxy",
         //callig     : "uk.co.chrisjenx:calligraphy:$ver.callig"
+        butter    : "com.jakewharton:butterknife:$ver.butter"
 
 ]
 
@@ -95,7 +101,8 @@ ext.leakCanary = [
 ext.apts = [
 
         dagger     : "com.google.dagger:dagger-compiler:$ver.dagger",
-        databinding: "com.android.databinding:compiler:$buildVer.androidGradle"
+        //databinding: "com.android.databinding:compiler:$buildVer.androidGradle",
+        butter     : "com.jakewharton:butterknife-compiler:$ver.butter"
 
 ]
 

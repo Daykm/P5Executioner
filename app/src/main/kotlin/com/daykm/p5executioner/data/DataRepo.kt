@@ -1,4 +1,4 @@
-package com.daykm.p5executioner
+package com.daykm.p5executioner.data
 
 import android.content.Context
 import com.daykm.p5executioner.proto.Data
@@ -14,7 +14,6 @@ import javax.inject.Singleton
             Single.fromCallable { parseData() }
                     .cache()
                     .subscribeOn(Schedulers.computation())
-
 
     init {
         DATA.subscribe()

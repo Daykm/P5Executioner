@@ -1,18 +1,22 @@
-package com.daykm.p5executioner
+package com.daykm.p5executioner.fusion
 
-import android.content.res.ColorStateList
+import android.graphics.Color
+import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.view.View
+import android.widget.TextView
+import butterknife.BindView
+import butterknife.ButterKnife
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.daykm.p5executioner.databinding.PersonaCardBinding
+import com.daykm.p5executioner.R
+import com.daykm.p5executioner.data.DataRepo
 import com.daykm.p5executioner.proto.Data
 import com.daykm.p5executioner.proto.Persona
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.BehaviorSubject
-import org.jetbrains.anko.onClick
 import timber.log.Timber
 import java.lang.RuntimeException
 import javax.inject.Inject
@@ -68,7 +72,7 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
     }
 
     override fun createNewHolder(): PersonaHolder {
-        return PersonaHolder(subject)
+        return PersonaHolder()
     }
 
     override fun getDefaultLayout(): Int {
@@ -76,7 +80,18 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
     }
 
     override fun bind(holder: PersonaHolder) {
-        holder.bind(this)
+        holder.let {
+            it.name.text = persona.name
+            it.level.text = persona.level.toString()
+            it.arcana.text = persona.arcana.name
+            if (selected) {
+                it.card.setBackgroundColor(
+                        ContextCompat.getColor(it.card.context, R.color.colorPrimaryDark))
+            } else {
+                it.card.setBackgroundColor(Color.TRANSPARENT)
+            }
+            it.card.setOnClickListener { subject.onNext(persona) }
+        }
     }
 
     fun destroy() {
@@ -84,26 +99,17 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
     }
 }
 
-class PersonaHolder(val subject: BehaviorSubject<Persona>) : EpoxyHolder() {
+class PersonaHolder : EpoxyHolder() {
+    @BindView(R.id.card_name)
+    lateinit var name: TextView
+    @BindView(R.id.card_arcana)
+    lateinit var arcana: TextView
+    @BindView(R.id.card_level)
+    lateinit var level: TextView
+    @BindView(R.id.card_persona)
+    lateinit var card: ConstraintLayout
 
-    lateinit var binding: PersonaCardBinding
-    lateinit var defaultBackground: ColorStateList
-
-    fun bind(model: PersonaModel) {
-        binding.name.text = model.persona.name
-        binding.level.text = model.persona.level.toString()
-        binding.arcana.text = model.persona.arcana.name
-        if (model.selected) {
-            binding.persona.setCardBackgroundColor(
-                    ContextCompat.getColor(binding.root.context, R.color.colorPrimaryDark))
-        } else {
-            binding.persona.cardBackgroundColor = defaultBackground
-        }
-        binding.persona.onClick { subject.onNext(model.persona) }
-    }
-
-    override fun bindView(itemView: View?) {
-        binding = PersonaCardBinding.bind(itemView)
-        defaultBackground = binding.persona.cardBackgroundColor
+    override fun bindView(itemView: View) {
+        ButterKnife.bind(this, itemView)
     }
 }

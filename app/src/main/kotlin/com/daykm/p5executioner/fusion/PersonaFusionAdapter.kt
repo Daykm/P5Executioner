@@ -1,4 +1,4 @@
-package com.daykm.p5executioner
+package com.daykm.p5executioner.fusion
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView.*
 import android.view.ViewGroup
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyModelWithView
+import com.daykm.p5executioner.util.Pageable
 import javax.inject.Inject
 
 class PersonaFusionAdapter
@@ -36,8 +37,8 @@ class PersonaFusionAdapter
     }
 }
 
-class PickerModel(val picker: PersonaPickerAdapter,
-                  val pool: RecycledViewPool) : EpoxyModelWithView<RecyclerView>() {
+class PickerModel(val picker: PersonaPickerAdapter, val pool: RecycledViewPool)
+    : EpoxyModelWithView<RecyclerView>() {
 
     override fun bind(view: RecyclerView) {
         view.adapter = picker.adapter

@@ -2,6 +2,7 @@ package com.daykm.p5executioner
 
 import android.app.Application
 import android.content.Context
+import com.daykm.p5executioner.main.PersonaComponent
 import com.squareup.leakcanary.LeakCanary
 import dagger.BindsInstance
 import dagger.Component
