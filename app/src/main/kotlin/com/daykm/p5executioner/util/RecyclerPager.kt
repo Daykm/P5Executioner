@@ -53,7 +53,7 @@ class RecyclerPagerView : RecyclerView {
     }
 }
 
-class RecyclerPagerController(val pageables: Array<Pageable>) : EpoxyController() {
+class RecyclerPagerController(val pageables: Set<Pageable>) : EpoxyController() {
     val pool = RecycledViewPool()
     override fun buildModels() {
         for ((id, pageable) in pageables.withIndex()) {
