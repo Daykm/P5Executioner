@@ -5,19 +5,6 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 
 class SimpleSpanBuilder {
-  private inner class SpanSection(private val text: String, private val startIndex: Int,
-      vararg spans: ParcelableSpan) {
-
-    val spns = arrayOf(spans)
-
-    fun apply(spanStringBuilder: SpannableStringBuilder?) {
-      if (spanStringBuilder == null) return
-      for (span in spns) {
-        spanStringBuilder.setSpan(span, startIndex, startIndex + text.length,
-            Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-      }
-    }
-  }
 
   private val spanSections: MutableList<SpanSection> = ArrayList()
   private val stringBuilder: StringBuilder = StringBuilder()
@@ -40,5 +27,19 @@ class SimpleSpanBuilder {
 
   override fun toString(): String {
     return stringBuilder.toString()
+  }
+}
+
+class SpanSection(private val text: String, private val startIndex: Int,
+    vararg spans: ParcelableSpan) {
+
+  val spns = arrayOf(spans)
+
+  fun apply(spanStringBuilder: SpannableStringBuilder?) {
+    if (spanStringBuilder == null) return
+    for (span in spns) {
+      spanStringBuilder.setSpan(span, startIndex, startIndex + text.length,
+          Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+    }
   }
 }

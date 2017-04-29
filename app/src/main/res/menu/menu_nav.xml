@@ -14,10 +14,10 @@
       android:title="@string/nav_by_persona"
       app:showAsAction="ifRoom"/>
   <item
-      android:id="@+id/nav_third"
+      android:id="@+id/nav_skills"
       android:enabled="true"
       android:icon="@drawable/ic_sentiment_very_satisfied_black_24dp"
-      android:title="@string/nav_third"
+      android:title="@string/nav_skills"
       app:showAsAction="ifRoom"/>
   <item
       android:id="@+id/nav_settings"

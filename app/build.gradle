@@ -57,7 +57,8 @@ ext.ver = [
     snapHelper: '1.1',
     moshi     : '1.4.0',
     epoxy     : '2.0.0',
-    leakCanary: '1.5'
+    leakCanary: '1.5',
+    callig    : '2.2.0'
 
 ]
 
@@ -79,7 +80,8 @@ ext.lib = [
     snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
     //moshi      : "com.squareup.moshi:moshi:$ver.moshi",
     kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
-    epoxy      : "com.airbnb.android:epoxy:$ver.epoxy"
+    epoxy      : "com.airbnb.android:epoxy:$ver.epoxy",
+    //callig     : "uk.co.chrisjenx:calligraphy:$ver.callig"
 
 ]
 

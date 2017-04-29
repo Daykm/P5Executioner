@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView.RecycledViewPool
 import com.daykm.p5executioner.databinding.ActivityPFiveBinding
+import com.daykm.p5executioner.skills.SkillsAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.Subcomponent
@@ -25,7 +26,7 @@ class P5Activity : Activity() {
     val component = App.INSTANCE.component.persona()
 
     pager = RecyclerPagerController(
-        arrayOf(component.fusion(), component.list(), PlaceholderController(),
+        arrayOf(component.fusion(), component.list(), component.skills(),
             PlaceholderController())).apply {
       activityBinding.recyclerPager.adapter = adapter
       requestModelBuild()
@@ -42,12 +43,18 @@ class P5Activity : Activity() {
       when (it.itemId) {
         R.id.nav_fusion -> activityBinding.recyclerPager.smoothScrollToPosition(0)
         R.id.nav_by_persona -> activityBinding.recyclerPager.smoothScrollToPosition(1)
-        R.id.nav_third -> activityBinding.recyclerPager.smoothScrollToPosition(2)
+        R.id.nav_skills -> activityBinding.recyclerPager.smoothScrollToPosition(2)
         R.id.nav_settings -> activityBinding.recyclerPager.smoothScrollToPosition(3)
       }
       true
     }
   }
+
+  /*
+  override fun attachBaseContext(newBase: Context?) {
+    super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
+  }
+  */
 }
 
 @Scope annotation class ActivityScope
@@ -60,4 +67,5 @@ class P5Activity : Activity() {
 @ActivityScope @Subcomponent(modules = arrayOf(PersonaModule::class)) interface PersonaComponent {
   fun fusion(): PersonaFusionAdapter
   fun list(): PersonaListAdapter
+  fun skills(): SkillsAdapter
 }

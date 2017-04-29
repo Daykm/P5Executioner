@@ -27,6 +27,8 @@ class App : Application() {
       Timber.plant(DebugTree())
     }
 
+    //CalligraphyConfig.initDefault(CalligraphyConfig.get())
+
     component = DaggerAppComponent.builder().ctx(this).build()
 
     if (!LeakCanary.isInAnalyzerProcess(this)) {
