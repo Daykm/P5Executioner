@@ -126,6 +126,8 @@ public class Main {
 					.addAllTalks(detail.talks != null ? detail.talks : new ArrayList<String>(0))
 					.setCost(detail.cost != null ? detail.cost : 0)
 					.setName(key)
+					.setEffect(detail.effect)
+					.setElement(Skill.Element.valueOf(detail.element.toUpperCase()))
 					.addPersonaeWhoLearn(builder)
 					.build());
 		}

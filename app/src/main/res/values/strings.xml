@@ -4,6 +4,47 @@
 	<string name="title_activity_p5">P5Activity</string>
   <string name="nav_fusion">Fusion</string>
   <string name="nav_second">Second</string>
-  <string name="nav_third">Third</string>
+  <string name="nav_skills">Skills</string>
   <string name="nav_settings">Settings</string>
+
+  <string-array name="arcana">
+    <item>Fool</item>
+  </string-array>
+
+  <string name="effect_weak">" W k "</string>
+  <string name="effect_repel">" Rpl "</string>
+  <string name="effect_none">"  -  "</string>
+  <string name="effect_strong">" Str "</string>
+  <string name="effect_null">" Nul "</string>
+  <string name="effect_drain">" D r "</string>
+
+  <string name="test_colors">
+    <font fgcolor='#FE9A00'>Rpl </font>
+    <font fgcolor='#FE9A00'>Rpl </font>
+    <font fgcolor='#FE361B'>Rpl </font>
+    <font fgcolor='#00ACFD'>Rpl </font>
+    <font fgcolor='#FAFD31'>Rpl </font>
+    <font fgcolor='#21F32C'>Rpl </font>
+    <font fgcolor='#FC61FB'>Rpl </font>
+    <font fgcolor='#00FAFE'>Rpl </font>
+    <font fgcolor='#FDFC9F'>Rpl </font>
+    <font fgcolor='#FD0034'>Rpl </font>
+  </string>
+
+  <string-array name="persona_stats">
+    <item>St</item>
+    <item>Ma</item>
+    <item>En</item>
+    <item>Ag</item>
+    <item>Lu</item>
+  </string-array>
+
+  <string name="test_stats">St 04 Ma 10 En 04 Ag 08 Lu 08</string>
+  <string name="nav_by_persona">By Persona</string>
+
+  <string name="font_roboto_mono_thin">fonts/RobotoMono-Thin.ttf</string>
+  <string name="font_roboto_mono_bold">fonts/RobotoMono-Bold.ttf</string>
+  <string name="skill_no_cost">-</string>
+  <string name="skill_cost_sp">%d SP</string>
+  <string name="skill_cost_hp">%d%% HP</string>
 </resources>

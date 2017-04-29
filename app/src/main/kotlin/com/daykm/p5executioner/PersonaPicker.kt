@@ -6,7 +6,7 @@ import android.view.View
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.daykm.p5executioner.databinding.PersonaItemBinding
+import com.daykm.p5executioner.databinding.PersonaCardBinding
 import com.daykm.p5executioner.proto.Data
 import com.daykm.p5executioner.proto.Persona
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -72,7 +72,7 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
   }
 
   override fun getDefaultLayout(): Int {
-    return R.layout.persona_item
+    return R.layout.persona_card
   }
 
   override fun bind(holder: PersonaHolder) {
@@ -86,7 +86,7 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
 
 class PersonaHolder(val subject: BehaviorSubject<Persona>) : EpoxyHolder() {
 
-  lateinit var binding: PersonaItemBinding
+  lateinit var binding: PersonaCardBinding
   lateinit var defaultBackground: ColorStateList
 
   fun bind(model: PersonaModel) {
@@ -103,7 +103,7 @@ class PersonaHolder(val subject: BehaviorSubject<Persona>) : EpoxyHolder() {
   }
 
   override fun bindView(itemView: View?) {
-    binding = PersonaItemBinding.bind(itemView)
+    binding = PersonaCardBinding.bind(itemView)
     defaultBackground = binding.persona.cardBackgroundColor
   }
 }

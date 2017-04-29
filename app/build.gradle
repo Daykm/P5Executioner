@@ -1,14 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.2"
+  compileSdkVersion buildConfig.compileSdkVer
+  buildToolsVersion buildConfig.buildToolsVer
   defaultConfig {
     applicationId "com.daykm.p5executioner"
-    minSdkVersion 16
-    targetSdkVersion 25
+    minSdkVersion buildConfig.minSdkVer
+    targetSdkVersion buildConfig.targetSdkVer
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -58,7 +57,8 @@ ext.ver = [
     snapHelper: '1.1',
     moshi     : '1.4.0',
     epoxy     : '2.0.0',
-    leakCanary: '1.5'
+    leakCanary: '1.5',
+    callig    : '2.2.0'
 
 ]
 
@@ -80,7 +80,8 @@ ext.lib = [
     snapHelper : "com.github.rubensousa:gravitysnaphelper:$ver.snapHelper",
     //moshi      : "com.squareup.moshi:moshi:$ver.moshi",
     kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
-    epoxy      : "com.airbnb.android:epoxy:$ver.epoxy"
+    epoxy      : "com.airbnb.android:epoxy:$ver.epoxy",
+    //callig     : "uk.co.chrisjenx:calligraphy:$ver.callig"
 
 ]
 
