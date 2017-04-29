@@ -6,8 +6,9 @@ package com.daykm.p5executioner.proto;
 /**
  * Protobuf type {@code p5.SpecialCombo}
  */
-public final class SpecialCombo
-		extends com.google.protobuf.GeneratedMessageLite<SpecialCombo, SpecialCombo.Builder> implements
+public final class SpecialCombo extends
+		com.google.protobuf.GeneratedMessageLite<
+				SpecialCombo, SpecialCombo.Builder> implements
 		// @@protoc_insertion_point(message_implements:p5.SpecialCombo)
 		SpecialComboOrBuilder {
 	private SpecialCombo() {
@@ -16,7 +17,7 @@ public final class SpecialCombo
 	}
 
 	private int bitField0_;
-  public static final int RESULT_FIELD_NUMBER = 1;
+	public static final int RESULT_FIELD_NUMBER = 1;
   private java.lang.String result_;
   /**
    * <code>string result = 1;</code>
@@ -181,58 +182,72 @@ public final class SpecialCombo
 	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(
 			com.google.protobuf.ByteString data)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data);
 	}
 
 	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(
 			com.google.protobuf.ByteString data,
 			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data, extensionRegistry);
-  }
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data, extensionRegistry);
+	}
 
 	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(byte[] data)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data);
 	}
 
-	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(byte[] data,
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(
+			byte[] data,
 			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data, extensionRegistry);
-  }
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data, extensionRegistry);
+	}
 
 	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(java.io.InputStream input)
 			throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input);
 	}
 
-	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(java.io.InputStream input,
-			com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-  }
+	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(
+			java.io.InputStream input,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input, extensionRegistry);
+	}
 
-	public static com.daykm.p5executioner.proto.SpecialCombo parseDelimitedFrom(
-			java.io.InputStream input) throws java.io.IOException {
+	public static com.daykm.p5executioner.proto.SpecialCombo parseDelimitedFrom(java.io.InputStream input)
+			throws java.io.IOException {
 		return parseDelimitedFrom(DEFAULT_INSTANCE, input);
 	}
 
 	public static com.daykm.p5executioner.proto.SpecialCombo parseDelimitedFrom(
-			java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			java.io.InputStream input,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 			throws java.io.IOException {
 		return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
 	}
 
 	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(
-			com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+			com.google.protobuf.CodedInputStream input)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input);
 	}
 
 	public static com.daykm.p5executioner.proto.SpecialCombo parseFrom(
 			com.google.protobuf.CodedInputStream input,
-			com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-  }
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input, extensionRegistry);
+	}
 
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -246,8 +261,8 @@ public final class SpecialCombo
 	 * Protobuf type {@code p5.SpecialCombo}
 	 */
 	public static final class Builder extends
-			com.google.protobuf.GeneratedMessageLite.Builder<com.daykm.p5executioner.proto.SpecialCombo, Builder>
-			implements
+			com.google.protobuf.GeneratedMessageLite.Builder<
+					com.daykm.p5executioner.proto.SpecialCombo, Builder> implements
 			// @@protoc_insertion_point(builder_implements:p5.SpecialCombo)
 			com.daykm.p5executioner.proto.SpecialComboOrBuilder {
 		// Construct using com.daykm.p5executioner.proto.SpecialCombo.newBuilder()
@@ -372,9 +387,10 @@ public final class SpecialCombo
 	}
 
 	protected final Object dynamicMethod(
-			com.google.protobuf.GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
+			com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+			Object arg0, Object arg1) {
 		switch (method) {
-      case NEW_MUTABLE_INSTANCE: {
+			case NEW_MUTABLE_INSTANCE: {
 				return new com.daykm.p5executioner.proto.SpecialCombo();
 			}
 			case IS_INITIALIZED: {
@@ -382,20 +398,20 @@ public final class SpecialCombo
 			}
 			case MAKE_IMMUTABLE: {
 				sources_.makeImmutable();
-        return null;
+				return null;
       }
       case NEW_BUILDER: {
         return new Builder();
       }
       case VISIT: {
         Visitor visitor = (Visitor) arg0;
-				com.daykm.p5executioner.proto.SpecialCombo other =
-						(com.daykm.p5executioner.proto.SpecialCombo) arg1;
-				result_ = visitor.visitString(!result_.isEmpty(), result_, !other.result_.isEmpty(),
-						other.result_);
+				com.daykm.p5executioner.proto.SpecialCombo other = (com.daykm.p5executioner.proto.SpecialCombo) arg1;
+				result_ = visitor.visitString(!result_.isEmpty(), result_,
+						!other.result_.isEmpty(), other.result_);
 				sources_ = visitor.visitList(sources_, other.sources_);
-				if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor.INSTANCE) {
-          bitField0_ |= other.bitField0_;
+				if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+						.INSTANCE) {
+					bitField0_ |= other.bitField0_;
         }
         return this;
       }
@@ -455,11 +471,12 @@ public final class SpecialCombo
 						}
 					}
 				}
-        return PARSER;
+				return PARSER;
       }
     }
     throw new UnsupportedOperationException();
   }
+
 
 	// @@protoc_insertion_point(class_scope:p5.SpecialCombo)
 	private static final com.daykm.p5executioner.proto.SpecialCombo DEFAULT_INSTANCE;

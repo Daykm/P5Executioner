@@ -4,5 +4,5 @@ import java.util.List;
 import java.util.Map;
 
 public class RareCombo {
-	public Map<String, List<Integer>> combos;
+    public Map<String, List<Integer>> combos;
 }

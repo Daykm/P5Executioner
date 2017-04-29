@@ -10,7 +10,8 @@ public interface DLCPersonaOrBuilder extends
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
 	 */
-	java.util.List<String> getPersonaeInSeriesList();
+	java.util.List<String>
+	getPersonaeInSeriesList();
 
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
@@ -25,5 +26,6 @@ public interface DLCPersonaOrBuilder extends
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
 	 */
-	com.google.protobuf.ByteString getPersonaeInSeriesBytes(int index);
+	com.google.protobuf.ByteString
+	getPersonaeInSeriesBytes(int index);
 }

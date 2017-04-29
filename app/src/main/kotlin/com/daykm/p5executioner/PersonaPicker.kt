@@ -19,91 +19,91 @@ import javax.inject.Inject
 
 class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : EpoxyController() {
 
-  val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
-  var personas: List<Persona>? = null
-  var personaModels: MutableList<PersonaModel>? = null
+    val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
+    var personas: List<Persona>? = null
+    var personaModels: MutableList<PersonaModel>? = null
 
-  override fun buildModels() {
-    Timber.i("Building model")
-    personaModels?.forEach { it.destroy() }
-    personaModels?.clear()
-    personas?.forEach { persona ->
-      run {
-        val model = PersonaModel(persona, selectedPersona)
-        personaModels?.add(model)
-        model.addTo(this)
-      }
+    override fun buildModels() {
+        Timber.i("Building model")
+        personaModels?.forEach { it.destroy() }
+        personaModels?.clear()
+        personas?.forEach { persona ->
+            run {
+                val model = PersonaModel(persona, selectedPersona)
+                personaModels?.add(model)
+                model.addTo(this)
+            }
+        }
     }
-  }
 
-  init {
-    setFilterDuplicates(true)
-    selectedPersona.subscribe { requestModelBuild() }
-  }
-
-  override fun onExceptionSwallowed(exception: RuntimeException?) {
-    Timber.e(exception)
-  }
-
-  fun bind() {
-    repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribe { data: Data ->
-      run {
-        personas = data.personasList
-        requestModelBuild()
-      }
+    init {
+        setFilterDuplicates(true)
+        selectedPersona.subscribe { requestModelBuild() }
     }
-  }
+
+    override fun onExceptionSwallowed(exception: RuntimeException?) {
+        Timber.e(exception)
+    }
+
+    fun bind() {
+        repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribe { data: Data ->
+            run {
+                personas = data.personasList
+                requestModelBuild()
+            }
+        }
+    }
 }
 
 data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Persona>)
-  : EpoxyModelWithHolder<PersonaHolder>() {
+    : EpoxyModelWithHolder<PersonaHolder>() {
 
-  var selected = false
+    var selected = false
 
-  val disposable = CompositeDisposable()
+    val disposable = CompositeDisposable()
 
-  init {
-    disposable.add(subject.subscribe { selected = it == persona })
-    id(persona.name + persona.arcana + selected.toString())
-  }
+    init {
+        disposable.add(subject.subscribe { selected = it == persona })
+        id(persona.name + persona.arcana + selected.toString())
+    }
 
-  override fun createNewHolder(): PersonaHolder {
-    return PersonaHolder(subject)
-  }
+    override fun createNewHolder(): PersonaHolder {
+        return PersonaHolder(subject)
+    }
 
-  override fun getDefaultLayout(): Int {
-    return R.layout.persona_card
-  }
+    override fun getDefaultLayout(): Int {
+        return R.layout.persona_card
+    }
 
-  override fun bind(holder: PersonaHolder) {
-    holder.bind(this)
-  }
+    override fun bind(holder: PersonaHolder) {
+        holder.bind(this)
+    }
 
-  fun destroy() {
-    disposable.dispose()
-  }
+    fun destroy() {
+        disposable.dispose()
+    }
 }
 
 class PersonaHolder(val subject: BehaviorSubject<Persona>) : EpoxyHolder() {
 
-  lateinit var binding: PersonaCardBinding
-  lateinit var defaultBackground: ColorStateList
+    lateinit var binding: PersonaCardBinding
+    lateinit var defaultBackground: ColorStateList
 
-  fun bind(model: PersonaModel) {
-    binding.name.text = model.persona.name
-    binding.level.text = model.persona.level.toString()
-    binding.arcana.text = model.persona.arcana.name
-    if (model.selected) {
-      binding.persona.setCardBackgroundColor(
-          ContextCompat.getColor(binding.root.context, R.color.colorPrimaryDark))
-    } else {
-      binding.persona.cardBackgroundColor = defaultBackground
+    fun bind(model: PersonaModel) {
+        binding.name.text = model.persona.name
+        binding.level.text = model.persona.level.toString()
+        binding.arcana.text = model.persona.arcana.name
+        if (model.selected) {
+            binding.persona.setCardBackgroundColor(
+                    ContextCompat.getColor(binding.root.context, R.color.colorPrimaryDark))
+        } else {
+            binding.persona.cardBackgroundColor = defaultBackground
+        }
+        binding.persona.onClick { subject.onNext(model.persona) }
     }
-    binding.persona.onClick { subject.onNext(model.persona) }
-  }
 
-  override fun bindView(itemView: View?) {
-    binding = PersonaCardBinding.bind(itemView)
-    defaultBackground = binding.persona.cardBackgroundColor
-  }
+    override fun bindView(itemView: View?) {
+        binding = PersonaCardBinding.bind(itemView)
+        defaultBackground = binding.persona.cardBackgroundColor
+    }
 }

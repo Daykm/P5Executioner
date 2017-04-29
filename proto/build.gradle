@@ -3,44 +3,44 @@ apply plugin: 'idea'
 apply plugin: 'com.google.protobuf'
 
 protobuf {
-  // Configure the protoc executable
-  protoc {
-    // Download from repositories
-    artifact = 'com.google.protobuf:protoc:3.2.0'
-  }
-  generatedFilesBaseDir = "$projectDir/gen"
+    // Configure the protoc executable
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.2.0'
+    }
+    generatedFilesBaseDir = "$projectDir/gen"
 }
 
 clean {
-  delete protobuf.generatedFilesBaseDir
+    delete protobuf.generatedFilesBaseDir
 }
 
 idea {
-  module {
-    sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/java");
-    // If you have additional sourceSets and/or codegen plugins, add all of them
-    sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/grpc");
-  }
+    module {
+        sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/java");
+        // If you have additional sourceSets and/or codegen plugins, add all of them
+        sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/grpc");
+    }
 }
 
 sourceSets {
-  main {
-    proto {
-      // In addition to the default 'src/main/proto'
-      srcDir 'src/main/protobuf'
-      srcDir 'src/main/protocolbuffers'
-      // In addition to the default '**/*.proto' (use with caution).
-      // Using an extension other than 'proto' is NOT recommended,
-      // because when proto files are published along with class files, we can
-      // only tell the type of a file from its extension.
-      include '**/*.protodevel'
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir 'src/main/protobuf'
+            srcDir 'src/main/protocolbuffers'
+            // In addition to the default '**/*.proto' (use with caution).
+            // Using an extension other than 'proto' is NOT recommended,
+            // because when proto files are published along with class files, we can
+            // only tell the type of a file from its extension.
+            include '**/*.protodevel'
+        }
     }
-  }
 }
 
 dependencies {
 
-  compile 'com.google.protobuf:protobuf-lite:3.0.0'
+    compile 'com.google.protobuf:protobuf-lite:3.0.0'
 }
 
 

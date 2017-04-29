@@ -13,30 +13,30 @@ import javax.inject.Inject
 
 
 class SkillsAdapter @Inject constructor(val repo: DataRepo,
-    val ctx: Context) : EpoxyController(), Pageable {
+                                        val ctx: Context) : EpoxyController(), Pageable {
 
-  lateinit var skills: List<Skill>
+    lateinit var skills: List<Skill>
 
-  override fun buildModels() {
-    skills.forEach {
-      SkillItemModel(it, ctx).id(it.name).addTo(this)
+    override fun buildModels() {
+        skills.forEach {
+            SkillItemModel(it, ctx).id(it.name).addTo(this)
+        }
     }
-  }
 
-  override fun manager(ctx: Context): LayoutManager {
-    val manager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
-    manager.recycleChildrenOnDetach = true
-    return manager
-  }
+    override fun manager(ctx: Context): LayoutManager {
+        val manager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
+        manager.recycleChildrenOnDetach = true
+        return manager
+    }
 
-  override fun attach() {
-    repo.DATA.subscribe(Consumer {
-      skills = it.skillsList
-      requestModelBuild()
-    })
-  }
+    override fun attach() {
+        repo.DATA.subscribe(Consumer {
+            skills = it.skillsList
+            requestModelBuild()
+        })
+    }
 
-  override fun adapter(): Adapter<*> {
-    return adapter
-  }
+    override fun adapter(): Adapter<*> {
+        return adapter
+    }
 }

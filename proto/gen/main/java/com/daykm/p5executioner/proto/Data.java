@@ -6,10 +6,11 @@ package com.daykm.p5executioner.proto;
 /**
  * Protobuf type {@code p5.Data}
  */
-public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, Data.Builder>
-		implements
+public final class Data extends
+		com.google.protobuf.GeneratedMessageLite<
+				Data, Data.Builder> implements
 		// @@protoc_insertion_point(message_implements:p5.Data)
-    DataOrBuilder {
+		DataOrBuilder {
   private Data() {
     specialCombos_ = emptyProtobufList();
     skills_ = emptyProtobufList();
@@ -19,11 +20,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     dlcPersonae_ = emptyProtobufList();
   }
   public static final int SPECIALCOMBOS_FIELD_NUMBER = 1;
-	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.SpecialCombo>
-			specialCombos_;
+	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.SpecialCombo> specialCombos_;
 
 	/**
-   * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
+	 * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
   public java.util.List<com.daykm.p5executioner.proto.SpecialCombo> getSpecialCombosList() {
     return specialCombos_;
@@ -31,9 +31,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
-	public java.util.List<? extends com.daykm.p5executioner.proto.SpecialComboOrBuilder> getSpecialCombosOrBuilderList() {
+	public java.util.List<? extends com.daykm.p5executioner.proto.SpecialComboOrBuilder>
+	getSpecialCombosOrBuilderList() {
 		return specialCombos_;
-  }
+	}
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
@@ -49,21 +50,24 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
-	public com.daykm.p5executioner.proto.SpecialComboOrBuilder getSpecialCombosOrBuilder(int index) {
+	public com.daykm.p5executioner.proto.SpecialComboOrBuilder getSpecialCombosOrBuilder(
+			int index) {
 		return specialCombos_.get(index);
-  }
+	}
   private void ensureSpecialCombosIsMutable() {
     if (!specialCombos_.isModifiable()) {
-			specialCombos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(specialCombos_);
+			specialCombos_ =
+					com.google.protobuf.GeneratedMessageLite.mutableCopy(specialCombos_);
 		}
 	}
 
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
-	private void setSpecialCombos(int index, com.daykm.p5executioner.proto.SpecialCombo value) {
+	private void setSpecialCombos(
+			int index, com.daykm.p5executioner.proto.SpecialCombo value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureSpecialCombosIsMutable();
     specialCombos_.set(index, value);
@@ -71,10 +75,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
-	private void setSpecialCombos(int index,
-			com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
+	private void setSpecialCombos(
+			int index, com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
 		ensureSpecialCombosIsMutable();
-    specialCombos_.set(index, builderForValue.build());
+		specialCombos_.set(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
@@ -89,9 +93,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
-	private void addSpecialCombos(int index, com.daykm.p5executioner.proto.SpecialCombo value) {
+	private void addSpecialCombos(
+			int index, com.daykm.p5executioner.proto.SpecialCombo value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureSpecialCombosIsMutable();
     specialCombos_.add(index, value);
@@ -107,10 +112,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
-	private void addSpecialCombos(int index,
-			com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
+	private void addSpecialCombos(
+			int index, com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
 		ensureSpecialCombosIsMutable();
-    specialCombos_.add(index, builderForValue.build());
+		specialCombos_.add(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
@@ -118,9 +123,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   private void addAllSpecialCombos(
       java.lang.Iterable<? extends com.daykm.p5executioner.proto.SpecialCombo> values) {
     ensureSpecialCombosIsMutable();
-		com.google.protobuf.AbstractMessageLite.addAll(values, specialCombos_);
+		com.google.protobuf.AbstractMessageLite.addAll(
+				values, specialCombos_);
 	}
-  /**
+
+	/**
    * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
    */
   private void clearSpecialCombos() {
@@ -145,9 +152,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
-	public java.util.List<? extends com.daykm.p5executioner.proto.SkillOrBuilder> getSkillsOrBuilderList() {
+	public java.util.List<? extends com.daykm.p5executioner.proto.SkillOrBuilder>
+	getSkillsOrBuilderList() {
 		return skills_;
-  }
+	}
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
@@ -163,21 +171,24 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
-	public com.daykm.p5executioner.proto.SkillOrBuilder getSkillsOrBuilder(int index) {
+	public com.daykm.p5executioner.proto.SkillOrBuilder getSkillsOrBuilder(
+			int index) {
 		return skills_.get(index);
-  }
+	}
   private void ensureSkillsIsMutable() {
     if (!skills_.isModifiable()) {
-			skills_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(skills_);
+			skills_ =
+					com.google.protobuf.GeneratedMessageLite.mutableCopy(skills_);
 		}
 	}
 
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
-	private void setSkills(int index, com.daykm.p5executioner.proto.Skill value) {
+	private void setSkills(
+			int index, com.daykm.p5executioner.proto.Skill value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureSkillsIsMutable();
     skills_.set(index, value);
@@ -185,9 +196,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
-	private void setSkills(int index, com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
+	private void setSkills(
+			int index, com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
 		ensureSkillsIsMutable();
-    skills_.set(index, builderForValue.build());
+		skills_.set(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
@@ -202,9 +214,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
-	private void addSkills(int index, com.daykm.p5executioner.proto.Skill value) {
+	private void addSkills(
+			int index, com.daykm.p5executioner.proto.Skill value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureSkillsIsMutable();
     skills_.add(index, value);
@@ -212,16 +225,18 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
-	private void addSkills(com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
+	private void addSkills(
+			com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
 		ensureSkillsIsMutable();
-    skills_.add(builderForValue.build());
+		skills_.add(builderForValue.build());
   }
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
-	private void addSkills(int index, com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
+	private void addSkills(
+			int index, com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
 		ensureSkillsIsMutable();
-    skills_.add(index, builderForValue.build());
+		skills_.add(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.Skill skills = 2;</code>
@@ -229,9 +244,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   private void addAllSkills(
       java.lang.Iterable<? extends com.daykm.p5executioner.proto.Skill> values) {
     ensureSkillsIsMutable();
-		com.google.protobuf.AbstractMessageLite.addAll(values, skills_);
+		com.google.protobuf.AbstractMessageLite.addAll(
+				values, skills_);
 	}
-  /**
+
+	/**
    * <code>repeated .p5.Skill skills = 2;</code>
    */
   private void clearSkills() {
@@ -246,11 +263,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   }
 
   public static final int ARCANACOMBOS_FIELD_NUMBER = 3;
-	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.ArcanaCombo>
-			arcanaCombos_;
+	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.ArcanaCombo> arcanaCombos_;
 
 	/**
-   * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
+	 * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
   public java.util.List<com.daykm.p5executioner.proto.ArcanaCombo> getArcanaCombosList() {
     return arcanaCombos_;
@@ -258,9 +274,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
-	public java.util.List<? extends com.daykm.p5executioner.proto.ArcanaComboOrBuilder> getArcanaCombosOrBuilderList() {
+	public java.util.List<? extends com.daykm.p5executioner.proto.ArcanaComboOrBuilder>
+	getArcanaCombosOrBuilderList() {
 		return arcanaCombos_;
-  }
+	}
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
@@ -276,21 +293,24 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
-	public com.daykm.p5executioner.proto.ArcanaComboOrBuilder getArcanaCombosOrBuilder(int index) {
+	public com.daykm.p5executioner.proto.ArcanaComboOrBuilder getArcanaCombosOrBuilder(
+			int index) {
 		return arcanaCombos_.get(index);
-  }
+	}
   private void ensureArcanaCombosIsMutable() {
     if (!arcanaCombos_.isModifiable()) {
-			arcanaCombos_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(arcanaCombos_);
+			arcanaCombos_ =
+					com.google.protobuf.GeneratedMessageLite.mutableCopy(arcanaCombos_);
 		}
 	}
 
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
-	private void setArcanaCombos(int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
+	private void setArcanaCombos(
+			int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureArcanaCombosIsMutable();
     arcanaCombos_.set(index, value);
@@ -298,10 +318,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
-	private void setArcanaCombos(int index,
-			com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
+	private void setArcanaCombos(
+			int index, com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
 		ensureArcanaCombosIsMutable();
-    arcanaCombos_.set(index, builderForValue.build());
+		arcanaCombos_.set(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
@@ -316,9 +336,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
-	private void addArcanaCombos(int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
+	private void addArcanaCombos(
+			int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureArcanaCombosIsMutable();
     arcanaCombos_.add(index, value);
@@ -326,17 +347,18 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
-	private void addArcanaCombos(com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
+	private void addArcanaCombos(
+			com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
 		ensureArcanaCombosIsMutable();
-    arcanaCombos_.add(builderForValue.build());
+		arcanaCombos_.add(builderForValue.build());
   }
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
-	private void addArcanaCombos(int index,
-			com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
+	private void addArcanaCombos(
+			int index, com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
 		ensureArcanaCombosIsMutable();
-    arcanaCombos_.add(index, builderForValue.build());
+		arcanaCombos_.add(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
@@ -344,9 +366,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   private void addAllArcanaCombos(
       java.lang.Iterable<? extends com.daykm.p5executioner.proto.ArcanaCombo> values) {
     ensureArcanaCombosIsMutable();
-		com.google.protobuf.AbstractMessageLite.addAll(values, arcanaCombos_);
+		com.google.protobuf.AbstractMessageLite.addAll(
+				values, arcanaCombos_);
 	}
-  /**
+
+	/**
    * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
    */
   private void clearArcanaCombos() {
@@ -361,11 +385,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   }
 
   public static final int PERSONAS_FIELD_NUMBER = 4;
-	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.Persona>
-			personas_;
+	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.Persona> personas_;
 
 	/**
-   * <code>repeated .p5.Persona personas = 4;</code>
+	 * <code>repeated .p5.Persona personas = 4;</code>
    */
   public java.util.List<com.daykm.p5executioner.proto.Persona> getPersonasList() {
     return personas_;
@@ -373,9 +396,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
-	public java.util.List<? extends com.daykm.p5executioner.proto.PersonaOrBuilder> getPersonasOrBuilderList() {
+	public java.util.List<? extends com.daykm.p5executioner.proto.PersonaOrBuilder>
+	getPersonasOrBuilderList() {
 		return personas_;
-  }
+	}
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
@@ -391,21 +415,24 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
-	public com.daykm.p5executioner.proto.PersonaOrBuilder getPersonasOrBuilder(int index) {
+	public com.daykm.p5executioner.proto.PersonaOrBuilder getPersonasOrBuilder(
+			int index) {
 		return personas_.get(index);
-  }
+	}
   private void ensurePersonasIsMutable() {
     if (!personas_.isModifiable()) {
-			personas_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(personas_);
+			personas_ =
+					com.google.protobuf.GeneratedMessageLite.mutableCopy(personas_);
 		}
 	}
 
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
-	private void setPersonas(int index, com.daykm.p5executioner.proto.Persona value) {
+	private void setPersonas(
+			int index, com.daykm.p5executioner.proto.Persona value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensurePersonasIsMutable();
     personas_.set(index, value);
@@ -413,10 +440,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
-	private void setPersonas(int index,
-			com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
+	private void setPersonas(
+			int index, com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
 		ensurePersonasIsMutable();
-    personas_.set(index, builderForValue.build());
+		personas_.set(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
@@ -431,9 +458,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
-	private void addPersonas(int index, com.daykm.p5executioner.proto.Persona value) {
+	private void addPersonas(
+			int index, com.daykm.p5executioner.proto.Persona value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensurePersonasIsMutable();
     personas_.add(index, value);
@@ -441,17 +469,18 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
-	private void addPersonas(com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
+	private void addPersonas(
+			com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
 		ensurePersonasIsMutable();
-    personas_.add(builderForValue.build());
+		personas_.add(builderForValue.build());
   }
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
-	private void addPersonas(int index,
-			com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
+	private void addPersonas(
+			int index, com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
 		ensurePersonasIsMutable();
-    personas_.add(index, builderForValue.build());
+		personas_.add(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.Persona personas = 4;</code>
@@ -459,9 +488,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   private void addAllPersonas(
       java.lang.Iterable<? extends com.daykm.p5executioner.proto.Persona> values) {
     ensurePersonasIsMutable();
-		com.google.protobuf.AbstractMessageLite.addAll(values, personas_);
+		com.google.protobuf.AbstractMessageLite.addAll(
+				values, personas_);
 	}
-  /**
+
+	/**
    * <code>repeated .p5.Persona personas = 4;</code>
    */
   private void clearPersonas() {
@@ -476,11 +507,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   }
 
   public static final int RAREMODIFIERS_FIELD_NUMBER = 5;
-	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.RareComboModifier>
-			rareModifiers_;
+	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.RareComboModifier> rareModifiers_;
 
 	/**
-   * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
+	 * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
   public java.util.List<com.daykm.p5executioner.proto.RareComboModifier> getRareModifiersList() {
     return rareModifiers_;
@@ -488,9 +518,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
-	public java.util.List<? extends com.daykm.p5executioner.proto.RareComboModifierOrBuilder> getRareModifiersOrBuilderList() {
+	public java.util.List<? extends com.daykm.p5executioner.proto.RareComboModifierOrBuilder>
+	getRareModifiersOrBuilderList() {
 		return rareModifiers_;
-  }
+	}
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
@@ -512,16 +543,18 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   }
   private void ensureRareModifiersIsMutable() {
     if (!rareModifiers_.isModifiable()) {
-			rareModifiers_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(rareModifiers_);
+			rareModifiers_ =
+					com.google.protobuf.GeneratedMessageLite.mutableCopy(rareModifiers_);
 		}
 	}
 
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
-	private void setRareModifiers(int index, com.daykm.p5executioner.proto.RareComboModifier value) {
+	private void setRareModifiers(
+			int index, com.daykm.p5executioner.proto.RareComboModifier value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureRareModifiersIsMutable();
     rareModifiers_.set(index, value);
@@ -529,10 +562,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
-	private void setRareModifiers(int index,
-			com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
+	private void setRareModifiers(
+			int index, com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
 		ensureRareModifiersIsMutable();
-    rareModifiers_.set(index, builderForValue.build());
+		rareModifiers_.set(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
@@ -547,9 +580,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
-	private void addRareModifiers(int index, com.daykm.p5executioner.proto.RareComboModifier value) {
+	private void addRareModifiers(
+			int index, com.daykm.p5executioner.proto.RareComboModifier value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureRareModifiersIsMutable();
     rareModifiers_.add(index, value);
@@ -565,10 +599,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
-	private void addRareModifiers(int index,
-			com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
+	private void addRareModifiers(
+			int index, com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
 		ensureRareModifiersIsMutable();
-    rareModifiers_.add(index, builderForValue.build());
+		rareModifiers_.add(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
@@ -576,9 +610,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   private void addAllRareModifiers(
       java.lang.Iterable<? extends com.daykm.p5executioner.proto.RareComboModifier> values) {
     ensureRareModifiersIsMutable();
-		com.google.protobuf.AbstractMessageLite.addAll(values, rareModifiers_);
+		com.google.protobuf.AbstractMessageLite.addAll(
+				values, rareModifiers_);
 	}
-  /**
+
+	/**
    * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
    */
   private void clearRareModifiers() {
@@ -593,11 +629,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   }
 
   public static final int DLCPERSONAE_FIELD_NUMBER = 6;
-	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.DLCPersona>
-			dlcPersonae_;
+	private com.google.protobuf.Internal.ProtobufList<com.daykm.p5executioner.proto.DLCPersona> dlcPersonae_;
 
 	/**
-   * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
+	 * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
   public java.util.List<com.daykm.p5executioner.proto.DLCPersona> getDlcPersonaeList() {
     return dlcPersonae_;
@@ -605,9 +640,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
-	public java.util.List<? extends com.daykm.p5executioner.proto.DLCPersonaOrBuilder> getDlcPersonaeOrBuilderList() {
+	public java.util.List<? extends com.daykm.p5executioner.proto.DLCPersonaOrBuilder>
+	getDlcPersonaeOrBuilderList() {
 		return dlcPersonae_;
-  }
+	}
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
@@ -623,21 +659,24 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
-	public com.daykm.p5executioner.proto.DLCPersonaOrBuilder getDlcPersonaeOrBuilder(int index) {
+	public com.daykm.p5executioner.proto.DLCPersonaOrBuilder getDlcPersonaeOrBuilder(
+			int index) {
 		return dlcPersonae_.get(index);
-  }
+	}
   private void ensureDlcPersonaeIsMutable() {
     if (!dlcPersonae_.isModifiable()) {
-			dlcPersonae_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(dlcPersonae_);
+			dlcPersonae_ =
+					com.google.protobuf.GeneratedMessageLite.mutableCopy(dlcPersonae_);
 		}
 	}
 
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
-	private void setDlcPersonae(int index, com.daykm.p5executioner.proto.DLCPersona value) {
+	private void setDlcPersonae(
+			int index, com.daykm.p5executioner.proto.DLCPersona value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureDlcPersonaeIsMutable();
     dlcPersonae_.set(index, value);
@@ -645,10 +684,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
-	private void setDlcPersonae(int index,
-			com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
+	private void setDlcPersonae(
+			int index, com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
 		ensureDlcPersonaeIsMutable();
-    dlcPersonae_.set(index, builderForValue.build());
+		dlcPersonae_.set(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
@@ -663,9 +702,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
-	private void addDlcPersonae(int index, com.daykm.p5executioner.proto.DLCPersona value) {
+	private void addDlcPersonae(
+			int index, com.daykm.p5executioner.proto.DLCPersona value) {
 		if (value == null) {
-      throw new NullPointerException();
+			throw new NullPointerException();
     }
     ensureDlcPersonaeIsMutable();
     dlcPersonae_.add(index, value);
@@ -673,17 +713,18 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
-	private void addDlcPersonae(com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
+	private void addDlcPersonae(
+			com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
 		ensureDlcPersonaeIsMutable();
-    dlcPersonae_.add(builderForValue.build());
+		dlcPersonae_.add(builderForValue.build());
   }
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
-	private void addDlcPersonae(int index,
-			com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
+	private void addDlcPersonae(
+			int index, com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
 		ensureDlcPersonaeIsMutable();
-    dlcPersonae_.add(index, builderForValue.build());
+		dlcPersonae_.add(index, builderForValue.build());
   }
   /**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
@@ -691,9 +732,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
   private void addAllDlcPersonae(
       java.lang.Iterable<? extends com.daykm.p5executioner.proto.DLCPersona> values) {
     ensureDlcPersonaeIsMutable();
-		com.google.protobuf.AbstractMessageLite.addAll(values, dlcPersonae_);
+		com.google.protobuf.AbstractMessageLite.addAll(
+				values, dlcPersonae_);
 	}
-  /**
+
+	/**
    * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
    */
   private void clearDlcPersonae() {
@@ -707,9 +750,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     dlcPersonae_.remove(index);
   }
 
-	public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+	public void writeTo(com.google.protobuf.CodedOutputStream output)
+			throws java.io.IOException {
 		for (int i = 0; i < specialCombos_.size(); i++) {
-      output.writeMessage(1, specialCombos_.get(i));
+			output.writeMessage(1, specialCombos_.get(i));
     }
     for (int i = 0; i < skills_.size(); i++) {
       output.writeMessage(2, skills_.get(i));
@@ -734,76 +778,100 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 
     size = 0;
     for (int i = 0; i < specialCombos_.size(); i++) {
-			size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, specialCombos_.get(i));
+			size += com.google.protobuf.CodedOutputStream
+					.computeMessageSize(1, specialCombos_.get(i));
 		}
-    for (int i = 0; i < skills_.size(); i++) {
-			size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, skills_.get(i));
+		for (int i = 0; i < skills_.size(); i++) {
+			size += com.google.protobuf.CodedOutputStream
+					.computeMessageSize(2, skills_.get(i));
 		}
-    for (int i = 0; i < arcanaCombos_.size(); i++) {
-			size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, arcanaCombos_.get(i));
+		for (int i = 0; i < arcanaCombos_.size(); i++) {
+			size += com.google.protobuf.CodedOutputStream
+					.computeMessageSize(3, arcanaCombos_.get(i));
 		}
-    for (int i = 0; i < personas_.size(); i++) {
-			size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, personas_.get(i));
+		for (int i = 0; i < personas_.size(); i++) {
+			size += com.google.protobuf.CodedOutputStream
+					.computeMessageSize(4, personas_.get(i));
 		}
-    for (int i = 0; i < rareModifiers_.size(); i++) {
-			size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, rareModifiers_.get(i));
+		for (int i = 0; i < rareModifiers_.size(); i++) {
+			size += com.google.protobuf.CodedOutputStream
+					.computeMessageSize(5, rareModifiers_.get(i));
 		}
-    for (int i = 0; i < dlcPersonae_.size(); i++) {
-			size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, dlcPersonae_.get(i));
+		for (int i = 0; i < dlcPersonae_.size(); i++) {
+			size += com.google.protobuf.CodedOutputStream
+					.computeMessageSize(6, dlcPersonae_.get(i));
 		}
-    memoizedSerializedSize = size;
+		memoizedSerializedSize = size;
     return size;
   }
 
-	public static com.daykm.p5executioner.proto.Data parseFrom(com.google.protobuf.ByteString data)
+	public static com.daykm.p5executioner.proto.Data parseFrom(
+			com.google.protobuf.ByteString data)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data);
 	}
 
-	public static com.daykm.p5executioner.proto.Data parseFrom(com.google.protobuf.ByteString data,
+	public static com.daykm.p5executioner.proto.Data parseFrom(
+			com.google.protobuf.ByteString data,
 			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-				extensionRegistry);
-	}
-  public static com.daykm.p5executioner.proto.Data parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+			throws com.google.protobuf.InvalidProtocolBufferException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data, extensionRegistry);
 	}
 
-	public static com.daykm.p5executioner.proto.Data parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+	public static com.daykm.p5executioner.proto.Data parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-				extensionRegistry);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data);
 	}
-  public static com.daykm.p5executioner.proto.Data parseFrom(java.io.InputStream input)
+
+	public static com.daykm.p5executioner.proto.Data parseFrom(
+			byte[] data,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws com.google.protobuf.InvalidProtocolBufferException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data, extensionRegistry);
+	}
+
+	public static com.daykm.p5executioner.proto.Data parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input);
 	}
 
-	public static com.daykm.p5executioner.proto.Data parseFrom(java.io.InputStream input,
-			com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-				extensionRegistry);
+	public static com.daykm.p5executioner.proto.Data parseFrom(
+			java.io.InputStream input,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input, extensionRegistry);
 	}
-  public static com.daykm.p5executioner.proto.Data parseDelimitedFrom(java.io.InputStream input)
+
+	public static com.daykm.p5executioner.proto.Data parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return parseDelimitedFrom(DEFAULT_INSTANCE, input);
   }
 
-	public static com.daykm.p5executioner.proto.Data parseDelimitedFrom(java.io.InputStream input,
-			com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+	public static com.daykm.p5executioner.proto.Data parseDelimitedFrom(
+			java.io.InputStream input,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws java.io.IOException {
 		return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-  }
-  public static com.daykm.p5executioner.proto.Data parseFrom(
-			com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
 	}
   public static com.daykm.p5executioner.proto.Data parseFrom(
-      com.google.protobuf.CodedInputStream input,
-			com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-				extensionRegistry);
+			com.google.protobuf.CodedInputStream input)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input);
+	}
+
+	public static com.daykm.p5executioner.proto.Data parseFrom(
+			com.google.protobuf.CodedInputStream input,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input, extensionRegistry);
 	}
 
   public static Builder newBuilder() {
@@ -817,10 +885,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
    * Protobuf type {@code p5.Data}
    */
   public static final class Builder extends
-			com.google.protobuf.GeneratedMessageLite.Builder<com.daykm.p5executioner.proto.Data, Builder>
-			implements
+			com.google.protobuf.GeneratedMessageLite.Builder<
+					com.daykm.p5executioner.proto.Data, Builder> implements
 			// @@protoc_insertion_point(builder_implements:p5.Data)
-      com.daykm.p5executioner.proto.DataOrBuilder {
+			com.daykm.p5executioner.proto.DataOrBuilder {
     // Construct using com.daykm.p5executioner.proto.Data.newBuilder()
     private Builder() {
       super(DEFAULT_INSTANCE);
@@ -831,9 +899,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
      * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
      */
     public java.util.List<com.daykm.p5executioner.proto.SpecialCombo> getSpecialCombosList() {
-			return java.util.Collections.unmodifiableList(instance.getSpecialCombosList());
+			return java.util.Collections.unmodifiableList(
+					instance.getSpecialCombosList());
 		}
-    /**
+
+		/**
      * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
      */
     public int getSpecialCombosCount() {
@@ -842,25 +912,26 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 
 		/**
 		 * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
-     */
+		 */
     public com.daykm.p5executioner.proto.SpecialCombo getSpecialCombos(int index) {
       return instance.getSpecialCombos(index);
     }
     /**
      * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
      */
-		public Builder setSpecialCombos(int index, com.daykm.p5executioner.proto.SpecialCombo value) {
+		public Builder setSpecialCombos(
+				int index, com.daykm.p5executioner.proto.SpecialCombo value) {
 			copyOnWrite();
-      instance.setSpecialCombos(index, value);
+			instance.setSpecialCombos(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
      */
-		public Builder setSpecialCombos(int index,
-				com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
+		public Builder setSpecialCombos(
+				int index, com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
 			copyOnWrite();
-      instance.setSpecialCombos(index, builderForValue);
+			instance.setSpecialCombos(index, builderForValue);
       return this;
     }
     /**
@@ -874,9 +945,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
      */
-		public Builder addSpecialCombos(int index, com.daykm.p5executioner.proto.SpecialCombo value) {
+		public Builder addSpecialCombos(
+				int index, com.daykm.p5executioner.proto.SpecialCombo value) {
 			copyOnWrite();
-      instance.addSpecialCombos(index, value);
+			instance.addSpecialCombos(index, value);
       return this;
     }
     /**
@@ -891,10 +963,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
      */
-		public Builder addSpecialCombos(int index,
-				com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
+		public Builder addSpecialCombos(
+				int index, com.daykm.p5executioner.proto.SpecialCombo.Builder builderForValue) {
 			copyOnWrite();
-      instance.addSpecialCombos(index, builderForValue);
+			instance.addSpecialCombos(index, builderForValue);
       return this;
     }
     /**
@@ -927,9 +999,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
      * <code>repeated .p5.Skill skills = 2;</code>
      */
     public java.util.List<com.daykm.p5executioner.proto.Skill> getSkillsList() {
-			return java.util.Collections.unmodifiableList(instance.getSkillsList());
+			return java.util.Collections.unmodifiableList(
+					instance.getSkillsList());
 		}
-    /**
+
+		/**
      * <code>repeated .p5.Skill skills = 2;</code>
      */
     public int getSkillsCount() {
@@ -938,25 +1012,26 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 
 		/**
 		 * <code>repeated .p5.Skill skills = 2;</code>
-     */
+		 */
     public com.daykm.p5executioner.proto.Skill getSkills(int index) {
       return instance.getSkills(index);
     }
     /**
      * <code>repeated .p5.Skill skills = 2;</code>
      */
-		public Builder setSkills(int index, com.daykm.p5executioner.proto.Skill value) {
+		public Builder setSkills(
+				int index, com.daykm.p5executioner.proto.Skill value) {
 			copyOnWrite();
-      instance.setSkills(index, value);
+			instance.setSkills(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.Skill skills = 2;</code>
      */
-		public Builder setSkills(int index,
-				com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
+		public Builder setSkills(
+				int index, com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
 			copyOnWrite();
-      instance.setSkills(index, builderForValue);
+			instance.setSkills(index, builderForValue);
       return this;
     }
     /**
@@ -970,26 +1045,28 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.Skill skills = 2;</code>
      */
-		public Builder addSkills(int index, com.daykm.p5executioner.proto.Skill value) {
+		public Builder addSkills(
+				int index, com.daykm.p5executioner.proto.Skill value) {
 			copyOnWrite();
-      instance.addSkills(index, value);
+			instance.addSkills(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.Skill skills = 2;</code>
      */
-		public Builder addSkills(com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
-			copyOnWrite();
-      instance.addSkills(builderForValue);
-      return this;
-    }
-    /**
-     * <code>repeated .p5.Skill skills = 2;</code>
-     */
-		public Builder addSkills(int index,
+		public Builder addSkills(
 				com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
 			copyOnWrite();
-      instance.addSkills(index, builderForValue);
+			instance.addSkills(builderForValue);
+      return this;
+    }
+    /**
+     * <code>repeated .p5.Skill skills = 2;</code>
+     */
+		public Builder addSkills(
+				int index, com.daykm.p5executioner.proto.Skill.Builder builderForValue) {
+			copyOnWrite();
+			instance.addSkills(index, builderForValue);
       return this;
     }
     /**
@@ -1022,9 +1099,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
      * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
      */
     public java.util.List<com.daykm.p5executioner.proto.ArcanaCombo> getArcanaCombosList() {
-			return java.util.Collections.unmodifiableList(instance.getArcanaCombosList());
+			return java.util.Collections.unmodifiableList(
+					instance.getArcanaCombosList());
 		}
-    /**
+
+		/**
      * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
      */
     public int getArcanaCombosCount() {
@@ -1033,25 +1112,26 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 
 		/**
 		 * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
-     */
+		 */
     public com.daykm.p5executioner.proto.ArcanaCombo getArcanaCombos(int index) {
       return instance.getArcanaCombos(index);
     }
     /**
      * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
      */
-		public Builder setArcanaCombos(int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
+		public Builder setArcanaCombos(
+				int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
 			copyOnWrite();
-      instance.setArcanaCombos(index, value);
+			instance.setArcanaCombos(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
      */
-		public Builder setArcanaCombos(int index,
-				com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
+		public Builder setArcanaCombos(
+				int index, com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
 			copyOnWrite();
-      instance.setArcanaCombos(index, builderForValue);
+			instance.setArcanaCombos(index, builderForValue);
       return this;
     }
     /**
@@ -1065,9 +1145,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
      */
-		public Builder addArcanaCombos(int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
+		public Builder addArcanaCombos(
+				int index, com.daykm.p5executioner.proto.ArcanaCombo value) {
 			copyOnWrite();
-      instance.addArcanaCombos(index, value);
+			instance.addArcanaCombos(index, value);
       return this;
     }
     /**
@@ -1082,10 +1163,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
      */
-		public Builder addArcanaCombos(int index,
-				com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
+		public Builder addArcanaCombos(
+				int index, com.daykm.p5executioner.proto.ArcanaCombo.Builder builderForValue) {
 			copyOnWrite();
-      instance.addArcanaCombos(index, builderForValue);
+			instance.addArcanaCombos(index, builderForValue);
       return this;
     }
     /**
@@ -1118,9 +1199,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
      * <code>repeated .p5.Persona personas = 4;</code>
      */
     public java.util.List<com.daykm.p5executioner.proto.Persona> getPersonasList() {
-			return java.util.Collections.unmodifiableList(instance.getPersonasList());
+			return java.util.Collections.unmodifiableList(
+					instance.getPersonasList());
 		}
-    /**
+
+		/**
      * <code>repeated .p5.Persona personas = 4;</code>
      */
     public int getPersonasCount() {
@@ -1129,25 +1212,26 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 
 		/**
 		 * <code>repeated .p5.Persona personas = 4;</code>
-     */
+		 */
     public com.daykm.p5executioner.proto.Persona getPersonas(int index) {
       return instance.getPersonas(index);
     }
     /**
      * <code>repeated .p5.Persona personas = 4;</code>
      */
-		public Builder setPersonas(int index, com.daykm.p5executioner.proto.Persona value) {
+		public Builder setPersonas(
+				int index, com.daykm.p5executioner.proto.Persona value) {
 			copyOnWrite();
-      instance.setPersonas(index, value);
+			instance.setPersonas(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.Persona personas = 4;</code>
      */
-		public Builder setPersonas(int index,
-				com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
+		public Builder setPersonas(
+				int index, com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
 			copyOnWrite();
-      instance.setPersonas(index, builderForValue);
+			instance.setPersonas(index, builderForValue);
       return this;
     }
     /**
@@ -1161,26 +1245,28 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.Persona personas = 4;</code>
      */
-		public Builder addPersonas(int index, com.daykm.p5executioner.proto.Persona value) {
+		public Builder addPersonas(
+				int index, com.daykm.p5executioner.proto.Persona value) {
 			copyOnWrite();
-      instance.addPersonas(index, value);
+			instance.addPersonas(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.Persona personas = 4;</code>
      */
-		public Builder addPersonas(com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
-			copyOnWrite();
-      instance.addPersonas(builderForValue);
-      return this;
-    }
-    /**
-     * <code>repeated .p5.Persona personas = 4;</code>
-     */
-		public Builder addPersonas(int index,
+		public Builder addPersonas(
 				com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
 			copyOnWrite();
-      instance.addPersonas(index, builderForValue);
+			instance.addPersonas(builderForValue);
+      return this;
+    }
+    /**
+     * <code>repeated .p5.Persona personas = 4;</code>
+     */
+		public Builder addPersonas(
+				int index, com.daykm.p5executioner.proto.Persona.Builder builderForValue) {
+			copyOnWrite();
+			instance.addPersonas(index, builderForValue);
       return this;
     }
     /**
@@ -1213,9 +1299,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
      * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
      */
     public java.util.List<com.daykm.p5executioner.proto.RareComboModifier> getRareModifiersList() {
-			return java.util.Collections.unmodifiableList(instance.getRareModifiersList());
+			return java.util.Collections.unmodifiableList(
+					instance.getRareModifiersList());
 		}
-    /**
+
+		/**
      * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
      */
     public int getRareModifiersCount() {
@@ -1224,26 +1312,26 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 
 		/**
 		 * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
-     */
+		 */
     public com.daykm.p5executioner.proto.RareComboModifier getRareModifiers(int index) {
       return instance.getRareModifiers(index);
     }
     /**
      * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
      */
-		public Builder setRareModifiers(int index,
-				com.daykm.p5executioner.proto.RareComboModifier value) {
+		public Builder setRareModifiers(
+				int index, com.daykm.p5executioner.proto.RareComboModifier value) {
 			copyOnWrite();
-      instance.setRareModifiers(index, value);
+			instance.setRareModifiers(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
      */
-		public Builder setRareModifiers(int index,
-				com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
+		public Builder setRareModifiers(
+				int index, com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
 			copyOnWrite();
-      instance.setRareModifiers(index, builderForValue);
+			instance.setRareModifiers(index, builderForValue);
       return this;
     }
     /**
@@ -1257,10 +1345,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
      */
-		public Builder addRareModifiers(int index,
-				com.daykm.p5executioner.proto.RareComboModifier value) {
+		public Builder addRareModifiers(
+				int index, com.daykm.p5executioner.proto.RareComboModifier value) {
 			copyOnWrite();
-      instance.addRareModifiers(index, value);
+			instance.addRareModifiers(index, value);
       return this;
     }
     /**
@@ -1275,10 +1363,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
      */
-		public Builder addRareModifiers(int index,
-				com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
+		public Builder addRareModifiers(
+				int index, com.daykm.p5executioner.proto.RareComboModifier.Builder builderForValue) {
 			copyOnWrite();
-      instance.addRareModifiers(index, builderForValue);
+			instance.addRareModifiers(index, builderForValue);
       return this;
     }
     /**
@@ -1311,9 +1399,11 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
      * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
      */
     public java.util.List<com.daykm.p5executioner.proto.DLCPersona> getDlcPersonaeList() {
-			return java.util.Collections.unmodifiableList(instance.getDlcPersonaeList());
+			return java.util.Collections.unmodifiableList(
+					instance.getDlcPersonaeList());
 		}
-    /**
+
+		/**
      * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
      */
     public int getDlcPersonaeCount() {
@@ -1322,25 +1412,26 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 
 		/**
 		 * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
-     */
+		 */
     public com.daykm.p5executioner.proto.DLCPersona getDlcPersonae(int index) {
       return instance.getDlcPersonae(index);
     }
     /**
      * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
      */
-		public Builder setDlcPersonae(int index, com.daykm.p5executioner.proto.DLCPersona value) {
+		public Builder setDlcPersonae(
+				int index, com.daykm.p5executioner.proto.DLCPersona value) {
 			copyOnWrite();
-      instance.setDlcPersonae(index, value);
+			instance.setDlcPersonae(index, value);
       return this;
     }
     /**
      * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
      */
-		public Builder setDlcPersonae(int index,
-				com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
+		public Builder setDlcPersonae(
+				int index, com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
 			copyOnWrite();
-      instance.setDlcPersonae(index, builderForValue);
+			instance.setDlcPersonae(index, builderForValue);
       return this;
     }
     /**
@@ -1354,9 +1445,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
      */
-		public Builder addDlcPersonae(int index, com.daykm.p5executioner.proto.DLCPersona value) {
+		public Builder addDlcPersonae(
+				int index, com.daykm.p5executioner.proto.DLCPersona value) {
 			copyOnWrite();
-      instance.addDlcPersonae(index, value);
+			instance.addDlcPersonae(index, value);
       return this;
     }
     /**
@@ -1371,10 +1463,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     /**
      * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
      */
-		public Builder addDlcPersonae(int index,
-				com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
+		public Builder addDlcPersonae(
+				int index, com.daykm.p5executioner.proto.DLCPersona.Builder builderForValue) {
 			copyOnWrite();
-      instance.addDlcPersonae(index, builderForValue);
+			instance.addDlcPersonae(index, builderForValue);
       return this;
     }
     /**
@@ -1406,9 +1498,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     // @@protoc_insertion_point(builder_scope:p5.Data)
   }
   protected final Object dynamicMethod(
-			com.google.protobuf.GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
+			com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+			Object arg0, Object arg1) {
 		switch (method) {
-      case NEW_MUTABLE_INSTANCE: {
+			case NEW_MUTABLE_INSTANCE: {
         return new com.daykm.p5executioner.proto.Data();
       }
       case IS_INITIALIZED: {
@@ -1435,14 +1528,16 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 				personas_ = visitor.visitList(personas_, other.personas_);
 				rareModifiers_ = visitor.visitList(rareModifiers_, other.rareModifiers_);
 				dlcPersonae_ = visitor.visitList(dlcPersonae_, other.dlcPersonae_);
-				if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor.INSTANCE) {
+				if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+						.INSTANCE) {
 				}
-        return this;
+				return this;
       }
       case MERGE_FROM_STREAM: {
-				com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+				com.google.protobuf.CodedInputStream input =
+						(com.google.protobuf.CodedInputStream) arg0;
 				com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-            (com.google.protobuf.ExtensionRegistryLite) arg1;
+						(com.google.protobuf.ExtensionRegistryLite) arg1;
         try {
           boolean done = false;
           while (!done) {
@@ -1463,64 +1558,64 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
                       com.google.protobuf.GeneratedMessageLite.mutableCopy(specialCombos_);
                 }
                 specialCombos_.add(
-										input.readMessage(com.daykm.p5executioner.proto.SpecialCombo.parser(),
-												extensionRegistry));
+										input.readMessage(com.daykm.p5executioner.proto.SpecialCombo.parser(), extensionRegistry));
 								break;
-              }
+							}
               case 18: {
                 if (!skills_.isModifiable()) {
-									skills_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(skills_);
+									skills_ =
+											com.google.protobuf.GeneratedMessageLite.mutableCopy(skills_);
 								}
-								skills_.add(input.readMessage(com.daykm.p5executioner.proto.Skill.parser(),
-										extensionRegistry));
+								skills_.add(
+										input.readMessage(com.daykm.p5executioner.proto.Skill.parser(), extensionRegistry));
 								break;
-              }
+							}
               case 26: {
                 if (!arcanaCombos_.isModifiable()) {
                   arcanaCombos_ =
                       com.google.protobuf.GeneratedMessageLite.mutableCopy(arcanaCombos_);
                 }
                 arcanaCombos_.add(
-										input.readMessage(com.daykm.p5executioner.proto.ArcanaCombo.parser(),
-												extensionRegistry));
+										input.readMessage(com.daykm.p5executioner.proto.ArcanaCombo.parser(), extensionRegistry));
 								break;
-              }
+							}
               case 34: {
                 if (!personas_.isModifiable()) {
-									personas_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(personas_);
+									personas_ =
+											com.google.protobuf.GeneratedMessageLite.mutableCopy(personas_);
 								}
-								personas_.add(input.readMessage(com.daykm.p5executioner.proto.Persona.parser(),
-										extensionRegistry));
+								personas_.add(
+										input.readMessage(com.daykm.p5executioner.proto.Persona.parser(), extensionRegistry));
 								break;
-              }
+							}
               case 42: {
                 if (!rareModifiers_.isModifiable()) {
                   rareModifiers_ =
                       com.google.protobuf.GeneratedMessageLite.mutableCopy(rareModifiers_);
                 }
                 rareModifiers_.add(
-										input.readMessage(com.daykm.p5executioner.proto.RareComboModifier.parser(),
-												extensionRegistry));
+										input.readMessage(com.daykm.p5executioner.proto.RareComboModifier.parser(), extensionRegistry));
 								break;
-              }
+							}
               case 50: {
                 if (!dlcPersonae_.isModifiable()) {
-									dlcPersonae_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(dlcPersonae_);
+									dlcPersonae_ =
+											com.google.protobuf.GeneratedMessageLite.mutableCopy(dlcPersonae_);
 								}
-                dlcPersonae_.add(
-										input.readMessage(com.daykm.p5executioner.proto.DLCPersona.parser(),
-												extensionRegistry));
+								dlcPersonae_.add(
+										input.readMessage(com.daykm.p5executioner.proto.DLCPersona.parser(), extensionRegistry));
 								break;
-              }
+							}
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw new RuntimeException(e.setUnfinishedMessage(this));
         } catch (java.io.IOException e) {
-					throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
-							e.getMessage()).setUnfinishedMessage(this));
+					throw new RuntimeException(
+							new com.google.protobuf.InvalidProtocolBufferException(
+									e.getMessage()).setUnfinishedMessage(this));
 				} finally {
-        }
+				}
       }
       case GET_DEFAULT_INSTANCE: {
         return DEFAULT_INSTANCE;
@@ -1529,7 +1624,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
 				if (PARSER == null) {
 					synchronized (com.daykm.p5executioner.proto.Data.class) {
 						if (PARSER == null) {
-              PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+							PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
             }
           }
         }
@@ -1539,8 +1634,9 @@ public final class Data extends com.google.protobuf.GeneratedMessageLite<Data, D
     throw new UnsupportedOperationException();
   }
 
+
 	// @@protoc_insertion_point(class_scope:p5.Data)
-  private static final com.daykm.p5executioner.proto.Data DEFAULT_INSTANCE;
+	private static final com.daykm.p5executioner.proto.Data DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new Data();
     DEFAULT_INSTANCE.makeImmutable();
