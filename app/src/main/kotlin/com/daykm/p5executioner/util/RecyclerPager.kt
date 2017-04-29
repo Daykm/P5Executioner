@@ -1,4 +1,4 @@
-package com.daykm.p5executioner
+package com.daykm.p5executioner.util
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
