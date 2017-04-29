@@ -7,7 +7,8 @@ public final class DataOuterClass {
 	private DataOuterClass() {
 	}
 
-	public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {
+	public static void registerAllExtensions(
+			com.google.protobuf.ExtensionRegistryLite registry) {
 	}
 
 	static {

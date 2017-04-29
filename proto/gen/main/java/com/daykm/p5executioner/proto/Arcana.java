@@ -19,15 +19,17 @@ public enum Arcana
   /**
 	 * <code>PRIESTESS = 2;</code>
 	 */
-	PRIESTESS(2), /**
+	PRIESTESS(2),
+	/**
 	 * <code>EMPRESS = 3;</code>
 	 */
-	EMPRESS(3), /**
+	EMPRESS(3),
+	/**
 	 * <code>EMPEROR = 4;</code>
 	 */
 	EMPEROR(4),
-  /**
-   * <code>HIEROPHANT = 5;</code>
+	/**
+	 * <code>HIEROPHANT = 5;</code>
    */
   HIEROPHANT(5),
   /**
@@ -101,7 +103,7 @@ public enum Arcana
    * <code>MAGICIAN = 1;</code>
    */
   public static final int MAGICIAN_VALUE = 1;
-  /**
+	/**
 	 * <code>PRIESTESS = 2;</code>
 	 */
 	public static final int PRIESTESS_VALUE = 2;
@@ -206,7 +208,7 @@ public enum Arcana
 			case 6:
 				return LOVERS;
 			case 7: return CHARIOT;
-      case 8: return JUSTICE;
+			case 8: return JUSTICE;
       case 9: return HERMIT;
       case 10: return FORTUNE;
       case 11: return STRENGTH;

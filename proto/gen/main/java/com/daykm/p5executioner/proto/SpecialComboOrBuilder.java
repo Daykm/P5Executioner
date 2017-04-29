@@ -4,8 +4,8 @@
 package com.daykm.p5executioner.proto;
 
 public interface SpecialComboOrBuilder extends
-		// @@protoc_insertion_point(interface_extends:p5.SpecialCombo)
-		com.google.protobuf.MessageLiteOrBuilder {
+    // @@protoc_insertion_point(interface_extends:p5.SpecialCombo)
+    com.google.protobuf.MessageLiteOrBuilder {
 
   /**
    * <code>string result = 1;</code>

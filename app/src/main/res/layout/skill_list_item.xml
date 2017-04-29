@@ -1,74 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
-  <android.support.constraint.ConstraintLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="?attr/selectableItemBackground"
-      android:clickable="true"
-      android:padding="16dp"
-      >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/skill_element"
-        android:layout_width="40dp"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:lines="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/skill_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/skill_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        tools:text="Phys"
-        />
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/skill_element"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/skill_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/skill_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            tools:text="Phys" />
 
 
-    <TextView
-        android:id="@+id/skill_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:lines="1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        app:layout_constraintLeft_toRightOf="@+id/skill_element"
-        app:layout_constraintRight_toLeftOf="@+id/skill_cost"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Skull Cracker"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        />
+        <TextView
+            android:id="@+id/skill_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintLeft_toRightOf="@+id/skill_element"
+            app:layout_constraintRight_toLeftOf="@+id/skill_cost"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Skull Cracker"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
-    <TextView
-        android:id="@+id/skill_cost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:lines="1"
-        app:layout_constraintLeft_toRightOf="@+id/skill_name"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        app:layout_constraintBaseline_toBaselineOf="@+id/skill_name"
-        tools:text="26 HP"
-        />
+        <TextView
+            android:id="@+id/skill_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            app:layout_constraintLeft_toRightOf="@+id/skill_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            app:layout_constraintBaseline_toBaselineOf="@+id/skill_name"
+            tools:text="26 HP" />
 
-    <TextView
-        android:id="@+id/skill_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ellipsize="end"
-        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        android:lines="2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/skill_name"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:text="Greatly increase inflicting rate of all status effects under rainy day or special weather warning."
-        />
+        <TextView
+            android:id="@+id/skill_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:lines="2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/skill_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="Greatly increase inflicting rate of all status effects under rainy day or special weather warning." />
 
-  </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 </layout>

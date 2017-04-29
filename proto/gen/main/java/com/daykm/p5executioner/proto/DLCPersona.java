@@ -6,8 +6,9 @@ package com.daykm.p5executioner.proto;
 /**
  * Protobuf type {@code p5.DLCPersona}
  */
-public final class DLCPersona
-		extends com.google.protobuf.GeneratedMessageLite<DLCPersona, DLCPersona.Builder> implements
+public final class DLCPersona extends
+		com.google.protobuf.GeneratedMessageLite<
+				DLCPersona, DLCPersona.Builder> implements
 		// @@protoc_insertion_point(message_implements:p5.DLCPersona)
 		DLCPersonaOrBuilder {
 	private DLCPersona() {
@@ -41,20 +42,24 @@ public final class DLCPersona
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
 	 */
-	public com.google.protobuf.ByteString getPersonaeInSeriesBytes(int index) {
-		return com.google.protobuf.ByteString.copyFromUtf8(personaeInSeries_.get(index));
+	public com.google.protobuf.ByteString
+	getPersonaeInSeriesBytes(int index) {
+		return com.google.protobuf.ByteString.copyFromUtf8(
+				personaeInSeries_.get(index));
 	}
 
 	private void ensurePersonaeInSeriesIsMutable() {
 		if (!personaeInSeries_.isModifiable()) {
-			personaeInSeries_ = com.google.protobuf.GeneratedMessageLite.mutableCopy(personaeInSeries_);
+			personaeInSeries_ =
+					com.google.protobuf.GeneratedMessageLite.mutableCopy(personaeInSeries_);
 		}
 	}
 
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
 	 */
-	private void setPersonaeInSeries(int index, java.lang.String value) {
+	private void setPersonaeInSeries(
+			int index, java.lang.String value) {
 		if (value == null) {
 			throw new NullPointerException();
 		}
@@ -65,7 +70,8 @@ public final class DLCPersona
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
 	 */
-	private void addPersonaeInSeries(java.lang.String value) {
+	private void addPersonaeInSeries(
+			java.lang.String value) {
 		if (value == null) {
 			throw new NullPointerException();
 		}
@@ -76,9 +82,11 @@ public final class DLCPersona
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
 	 */
-	private void addAllPersonaeInSeries(java.lang.Iterable<java.lang.String> values) {
+	private void addAllPersonaeInSeries(
+			java.lang.Iterable<java.lang.String> values) {
 		ensurePersonaeInSeriesIsMutable();
-		com.google.protobuf.AbstractMessageLite.addAll(values, personaeInSeries_);
+		com.google.protobuf.AbstractMessageLite.addAll(
+				values, personaeInSeries_);
 	}
 
 	/**
@@ -91,7 +99,8 @@ public final class DLCPersona
 	/**
 	 * <code>repeated string personaeInSeries = 1;</code>
 	 */
-	private void addPersonaeInSeriesBytes(com.google.protobuf.ByteString value) {
+	private void addPersonaeInSeriesBytes(
+			com.google.protobuf.ByteString value) {
 		if (value == null) {
 			throw new NullPointerException();
 		}
@@ -100,7 +109,8 @@ public final class DLCPersona
 		personaeInSeries_.add(value.toStringUtf8());
 	}
 
-	public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+	public void writeTo(com.google.protobuf.CodedOutputStream output)
+			throws java.io.IOException {
 		for (int i = 0; i < personaeInSeries_.size(); i++) {
 			output.writeString(1, personaeInSeries_.get(i));
 		}
@@ -114,8 +124,8 @@ public final class DLCPersona
 		{
 			int dataSize = 0;
 			for (int i = 0; i < personaeInSeries_.size(); i++) {
-				dataSize +=
-						com.google.protobuf.CodedOutputStream.computeStringSizeNoTag(personaeInSeries_.get(i));
+				dataSize += com.google.protobuf.CodedOutputStream
+						.computeStringSizeNoTag(personaeInSeries_.get(i));
 			}
 			size += dataSize;
 			size += 1 * getPersonaeInSeriesList().size();
@@ -127,61 +137,71 @@ public final class DLCPersona
 	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(
 			com.google.protobuf.ByteString data)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data);
 	}
 
 	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(
 			com.google.protobuf.ByteString data,
 			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-				extensionRegistry);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data, extensionRegistry);
 	}
 
 	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(byte[] data)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data);
 	}
 
-	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(byte[] data,
+	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(
+			byte[] data,
 			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 			throws com.google.protobuf.InvalidProtocolBufferException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, data,
-				extensionRegistry);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, data, extensionRegistry);
 	}
 
 	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(java.io.InputStream input)
 			throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input);
 	}
 
-	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(java.io.InputStream input,
-			com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-				extensionRegistry);
+	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(
+			java.io.InputStream input,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input, extensionRegistry);
 	}
 
-	public static com.daykm.p5executioner.proto.DLCPersona parseDelimitedFrom(
-			java.io.InputStream input) throws java.io.IOException {
+	public static com.daykm.p5executioner.proto.DLCPersona parseDelimitedFrom(java.io.InputStream input)
+			throws java.io.IOException {
 		return parseDelimitedFrom(DEFAULT_INSTANCE, input);
 	}
 
 	public static com.daykm.p5executioner.proto.DLCPersona parseDelimitedFrom(
-			java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			java.io.InputStream input,
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 			throws java.io.IOException {
 		return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
 	}
 
 	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(
-			com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input);
+			com.google.protobuf.CodedInputStream input)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input);
 	}
 
 	public static com.daykm.p5executioner.proto.DLCPersona parseFrom(
 			com.google.protobuf.CodedInputStream input,
-			com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-		return com.google.protobuf.GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, input,
-				extensionRegistry);
+			com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+			throws java.io.IOException {
+		return com.google.protobuf.GeneratedMessageLite.parseFrom(
+				DEFAULT_INSTANCE, input, extensionRegistry);
 	}
 
 	public static Builder newBuilder() {
@@ -196,8 +216,8 @@ public final class DLCPersona
 	 * Protobuf type {@code p5.DLCPersona}
 	 */
 	public static final class Builder extends
-			com.google.protobuf.GeneratedMessageLite.Builder<com.daykm.p5executioner.proto.DLCPersona, Builder>
-			implements
+			com.google.protobuf.GeneratedMessageLite.Builder<
+					com.daykm.p5executioner.proto.DLCPersona, Builder> implements
 			// @@protoc_insertion_point(builder_implements:p5.DLCPersona)
 			com.daykm.p5executioner.proto.DLCPersonaOrBuilder {
 		// Construct using com.daykm.p5executioner.proto.DLCPersona.newBuilder()
@@ -205,11 +225,14 @@ public final class DLCPersona
 			super(DEFAULT_INSTANCE);
 		}
 
+
 		/**
 		 * <code>repeated string personaeInSeries = 1;</code>
 		 */
-		public java.util.List<String> getPersonaeInSeriesList() {
-			return java.util.Collections.unmodifiableList(instance.getPersonaeInSeriesList());
+		public java.util.List<String>
+		getPersonaeInSeriesList() {
+			return java.util.Collections.unmodifiableList(
+					instance.getPersonaeInSeriesList());
 		}
 
 		/**
@@ -229,14 +252,16 @@ public final class DLCPersona
 		/**
 		 * <code>repeated string personaeInSeries = 1;</code>
 		 */
-		public com.google.protobuf.ByteString getPersonaeInSeriesBytes(int index) {
+		public com.google.protobuf.ByteString
+		getPersonaeInSeriesBytes(int index) {
 			return instance.getPersonaeInSeriesBytes(index);
 		}
 
 		/**
 		 * <code>repeated string personaeInSeries = 1;</code>
 		 */
-		public Builder setPersonaeInSeries(int index, java.lang.String value) {
+		public Builder setPersonaeInSeries(
+				int index, java.lang.String value) {
 			copyOnWrite();
 			instance.setPersonaeInSeries(index, value);
 			return this;
@@ -245,7 +270,8 @@ public final class DLCPersona
 		/**
 		 * <code>repeated string personaeInSeries = 1;</code>
 		 */
-		public Builder addPersonaeInSeries(java.lang.String value) {
+		public Builder addPersonaeInSeries(
+				java.lang.String value) {
 			copyOnWrite();
 			instance.addPersonaeInSeries(value);
 			return this;
@@ -254,7 +280,8 @@ public final class DLCPersona
 		/**
 		 * <code>repeated string personaeInSeries = 1;</code>
 		 */
-		public Builder addAllPersonaeInSeries(java.lang.Iterable<java.lang.String> values) {
+		public Builder addAllPersonaeInSeries(
+				java.lang.Iterable<java.lang.String> values) {
 			copyOnWrite();
 			instance.addAllPersonaeInSeries(values);
 			return this;
@@ -272,7 +299,8 @@ public final class DLCPersona
 		/**
 		 * <code>repeated string personaeInSeries = 1;</code>
 		 */
-		public Builder addPersonaeInSeriesBytes(com.google.protobuf.ByteString value) {
+		public Builder addPersonaeInSeriesBytes(
+				com.google.protobuf.ByteString value) {
 			copyOnWrite();
 			instance.addPersonaeInSeriesBytes(value);
 			return this;
@@ -282,7 +310,8 @@ public final class DLCPersona
 	}
 
 	protected final Object dynamicMethod(
-			com.google.protobuf.GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
+			com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+			Object arg0, Object arg1) {
 		switch (method) {
 			case NEW_MUTABLE_INSTANCE: {
 				return new com.daykm.p5executioner.proto.DLCPersona();
@@ -299,15 +328,16 @@ public final class DLCPersona
 			}
 			case VISIT: {
 				Visitor visitor = (Visitor) arg0;
-				com.daykm.p5executioner.proto.DLCPersona other =
-						(com.daykm.p5executioner.proto.DLCPersona) arg1;
+				com.daykm.p5executioner.proto.DLCPersona other = (com.daykm.p5executioner.proto.DLCPersona) arg1;
 				personaeInSeries_ = visitor.visitList(personaeInSeries_, other.personaeInSeries_);
-				if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor.INSTANCE) {
+				if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+						.INSTANCE) {
 				}
 				return this;
 			}
 			case MERGE_FROM_STREAM: {
-				com.google.protobuf.CodedInputStream input = (com.google.protobuf.CodedInputStream) arg0;
+				com.google.protobuf.CodedInputStream input =
+						(com.google.protobuf.CodedInputStream) arg0;
 				com.google.protobuf.ExtensionRegistryLite extensionRegistry =
 						(com.google.protobuf.ExtensionRegistryLite) arg1;
 				try {
@@ -338,8 +368,9 @@ public final class DLCPersona
 				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
 					throw new RuntimeException(e.setUnfinishedMessage(this));
 				} catch (java.io.IOException e) {
-					throw new RuntimeException(new com.google.protobuf.InvalidProtocolBufferException(
-							e.getMessage()).setUnfinishedMessage(this));
+					throw new RuntimeException(
+							new com.google.protobuf.InvalidProtocolBufferException(
+									e.getMessage()).setUnfinishedMessage(this));
 				} finally {
 				}
 			}
@@ -360,6 +391,7 @@ public final class DLCPersona
 		throw new UnsupportedOperationException();
 	}
 
+
 	// @@protoc_insertion_point(class_scope:p5.DLCPersona)
 	private static final com.daykm.p5executioner.proto.DLCPersona DEFAULT_INSTANCE;
 
@@ -376,6 +408,6 @@ public final class DLCPersona
 
 	public static com.google.protobuf.Parser<DLCPersona> parser() {
 		return DEFAULT_INSTANCE.getParserForType();
-	}
+  }
 }
 

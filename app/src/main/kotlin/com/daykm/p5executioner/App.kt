@@ -34,7 +34,7 @@ class App : Application() {
     if (!LeakCanary.isInAnalyzerProcess(this)) {
       LeakCanary.install(this)
     }
-  }
+    }
 }
 
 @Module abstract class AppModule

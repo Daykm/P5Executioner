@@ -10,7 +10,8 @@ public interface DataOrBuilder extends
 	/**
 	 * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
 	 */
-	java.util.List<com.daykm.p5executioner.proto.SpecialCombo> getSpecialCombosList();
+	java.util.List<com.daykm.p5executioner.proto.SpecialCombo>
+	getSpecialCombosList();
 
 	/**
 	 * <code>repeated .p5.SpecialCombo specialCombos = 1;</code>
@@ -25,7 +26,8 @@ public interface DataOrBuilder extends
 	/**
 	 * <code>repeated .p5.Skill skills = 2;</code>
 	 */
-	java.util.List<com.daykm.p5executioner.proto.Skill> getSkillsList();
+	java.util.List<com.daykm.p5executioner.proto.Skill>
+	getSkillsList();
 
 	/**
 	 * <code>repeated .p5.Skill skills = 2;</code>
@@ -40,7 +42,8 @@ public interface DataOrBuilder extends
 	/**
 	 * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
 	 */
-	java.util.List<com.daykm.p5executioner.proto.ArcanaCombo> getArcanaCombosList();
+	java.util.List<com.daykm.p5executioner.proto.ArcanaCombo>
+	getArcanaCombosList();
 
 	/**
 	 * <code>repeated .p5.ArcanaCombo arcanaCombos = 3;</code>
@@ -55,7 +58,8 @@ public interface DataOrBuilder extends
 	/**
 	 * <code>repeated .p5.Persona personas = 4;</code>
 	 */
-	java.util.List<com.daykm.p5executioner.proto.Persona> getPersonasList();
+	java.util.List<com.daykm.p5executioner.proto.Persona>
+	getPersonasList();
 
 	/**
 	 * <code>repeated .p5.Persona personas = 4;</code>
@@ -70,7 +74,8 @@ public interface DataOrBuilder extends
 	/**
 	 * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
 	 */
-	java.util.List<com.daykm.p5executioner.proto.RareComboModifier> getRareModifiersList();
+	java.util.List<com.daykm.p5executioner.proto.RareComboModifier>
+	getRareModifiersList();
 
 	/**
 	 * <code>repeated .p5.RareComboModifier rareModifiers = 5;</code>
@@ -85,7 +90,8 @@ public interface DataOrBuilder extends
 	/**
 	 * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
 	 */
-	java.util.List<com.daykm.p5executioner.proto.DLCPersona> getDlcPersonaeList();
+	java.util.List<com.daykm.p5executioner.proto.DLCPersona>
+	getDlcPersonaeList();
 
 	/**
 	 * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
@@ -95,5 +101,5 @@ public interface DataOrBuilder extends
 	/**
 	 * <code>repeated .p5.DLCPersona dlcPersonae = 6;</code>
 	 */
-	int getDlcPersonaeCount();
+  int getDlcPersonaeCount();
 }

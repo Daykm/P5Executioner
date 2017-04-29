@@ -18,7 +18,7 @@ import io.reactivex.functions.Consumer
 import javax.inject.Inject
 
 class PersonaListAdapter @Inject constructor(val repo: DataRepo,
-    val ctx: Context) : EpoxyController(), Pageable {
+                                             val ctx: Context) : EpoxyController(), Pageable {
 
   lateinit var personae: List<Persona>
 
@@ -26,7 +26,7 @@ class PersonaListAdapter @Inject constructor(val repo: DataRepo,
     personae.forEach {
       ListModel(it, ctx).id(it.name).addTo(this)
     }
-  }
+    }
 
   override fun manager(ctx: Context): LayoutManager {
     val manager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
@@ -81,7 +81,7 @@ class ListModel(val persona: Persona, val ctx: Context) : EpoxyModelWithHolder<L
         String.format("%s %02d", it.first, it.second)
       }.joinToString(" ")
     }
-  }
+    }
 
   override fun bind(holder: ListItemHolder) {
     holder.binding.let {
@@ -91,7 +91,7 @@ class ListModel(val persona: Persona, val ctx: Context) : EpoxyModelWithHolder<L
       it.personaName.text = persona.name
       it.personaLevel.text = persona.level.toString()
     }
-  }
+    }
 
   fun affinity(option: AffinityOption): String = when (option) {
     Persona.Affinities.AffinityOption.NONE -> ctx.getString(R.string.effect_none)

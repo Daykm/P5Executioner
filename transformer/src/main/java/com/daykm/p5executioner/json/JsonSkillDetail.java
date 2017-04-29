@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 public class JsonSkillDetail {
-	public String effect;
-	public String element;
-	public Map<String, Integer> personas;
-	public Integer cost;
-	public List<String> talks;
+    public String effect;
+    public String element;
+    public Map<String, Integer> personas;
+    public Integer cost;
+    public List<String> talks;
 }

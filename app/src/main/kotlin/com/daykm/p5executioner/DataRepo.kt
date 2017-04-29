@@ -10,23 +10,23 @@ import javax.inject.Singleton
 
 @Singleton class DataRepo @Inject constructor(val ctx: Context) {
 
-  val DATA =
-      Single.fromCallable { parseData() }
-          .cache()
-          .subscribeOn(Schedulers.computation())
+    val DATA =
+            Single.fromCallable { parseData() }
+                    .cache()
+                    .subscribeOn(Schedulers.computation())
 
 
-  init {
-    DATA.subscribe()
-  }
+    init {
+        DATA.subscribe()
+    }
 
 
-  private fun parseData(): Data {
-    val start = System.nanoTime()
-    val data = Data.parseFrom(ctx.assets.open("data.pb"))
-    val end = System.nanoTime() - start
-    Timber.i("Parsing took %d nanoseconds", end)
-    return data
-  }
+    private fun parseData(): Data {
+        val start = System.nanoTime()
+        val data = Data.parseFrom(ctx.assets.open("data.pb"))
+        val end = System.nanoTime() - start
+        Timber.i("Parsing took %d nanoseconds", end)
+        return data
+    }
 
 }

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-  <item
-      android:id="@+id/nav_fusion"
-      android:enabled="true"
-      android:icon="@drawable/ic_sentiment_very_dissatisfied_black_24dp"
-      android:title="@string/nav_fusion"
-      app:showAsAction="ifRoom"/>
-  <item
-      android:id="@+id/nav_by_persona"
-      android:enabled="true"
-      android:icon="@drawable/ic_sentiment_neutral_black_24dp"
-      android:title="@string/nav_by_persona"
-      app:showAsAction="ifRoom"/>
-  <item
-      android:id="@+id/nav_skills"
-      android:enabled="true"
-      android:icon="@drawable/ic_sentiment_very_satisfied_black_24dp"
-      android:title="@string/nav_skills"
-      app:showAsAction="ifRoom"/>
-  <item
-      android:id="@+id/nav_settings"
-      android:enabled="true"
-      android:icon="@drawable/ic_settings_black_24dp"
-      android:title="@string/nav_settings"
-      app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/nav_fusion"
+        android:enabled="true"
+        android:icon="@drawable/ic_sentiment_very_dissatisfied_black_24dp"
+        android:title="@string/nav_fusion"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/nav_by_persona"
+        android:enabled="true"
+        android:icon="@drawable/ic_sentiment_neutral_black_24dp"
+        android:title="@string/nav_by_persona"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/nav_skills"
+        android:enabled="true"
+        android:icon="@drawable/ic_sentiment_very_satisfied_black_24dp"
+        android:title="@string/nav_skills"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/nav_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/nav_settings"
+        app:showAsAction="ifRoom" />
 </menu>
