@@ -53,7 +53,7 @@ class P5Activity : Activity() {
 }
 
 @Scope annotation class ActivityScope
-@Module abstract class PersonaModule {
+@Module class PersonaModule {
     @Provides fun pool(): RecycledViewPool = RecycledViewPool()
     @Provides fun adapters(
             fusion: PersonaFusionAdapter,
