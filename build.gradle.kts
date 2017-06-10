@@ -1,11 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-apply from: 'config.gradle'
+apply(mapOf(Pair("from", "config.gradle")))
+
 buildscript {
     ext.buildVer = [
 
-            kotlin        : '1.1.2-4',
-            androidGradle : '3.0.0-alpha1',
-            protobufGradle: '0.8.1'
+    kotlin        : '1.1.2-4',
+    androidGradle : '3.0.0-alpha1',
+    protobufGradle: '0.8.1'
 
     ]
 
@@ -32,6 +33,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+task clean (type: Delete) {
+    delete rootProject . buildDir
 }

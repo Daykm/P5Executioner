@@ -1,8 +1,8 @@
 package com.daykm.p5executioner.main
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView.RecycledViewPool
 import com.daykm.p5executioner.App
 import com.daykm.p5executioner.R
@@ -19,7 +19,7 @@ import dagger.Subcomponent
 import timber.log.Timber
 import javax.inject.Scope
 
-class P5Activity : Activity() {
+class P5Activity : AppCompatActivity() {
 
     lateinit var pager: RecyclerPagerController
     lateinit var recycler: RecyclerPagerView
