@@ -2,14 +2,16 @@
 apply from: 'config.gradle'
 buildscript {
     ext.buildVer = [
-
-            kotlin        : '1.1.1',
-            androidGradle : '2.3.1',
+            kotlin        : '1.1.2-4',
+            androidGradle : '3.0.0-alpha4',
             protobufGradle: '0.8.1'
 
     ]
 
     repositories {
+        maven {
+            url "https://maven.google.com"
+        }
         jcenter()
     }
     dependencies {
@@ -21,10 +23,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "https://maven.google.com"
+        }
         jcenter()
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

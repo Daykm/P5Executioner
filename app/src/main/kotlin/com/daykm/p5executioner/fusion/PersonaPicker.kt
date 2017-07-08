@@ -45,9 +45,7 @@ class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : EpoxyContro
         selectedPersona.subscribe { requestModelBuild() }
     }
 
-    override fun onExceptionSwallowed(exception: RuntimeException?) {
-        Timber.e(exception)
-    }
+    override fun onExceptionSwallowed(exception: RuntimeException?) = Timber.e(exception)
 
     fun bind() {
         repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribe { data: Data ->
@@ -71,13 +69,9 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
         id(persona.name + persona.arcana + selected.toString())
     }
 
-    override fun createNewHolder(): PersonaHolder {
-        return PersonaHolder()
-    }
+    override fun createNewHolder(): PersonaHolder = PersonaHolder()
 
-    override fun getDefaultLayout(): Int {
-        return R.layout.persona_card
-    }
+    override fun getDefaultLayout(): Int = R.layout.persona_card
 
     override fun bind(holder: PersonaHolder) {
         holder.let {
@@ -94,9 +88,7 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
         }
     }
 
-    fun destroy() {
-        disposable.dispose()
-    }
+    fun destroy() = disposable.dispose()
 }
 
 class PersonaHolder : EpoxyHolder() {

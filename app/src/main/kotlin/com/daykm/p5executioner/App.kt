@@ -13,38 +13,38 @@ import javax.inject.Singleton
 
 class App : Application() {
 
-  companion object {
-    lateinit var INSTANCE: App
-      private set
-  }
-
-  lateinit var component: AppComponent
-
-  override fun onCreate() {
-    super.onCreate()
-    INSTANCE = this
-
-    if (BuildConfig.DEBUG) {
-      Timber.plant(DebugTree())
+    companion object {
+        lateinit var INSTANCE: App
+            private set
     }
 
-    //CalligraphyConfig.initDefault(CalligraphyConfig.get())
+    lateinit var component: AppComponent
 
-    component = DaggerAppComponent.builder().ctx(this).build()
+    override fun onCreate() {
+        super.onCreate()
+        INSTANCE = this
 
-    if (!LeakCanary.isInAnalyzerProcess(this)) {
-      LeakCanary.install(this)
-    }
+        debug { Timber.plant(DebugTree()) }
+
+        component = DaggerAppComponent.builder().ctx(this).build()
+
+        if (!LeakCanary.isInAnalyzerProcess(this)) {
+            LeakCanary.install(this)
+        }
     }
 }
 
 @Module abstract class AppModule
 
 @Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
-  fun persona(): PersonaComponent
+    fun persona(): PersonaComponent
 
-  @Component.Builder interface Builder {
-    fun build(): AppComponent
-    @BindsInstance fun ctx(ctx: Context): Builder
-  }
+    @Component.Builder interface Builder {
+        fun build(): AppComponent
+        @BindsInstance fun ctx(ctx: Context): Builder
+    }
+}
+
+fun <Unit> debug(f: () -> Unit) {
+    if (BuildConfig.DEBUG) f()
 }

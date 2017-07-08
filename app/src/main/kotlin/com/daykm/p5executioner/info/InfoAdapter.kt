@@ -13,32 +13,18 @@ import com.daykm.p5executioner.util.Pageable
 import javax.inject.Inject
 
 
-class InfoAdapter
-@Inject constructor() : EpoxyController(), Pageable {
-    override fun manager(ctx: Context): RecyclerView.LayoutManager {
-        val manager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
-        manager.recycleChildrenOnDetach = true
-        return manager
-    }
+class InfoAdapter @Inject constructor() : EpoxyController(), Pageable {
+    override fun manager(ctx: Context): RecyclerView.LayoutManager =
+            LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
+                    .apply { recycleChildrenOnDetach = true }
 
-    override fun attach() {
-        requestModelBuild()
-    }
-
-    override fun adapter(): RecyclerView.Adapter<*> {
-        return adapter
-    }
-
-    override fun buildModels() {
-        SourceModel().id(1).addTo(this)
-    }
+    override fun attach() = requestModelBuild()
+    override fun adapter(): RecyclerView.Adapter<*> = adapter
+    override fun buildModels() = SourceModel().id(1).addTo(this)
 }
 
 class SourceModel : EpoxyModelWithView<TextView>() {
-
-    override fun buildView(parent: ViewGroup): TextView {
-        return LayoutInflater.from(parent.context)
-                .inflate(R.layout.source_item, parent, false) as TextView
-    }
-
+    override fun buildView(parent: ViewGroup): TextView =
+            LayoutInflater.from(parent.context)
+                    .inflate(R.layout.source_item, parent, false) as TextView
 }

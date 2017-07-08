@@ -10,24 +10,19 @@ import com.daykm.p5executioner.proto.Persona
 import com.daykm.p5executioner.util.Pageable
 import io.reactivex.functions.Consumer
 import javax.inject.Inject
+import kotlin.properties.Delegates
 
-class PersonaListAdapter
-@Inject constructor(val repo: DataRepo, val ctx: Context)
-    : EpoxyController(), Pageable {
+class PersonaListAdapter @Inject constructor(val repo: DataRepo, val ctx: Context) : EpoxyController(), Pageable {
 
-    lateinit var personae: List<Persona>
+    var personae: List<Persona> by Delegates.notNull()
 
-    override fun buildModels() {
-        personae.forEach {
-            PersonaListItemModel(it, ctx).id(it.name).addTo(this)
-        }
+    override fun buildModels() = personae.forEach {
+        PersonaListItemModel(it, ctx).id(it.name).addTo(this)
     }
 
-    override fun manager(ctx: Context): LayoutManager {
-        val manager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
-        manager.recycleChildrenOnDetach = true
-        return manager
-    }
+    override fun manager(ctx: Context): LayoutManager =
+            LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
+                    .apply { recycleChildrenOnDetach = true }
 
     override fun attach() {
         repo.DATA.subscribe(Consumer {
@@ -36,8 +31,7 @@ class PersonaListAdapter
         })
     }
 
-    override fun adapter(): Adapter<*> {
-        return adapter
-    }
+
+    override fun adapter(): Adapter<*> = adapter
 }
 

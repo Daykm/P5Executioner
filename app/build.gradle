@@ -18,26 +18,15 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
         debug {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'),
-                    'proguard-rules.pro',
-                    'proguard-rules-debug.pro'
+            useProguard false
         }
     }
     dataBinding {
         enabled = false
-    }
-    signingConfigs {
-        debug {
-            keyAlias 'key'
-            keyPassword 'password'
-            storeFile file('C:/Users/daykm/Documents/GitHub/P5Executioner/debug.jks')
-            storePassword 'password'
-        }
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -50,9 +39,8 @@ android {
 }
 
 ext.ver = [
-
         anko      : '0.9.1',
-        sup       : '25.3.1',
+        sup       : '26.0.0-beta1',
         dagger    : '2.10',
         constraint: '1.0.2',
         timber    : '4.5.1',
@@ -63,12 +51,11 @@ ext.ver = [
         epoxy     : '2.0.0',
         leakCanary: '1.5',
         callig    : '2.2.0',
-        butter    : '8.5.1'
-
+        butter    : '8.5.1',
+        proto     : '3.0.0'
 ]
 
 ext.lib = [
-
         //ankoSdk15  : "org.jetbrains.anko:anko-sdk15:$ver.anko",
         //ankoCard   : "org.jetbrains.anko:anko-cardview-v7:$ver.anko",
         //ankoRecycle: "org.jetbrains.anko:anko-recyclerview-v7:$ver.anko",
@@ -87,41 +74,33 @@ ext.lib = [
         kotlin    : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
         epoxy     : "com.airbnb.android:epoxy:$ver.epoxy",
         //callig     : "uk.co.chrisjenx:calligraphy:$ver.callig"
-        butter    : "com.jakewharton:butterknife:$ver.butter"
-
+        butter    : "com.jakewharton:butterknife:$ver.butter",
+        proto     : "com.google.protobuf:protobuf-lite:$ver.proto"
 ]
 
 ext.leakCanary = [
-
         leakCanary    : "com.squareup.leakcanary:leakcanary-android:$ver.leakCanary",
         leakCanaryNoOp: "com.squareup.leakcanary:leakcanary-android-no-op:$ver.leakCanary"
-
 ]
 
 ext.apts = [
-
-        dagger     : "com.google.dagger:dagger-compiler:$ver.dagger",
+        dagger: "com.google.dagger:dagger-compiler:$ver.dagger",
         //databinding: "com.android.databinding:compiler:$buildVer.androidGradle",
-        butter     : "com.jakewharton:butterknife-compiler:$ver.butter"
-
+        butter: "com.jakewharton:butterknife-compiler:$ver.butter"
 ]
 
-ext.proj = [
-
-        ':gen', ':proto'
-
-]
+ext.proj = [':gen', ':proto']
 dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    lib.each { entry -> compile entry.value }
+    lib.each { entry -> implementation entry.value }
     apts.each { entry -> kapt entry.value }
-    proj.each { entry -> compile(project(entry)) }
-    debugCompile leakCanary.leakCanary
-    releaseCompile leakCanary.leakCanaryNoOp
-    testCompile leakCanary.leakCanaryNoOp
-    androidTestCompile project(path: ':proto')
+    proj.each { entry -> implementation(project(entry)) }
+    debugImplementation leakCanary.leakCanary
+    releaseImplementation leakCanary.leakCanaryNoOp
+    testImplementation leakCanary.leakCanaryNoOp
+    androidTestImplementation project(path: ':proto')
 }
 

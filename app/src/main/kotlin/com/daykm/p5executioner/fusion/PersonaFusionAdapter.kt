@@ -22,19 +22,12 @@ class PersonaFusionAdapter
         PickerModel(secondPicker, pool).id(2).addTo(this)
     }
 
-    override fun manager(ctx: Context): LayoutManager {
-        val manager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
-        manager.recycleChildrenOnDetach = true
-        return manager
-    }
+    override fun manager(ctx: Context): LayoutManager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
+            .apply { recycleChildrenOnDetach = true }
 
-    override fun attach() {
-        requestModelBuild()
-    }
+    override fun attach() = requestModelBuild()
 
-    override fun adapter(): Adapter<*> {
-        return adapter
-    }
+    override fun adapter(): Adapter<*> = adapter
 }
 
 class PickerModel(val picker: PersonaPickerAdapter, val pool: RecycledViewPool)
