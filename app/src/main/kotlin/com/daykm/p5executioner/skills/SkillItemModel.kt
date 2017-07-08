@@ -11,32 +11,22 @@ class SkillItemModel(val skill: Skill, val ctx: Context) : EpoxyModelWithHolder<
 
     val skillCost = skillCost()
 
-    override fun getDefaultLayout(): Int {
-        return R.layout.skill_list_item
+    override fun getDefaultLayout(): Int = R.layout.skill_list_item
+
+    override fun createNewHolder(): SkillItemHolder = SkillItemHolder()
+
+    override fun bind(holder: SkillItemHolder) = holder.let {
+        it.cost.text = skillCost
+        it.effect.text = skill.effect
+        it.element.text = skill.element.name
+        it.name.text = skill.name
     }
 
-    override fun createNewHolder(): SkillItemHolder {
-        return SkillItemHolder()
-    }
-
-    override fun bind(holder: SkillItemHolder) {
-        holder.let {
-            it.cost.text = skillCost
-            it.effect.text = skill.effect
-            it.element.text = skill.element.name
-            it.name.text = skill.name
-        }
-    }
-
-    fun skillCost(): String {
-        if (skill.element != PASSIVE) {
-            return when {
-                skill.cost < 100 -> ctx.getString(R.string.skill_cost_hp, skill.cost)
-                else -> ctx.getString(R.string.skill_cost_sp, skill.cost / 100)
-            }
-        } else {
-            return ctx.getString(string.skill_no_cost)
-        }
-
-    }
+    fun skillCost(): String =
+            if (skill.element != PASSIVE) {
+                when {
+                    skill.cost < 100 -> ctx.getString(R.string.skill_cost_hp, skill.cost)
+                    else -> ctx.getString(R.string.skill_cost_sp, skill.cost / 100)
+                }
+            } else ctx.getString(string.skill_no_cost)
 }

@@ -18,11 +18,12 @@ import dagger.Provides
 import dagger.Subcomponent
 import timber.log.Timber
 import javax.inject.Scope
+import kotlin.properties.Delegates
 
 class P5Activity : AppCompatActivity() {
 
-    lateinit var pager: RecyclerPagerController
-    lateinit var recycler: RecyclerPagerView
+    var pager: RecyclerPagerController by Delegates.notNull()
+    var recycler: RecyclerPagerView by Delegates.notNull()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

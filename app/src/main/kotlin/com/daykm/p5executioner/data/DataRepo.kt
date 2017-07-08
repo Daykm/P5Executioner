@@ -10,10 +10,9 @@ import javax.inject.Singleton
 
 @Singleton class DataRepo @Inject constructor(val ctx: Context) {
 
-    val DATA =
-            Single.fromCallable { parseData() }
-                    .cache()
-                    .subscribeOn(Schedulers.computation())
+    val DATA = Single.fromCallable { parseData() }
+            .subscribeOn(Schedulers.computation())
+            .cache()
 
     init {
         DATA.subscribe()
