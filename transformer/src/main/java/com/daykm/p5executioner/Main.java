@@ -29,8 +29,8 @@ import okio.Source;
 
 public class Main {
 
-    private static final String OUTPUT = "gen/src/main/assets/";
-    private static final String INPUT = "transformer/json/";
+    private static final String OUTPUT = "../gen/src/main/assets/";
+    private static final String INPUT = "json/";
 
     public static void main(String[] args) throws Exception {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));

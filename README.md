@@ -1,4 +1,14 @@
 # P5Executioner
 Android app for persona fusion
 
-TODO add build instructions
+Build Instructions :
+
+Run proto gen task
+
+:proto:generateProto
+
+Run data transformer task:
+
+:transformer:run
+
+Then the app module can be assembled
