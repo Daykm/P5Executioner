@@ -2,14 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 android {
-    signingConfigs {
-        config {
-            keyAlias 'alias'
-            keyPassword 'password'
-            storeFile file('C:/Users/daykm/default.jks')
-            storePassword 'password'
-        }
-    }
     compileSdkVersion buildConfig.compileSdkVer
     buildToolsVersion buildConfig.buildToolsVer
     defaultConfig {
@@ -29,7 +21,6 @@ android {
         }
         debug {
             minifyEnabled true
-            shrinkResources true
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-debug.pro', 'proguard-rules.pro'
         }
