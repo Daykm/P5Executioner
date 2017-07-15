@@ -14,15 +14,23 @@ android {
         resConfig "en"
     }
     buildTypes {
+        debug {
+            minifyEnabled true
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-debug.pro', 'proguard-rules.pro'
+        }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug {
-            minifyEnabled true
-            useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-debug.pro', 'proguard-rules.pro'
+    }
+
+    flavorDimensions "dev"
+
+    productFlavors {
+        app {
+            dimension "dev"
         }
     }
     sourceSets {
@@ -83,6 +91,7 @@ ext.apts = [
 ]
 
 ext.proj = [':gen', ':proto']
+
 dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
