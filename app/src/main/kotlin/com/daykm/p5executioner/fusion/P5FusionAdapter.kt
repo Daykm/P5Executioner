@@ -7,10 +7,10 @@ import android.support.v7.widget.RecyclerView.*
 import android.view.ViewGroup
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyModelWithView
-import com.daykm.p5executioner.util.Pageable
+import com.daykm.p5executioner.view.Pageable
 import javax.inject.Inject
 
-class PersonaFusionAdapter
+class P5FusionAdapter
 @Inject constructor(
         val firstPicker: PersonaPickerAdapter,
         val secondPicker: PersonaPickerAdapter,

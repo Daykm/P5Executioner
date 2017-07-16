@@ -7,13 +7,13 @@ import android.support.v7.widget.RecyclerView.LayoutManager
 import com.airbnb.epoxy.EpoxyController
 import com.daykm.p5executioner.data.DataRepo
 import com.daykm.p5executioner.proto.Skill
-import com.daykm.p5executioner.util.Pageable
+import com.daykm.p5executioner.view.Pageable
 import io.reactivex.functions.Consumer
 import javax.inject.Inject
 
 
-class SkillsAdapter @Inject constructor(val repo: DataRepo,
-                                        val ctx: Context) : EpoxyController(), Pageable {
+class P5SkillsAdapter @Inject constructor(val repo: DataRepo,
+                                          val ctx: Context) : EpoxyController(), Pageable {
 
     lateinit var skills: List<Skill>
 

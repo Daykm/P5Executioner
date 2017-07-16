@@ -7,7 +7,7 @@ import android.text.style.ForegroundColorSpan
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.proto.Persona
-import com.daykm.p5executioner.util.SimpleSpanBuilder
+import com.daykm.p5executioner.view.SimpleSpanBuilder
 
 class PersonaListItemModel(val persona: Persona, val ctx: Context) : EpoxyModelWithHolder<PersonaListItemHolder>() {
     val elements: SpannableStringBuilder

@@ -37,16 +37,12 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
-    lintOptions {
-        abortOnError false
-        ignoreWarnings true
-    }
 }
 
 ext.ver = [
-        anko      : '0.9.1',
+        anko      : '0.10.1',
         sup       : '26.0.0-beta2',
-        dagger    : '2.10',
+        dagger    : '2.11',
         constraint: '1.0.2',
         timber    : '4.5.1',
         rxJava    : '2.0.8',
@@ -61,10 +57,12 @@ ext.ver = [
 ]
 
 ext.lib = [
-        //ankoSdk15  : "org.jetbrains.anko:anko-sdk15:$ver.anko",
+        kotlinStd : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
+        ankoSdk15 : "org.jetbrains.anko:anko-sdk21:$ver.anko",
+        ankoCompat: "org.jetbrains.anko:anko-appcompat-v7:$ver.anko",
         //ankoCard   : "org.jetbrains.anko:anko-cardview-v7:$ver.anko",
         //ankoRecycle: "org.jetbrains.anko:anko-recyclerview-v7:$ver.anko",
-        //ankoDesign : "org.jetbrains.anko:anko-design:$ver.anko",
+        ankoDesign : "org.jetbrains.anko:anko-design:$ver.anko",
         //TODO wait for this to come out
         // ankoConstraint: "org.jetbrains.anko:anko-constraint:$ver.anko",
         dagger    : "com.google.dagger:dagger:$ver.dagger",
@@ -74,7 +72,6 @@ ext.lib = [
         timber    : "com.jakewharton.timber:timber:$ver.timber",
         rxJava    : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
         rxAndroid : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
-        kotlin    : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
         epoxy     : "com.airbnb.android:epoxy:$ver.epoxy",
         butter    : "com.jakewharton:butterknife:$ver.butter",
         proto     : "com.google.protobuf:protobuf-lite:$ver.proto"
