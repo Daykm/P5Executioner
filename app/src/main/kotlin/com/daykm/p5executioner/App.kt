@@ -2,7 +2,7 @@ package com.daykm.p5executioner
 
 import android.app.Application
 import android.content.Context
-import com.daykm.p5executioner.main.PersonaComponent
+import com.daykm.p5executioner.main.P5Component
 import com.squareup.leakcanary.LeakCanary
 import dagger.BindsInstance
 import dagger.Component
@@ -37,7 +37,8 @@ class App : Application() {
 @Module abstract class AppModule
 
 @Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
-    fun persona(): PersonaComponent
+
+    fun persona(): P5Component
 
     @Component.Builder interface Builder {
         fun build(): AppComponent

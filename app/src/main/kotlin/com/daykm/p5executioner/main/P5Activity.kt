@@ -1,68 +1,37 @@
 package com.daykm.p5executioner.main
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView.RecycledViewPool
 import com.daykm.p5executioner.App
 import com.daykm.p5executioner.R
-import com.daykm.p5executioner.fusion.PersonaFusionAdapter
-import com.daykm.p5executioner.info.InfoAdapter
-import com.daykm.p5executioner.personas.PersonaListAdapter
-import com.daykm.p5executioner.skills.SkillsAdapter
-import com.daykm.p5executioner.util.Pageable
-import com.daykm.p5executioner.util.RecyclerPagerController
-import com.daykm.p5executioner.util.RecyclerPagerView
-import dagger.Module
-import dagger.Provides
-import dagger.Subcomponent
+import org.jetbrains.anko.setContentView
 import timber.log.Timber
-import javax.inject.Scope
-import kotlin.properties.Delegates
 
 class P5Activity : AppCompatActivity() {
-
-    var pager: RecyclerPagerController by Delegates.notNull()
-    var recycler: RecyclerPagerView by Delegates.notNull()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
-        setContentView(R.layout.activity_p_five)
-        recycler = findViewById(R.id.recycler_pager) as RecyclerPagerView
         val component = App.INSTANCE.component.persona()
-        pager = RecyclerPagerController(component.controllers()).apply {
-            recycler.adapter = adapter
-            requestModelBuild()
-        }
-        (findViewById(R.id.bottom_nav) as BottomNavigationView).apply {
-            setOnNavigationItemReselectedListener {
-                Timber.i("Menu item '%s' reselected", it.title)
-            }
-            setOnNavigationItemSelectedListener {
-                Timber.i("Menu item '%s' selected", it.title)
-                when (it.itemId) {
-                    R.id.nav_fusion -> recycler.smoothScrollToPosition(0)
-                    R.id.nav_by_persona -> recycler.smoothScrollToPosition(1)
-                    R.id.nav_skills -> recycler.smoothScrollToPosition(2)
-                    R.id.nav_settings -> recycler.smoothScrollToPosition(3)
+        P5Layout().apply {
+            setContentView(this@P5Activity)
+            pager.adapter = component.adapter()
+            nav.apply {
+                setOnNavigationItemReselectedListener {
+                    Timber.i("Menu item '%s' reselected", it.title)
                 }
-                true
+                setOnNavigationItemSelectedListener {
+                    Timber.i("Menu item '%s' selected", it.title)
+                    pager.currentItem = when (it.itemId) {
+                        R.id.nav_fusion -> 0
+                        R.id.nav_by_persona -> 1
+                        R.id.nav_skills -> 2
+                        R.id.nav_settings -> 3
+                        else -> 0
+                    }
+                    true
+                }
             }
         }
     }
 }
 
-@Scope annotation class ActivityScope
-@Module class PersonaModule {
-    @Provides fun pool(): RecycledViewPool = RecycledViewPool()
-    @Provides fun adapters(
-            fusion: PersonaFusionAdapter,
-            personas: PersonaListAdapter,
-            skills: SkillsAdapter,
-            info: InfoAdapter): Set<Pageable> = setOf(fusion, personas, skills, info)
-}
-
-@ActivityScope @Subcomponent(modules = arrayOf(PersonaModule::class)) interface PersonaComponent {
-    fun controllers(): Set<Pageable>
-}

@@ -1,4 +1,4 @@
-package com.daykm.p5executioner.util
+package com.daykm.p5executioner.view
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -70,16 +70,13 @@ class PagerModel(val pageable: Pageable,
         pageable.attach()
     }
 
-    override fun buildView(parent: ViewGroup): RecyclerView {
-        return RecyclerView(parent.context).apply {
-            layoutManager = pageable.manager(parent.context)
-            recycledViewPool = pool
-            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT)
-            setHasFixedSize(true)
-        }
+    override fun buildView(parent: ViewGroup): RecyclerView = RecyclerView(parent.context).apply {
+        layoutManager = pageable.manager(parent.context)
+        recycledViewPool = pool
+        layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT)
+        setHasFixedSize(true)
     }
-
 }
 
 class PlaceholderController : EpoxyController(), Pageable {
