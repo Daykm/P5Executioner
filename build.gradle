@@ -3,7 +3,7 @@ apply from: 'config.gradle'
 buildscript {
     ext.buildVer = [
             kotlin        : '1.1.3-2',
-            androidGradle : '3.0.0-alpha6',
+            androidGradle : '3.0.0-alpha8',
     ]
 
     repositories {
