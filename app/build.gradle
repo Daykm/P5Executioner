@@ -1,7 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+
 android {
+
     compileSdkVersion buildConfig.compileSdkVer
     buildToolsVersion buildConfig.buildToolsVer
     defaultConfig {
@@ -13,11 +15,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         resConfig "en"
     }
+
     buildTypes {
         debug {
             minifyEnabled true
             useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-debug.pro', 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
@@ -33,6 +36,7 @@ android {
             dimension "dev"
         }
     }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
@@ -41,7 +45,7 @@ android {
 
 ext.ver = [
         anko      : '0.10.1',
-        sup       : '26.0.0-beta2',
+        sup       : '26.0.0',
         dagger    : '2.11',
         constraint: '1.0.2',
         timber    : '4.5.1',
