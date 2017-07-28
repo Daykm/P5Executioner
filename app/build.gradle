@@ -99,8 +99,8 @@ dependencies {
     })
     testImplementation 'junit:junit:4.12'
     lib.each { entry -> implementation entry.value }
-    apts.each { entry -> kapt entry.value }
     proj.each { entry -> implementation(project(entry)) }
+    apts.each { entry -> kapt entry.value }
     debugImplementation leakCanary.leakCanary
     releaseImplementation leakCanary.leakCanaryNoOp
     testImplementation leakCanary.leakCanaryNoOp

@@ -8,10 +8,12 @@ import org.jetbrains.anko.setContentView
 import timber.log.Timber
 
 class P5Activity : AppCompatActivity() {
+
+    val component: P5Component by lazy { App.INSTANCE.component.persona() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
-        val component = App.INSTANCE.component.persona()
         P5Layout().apply {
             setContentView(this@P5Activity)
             pager.adapter = component.adapter()
@@ -34,4 +36,5 @@ class P5Activity : AppCompatActivity() {
         }
     }
 }
+
 
