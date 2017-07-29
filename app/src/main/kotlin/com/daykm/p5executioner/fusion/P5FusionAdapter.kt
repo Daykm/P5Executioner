@@ -5,9 +5,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.*
 import android.view.ViewGroup
-import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyModelWithView
+import com.airbnb.epoxy.TypedEpoxyController
 import com.daykm.p5executioner.view.Pageable
+import org.jetbrains.anko.collections.forEachWithIndex
 import javax.inject.Inject
 
 class P5FusionAdapter
@@ -15,17 +16,19 @@ class P5FusionAdapter
         val firstPicker: PersonaPickerAdapter,
         val secondPicker: PersonaPickerAdapter,
         val pool: RecycledViewPool)
-    : EpoxyController(), Pageable {
+    : TypedEpoxyController<List<PersonaPickerAdapter>>(), Pageable {
 
-    override fun buildModels() {
-        PickerModel(firstPicker, pool).id(1).addTo(this)
-        PickerModel(secondPicker, pool).id(2).addTo(this)
+    override fun buildModels(data: List<PersonaPickerAdapter>?) {
+        data?.forEachWithIndex { i, adapter ->
+            PickerModel(adapter, pool).id(i).addTo(this)
+        }
     }
 
-    override fun manager(ctx: Context): LayoutManager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
-            .apply { recycleChildrenOnDetach = true }
+    override fun manager(ctx: Context): LayoutManager =
+            LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
+                    .apply { recycleChildrenOnDetach = true }
 
-    override fun attach() = requestModelBuild()
+    override fun attach() = setData(listOf(firstPicker, secondPicker))
 
     override fun adapter(): Adapter<*> = adapter
 }

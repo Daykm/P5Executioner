@@ -7,53 +7,33 @@ import android.view.View
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
-import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
+import com.airbnb.epoxy.TypedEpoxyController
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.data.DataRepo
-import com.daykm.p5executioner.proto.Data
 import com.daykm.p5executioner.proto.Persona
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.BehaviorSubject
 import timber.log.Timber
 import java.lang.RuntimeException
 import javax.inject.Inject
 
-class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : EpoxyController() {
+class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : TypedEpoxyController<List<Persona>>() {
 
     val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
-    var personas: List<Persona>? = null
-    var personaModels: MutableList<PersonaModel>? = null
 
-    override fun buildModels() {
-        Timber.i("Building model")
-        personaModels?.forEach { it.destroy() }
-        personaModels?.clear()
-        personas?.forEach { persona ->
-            run {
-                val model = PersonaModel(persona, selectedPersona)
-                personaModels?.add(model)
-                model.addTo(this)
-            }
-        }
-    }
-
-    init {
-        setFilterDuplicates(true)
-        selectedPersona.subscribe { requestModelBuild() }
+    override fun buildModels(data: List<Persona>?) {
+        Timber.i("Building %d models", data?.size ?: 0)
+        data?.forEach { PersonaModel(it, selectedPersona).addTo(this) }
     }
 
     override fun onExceptionSwallowed(exception: RuntimeException?) = Timber.e(exception)
 
     fun bind() {
-        repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribe { data: Data ->
-            run {
-                personas = data.personasList
-                requestModelBuild()
-            }
-        }
+        repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribeBy { setData(it.personasList) }
     }
 }
 
@@ -73,22 +53,20 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
 
     override fun getDefaultLayout(): Int = R.layout.persona_card
 
-    override fun bind(holder: PersonaHolder) {
-        holder.let {
-            it.name.text = persona.name
-            it.level.text = persona.level.toString()
-            it.arcana.text = persona.arcana.name
-            if (selected) {
-                it.card.setBackgroundColor(
-                        ContextCompat.getColor(it.card.context, R.color.colorPrimaryDark))
-            } else {
-                it.card.setBackgroundColor(Color.TRANSPARENT)
-            }
-            it.card.setOnClickListener { subject.onNext(persona) }
+    override fun bind(holder: PersonaHolder) = holder.let {
+        it.name.text = persona.name
+        it.level.text = persona.level.toString()
+        it.arcana.text = persona.arcana.name
+        if (selected) {
+            it.card.setBackgroundColor(
+                    ContextCompat.getColor(it.card.context, R.color.colorPrimaryDark))
+        } else {
+            it.card.setBackgroundColor(Color.TRANSPARENT)
         }
+        it.card.setOnClickListener { subject.onNext(persona) }
     }
 
-    fun destroy() = disposable.dispose()
+    override fun unbind(holder: PersonaHolder?) = disposable.clear()
 }
 
 class PersonaHolder : EpoxyHolder() {
@@ -104,4 +82,5 @@ class PersonaHolder : EpoxyHolder() {
     override fun bindView(itemView: View) {
         ButterKnife.bind(this, itemView)
     }
+
 }

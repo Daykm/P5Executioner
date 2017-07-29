@@ -6,6 +6,7 @@ android {
 
     compileSdkVersion buildConfig.compileSdkVer
     buildToolsVersion buildConfig.buildToolsVer
+
     defaultConfig {
         applicationId "com.daykm.p5executioner"
         minSdkVersion buildConfig.minSdkVer
@@ -16,16 +17,27 @@ android {
         resConfig "en"
     }
 
+    signingConfigs {
+        debug {
+            keyAlias 'debugging'
+            keyPassword 'debugging'
+            storeFile file('debug.jks')
+            storePassword 'debugging'
+        }
+    }
+
     buildTypes {
         debug {
             minifyEnabled true
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 
@@ -47,7 +59,7 @@ ext.ver = [
         anko      : '0.10.1',
         sup       : '26.0.0',
         dagger    : '2.11',
-        constraint: '1.0.2',
+        constraint: '1.1.0-beta1',
         timber    : '4.5.1',
         rxJava    : '2.0.8',
         rxAndroid : '2.0.1',
@@ -57,28 +69,31 @@ ext.ver = [
         leakCanary: '1.5',
         callig    : '2.2.0',
         butter    : '8.5.1',
-        proto     : '3.0.0'
+        proto     : '3.0.0',
+        rxKotlin  : '2.1.0'
 ]
 
 ext.lib = [
-        kotlinStd : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$buildVer.kotlin",
-        ankoSdk15 : "org.jetbrains.anko:anko-sdk21:$ver.anko",
-        ankoCompat: "org.jetbrains.anko:anko-appcompat-v7:$ver.anko",
+        kotlinStd  : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$buildVer.kotlin",
+        ankoCommons: "org.jetbrains.anko:anko-appcompat-v7-commons:$ver.anko",
+        ankoSdk21  : "org.jetbrains.anko:anko-sdk21:$ver.anko",
+        ankoCompat : "org.jetbrains.anko:anko-appcompat-v7:$ver.anko",
         //ankoCard   : "org.jetbrains.anko:anko-cardview-v7:$ver.anko",
         //ankoRecycle: "org.jetbrains.anko:anko-recyclerview-v7:$ver.anko",
         ankoDesign : "org.jetbrains.anko:anko-design:$ver.anko",
         //TODO wait for this to come out
         // ankoConstraint: "org.jetbrains.anko:anko-constraint:$ver.anko",
-        dagger    : "com.google.dagger:dagger:$ver.dagger",
+        dagger     : "com.google.dagger:dagger:$ver.dagger",
         //supDesign  : "com.android.support:design:$ver.sup",
-        constraint: "com.android.support.constraint:constraint-layout:$ver.constraint",
+        constraint : "com.android.support.constraint:constraint-layout:$ver.constraint",
         //cardView   : "com.android.support:cardview-v7:$ver.sup",
-        timber    : "com.jakewharton.timber:timber:$ver.timber",
-        rxJava    : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
-        rxAndroid : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
-        epoxy     : "com.airbnb.android:epoxy:$ver.epoxy",
-        butter    : "com.jakewharton:butterknife:$ver.butter",
-        proto     : "com.google.protobuf:protobuf-lite:$ver.proto"
+        timber     : "com.jakewharton.timber:timber:$ver.timber",
+        rxJava     : "io.reactivex.rxjava2:rxjava:$ver.rxJava",
+        rxAndroid  : "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid",
+        rxKotlin   : "io.reactivex.rxjava2:rxkotlin:$ver.rxKotlin",
+        epoxy      : "com.airbnb.android:epoxy:$ver.epoxy",
+        butter     : "com.jakewharton:butterknife:$ver.butter",
+        proto      : "com.google.protobuf:protobuf-lite:$ver.proto"
 ]
 
 ext.leakCanary = [
