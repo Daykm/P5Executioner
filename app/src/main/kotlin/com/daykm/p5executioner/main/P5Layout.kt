@@ -8,7 +8,6 @@ import com.daykm.p5executioner.R
 import com.daykm.p5executioner.util.color
 import com.daykm.p5executioner.view.BottomBarBehavior
 import com.daykm.p5executioner.view.navPager
-import com.daykm.p5executioner.view.transformer
 import org.jetbrains.anko.AnkoComponent
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.design.bottomNavigationView
@@ -24,7 +23,6 @@ class P5Layout : AnkoComponent<P5Activity> {
         coordinatorLayout {
             navPager {
                 isScrollContainer = true
-                setPageTransformer(true, transformer)
             }.lparams {
                 height = matchParent
                 width = matchParent

@@ -61,7 +61,7 @@ ext.ver = [
 ]
 
 ext.lib = [
-        kotlinStd : "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin",
+        kotlinStd : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$buildVer.kotlin",
         ankoSdk15 : "org.jetbrains.anko:anko-sdk21:$ver.anko",
         ankoCompat: "org.jetbrains.anko:anko-appcompat-v7:$ver.anko",
         //ankoCard   : "org.jetbrains.anko:anko-cardview-v7:$ver.anko",
