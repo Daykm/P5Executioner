@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import javax.inject.Inject
 
 class PageableAdapter
-@Inject constructor(val pageables: List<Pageable>, val pool: RecyclerView.RecycledViewPool) :
+@Inject constructor(val pageables: List<@JvmSuppressWildcards Pageable>, val pool: RecyclerView.RecycledViewPool) :
         PagerAdapter() {
 
     override fun isViewFromObject(p0: View, p1: Any): Boolean = p0 === p1
