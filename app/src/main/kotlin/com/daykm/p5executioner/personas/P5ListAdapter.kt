@@ -8,6 +8,7 @@ import com.airbnb.epoxy.EpoxyController
 import com.daykm.p5executioner.data.DataRepo
 import com.daykm.p5executioner.proto.Persona
 import com.daykm.p5executioner.view.Pageable
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import javax.inject.Inject
 import kotlin.properties.Delegates
@@ -25,7 +26,7 @@ class P5ListAdapter @Inject constructor(val repo: DataRepo, val ctx: Context) : 
                     .apply { recycleChildrenOnDetach = true }
 
     override fun attach() {
-        repo.DATA.subscribe(Consumer {
+        repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribe(Consumer {
             personae = it.personasList
             requestModelBuild()
         })
