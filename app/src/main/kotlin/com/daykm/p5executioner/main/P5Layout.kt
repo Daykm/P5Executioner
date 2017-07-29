@@ -23,6 +23,7 @@ class P5Layout : AnkoComponent<P5Activity> {
         coordinatorLayout {
             navPager {
                 isScrollContainer = true
+                offscreenPageLimit = 5
             }.lparams {
                 height = matchParent
                 width = matchParent
@@ -35,6 +36,7 @@ class P5Layout : AnkoComponent<P5Activity> {
             }.lparams {
                 behavior = BottomBarBehavior()
                 gravity = Gravity.BOTTOM
+                width = matchParent
             }.let { nav = it }
         }.apply { layout = this }
     }
