@@ -36,8 +36,9 @@ fun main(args: Array<String>) {
 
     Paths.get(OUTPUT + "data.pb").let {
         Files.createDirectories(it.parent)
-        Files.createFile(it)
-        Files.write(it, data.toByteArray())
+        it.toFile().printWriter().use {
+            it.print(data.toByteArray())
+        }
     }
 }
 
@@ -46,7 +47,7 @@ fun createDlcPersonae(moshi: Moshi): List<DLCPersona> = moshi.let {
     it.adapter<List<List<String>>>(
             Types.newParameterizedType(List::class.java,
                     Types.newParameterizedType(List::class.java, String::class.java))
-    ).fromJson(Okio.buffer(Okio.source(File(INPUT + "dlcPersonae.json"))))
+    ).fromJson(Okio.buffer(Okio.source(File(INPUT + "dlcPersonae.json"))))!!
             .mapTo(ArrayList<DLCPersona>()) {
                 DLCPersona.newBuilder().addAllPersonaeInSeries(it).build()
             }
@@ -59,12 +60,9 @@ fun createSpecialCombos(moshi: Moshi): List<SpecialCombo> {
 
     val combos = adapter.fromJson(Okio.buffer(Okio.source(File(INPUT + "specialCombos.json"))))
 
-    val protoCombos = ArrayList<SpecialCombo>(combos.size)
+    val protoCombos = ArrayList<SpecialCombo>(combos!!.size)
 
-    for (combo in combos) {
-        protoCombos.add(
-                SpecialCombo.newBuilder().setResult(combo.result).addAllSources(combo.sources).build())
-    }
+    combos.mapTo(protoCombos) { SpecialCombo.newBuilder().setResult(it.result).addAllSources(it.sources).build() }
 
     return protoCombos
 }
@@ -73,16 +71,16 @@ fun createSpecialCombos(moshi: Moshi): List<SpecialCombo> {
 fun createArcanaCombos(moshi: Moshi): List<ArcanaCombo> {
     val adapter = moshi.adapter<List<JsonCombo>>(Types.newParameterizedType(List::class.java, JsonCombo::class.java))
 
-    val json = adapter.fromJson(Okio.buffer(Okio.source(File(INPUT + "arcanaCombos.json"))))
+    val json = adapter.fromJson(Okio.buffer(Okio.source(File(INPUT + "arcanaCombos.json"))))!!
 
     val protoCombos = ArrayList<ArcanaCombo>(json.size)
 
-    for (combo in json) {
-        protoCombos.add(ArcanaCombo.newBuilder()
-                .setFirst(Arcana.valueOf(combo.source[0].toUpperCase()))
-                .setSecond(Arcana.valueOf(combo.source[1].toUpperCase()))
-                .setResult(Arcana.valueOf(combo.result.toUpperCase()))
-                .build())
+    json.mapTo(protoCombos) {
+        ArcanaCombo.newBuilder()
+                .setFirst(Arcana.valueOf(it.source[0].toUpperCase()))
+                .setSecond(Arcana.valueOf(it.source[1].toUpperCase()))
+                .setResult(Arcana.valueOf(it.result.toUpperCase()))
+                .build()
     }
 
     return protoCombos
@@ -96,7 +94,7 @@ fun createSkills(moshi: Moshi): List<Skill> {
     val adapter = moshi.adapter<Map<String, JsonSkillDetail>>(type)
 
     val source = Okio.source(File(INPUT + "skills.json"))
-    val skills = adapter.fromJson(Okio.buffer(source))
+    val skills = adapter.fromJson(Okio.buffer(source))!!
 
     val protoSkills = ArrayList<Skill>(skills.size)
 
@@ -128,15 +126,15 @@ fun createRareCombos(moshi: Moshi): List<RareComboModifier> {
     val adapter = moshi.adapter<Map<String, List<Int>>>(type)
 
     val source = Okio.source(File(INPUT + "rareCombos.json"))
-    val rareCombos = adapter.fromJson(Okio.buffer(source))
+    val rareCombos = adapter.fromJson(Okio.buffer(source))!!
 
     val protoModifiers = ArrayList<RareComboModifier>(rareCombos.size)
 
-    for (key in rareCombos.keys) {
-        protoModifiers.add(RareComboModifier.newBuilder()
-                .setArcana(Arcana.valueOf(key.toUpperCase()))
-                .addAllModifiers(rareCombos[key])
-                .build())
+    rareCombos.keys.mapTo(protoModifiers) {
+        RareComboModifier.newBuilder()
+                .setArcana(Arcana.valueOf(it.toUpperCase()))
+                .addAllModifiers(rareCombos[it])
+                .build()
     }
 
     return protoModifiers
@@ -150,7 +148,7 @@ fun createPersonas(moshi: Moshi): List<Persona> {
 
     val source = Okio.source(File(INPUT + "personae.json"))
 
-    val personae = adapter.fromJson(Okio.buffer(source))
+    val personae = adapter.fromJson(Okio.buffer(source))!!
 
     val protoPersonas = ArrayList<Persona>(personae.size)
 
