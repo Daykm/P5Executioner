@@ -24,11 +24,14 @@ jobs:
           name: Assemble apk
           command: ./gradlew assembleAppRelease --profile -PshouldPreDex=false
       - store_artifacts:
-          path: app/outputs/mapping/app/release/mapping.txt
+          path: app/build/outputs/mapping/app/release/mapping.txt
           destination: mapping
       - store_artifacts:
-          path: app/outputs/apk/app/release/
+          path: app/build/outputs/apk/app/release
           destination: apk
+      - store_artifacts:
+          path: app/build/reports/profile
+          destination: gradleProfile
       - run:
           name: Run Tests
           command: ./gradlew lint test -PshouldPreDex=false
