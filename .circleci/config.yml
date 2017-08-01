@@ -35,6 +35,12 @@ jobs:
       - store_artifacts:
           path: build/reports/profile
           destination: gradleProfile
+      - store_artifacts:
+          path: build/reports/profile/css
+          destination: gradleProfile/css
+      - store_artifacts:
+          path: build/reports/profile/js
+          destination: gradleProfile/js
       - run:
           name: Run Tests
           command: ./gradlew lint test
