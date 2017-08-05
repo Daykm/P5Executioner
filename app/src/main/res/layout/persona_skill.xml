@@ -10,17 +10,25 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/person_level"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        tools:text="20"/>
+
+    <TextView
         android:id="@+id/skill_element"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:lines="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         app:layout_constraintBaseline_toBaselineOf="@+id/skill_name"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/person_level"
         app:layout_constraintRight_toLeftOf="@+id/skill_name"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Phys"/>
-
 
     <TextView
         android:id="@+id/skill_name"

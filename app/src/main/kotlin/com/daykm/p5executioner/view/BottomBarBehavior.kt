@@ -13,15 +13,11 @@ class BottomBarBehavior : CoordinatorLayout.Behavior<BottomNavigationView>() {
         return dependsOn
     }
 
-    override fun onStartNestedScroll(
-            coordinatorLayout: CoordinatorLayout?,
-            child: BottomNavigationView?,
-            directTargetChild: View?,
-            target: View?,
-            nestedScrollAxes: Int)
-            : Boolean = nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
+    override fun onStartNestedScroll(coordinatorLayout: CoordinatorLayout, child: BottomNavigationView, directTargetChild: View, target: View, axes: Int, type: Int): Boolean
+            = axes == ViewCompat.SCROLL_AXIS_VERTICAL
 
-    override fun onNestedPreScroll(coordinatorLayout: CoordinatorLayout?, child: BottomNavigationView?, target: View?, dx: Int, dy: Int, consumed: IntArray?) {
+
+    override fun onNestedPreScroll(coordinatorLayout: CoordinatorLayout, child: BottomNavigationView, target: View, dx: Int, dy: Int, consumed: IntArray, type: Int) {
         if (dy < 0) {
             showBottomNavigationView(child!!)
         } else if (dy > 0) {

@@ -1,15 +1,17 @@
 package com.daykm.p5executioner.personas
 
-import android.content.Context
+import android.app.Activity
 import android.support.v4.content.ContextCompat
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.R
+import com.daykm.p5executioner.personadetail.PersonaDetailActivity
 import com.daykm.p5executioner.proto.Persona
 import com.daykm.p5executioner.view.SimpleSpanBuilder
+import org.jetbrains.anko.intentFor
 
-class PersonaListItemModel(val persona: Persona, val ctx: Context) : EpoxyModelWithHolder<PersonaListItemHolder>() {
+class PersonaListItemModel(val persona: Persona, val ctx: Activity) : EpoxyModelWithHolder<PersonaListItemHolder>() {
     val elements: SpannableStringBuilder
     val stats: String
 
@@ -53,6 +55,11 @@ class PersonaListItemModel(val persona: Persona, val ctx: Context) : EpoxyModelW
             it.arcana.text = persona.arcana.name
             it.name.text = persona.name
             it.level.text = persona.level.toString()
+            it.view.setOnClickListener {
+                ctx.startActivity(
+                        ctx.intentFor<PersonaDetailActivity>("persona" to persona.toByteArray())
+                )
+            }
         }
     }
 

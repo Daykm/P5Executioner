@@ -3,6 +3,9 @@ package com.daykm.p5executioner
 import android.app.Application
 import android.content.Context
 import com.daykm.p5executioner.main.P5Component
+import com.daykm.p5executioner.main.P5Module
+import com.daykm.p5executioner.personadetail.PersonaDetailComponent
+import com.frogermcs.androiddevmetrics.AndroidDevMetrics
 import com.squareup.leakcanary.LeakCanary
 import dagger.BindsInstance
 import dagger.Component
@@ -24,7 +27,10 @@ class App : Application() {
         super.onCreate()
         INSTANCE = this
 
-        debug { Timber.plant(DebugTree()) }
+        debug {
+            Timber.plant(DebugTree())
+            AndroidDevMetrics.initWith(this)
+        }
 
         component = DaggerAppComponent.builder().ctx(this).build()
 
@@ -38,7 +44,9 @@ class App : Application() {
 
 @Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
 
-    fun persona(): P5Component
+    fun persona(module: P5Module): P5Component
+
+    fun personaDetail(): PersonaDetailComponent
 
     @Component.Builder interface Builder {
         fun build(): AppComponent

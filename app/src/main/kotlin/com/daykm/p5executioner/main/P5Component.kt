@@ -6,4 +6,5 @@ import dagger.Subcomponent
 @ActivityScope
 @Subcomponent(modules = arrayOf(P5Module::class)) interface P5Component {
     fun adapter(): PageableAdapter
+
 }

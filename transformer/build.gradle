@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 defaultTasks 'run'
 
-mainClassName = "com.daykm.p5executioner.Main"
+mainClassName = "com.daykm.p5executioner.MainKt"
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin"
