@@ -32,9 +32,13 @@ class App : Application() {
 
         component = DaggerAppComponent.builder().ctx(this).build()
 
-        if (!LeakCanary.isInAnalyzerProcess(this)) {
-            LeakCanary.install(this)
-        }
+        initLeakCanary()
+    }
+}
+
+fun Application.initLeakCanary() {
+    if (!LeakCanary.isInAnalyzerProcess(this)) {
+        LeakCanary.install(this)
     }
 }
 
