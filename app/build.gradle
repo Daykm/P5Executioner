@@ -1,17 +1,6 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath(appPlugins.devMetrics)
-    }
-}
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.frogermcs.androiddevmetrics'
 
 android {
 
@@ -19,13 +8,13 @@ android {
     buildToolsVersion buildConfig.buildToolsVer
 
     defaultConfig {
-        applicationId "com.daykm.p5executioner"
+        applicationId 'com.daykm.p5executioner'
         minSdkVersion buildConfig.minSdkVer
         targetSdkVersion buildConfig.targetSdkVer
         versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        resConfig "en"
+        versionName '1.0'
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        resConfig 'en'
     }
 
     signingConfigs {
@@ -52,11 +41,11 @@ android {
         }
     }
 
-    flavorDimensions "dev"
+    flavorDimensions 'dev'
 
     productFlavors {
         app {
-            dimension "dev"
+            dimension 'dev'
         }
     }
 

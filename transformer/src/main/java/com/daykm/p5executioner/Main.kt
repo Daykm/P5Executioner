@@ -132,9 +132,7 @@ fun createRareCombos(moshi: Moshi): List<RareComboModifier> {
 
 @Throws(Exception::class)
 fun createPersonas(moshi: Moshi): List<Persona> {
-    val type = Types.newParameterizedType(Map::class.java, String::class.java, JsonPersonaDetail::class.java)
-
-    val adapter = moshi.adapter<Map<String, JsonPersonaDetail>>(type)
+    val adapter = moshi.adapterForMapOf(String::class.java, JsonPersonaDetail::class.java)
 
     val source = Okio.source(File(INPUT + "personae.json"))
 
@@ -194,3 +192,7 @@ fun createPersonas(moshi: Moshi): List<Persona> {
 
 fun <T> Moshi.adapterForListOf(clazz: Class<T>): JsonAdapter<List<T>> =
         adapter<List<T>>(Types.newParameterizedType(List::class.java, clazz))
+
+fun <K, V> Moshi.adapterForMapOf(keyClass: Class<K>, valueClass: Class<V>): JsonAdapter<Map<K, V>> =
+        adapter<Map<K, V>>(Types.newParameterizedType(Map::class.java, keyClass::class.java, valueClass::class.java))
+
