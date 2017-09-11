@@ -5,7 +5,6 @@ import android.content.Context
 import com.daykm.p5executioner.main.P5Component
 import com.daykm.p5executioner.main.P5Module
 import com.daykm.p5executioner.personadetail.PersonaDetailComponent
-import com.frogermcs.androiddevmetrics.AndroidDevMetrics
 import com.squareup.leakcanary.LeakCanary
 import dagger.BindsInstance
 import dagger.Component
@@ -29,7 +28,6 @@ class App : Application() {
 
         debug {
             Timber.plant(DebugTree())
-            AndroidDevMetrics.initWith(this)
         }
 
         component = DaggerAppComponent.builder().ctx(this).build()
