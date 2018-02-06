@@ -4,16 +4,13 @@ apply from: 'versions.gradle'
 
 buildscript {
     ext.buildVer = [
-            kotlin        : '1.1.4-3',
-            androidGradle : '3.0.0-beta5',
+            kotlin        : '1.2.21',
+            androidGradle : '3.0.1',
     ]
 
     repositories {
         google()
         jcenter()
-        maven {
-            url 'https://dl.bintray.com/kotlin/kotlin-eap-1.1'
-        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$buildVer.androidGradle"

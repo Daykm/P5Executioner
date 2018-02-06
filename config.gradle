@@ -1,4 +1,4 @@
 ext.buildConfig = [minSdkVer    : 21,
                    targetSdkVer : 26,
                    compileSdkVer: 26,
-                   buildToolsVer: '26.0.0']
+                   buildToolsVer: '26.0.2']
