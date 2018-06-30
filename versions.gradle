@@ -22,7 +22,7 @@ ext.appPlugins = [
 ]
 
 ext.lib = [
-        kotlinStd  : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$buildVer.kotlin",
+        kotlinStd  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$buildVer.kotlin",
         ankoCommons: "org.jetbrains.anko:anko-commons:$ver.anko",
         ankoSdk21  : "org.jetbrains.anko:anko-sdk21:$ver.anko",
         ankoCompat : "org.jetbrains.anko:anko-appcompat-v7:$ver.anko",
