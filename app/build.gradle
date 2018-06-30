@@ -4,7 +4,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
 
-    compileSdkVersion buildConfig.compileSdkVer
+    compileSdkVersion 26
     buildToolsVersion buildConfig.buildToolsVer
 
     defaultConfig {
@@ -67,7 +67,6 @@ dependencies {
     debugImplementation leakCanary.leakCanary
     releaseImplementation leakCanary.leakCanaryNoOp
     testImplementation leakCanary.leakCanaryNoOp
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.0', {
         exclude group: 'com.android.support', module: 'support-annotations'

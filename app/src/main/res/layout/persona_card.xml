@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_persona"
@@ -7,6 +8,7 @@
     android:layout_height="150dp"
     android:layout_margin="8dp"
     android:clickable="true"
+    android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     android:orientation="vertical"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +28,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Arsene" />
+        tools:text="Arsene"/>
 
     <TextView
         android:id="@+id/card_level"
@@ -36,7 +38,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="3" />
+        tools:text="3"/>
 
     <TextView
         android:id="@+id/card_arcana"
@@ -46,6 +48,6 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:text="Fool" />
+        tools:text="Fool"/>
 
 </android.support.constraint.ConstraintLayout>

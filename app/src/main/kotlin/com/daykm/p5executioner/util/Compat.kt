@@ -11,7 +11,7 @@ import android.support.v4.content.ContextCompat
 import android.widget.TextView
 
 
-fun Context.colorStateList(@ColorRes color: Int): ColorStateList = ContextCompat.getColorStateList(this, color)
+fun Context.colorStateList(@ColorRes color: Int): ColorStateList = ContextCompat.getColorStateList(this, color)!!
 fun Context.color(@ColorRes color: Int): Int = ContextCompat.getColor(this, color)
 
 fun TextView.txtAppr(@StyleRes style: Int) {

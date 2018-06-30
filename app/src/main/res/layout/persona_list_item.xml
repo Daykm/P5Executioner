@@ -8,6 +8,7 @@
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
     android:clickable="true"
+    android:focusable="true"
     android:orientation="horizontal"
     android:padding="8dp">
 
@@ -15,13 +16,13 @@
         android:id="@+id/persona_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/persona_arcana"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/persona_arcana"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Arsene"/>
 
@@ -33,8 +34,8 @@
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         app:layout_constraintBaseline_toBaselineOf="@id/persona_name"
-        app:layout_constraintLeft_toRightOf="@id/persona_name"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/persona_name"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Fool"/>
 
@@ -47,8 +48,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/persona_stats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/persona_stats"
         app:layout_constraintTop_toBottomOf="@id/persona_name"
         tools:text="99"/>
 
@@ -63,8 +64,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textSize="12sp"
         android:fontFamily="monospace"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/persona_level"
         tools:text="@string/test_colors"/>
 
@@ -72,13 +73,13 @@
         android:id="@+id/persona_stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:ellipsize="none"
         android:fontFamily="sans-serif-thin-monospace"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBaseline_toBaselineOf="@id/persona_level"
-        app:layout_constraintLeft_toRightOf="@id/persona_level"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/persona_level"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/persona_name"
         tools:text="@string/test_stats"/>
 

@@ -2,7 +2,7 @@ ext.ver = [
         anko      : '0.10.1',
         sup       : '26.0.0',
         dagger    : '2.11',
-        constraint: '1.1.0-beta1',
+        constraint: '2.0.0-alpha1',
         timber    : '4.5.1',
         rxJava    : '2.0.8',
         rxAndroid : '2.0.1',
