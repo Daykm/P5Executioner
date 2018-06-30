@@ -5,11 +5,9 @@ import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.R
-import com.daykm.p5executioner.personadetail.PersonaDetailActivity
 import com.daykm.p5executioner.proto.Persona
 import com.daykm.p5executioner.util.color
 import com.daykm.p5executioner.view.SimpleSpanBuilder
-import org.jetbrains.anko.intentFor
 
 class PersonaListItemModel(val persona: Persona, val ctx: Activity) : EpoxyModelWithHolder<PersonaListItemHolder>() {
     val elements: SpannableStringBuilder
@@ -59,9 +57,11 @@ class PersonaListItemModel(val persona: Persona, val ctx: Activity) : EpoxyModel
             it.name.text = persona.name
             it.level.text = persona.level.toString()
             it.view.setOnClickListener {
+                /*
                 ctx.startActivity(
                         ctx.intentFor<PersonaDetailActivity>("persona" to persona.toByteArray())
                 )
+                */
             }
         }
     }

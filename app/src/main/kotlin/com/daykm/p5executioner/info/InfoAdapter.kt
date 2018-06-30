@@ -1,9 +1,6 @@
 package com.daykm.p5executioner.info
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.text.util.Linkify
 import android.view.Gravity
 import android.view.ViewGroup
@@ -12,19 +9,11 @@ import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyModelWithView
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.util.txtAppr
-import com.daykm.p5executioner.view.Pageable
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.textView
 import javax.inject.Inject
 
-
-class InfoAdapter @Inject constructor() : EpoxyController(), Pageable {
-    override fun manager(ctx: Context): RecyclerView.LayoutManager =
-            LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
-                    .apply { recycleChildrenOnDetach = true }
-
-    override fun attach() = requestModelBuild()
-    override fun adapter(): RecyclerView.Adapter<*> = adapter
+class InfoAdapter @Inject constructor() : EpoxyController() {
     override fun buildModels() = SourceModel().id(1).addTo(this)
 }
 

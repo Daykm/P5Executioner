@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Context
 import com.daykm.p5executioner.main.P5Component
 import com.daykm.p5executioner.main.P5Module
-import com.daykm.p5executioner.personadetail.PersonaDetailComponent
 import com.squareup.leakcanary.LeakCanary
 import dagger.BindsInstance
 import dagger.Component
@@ -47,8 +46,6 @@ fun Application.initLeakCanary() {
 @Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
 
     fun persona(module: P5Module): P5Component
-
-    fun personaDetail(): PersonaDetailComponent
 
     @Component.Builder interface Builder {
         fun build(): AppComponent
