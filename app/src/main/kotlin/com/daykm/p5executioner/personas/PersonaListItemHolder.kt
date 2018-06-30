@@ -1,6 +1,7 @@
 package com.daykm.p5executioner.personas
 
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
@@ -9,6 +10,8 @@ import com.daykm.p5executioner.R
 
 class PersonaListItemHolder : EpoxyHolder() {
 
+    @BindView(R.id.persona_item)
+    lateinit var view: ViewGroup
     @BindView(R.id.persona_name)
     lateinit var name: TextView
     @BindView(R.id.persona_arcana)

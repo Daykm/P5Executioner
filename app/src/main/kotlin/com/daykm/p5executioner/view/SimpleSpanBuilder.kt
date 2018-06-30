@@ -6,15 +6,12 @@ import android.text.SpannableStringBuilder
 
 class SimpleSpanBuilder {
 
-    private val spanSections: MutableList<SpanSection> = ArrayList()
+    private val spanSections: MutableList<SpanSection> = mutableListOf()
     private val stringBuilder: StringBuilder = StringBuilder()
 
-    fun append(text: String, vararg spans: ParcelableSpan): SimpleSpanBuilder {
-        if (spans != null && spans.size > 0) {
-            spanSections.add(SpanSection(text, stringBuilder.length, *spans))
-        }
+    fun append(text: String, span: ParcelableSpan) {
+        spanSections.add(SpanSection(text, stringBuilder.length, span))
         stringBuilder.append(text)
-        return this
     }
 
     fun build(): SpannableStringBuilder {
@@ -25,21 +22,14 @@ class SimpleSpanBuilder {
         return ssb
     }
 
-    override fun toString(): String {
-        return stringBuilder.toString()
-    }
+    override fun toString(): String = stringBuilder.toString()
 }
 
 class SpanSection(private val text: String, private val startIndex: Int,
-                  vararg spans: ParcelableSpan) {
+                  val span: ParcelableSpan) {
 
-    val spns = arrayOf(spans)
-
-    fun apply(spanStringBuilder: SpannableStringBuilder?) {
-        if (spanStringBuilder == null) return
-        for (span in spns) {
-            spanStringBuilder.setSpan(span, startIndex, startIndex + text.length,
-                    Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        }
+    fun apply(spanStringBuilder: SpannableStringBuilder) {
+        spanStringBuilder.setSpan(span, startIndex, startIndex + text.length,
+                Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
     }
 }

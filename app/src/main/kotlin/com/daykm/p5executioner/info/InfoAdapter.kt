@@ -1,5 +1,6 @@
 package com.daykm.p5executioner.info
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -28,12 +29,13 @@ class InfoAdapter @Inject constructor() : EpoxyController(), Pageable {
 }
 
 class SourceModel : EpoxyModelWithView<TextView>() {
+    @SuppressLint("SetTextI18n")
     override fun buildView(parent: ViewGroup): TextView = with(AnkoContext.create(parent.context)) {
         textView {
             text = "github.com/Daykm/P5Executioner"
             gravity = Gravity.CENTER
             Linkify.addLinks(this, Linkify.WEB_URLS)
-            txtAppr(R.style.Base_TextAppearance_AppCompat_Title)
+            txtAppr(R.style.TextAppearance_AppCompat_Title)
         }
     }
 }

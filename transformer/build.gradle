@@ -3,11 +3,11 @@ apply plugin: 'application'
 
 defaultTasks 'run'
 
-mainClassName = "com.daykm.p5executioner.Main"
+mainClassName = "com.daykm.p5executioner.MainKt"
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$buildVer.kotlin"
-    implementation 'com.squareup.moshi:moshi:1.5.0'
+    implementation 'com.squareup.moshi:moshi:1.6.0'
     implementation 'com.google.protobuf:protobuf-lite:3.0.0'
     implementation project(':proto')
 

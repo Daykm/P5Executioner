@@ -1,13 +1,11 @@
-@file:JvmName("Main")
-
 package com.daykm.p5executioner
 
 import com.daykm.p5executioner.proto.*
+import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import okio.Okio
 import java.io.File
-import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.*
 
@@ -16,35 +14,43 @@ class JsonCombo(val result: String, val source: Array<String>)
 class JsonPersonaDetail(val arcana: String, val level: Int, val skills: Map<String, Int>, val elems: List<String>, val stats: Array<Int>)
 class JsonSkillDetail(val element: String, val cost: Int?, val personas: Map<String, Int>, val talks: List<String>?, val effect: String)
 
-val OUTPUT = "../gen/src/main/assets/"
+
 val INPUT = "json/"
 
 @Throws(Exception::class)
 fun main(args: Array<String>) {
     println("Working Directory = " + System.getProperty("user.dir"))
 
-    val data = Moshi.Builder().build().let {
+    val data = with(Moshi.Builder().build()) {
         Data.newBuilder()
-                .addAllArcanaCombos(createArcanaCombos(it))
-                .addAllPersonas(createPersonas(it))
-                .addAllSkills(createSkills(it))
-                .addAllRareModifiers(createRareCombos(it))
-                .addAllSpecialCombos(createSpecialCombos(it))
-                .addAllDlcPersonae(createDlcPersonae(it))
+                .addAllArcanaCombos(createArcanaCombos(this))
+                .addAllPersonas(createPersonas(this))
+                .addAllSkills(createSkills(this))
+                .addAllRareModifiers(createRareCombos(this))
+                .addAllSpecialCombos(createSpecialCombos(this))
+                .addAllDlcPersonae(createDlcPersonae(this))
                 .build()
     }
 
-    Paths.get(OUTPUT + "data.pb").let {
-        Files.createDirectories(it.parent)
-        it.toFile().printWriter().use {
-            it.print(data.toByteArray())
-        }
-    }
+    val bytes = data.toByteArray()
+
+    println("Data is ${bytes.size} big")
+
+    createOutputFile().outputStream().use { it.write(bytes) }
+}
+
+private fun createOutputFile(): File {
+
+    val directoryPath = Paths.get("../gen/src/main/assets/")
+
+    val directory = directoryPath.toFile().mkdirs()
+
+    return Paths.get("../gen/src/main/assets/data.pb").toFile()
 }
 
 @Throws(Exception::class)
-fun createDlcPersonae(moshi: Moshi): List<DLCPersona> = moshi.let {
-    it.adapter<List<List<String>>>(
+fun createDlcPersonae(moshi: Moshi): List<DLCPersona> = with(moshi) {
+    adapter<List<List<String>>>(
             Types.newParameterizedType(List::class.java,
                     Types.newParameterizedType(List::class.java, String::class.java))
     ).fromJson(Okio.buffer(Okio.source(File(INPUT + "dlcPersonae.json"))))!!
@@ -55,35 +61,28 @@ fun createDlcPersonae(moshi: Moshi): List<DLCPersona> = moshi.let {
 
 @Throws(Exception::class)
 fun createSpecialCombos(moshi: Moshi): List<SpecialCombo> {
-
-    val adapter = moshi.adapter<List<JsonSpecialCombo>>(Types.newParameterizedType(List::class.java, JsonSpecialCombo::class.java))
+    val adapter = moshi.adapterForListOf(JsonSpecialCombo::class.java)
 
     val combos = adapter.fromJson(Okio.buffer(Okio.source(File(INPUT + "specialCombos.json"))))
 
     val protoCombos = ArrayList<SpecialCombo>(combos!!.size)
 
     combos.mapTo(protoCombos) { SpecialCombo.newBuilder().setResult(it.result).addAllSources(it.sources).build() }
-
+    println("Parsed ${protoCombos.size} special combos")
     return protoCombos
 }
 
 @Throws(Exception::class)
 fun createArcanaCombos(moshi: Moshi): List<ArcanaCombo> {
     val adapter = moshi.adapter<List<JsonCombo>>(Types.newParameterizedType(List::class.java, JsonCombo::class.java))
-
     val json = adapter.fromJson(Okio.buffer(Okio.source(File(INPUT + "arcanaCombos.json"))))!!
-
-    val protoCombos = ArrayList<ArcanaCombo>(json.size)
-
-    json.mapTo(protoCombos) {
+    return json.map {
         ArcanaCombo.newBuilder()
                 .setFirst(Arcana.valueOf(it.source[0].toUpperCase()))
                 .setSecond(Arcana.valueOf(it.source[1].toUpperCase()))
                 .setResult(Arcana.valueOf(it.result.toUpperCase()))
                 .build()
     }
-
-    return protoCombos
 }
 
 @Throws(Exception::class)
@@ -142,9 +141,7 @@ fun createRareCombos(moshi: Moshi): List<RareComboModifier> {
 
 @Throws(Exception::class)
 fun createPersonas(moshi: Moshi): List<Persona> {
-    val type = Types.newParameterizedType(Map::class.java, String::class.java, JsonPersonaDetail::class.java)
-
-    val adapter = moshi.adapter<Map<String, JsonPersonaDetail>>(type)
+    val adapter = moshi.adapterForMapOf(String::class.java, JsonPersonaDetail::class.java)
 
     val source = Okio.source(File(INPUT + "personae.json"))
 
@@ -201,3 +198,12 @@ fun createPersonas(moshi: Moshi): List<Persona> {
     }
     return protoPersonas
 }
+
+fun <T> Moshi.adapterForListOf(clazz: Class<T>): JsonAdapter<List<T>> =
+        adapter<List<T>>(Types.newParameterizedType(List::class.java, clazz))
+
+fun <K, V> Moshi.adapterForMapOf(keyClass: Class<K>, valueClass: Class<V>): JsonAdapter<Map<K, V>> {
+    val type = Types.newParameterizedType(Map::class.java, keyClass, valueClass)
+    return adapter<Map<K, V>>(type)
+}
+

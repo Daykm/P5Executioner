@@ -5,8 +5,8 @@ import android.support.design.widget.CoordinatorLayout
 import android.support.v4.view.ViewPager
 import android.view.Gravity
 import com.daykm.p5executioner.R
-import com.daykm.p5executioner.util.color
-import com.daykm.p5executioner.view.BottomBarBehavior
+import com.daykm.p5executioner.util.colorStateList
+import com.daykm.p5executioner.view.BottomNavigationBehavior
 import com.daykm.p5executioner.view.navPager
 import org.jetbrains.anko.AnkoComponent
 import org.jetbrains.anko.AnkoContext
@@ -30,11 +30,11 @@ class P5Layout : AnkoComponent<P5Activity> {
             }.let { pager = it }
             bottomNavigationView {
                 itemBackgroundResource = R.color.colorPrimary
-                itemIconTintList = ctx.color(R.color.white)
-                itemTextColor = ctx.color(R.color.white)
+                itemIconTintList = ctx.colorStateList(R.color.white)
+                itemTextColor = ctx.colorStateList(R.color.white)
                 inflateMenu(R.menu.menu_nav)
             }.lparams {
-                behavior = BottomBarBehavior()
+                behavior = BottomNavigationBehavior<BottomNavigationView>()
                 gravity = Gravity.BOTTOM
                 width = matchParent
             }.let { nav = it }

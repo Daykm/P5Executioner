@@ -1,5 +1,6 @@
 package com.daykm.p5executioner.personas
 
+import android.app.Activity
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView.Adapter
@@ -14,13 +15,13 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class P5ListAdapter
-@Inject constructor(val repo: DataRepo, val ctx: Context)
+@Inject constructor(val repo: DataRepo, val activity: Activity)
     : TypedEpoxyController<List<Persona>>(), Pageable {
 
     override fun buildModels(data: List<Persona>?) {
         Timber.i("Building %d models", data?.size ?: 0)
         data?.forEach {
-            PersonaListItemModel(it, ctx).id(it.name).addTo(this)
+            PersonaListItemModel(it, activity).id(it.name).addTo(this)
         }
     }
 
