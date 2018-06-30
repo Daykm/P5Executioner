@@ -9,7 +9,7 @@ import timber.log.Timber
 
 class P5Activity : AppCompatActivity() {
 
-    val component: P5Component by lazy { App.INSTANCE.component.persona() }
+    val component: P5Component by lazy { App.INSTANCE.component.persona(P5Module(this)) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

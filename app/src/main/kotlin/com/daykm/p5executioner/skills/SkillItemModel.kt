@@ -25,8 +25,14 @@ class SkillItemModel(val skill: Skill, val ctx: Context) : EpoxyModelWithHolder<
     fun skillCost(): String =
             if (skill.element != PASSIVE) {
                 when {
-                    skill.cost < 100 -> ctx.getString(R.string.skill_cost_hp, skill.cost)
-                    else -> ctx.getString(R.string.skill_cost_sp, skill.cost / 100)
+                    skill.cost < 100 -> {
+                        val cost: Int = skill.cost
+                        ctx.getString(R.string.skill_cost_hp, cost)
+                    }
+                    else -> {
+                        val cost: Int = skill.cost / 100
+                        ctx.getString(R.string.skill_cost_sp, cost)
+                    }
                 }
             } else ctx.getString(string.skill_no_cost)
 }
