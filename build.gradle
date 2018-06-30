@@ -24,7 +24,7 @@ allprojects {
         jcenter()
     }
 
-    ext.getFlagFromPeroperties = { name ->
+    ext.getFlagFromProperties = { name ->
         return project.hasProperty(name) ? Boolean.parseBoolean(project.property(name)) : true
     }
 }

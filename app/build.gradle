@@ -51,7 +51,7 @@ android {
 
     dexOptions {
         // disable predexing in CI
-        preDexLibraries = getFlagFromPeroperties('shouldPreDex')
+        preDexLibraries = getFlagFromProperties('shouldPreDex')
     }
 
     sourceSets {
