@@ -33,7 +33,7 @@ class SourceModel : EpoxyModelWithView<TextView>() {
             text = "github.com/Daykm/P5Executioner"
             gravity = Gravity.CENTER
             Linkify.addLinks(this, Linkify.WEB_URLS)
-            txtAppr(R.style.Base_TextAppearance_AppCompat_Title)
+            txtAppr(R.style.TextAppearance_AppCompat_Title)
         }
     }
 }
