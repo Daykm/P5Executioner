@@ -84,11 +84,15 @@ abstract class VerticalScrollingBehavior<V : View> : CoordinatorLayout.Behavior<
     private var totalDy = 0
 
     var overScrollDirection = SCROLL_NONE
-        @ScrollDirection private set
+        private set(@ScrollDirection value) {
+            field = value
+        }
         @ScrollDirection get
 
     var scrollDirection = SCROLL_NONE
-        @ScrollDirection private set
+        private set(@ScrollDirection value) {
+            field = value
+        }
         @ScrollDirection get
 
     @Retention(AnnotationRetention.SOURCE)
