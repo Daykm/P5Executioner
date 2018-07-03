@@ -3,7 +3,6 @@ package com.daykm.p5executioner.main
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.daykm.p5executioner.App
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.databinding.ActivityMainBinding
 import com.daykm.p5executioner.info.InfoFragment
@@ -13,7 +12,9 @@ import timber.log.Timber
 
 class P5Activity : AppCompatActivity() {
 
-    val component: P5Component by lazy { App.INSTANCE.component.persona(P5Module(this)) }
+    val component: P5Component by lazy {
+        TODO()
+    }
 
     lateinit var binding: ActivityMainBinding
 

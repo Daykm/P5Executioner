@@ -1,4 +1,4 @@
-package com.daykm.p5executioner.main
+package com.daykm.p5executioner.di
 
 import javax.inject.Scope
 

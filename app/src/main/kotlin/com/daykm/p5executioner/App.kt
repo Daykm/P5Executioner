@@ -1,56 +1,58 @@
 package com.daykm.p5executioner
 
 import android.app.Application
-import android.content.Context
-import com.daykm.p5executioner.main.P5Component
-import com.daykm.p5executioner.main.P5Module
 import com.squareup.leakcanary.LeakCanary
-import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
+import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
+import dagger.android.support.DaggerApplication
 import timber.log.Timber
 import timber.log.Timber.DebugTree
+import javax.inject.Inject
 import javax.inject.Singleton
 
-class App : Application() {
+class App : DaggerApplication() {
 
-    companion object {
-        lateinit var INSTANCE: App
-            private set
-    }
+    @Inject
+    lateinit var injector: AndroidInjector<App>
+
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> = injector
 
     lateinit var component: AppComponent
 
     override fun onCreate() {
         super.onCreate()
-        INSTANCE = this
 
         debug {
             Timber.plant(DebugTree())
         }
 
-        component = DaggerAppComponent.builder().ctx(this).build()
+        // component = DaggerAppComponent.builder().ctx(this).build()
 
         initLeakCanary()
     }
 }
 
-fun Application.initLeakCanary() {
+private fun Application.initLeakCanary() {
     if (!LeakCanary.isInAnalyzerProcess(this)) {
         LeakCanary.install(this)
     }
 }
 
-@Module abstract class AppModule
+@Module(includes = [AndroidInjectionModule::class])
+abstract class AppModule
 
-@Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
+@Singleton
+@Component(modules = [AppModule::class])
+interface AppComponent : AndroidInjector<App> {
 
-    fun persona(module: P5Module): P5Component
-
+    /*
     @Component.Builder interface Builder {
         fun build(): AppComponent
         @BindsInstance fun ctx(ctx: Context): Builder
     }
+    */
 }
 
 fun <Unit> debug(f: () -> Unit) {
