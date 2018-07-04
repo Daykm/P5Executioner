@@ -2,24 +2,26 @@ package com.daykm.p5executioner.main
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.databinding.ActivityMainBinding
+import com.daykm.p5executioner.fusion.FusionFragment
 import com.daykm.p5executioner.info.InfoFragment
 import com.daykm.p5executioner.view.FragmentItemPagerAdapter
 import com.daykm.p5executioner.view.fragmentAdapterItem
+import dagger.android.support.DaggerAppCompatActivity
 import timber.log.Timber
+import javax.inject.Inject
 
-class P5Activity : AppCompatActivity() {
+class P5Activity : DaggerAppCompatActivity() {
 
-    val component: P5Component by lazy {
-        TODO()
-    }
+    @Inject
+    lateinit var test: String
 
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Timber.i(test)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         initBottomNav(binding)
         initPager(binding)
@@ -30,7 +32,7 @@ class P5Activity : AppCompatActivity() {
 
         adapter.items = listOf(
                 fragmentAdapterItem {
-                    InfoFragment()
+                    FusionFragment()
                 },
                 fragmentAdapterItem {
                     InfoFragment()

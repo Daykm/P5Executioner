@@ -30,7 +30,8 @@ ext.lib = [
         ankoRecycle   : "org.jetbrains.anko:anko-recyclerview-v7:$ver.anko",
         ankoDesign    : "org.jetbrains.anko:anko-design:$ver.anko",
         dagger        : "com.google.dagger:dagger:$ver.dagger",
-        daggerAndroid : "com.google.dagger:dagger-android-support:$ver.dagger",
+        daggerAndroid        : "com.google.dagger:dagger-android:$ver.dagger",
+        daggerAndroidSupport : "com.google.dagger:dagger-android-support:$ver.dagger",
         supDesign     : "com.android.support:design:$ver.sup",
         constraint    : "com.android.support.constraint:constraint-layout:$ver.constraint",
         cardView      : "com.android.support:cardview-v7:$ver.sup",
@@ -50,6 +51,7 @@ ext.leakCanary = [
 
 ext.apts = [
         dagger: "com.google.dagger:dagger-compiler:$ver.dagger",
+        daggerAndroid: "com.google.dagger:dagger-android-processor:$ver.dagger",
         butter: "com.jakewharton:butterknife-compiler:$ver.butter"
 ]
 
