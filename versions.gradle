@@ -8,7 +8,7 @@ ext.ver = [
         rxAndroid : '2.0.1',
         snapHelper: '1.1',
         moshi     : '1.5.0',
-        epoxy     : '2.0.0',
+        epoxy     : '2.14.0',
         leakCanary: '1.5',
         callig    : '2.2.0',
         butter    : '8.5.1',

@@ -11,10 +11,14 @@ import javax.inject.Inject
 
 class P5FusionAdapter
 @Inject constructor(
-        val firstPicker: PersonaPickerAdapter,
-        val secondPicker: PersonaPickerAdapter,
-        val pool: RecycledViewPool)
+        firstPicker: PersonaPickerAdapter,
+        secondPicker: PersonaPickerAdapter,
+        private val pool: RecycledViewPool)
     : TypedEpoxyController<List<PersonaPickerAdapter>>() {
+
+    init {
+        setData(listOf(firstPicker, secondPicker))
+    }
 
     override fun buildModels(data: List<PersonaPickerAdapter>?) {
         data?.forEachWithIndex { i, adapter ->
