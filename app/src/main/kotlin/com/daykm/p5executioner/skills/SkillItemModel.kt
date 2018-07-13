@@ -7,9 +7,12 @@ import com.daykm.p5executioner.R.string
 import com.daykm.p5executioner.proto.Skill
 import com.daykm.p5executioner.proto.Skill.Element.PASSIVE
 
-class SkillItemModel(val skill: Skill, val ctx: Context) : EpoxyModelWithHolder<SkillItemHolder>() {
+class SkillItemModel(
+        private val skill: Skill,
+        private val ctx: Context
+) : EpoxyModelWithHolder<SkillItemHolder>() {
 
-    val skillCost = skillCost()
+    private val skillCost = skillCost()
 
     override fun getDefaultLayout(): Int = R.layout.skill_list_item
 

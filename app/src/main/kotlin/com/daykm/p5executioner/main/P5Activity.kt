@@ -6,6 +6,8 @@ import com.daykm.p5executioner.R
 import com.daykm.p5executioner.databinding.ActivityMainBinding
 import com.daykm.p5executioner.fusion.FusionFragment
 import com.daykm.p5executioner.info.InfoFragment
+import com.daykm.p5executioner.personas.PersonaListFragment
+import com.daykm.p5executioner.skills.P5SkillsFragment
 import com.daykm.p5executioner.view.FragmentItemPagerAdapter
 import com.daykm.p5executioner.view.fragmentAdapterItem
 import dagger.android.support.DaggerAppCompatActivity
@@ -35,10 +37,10 @@ class P5Activity : DaggerAppCompatActivity() {
                     FusionFragment()
                 },
                 fragmentAdapterItem {
-                    InfoFragment()
+                    PersonaListFragment()
                 },
                 fragmentAdapterItem {
-                    InfoFragment()
+                    P5SkillsFragment()
                 },
                 fragmentAdapterItem {
                     InfoFragment()

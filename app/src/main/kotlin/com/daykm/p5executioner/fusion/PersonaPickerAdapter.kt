@@ -20,7 +20,10 @@ import io.reactivex.subjects.BehaviorSubject
 import timber.log.Timber
 import javax.inject.Inject
 
-class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : TypedEpoxyController<List<Persona>>() {
+class PersonaPickerAdapter
+@Inject constructor(
+        private val repo: DataRepo
+) : TypedEpoxyController<List<Persona>>() {
 
     val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
 

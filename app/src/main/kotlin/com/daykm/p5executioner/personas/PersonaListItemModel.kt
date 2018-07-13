@@ -1,6 +1,6 @@
 package com.daykm.p5executioner.personas
 
-import android.app.Activity
+import android.support.v7.app.AppCompatActivity
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import com.airbnb.epoxy.EpoxyModelWithHolder
@@ -9,9 +9,13 @@ import com.daykm.p5executioner.proto.Persona
 import com.daykm.p5executioner.util.color
 import com.daykm.p5executioner.view.SimpleSpanBuilder
 
-class PersonaListItemModel(val persona: Persona, val ctx: Activity) : EpoxyModelWithHolder<PersonaListItemHolder>() {
-    val elements: SpannableStringBuilder
-    val stats: String
+class PersonaListItemModel(
+        private val persona: Persona,
+        private val ctx: AppCompatActivity
+) : EpoxyModelWithHolder<PersonaListItemHolder>() {
+
+    private val elements: SpannableStringBuilder
+    private val stats: String
 
     init {
         val affinities = persona.affinities.let {
@@ -28,12 +32,12 @@ class PersonaListItemModel(val persona: Persona, val ctx: Activity) : EpoxyModel
                     it.curse to R.color.icon_curse)
         }
 
-        elements = with(SimpleSpanBuilder(), {
+        elements = with(SimpleSpanBuilder()) {
             affinities.forEach {
                 append(affinity(it.first), ForegroundColorSpan(ctx.color(it.second)))
             }
             build()
-        })
+        }
 
         stats = persona.stats.let {
             ctx.resources.getStringArray(R.array.persona_stats).zip(
@@ -66,7 +70,7 @@ class PersonaListItemModel(val persona: Persona, val ctx: Activity) : EpoxyModel
         }
     }
 
-    fun affinity(option: Persona.Affinities.AffinityOption): String = when (option) {
+    private fun affinity(option: Persona.Affinities.AffinityOption): String = when (option) {
         Persona.Affinities.AffinityOption.NONE -> ctx.getString(R.string.effect_none)
         Persona.Affinities.AffinityOption.WEAK -> ctx.getString(R.string.effect_weak)
         Persona.Affinities.AffinityOption.ABSORB -> ctx.getString(R.string.effect_drain)

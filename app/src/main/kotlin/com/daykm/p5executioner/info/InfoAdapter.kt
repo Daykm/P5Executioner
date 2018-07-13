@@ -8,7 +8,8 @@ import com.daykm.p5executioner.R
 import com.daykm.p5executioner.databinding.InfoItemBinding
 import javax.inject.Inject
 
-class InfoAdapter @Inject constructor() : EpoxyController() {
+class InfoAdapter
+@Inject constructor() : EpoxyController() {
 
     init {
         requestModelBuild()

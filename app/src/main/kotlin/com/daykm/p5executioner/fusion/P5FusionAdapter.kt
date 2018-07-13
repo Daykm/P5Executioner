@@ -13,8 +13,8 @@ class P5FusionAdapter
 @Inject constructor(
         firstPicker: PersonaPickerAdapter,
         secondPicker: PersonaPickerAdapter,
-        private val pool: RecycledViewPool)
-    : TypedEpoxyController<List<PersonaPickerAdapter>>() {
+        private val pool: RecycledViewPool
+) : TypedEpoxyController<List<PersonaPickerAdapter>>() {
 
     init {
         setData(listOf(firstPicker, secondPicker))
@@ -27,8 +27,10 @@ class P5FusionAdapter
     }
 }
 
-class PickerModel(val picker: PersonaPickerAdapter, val pool: RecycledViewPool)
-    : EpoxyModelWithView<RecyclerView>() {
+class PickerModel(
+        private val picker: PersonaPickerAdapter,
+        private val pool: RecycledViewPool
+) : EpoxyModelWithView<RecyclerView>() {
 
     override fun bind(view: RecyclerView) {
         view.adapter = picker.adapter
