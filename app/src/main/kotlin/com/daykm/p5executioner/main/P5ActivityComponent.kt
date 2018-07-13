@@ -1,12 +1,14 @@
 package com.daykm.p5executioner.main
 
-import android.app.Activity
 import android.support.v7.widget.RecyclerView
 import com.daykm.p5executioner.android.LoggingRecyclerPool
 import com.daykm.p5executioner.fusion.FusionFragment
 import com.daykm.p5executioner.fusion.FusionFragmentComponent
 import com.daykm.p5executioner.fusion.FusionModule
-import dagger.*
+import dagger.Binds
+import dagger.Module
+import dagger.Provides
+import dagger.Subcomponent
 import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 
@@ -30,12 +32,5 @@ abstract class P5Module {
 interface P5ActivityComponent : AndroidInjector<P5Activity> {
 
     @Subcomponent.Builder
-    abstract class Builder : AndroidInjector.Builder<P5Activity>() {
-
-        @BindsInstance
-        abstract fun activity(activity: Activity)
-
-        @BindsInstance
-        abstract fun pool(pool: RecyclerView.RecycledViewPool)
-    }
+    abstract class Builder : AndroidInjector.Builder<P5Activity>()
 }

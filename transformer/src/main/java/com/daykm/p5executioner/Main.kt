@@ -43,7 +43,7 @@ private fun createOutputFile(): File {
 
     val directoryPath = Paths.get("../gen/src/main/assets/")
 
-    val directory = directoryPath.toFile().mkdirs()
+    directoryPath.toFile().mkdirs()
 
     return Paths.get("../gen/src/main/assets/data.pb").toFile()
 }

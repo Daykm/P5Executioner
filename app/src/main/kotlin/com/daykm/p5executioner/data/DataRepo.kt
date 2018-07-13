@@ -30,7 +30,6 @@ import javax.inject.Singleton
     }
 }
 
-
 fun Data.skillsForPersona(persona: Persona): List<Skill> = with(persona.skillsList.map { it.name }, {
     skillsList.filter {
         this.contains(it.name)
