@@ -9,7 +9,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+          key: >
+          jars
+          -{{ checksum "build.gradle" }}
+          -{{ checksum  "app/build.gradle" }}
+          -{{ checksum  "gen/build.gradle" }}
+          -{{ checksum  "proto/build.gradle" }}
       - run:
           name: Give gradlew write
           command: chmod +x gradlew
@@ -19,7 +24,12 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+          key: >
+          jars
+          -{{ checksum "build.gradle" }}
+          -{{ checksum  "app/build.gradle" }}
+          -{{ checksum  "gen/build.gradle" }}
+          -{{ checksum  "proto/build.gradle" }}
       - run:
           name: Assemble apk
           command: ./gradlew :app:assembleApp --profile
