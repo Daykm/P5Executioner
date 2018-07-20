@@ -18,10 +18,12 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.BehaviorSubject
 import timber.log.Timber
-import java.lang.RuntimeException
 import javax.inject.Inject
 
-class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : TypedEpoxyController<List<Persona>>() {
+class PersonaPickerAdapter
+@Inject constructor(
+        private val repo: DataRepo
+) : TypedEpoxyController<List<Persona>>() {
 
     val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
 
@@ -29,8 +31,6 @@ class PersonaPickerAdapter @Inject constructor(val repo: DataRepo) : TypedEpoxyC
         Timber.i("Building %d models", data?.size ?: 0)
         data?.forEach { PersonaModel(it, selectedPersona).addTo(this) }
     }
-
-    override fun onExceptionSwallowed(exception: RuntimeException?) = Timber.e(exception)
 
     fun bind() {
         repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribeBy { setData(it.personasList) }
@@ -66,7 +66,7 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
         it.card.setOnClickListener { subject.onNext(persona) }
     }
 
-    override fun unbind(holder: PersonaHolder?) = disposable.clear()
+    override fun unbind(holder: PersonaHolder) = disposable.clear()
 }
 
 class PersonaHolder : EpoxyHolder() {

@@ -8,6 +8,8 @@ import android.os.Build
 import android.support.annotation.ColorRes
 import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.TextView
 
 
@@ -34,3 +36,4 @@ fun test() {
 
 fun <T : Fragment?> FragmentManager.get(key: String): T? = getFragment(null, key)?.let { it as? T }
 
+val View.inflater get() = LayoutInflater.from(context)

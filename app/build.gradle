@@ -4,7 +4,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
 
-    compileSdkVersion 26
+    compileSdkVersion buildConfig.compileSdkVer
     buildToolsVersion buildConfig.buildToolsVer
 
     defaultConfig {
@@ -26,11 +26,15 @@ android {
         }
     }
 
+    dataBinding {
+        enabled true
+    }
+
     buildTypes {
         debug {
             minifyEnabled true
             useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
         release {

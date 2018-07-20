@@ -10,7 +10,9 @@ import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton class DataRepo @Inject constructor(val ctx: Context) {
+@Singleton
+class DataRepo
+@Inject constructor(val ctx: Context) {
 
     val DATA = Single.fromCallable { parseData() }
             .subscribeOn(Schedulers.computation())
@@ -19,7 +21,6 @@ import javax.inject.Singleton
     init {
         DATA.subscribe()
     }
-
 
     private fun parseData(): Data {
         val start = System.nanoTime()
@@ -30,9 +31,8 @@ import javax.inject.Singleton
     }
 }
 
-
-fun Data.skillsForPersona(persona: Persona): List<Skill> = with(persona.skillsList.map { it.name }, {
+fun Data.skillsForPersona(persona: Persona): List<Skill> = with(persona.skillsList.map { it.name }) {
     skillsList.filter {
         this.contains(it.name)
     }
-})
+}

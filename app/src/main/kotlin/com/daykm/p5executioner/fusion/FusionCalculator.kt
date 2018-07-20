@@ -7,7 +7,10 @@ import com.daykm.p5executioner.proto.SpecialCombo
 import javax.inject.Inject
 
 
-class FusionCalculator @Inject constructor(val data: DataRepo) {
+class FusionCalculator
+@Inject constructor(
+        val data: DataRepo
+) {
 
     lateinit var specialCombos: List<SpecialCombo>
     lateinit var personaByArcana: MutableMap<Arcana, MutableList<Persona>>

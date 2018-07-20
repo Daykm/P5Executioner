@@ -1,58 +1,32 @@
 package com.daykm.p5executioner
 
 import android.app.Application
-import android.content.Context
-import com.daykm.p5executioner.main.P5Component
-import com.daykm.p5executioner.main.P5Module
-import com.daykm.p5executioner.personadetail.PersonaDetailComponent
 import com.squareup.leakcanary.LeakCanary
-import dagger.BindsInstance
-import dagger.Component
-import dagger.Module
+import dagger.android.support.DaggerApplication
 import timber.log.Timber
 import timber.log.Timber.DebugTree
-import javax.inject.Singleton
 
-class App : Application() {
+class App : DaggerApplication() {
 
-    companion object {
-        lateinit var INSTANCE: App
-            private set
-    }
-
-    lateinit var component: AppComponent
+    @Suppress("HasPlatformType")
+    override fun applicationInjector() = DaggerAppComponent.builder()
+            .ctx(this)
+            .create(this)
 
     override fun onCreate() {
         super.onCreate()
-        INSTANCE = this
 
         debug {
             Timber.plant(DebugTree())
         }
 
-        component = DaggerAppComponent.builder().ctx(this).build()
-
         initLeakCanary()
     }
 }
 
-fun Application.initLeakCanary() {
+private fun Application.initLeakCanary() {
     if (!LeakCanary.isInAnalyzerProcess(this)) {
         LeakCanary.install(this)
-    }
-}
-
-@Module abstract class AppModule
-
-@Singleton @Component(modules = arrayOf(AppModule::class)) interface AppComponent {
-
-    fun persona(module: P5Module): P5Component
-
-    fun personaDetail(): PersonaDetailComponent
-
-    @Component.Builder interface Builder {
-        fun build(): AppComponent
-        @BindsInstance fun ctx(ctx: Context): Builder
     }
 }
 
