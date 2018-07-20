@@ -3,9 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/P5Executioner.iml" filepath="$PROJECT_DIR$/P5Executioner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/P5Executioner.iml" filepath="$PROJECT_DIR$/P5Executioner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/gen/gen.iml" filepath="$PROJECT_DIR$/gen/gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gen/gen.iml" filepath="$PROJECT_DIR$/gen/gen.iml" />
       <module fileurl="file://$PROJECT_DIR$/proto/proto.iml" filepath="$PROJECT_DIR$/proto/proto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proto/proto.iml" filepath="$PROJECT_DIR$/proto/proto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transformer/transformer.iml" filepath="$PROJECT_DIR$/transformer/transformer.iml" />
       <module fileurl="file://$PROJECT_DIR$/transformer/transformer.iml" filepath="$PROJECT_DIR$/transformer/transformer.iml" />
     </modules>
   </component>
