@@ -4,7 +4,7 @@ apply from: 'versions.gradle'
 
 buildscript {
     ext.buildVer = [
-            kotlin        : '1.2.50',
+            kotlin        : '1.2.60',
     ]
 
     repositories {
