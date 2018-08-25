@@ -3,14 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-
-    compileSdkVersion buildConfig.compileSdkVer
-    buildToolsVersion buildConfig.buildToolsVer
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildTools
 
     defaultConfig {
         applicationId 'com.daykm.p5executioner'
-        minSdkVersion buildConfig.minSdkVer
-        targetSdkVersion buildConfig.targetSdkVer
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
         versionCode 1
         versionName '1.0'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
@@ -65,15 +64,49 @@ android {
 }
 
 dependencies {
-    lib.each { entry -> implementation entry.value }
-    proj.each { entry -> implementation(project(entry)) }
-    apts.each { entry -> kapt entry.value }
-    debugImplementation leakCanary.leakCanary
-    releaseImplementation leakCanary.leakCanaryNoOp
-    testImplementation leakCanary.leakCanaryNoOp
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    implementation JetpackLibs.constraint
+    implementation JetpackLibs.supportCompat
+    implementation JetpackLibs.supportFragment
+    implementation JetpackLibs.supportV7
+    implementation JetpackLibs.supportDesign
+    implementation JetpackLibs.cardView
+    implementation JetpackLibs.recyclerView
+
+    implementation AnkoLibs.commons
+    implementation AnkoLibs.sdk21
+    implementation AnkoLibs.compat
+    implementation AnkoLibs.card
+    implementation AnkoLibs.recycle
+    implementation AnkoLibs.design
+
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    implementation Libs.daggerAndroidSupport
+
+    implementation Libs.rxJava
+    implementation Libs.rxAndroid
+    implementation Libs.rxKotlin
+
+    implementation Libs.timber
+    implementation Libs.butterknife
+    implementation Libs.epoxy
+    implementation Libs.proto
+
+    implementation project(":proto")
+    implementation project(":gen")
+
+    kapt AnnoProcs.dagger
+    kapt AnnoProcs.daggerAndroid
+    kapt AnnoProcs.butterknife
+
+    debugImplementation Libs.leakCanary
+    releaseImplementation Libs.leakCanaryNoOp
+    testImplementation Libs.leakCanaryNoOp
+    testImplementation TestingLibs.junit
+
+    androidTestImplementation AndroidTestingLibs.espressoCore
+    androidTestImplementation AndroidTestingLibs.runner
+    androidTestImplementation AndroidTestingLibs.rules
+
     androidTestImplementation project(path: ':proto')
 }
