@@ -92,8 +92,7 @@ dependencies {
     implementation Libs.epoxy
     implementation Libs.proto
 
-    implementation project(":proto")
-    implementation project(":gen")
+    implementation project(":proto")\
 
     kapt AnnoProcs.dagger
     kapt AnnoProcs.daggerAndroid
