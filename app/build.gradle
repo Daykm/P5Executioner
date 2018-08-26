@@ -72,13 +72,6 @@ dependencies {
     implementation JetpackLibs.cardView
     implementation JetpackLibs.recyclerView
 
-    implementation AnkoLibs.commons
-    implementation AnkoLibs.sdk21
-    implementation AnkoLibs.compat
-    implementation AnkoLibs.card
-    implementation AnkoLibs.recycle
-    implementation AnkoLibs.design
-
     implementation Libs.dagger
     implementation Libs.daggerAndroid
     implementation Libs.daggerAndroidSupport
