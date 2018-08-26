@@ -3,19 +3,22 @@ package com.daykm.p5executioner.personas
 import android.support.v7.app.AppCompatActivity
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
+import android.view.View
+import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.R
+import com.daykm.p5executioner.databinding.PersonaListItemBinding
 import com.daykm.p5executioner.proto.Persona
 import com.daykm.p5executioner.util.color
 import com.daykm.p5executioner.view.SimpleSpanBuilder
 
 class PersonaListItemModel(
-        private val persona: Persona,
+        val persona: Persona,
         private val ctx: AppCompatActivity
 ) : EpoxyModelWithHolder<PersonaListItemHolder>() {
 
-    private val elements: SpannableStringBuilder
-    private val stats: String
+    val elements: SpannableStringBuilder
+    val stats: String
 
     init {
         val affinities = persona.affinities.let {
@@ -54,20 +57,7 @@ class PersonaListItemModel(
     }
 
     override fun bind(holder: PersonaListItemHolder) {
-        holder.let {
-            it.elems.text = elements
-            it.stats.text = stats
-            it.arcana.text = persona.arcana.name
-            it.name.text = persona.name
-            it.level.text = persona.level.toString()
-            it.view.setOnClickListener {
-                /*
-                ctx.startActivity(
-                        ctx.intentFor<PersonaDetailActivity>("persona" to persona.toByteArray())
-                )
-                */
-            }
-        }
+        holder.bindModel(this)
     }
 
     private fun affinity(option: Persona.Affinities.AffinityOption): String = when (option) {
@@ -84,4 +74,28 @@ class PersonaListItemModel(
 
     override fun createNewHolder(): PersonaListItemHolder = PersonaListItemHolder()
 
+}
+
+
+class PersonaListItemHolder : EpoxyHolder() {
+    private lateinit var binding: PersonaListItemBinding
+
+    override fun bindView(itemView: View) {
+        binding = PersonaListItemBinding.bind(itemView)
+    }
+
+    fun bindModel(model: PersonaListItemModel) {
+        binding.personaElements.text = model.elements
+        binding.personaStats.text = model.stats
+        binding.personaArcana.text = model.persona.arcana.name
+        binding.personaName.text = model.persona.name
+        binding.personaLevel.text = model.persona.level.toString()
+        binding.personaItem.setOnClickListener {
+            /*
+            ctx.startActivity(
+                    ctx.intentFor<PersonaDetailActivity>("persona" to persona.toByteArray())
+            )
+            */
+        }
+    }
 }
