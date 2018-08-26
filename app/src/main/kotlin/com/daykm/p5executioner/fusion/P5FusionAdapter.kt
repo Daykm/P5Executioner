@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView.RecycledViewPool
 import android.view.ViewGroup
 import com.airbnb.epoxy.EpoxyModelWithView
 import com.airbnb.epoxy.TypedEpoxyController
-import org.jetbrains.anko.collections.forEachWithIndex
 import javax.inject.Inject
 
 class P5FusionAdapter
@@ -21,7 +20,7 @@ class P5FusionAdapter
     }
 
     override fun buildModels(data: List<PersonaPickerAdapter>?) {
-        data?.forEachWithIndex { i, adapter ->
+        data?.forEachIndexed { i, adapter ->
             PickerModel(adapter, pool).id(i).addTo(this)
         }
     }
