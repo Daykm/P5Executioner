@@ -1,28 +1,28 @@
 package com.daykm.p5executioner.skills
 
 import android.content.Context
+import android.view.View
+import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.R.string
+import com.daykm.p5executioner.databinding.SkillListItemBinding
 import com.daykm.p5executioner.proto.Skill
 import com.daykm.p5executioner.proto.Skill.Element.PASSIVE
 
 class SkillItemModel(
-        private val skill: Skill,
+        val skill: Skill,
         private val ctx: Context
 ) : EpoxyModelWithHolder<SkillItemHolder>() {
 
-    private val skillCost = skillCost()
+    val skillCost = skillCost()
 
     override fun getDefaultLayout(): Int = R.layout.skill_list_item
 
     override fun createNewHolder(): SkillItemHolder = SkillItemHolder()
 
-    override fun bind(holder: SkillItemHolder) = holder.let {
-        it.cost.text = skillCost
-        it.effect.text = skill.effect
-        it.element.text = skill.element.name
-        it.name.text = skill.name
+    override fun bind(holder: SkillItemHolder) {
+        holder.bindModel(this)
     }
 
     fun skillCost(): String =
@@ -38,4 +38,20 @@ class SkillItemModel(
                     }
                 }
             } else ctx.getString(string.skill_no_cost)
+}
+
+class SkillItemHolder : EpoxyHolder() {
+
+    private lateinit var binding: SkillListItemBinding
+
+    override fun bindView(itemView: View) {
+        binding = SkillListItemBinding.bind(itemView)
+    }
+
+    fun bindModel(model: SkillItemModel) {
+        binding.skillCost.text = model.skillCost
+        binding.skillDescription.text = model.skill.effect
+        binding.skillElement.text = model.skill.element.name
+        binding.skillName.text = model.skill.name
+    }
 }

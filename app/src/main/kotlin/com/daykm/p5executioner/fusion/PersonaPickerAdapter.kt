@@ -1,17 +1,14 @@
 package com.daykm.p5executioner.fusion
 
 import android.graphics.Color
-import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.view.View
-import android.widget.TextView
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.airbnb.epoxy.TypedEpoxyController
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.data.DataRepo
+import com.daykm.p5executioner.databinding.PersonaCardBinding
 import com.daykm.p5executioner.proto.Persona
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -37,12 +34,13 @@ class PersonaPickerAdapter
     }
 }
 
-data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Persona>)
+data class PersonaModel(val persona: Persona, private val subject: BehaviorSubject<Persona>)
     : EpoxyModelWithHolder<PersonaHolder>() {
 
     var selected = false
+        private set
 
-    val disposable = CompositeDisposable()
+    private val disposable = CompositeDisposable()
 
     init {
         disposable.add(subject.subscribe { selected = it == persona })
@@ -53,34 +51,36 @@ data class PersonaModel(val persona: Persona, val subject: BehaviorSubject<Perso
 
     override fun getDefaultLayout(): Int = R.layout.persona_card
 
-    override fun bind(holder: PersonaHolder) = holder.let {
-        it.name.text = persona.name
-        it.level.text = persona.level.toString()
-        it.arcana.text = persona.arcana.name
-        if (selected) {
-            it.card.setBackgroundColor(
-                    ContextCompat.getColor(it.card.context, R.color.colorPrimaryDark))
-        } else {
-            it.card.setBackgroundColor(Color.TRANSPARENT)
-        }
-        it.card.setOnClickListener { subject.onNext(persona) }
+    override fun bind(holder: PersonaHolder) {
+        holder.bindModel(this)
     }
 
     override fun unbind(holder: PersonaHolder) = disposable.clear()
+
+    fun notifyClick() {
+        subject.onNext(persona)
+    }
 }
 
 class PersonaHolder : EpoxyHolder() {
-    @BindView(R.id.card_name)
-    lateinit var name: TextView
-    @BindView(R.id.card_arcana)
-    lateinit var arcana: TextView
-    @BindView(R.id.card_level)
-    lateinit var level: TextView
-    @BindView(R.id.card_persona)
-    lateinit var card: ConstraintLayout
+
+    private lateinit var binding: PersonaCardBinding
 
     override fun bindView(itemView: View) {
-        ButterKnife.bind(this, itemView)
+        binding = PersonaCardBinding.bind(itemView)
+    }
+
+    fun bindModel(model: PersonaModel) {
+        binding.cardName.text = model.persona.name
+        binding.cardLevel.text = model.persona.level.toString()
+        binding.cardArcana.text = model.persona.arcana.name
+        if (model.selected) {
+            val ctx = binding.root.context
+            binding.cardPersona.setBackgroundColor(ContextCompat.getColor(ctx, R.color.colorPrimaryDark))
+        } else {
+            binding.cardPersona.setBackgroundColor(Color.TRANSPARENT)
+        }
+        binding.cardPersona.setOnClickListener { model.notifyClick() }
     }
 
 }
