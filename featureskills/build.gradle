@@ -26,6 +26,8 @@ dependencies {
     implementation Kotlin.stdLIbJdk7
 
     implementation JetpackLibs.supportCompat
+    implementation JetpackLibs.supportFragment
+    implementation JetpackLibs.supportV7
     implementation JetpackLibs.recyclerView
     implementation JetpackLibs.constraint
 
