@@ -30,6 +30,7 @@ dependencies {
     implementation JetpackLibs.supportV7
     implementation JetpackLibs.recyclerView
     implementation JetpackLibs.constraint
+    implementation JetpackLibs.supportDesign
 
     implementation Libs.timber
     implementation Libs.dagger
