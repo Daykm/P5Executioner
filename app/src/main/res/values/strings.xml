@@ -44,9 +44,6 @@
 
     <string name="font_roboto_mono_thin">fonts/RobotoMono-Thin.ttf</string>
     <string name="font_roboto_mono_bold">fonts/RobotoMono-Bold.ttf</string>
-    <string name="skill_no_cost">-</string>
-    <string name="skill_cost_sp">%d SP</string>
-    <string name="skill_cost_hp">%d%% HP</string>
     <string name="stat_strength">Str</string>
     <string name="stats_magic">Mag</string>
     <string name="stats_endurance">End</string>

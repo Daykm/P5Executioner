@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.daykm.p5executioner.databinding.FragmentSkillsBinding
+import com.daykm.p5executioner.skills.databinding.FragmentSkillsBinding
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 

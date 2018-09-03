@@ -4,11 +4,9 @@ import android.content.Context
 import android.view.View
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.daykm.p5executioner.R
-import com.daykm.p5executioner.R.string
-import com.daykm.p5executioner.databinding.SkillListItemBinding
 import com.daykm.p5executioner.proto.Skill
 import com.daykm.p5executioner.proto.Skill.Element.PASSIVE
+import com.daykm.p5executioner.skills.databinding.SkillListItemBinding
 
 class SkillItemModel(
         val skill: Skill,
@@ -37,7 +35,7 @@ class SkillItemModel(
                         ctx.getString(R.string.skill_cost_sp, cost)
                     }
                 }
-            } else ctx.getString(string.skill_no_cost)
+            } else ctx.getString(R.string.skill_no_cost)
 }
 
 class SkillItemHolder : EpoxyHolder() {

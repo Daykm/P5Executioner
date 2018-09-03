@@ -1,1 +1,1 @@
-include ':app', ':proto', ':transformer'
+include ':app', ':proto', ':transformer', ':data', ':template', ':featureskills'

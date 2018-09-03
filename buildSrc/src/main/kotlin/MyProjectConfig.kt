@@ -19,6 +19,7 @@ object AnnoProcs {
     const val dagger = "com.google.dagger:dagger-compiler:2.16"
     const val daggerAndroid = "com.google.dagger:dagger-android-processor:2.16"
     const val butterknife = "com.jakewharton:butterknife-compiler:8.5.1"
+    const val databinding = "com.android.databinding:compiler:3.2.0"
 }
 
 object AnkoLibs {

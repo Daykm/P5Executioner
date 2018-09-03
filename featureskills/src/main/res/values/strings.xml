@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Feature Skills</string>
+
+    <string name="skill_no_cost">-</string>
+    <string name="skill_cost_sp">%d SP</string>
+    <string name="skill_cost_hp">%d%% HP</string>
+</resources>
