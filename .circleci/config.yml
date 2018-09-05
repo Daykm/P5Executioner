@@ -9,8 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Generate cache key
-        command: ./checksum.sh /tmp/checksum.txt
+          name: Generate cache key
+          command: ./checksum.sh /tmp/checksum.txt
       - restore_cache:
           key: gradle-{{ checksum "/tmp/checksum.txt" }}
       - run:
