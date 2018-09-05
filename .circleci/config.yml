@@ -1,13 +1,21 @@
 version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/android:api-27-alpha
+  working_directory: ~/code
+  environment:
+    JAVA_TOOL_OPTIONS: "-Xmx3200m"
+    GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2 -Dkotlin.incremental=false"
+    TERM: dumb
+
 jobs:
   build:
-    working_directory: ~/code
-    docker:
-      - image: circleci/android:api-28-alpha
-    environment:
-      JVM_OPTS: -Xmx3200m
     steps:
       - checkout
+      - run:
+          name: Give gradlew write
+          command: chmod +x gradlew
       - run:
           name: Generate cache key
           command: ./ciUtil/checksum.sh /tmp/checksum.txt
