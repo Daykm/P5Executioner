@@ -8,16 +8,4 @@
     <color name="colorAccentDark">#000000</color>
     <color name="white">#FFFFFF</color>
 
-
-    <color name="icon_phys">#FE9A00</color>
-    <color name="icon_gun">#FE9A00</color>
-    <color name="icon_fire">#FE361B</color>
-    <color name="icon_ice">#00ACFD</color>
-    <color name="icon_electric">#FAFD31</color>
-    <color name="icon_wind">#21F32C</color>
-    <color name="icon_psy">#FC61FB</color>
-    <color name="icon_nuke">#00FAFE</color>
-    <color name="icon_bless">#FDFC9F</color>
-    <color name="icon_curse">#FD0034</color>
-
 </resources>

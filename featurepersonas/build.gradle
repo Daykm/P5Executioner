@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion AndroidConfig.compileSdk
+
+    defaultConfig {
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation Kotlin.stdLIbJdk7
+
+    implementation JetpackLibs.supportCompat
+    implementation JetpackLibs.supportFragment
+    implementation JetpackLibs.supportV7
+    implementation JetpackLibs.recyclerView
+    implementation JetpackLibs.constraint
+    implementation JetpackLibs.supportDesign
+
+    implementation Libs.timber
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    implementation Libs.daggerAndroidSupport
+    implementation Libs.rxJava
+    implementation Libs.rxAndroid
+    implementation Libs.rxKotlin
+
+    implementation Libs.epoxy
+
+
+    implementation project(":data")
+
+    testImplementation TestingLibs.junit
+    androidTestImplementation AndroidTestingLibs.runner
+    androidTestImplementation AndroidTestingLibs.espressoCore
+}
