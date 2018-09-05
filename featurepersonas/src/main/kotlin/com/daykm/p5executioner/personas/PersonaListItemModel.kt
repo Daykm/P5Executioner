@@ -11,6 +11,7 @@ import android.view.View
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.personas.databinding.PersonaListItemBinding
+import com.daykm.p5executioner.proto.Persona
 
 class PersonaListItemModel(
         val persona: Persona,
