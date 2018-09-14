@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 class P5ListAdapter
 @Inject constructor(
-        private val repo: DataRepo,
+        repo: DataRepo,
         private val activity: AppCompatActivity
 ) : TypedEpoxyController<List<Persona>>() {
 
