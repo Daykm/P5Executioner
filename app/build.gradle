@@ -89,6 +89,9 @@ dependencies {
     implementation project(":data")
     implementation project(":featureskills")
     implementation project(":featurepersonas")
+    implementation project(":featureinfo")
+    implementation project(":featurefusion")
+    implementation project(":style")
 
     kapt AnnoProcs.dagger
     kapt AnnoProcs.daggerAndroid

@@ -6,9 +6,8 @@ import android.view.View
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.airbnb.epoxy.TypedEpoxyController
-import com.daykm.p5executioner.R
 import com.daykm.p5executioner.data.DataRepo
-import com.daykm.p5executioner.databinding.PersonaCardBinding
+import com.daykm.p5executioner.fusion.databinding.PersonaCardBinding
 import com.daykm.p5executioner.proto.Persona
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

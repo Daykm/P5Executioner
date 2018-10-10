@@ -4,8 +4,7 @@ import android.view.View
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.daykm.p5executioner.R
-import com.daykm.p5executioner.databinding.InfoItemBinding
+import com.daykm.p5executioner.info.databinding.InfoItemBinding
 import javax.inject.Inject
 
 class InfoAdapter

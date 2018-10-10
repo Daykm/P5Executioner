@@ -11,7 +11,7 @@ object AndroidConfig {
 }
 
 object BuildPlugins {
-    const val android = "com.android.tools.build:gradle:3.2.0-rc02"
+    const val android = "com.android.tools.build:gradle:3.2.0"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.60"
     const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:0.8.6"
 }
