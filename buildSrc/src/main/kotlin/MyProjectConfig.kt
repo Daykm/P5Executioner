@@ -11,14 +11,16 @@ object AndroidConfig {
 }
 
 object BuildPlugins {
-    const val android = "com.android.tools.build:gradle:3.2.0-rc02"
+    const val android = "com.android.tools.build:gradle:3.2.0"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.60"
+    const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:0.8.6"
 }
 
 object AnnoProcs {
     const val dagger = "com.google.dagger:dagger-compiler:2.16"
     const val daggerAndroid = "com.google.dagger:dagger-android-processor:2.16"
     const val butterknife = "com.jakewharton:butterknife-compiler:8.5.1"
+    const val databinding = "com.android.databinding:compiler:3.2.0"
 }
 
 object AnkoLibs {

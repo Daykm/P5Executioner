@@ -10,7 +10,14 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/featurefusion" />
+            <option value="$PROJECT_DIR$/featureinfo" />
+            <option value="$PROJECT_DIR$/featurepersonas" />
+            <option value="$PROJECT_DIR$/featureskills" />
             <option value="$PROJECT_DIR$/proto" />
+            <option value="$PROJECT_DIR$/style" />
+            <option value="$PROJECT_DIR$/template" />
             <option value="$PROJECT_DIR$/transformer" />
           </set>
         </option>

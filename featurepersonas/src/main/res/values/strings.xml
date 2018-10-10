@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Feature Skills</string>
+
+
+    <string name="effect_weak">" W k "</string>
+    <string name="effect_repel">" Rpl "</string>
+    <string name="effect_none">" - "</string>
+    <string name="effect_strong">" Str "</string>
+    <string name="effect_null">" Nul "</string>
+    <string name="effect_drain">" D r "</string>
+
+
+    <string-array name="persona_stats">
+        <item>St</item>
+        <item>Ma</item>
+        <item>En</item>
+        <item>Ag</item>
+        <item>Lu</item>
+    </string-array>
+</resources>

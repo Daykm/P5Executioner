@@ -64,6 +64,8 @@ android {
 }
 
 dependencies {
+    implementation Kotlin.stdLIbJdk7
+
     implementation JetpackLibs.constraint
     implementation JetpackLibs.supportCompat
     implementation JetpackLibs.supportFragment
@@ -84,7 +86,12 @@ dependencies {
     implementation Libs.epoxy
     implementation Libs.proto
 
-    implementation project(":proto")
+    implementation project(":data")
+    implementation project(":featureskills")
+    implementation project(":featurepersonas")
+    implementation project(":featureinfo")
+    implementation project(":featurefusion")
+    implementation project(":style")
 
     kapt AnnoProcs.dagger
     kapt AnnoProcs.daggerAndroid
@@ -98,5 +105,5 @@ dependencies {
     androidTestImplementation AndroidTestingLibs.runner
     androidTestImplementation AndroidTestingLibs.rules
 
-    androidTestImplementation project(path: ':proto')
+    androidTestImplementation project(path: ':data')
 }

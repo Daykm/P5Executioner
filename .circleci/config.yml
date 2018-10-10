@@ -6,10 +6,17 @@ jobs:
       - image: circleci/android:api-28-alpha
     environment:
       JVM_OPTS: -Xmx3200m
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2 -Dkotlin.incremental=false"
     steps:
       - checkout
+      - run:
+          name: Give script write
+          command: chmod +x ./ciUtil/checksum.sh
+      - run:
+          name: Generate cache key
+          command: ./ciUtil/checksum.sh /tmp/checksum.txt
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "proto/build.gradle" }}
+          key: gradle-{{ checksum "/tmp/checksum.txt" }}
       - run:
           name: Give gradlew write
           command: chmod +x gradlew
@@ -19,28 +26,16 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "proto/build.gradle" }}
+          key: gradle-{{ checksum "/tmp/checksum.txt" }}
       - run:
           name: Assemble apk
-          command: ./gradlew :app:assembleApp --profile
-      - store_artifacts:
-          path: app/build/outputs/mapping/app/release/mapping.txt
-          destination: mapping
+          command: ./gradlew :app:assembleApp
       - store_artifacts:
           path: app/build/outputs/apk/app/release
           destination: apk
       - store_artifacts:
           path: app/build/outputs/apk/app/debug
           destination: apk
-      - store_artifacts:
-          path: build/reports/profile
-          destination: gradleProfile
-      - store_artifacts:
-          path: build/reports/profile/css
-          destination: gradleProfile/css
-      - store_artifacts:
-          path: build/reports/profile/js
-          destination: gradleProfile/js
       - run:
           name: Run Tests
           command: ./gradlew lint test
