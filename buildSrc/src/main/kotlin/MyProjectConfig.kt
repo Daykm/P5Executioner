@@ -1,6 +1,6 @@
 object Kotlin {
-    const val stdLIbJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.61"
-    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.2.61"
+    const val stdLIbJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.0"
+    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.0"
 }
 
 object AndroidConfig {
@@ -11,7 +11,7 @@ object AndroidConfig {
 }
 
 object BuildPlugins {
-    const val android = "com.android.tools.build:gradle:3.2.0"
+    const val android = "com.android.tools.build:gradle:3.2.1"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.60"
     const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:0.8.6"
 }
