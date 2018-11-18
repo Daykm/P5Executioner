@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion AndroidConfig.compileSdk
+
+    defaultConfig {
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+}
+
+dependencies {
+    implementation Kotlin.stdLIbJdk7
+
+    implementation JetpackLibs.supportCompat
+
+    implementation Libs.timber
+    implementation Libs.dagger
+    implementation Libs.rxJava
+    implementation Libs.rxAndroid
+    implementation Libs.rxKotlin
+
+    api project(":proto")
+
+    testImplementation TestingLibs.junit
+    androidTestImplementation AndroidTestingLibs.runner
+    androidTestImplementation AndroidTestingLibs.espressoCore
+}

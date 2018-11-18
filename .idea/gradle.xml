@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/database" />
             <option value="$PROJECT_DIR$/featurefusion" />
             <option value="$PROJECT_DIR$/featureinfo" />
             <option value="$PROJECT_DIR$/featurepersonas" />
