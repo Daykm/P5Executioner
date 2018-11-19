@@ -8,7 +8,7 @@ object Combos : Table("combos") {
 
 object Personas : Table("personas") {
     val name = text("name")
-
+    val level = integer("level")
     val arcana = text("arcana")
 
     val strength = integer("strength")

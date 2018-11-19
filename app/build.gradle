@@ -64,7 +64,7 @@ android {
 }
 
 dependencies {
-    implementation Kotlin.stdLIbJdk7
+    implementation Kotlin.stdLibJdk7
 
     implementation JetpackLibs.constraint
     implementation JetpackLibs.supportCompat
@@ -73,10 +73,13 @@ dependencies {
     implementation JetpackLibs.supportDesign
     implementation JetpackLibs.cardView
     implementation JetpackLibs.recyclerView
+    implementation JetpackLibs.room
 
     implementation Libs.dagger
     implementation Libs.daggerAndroid
     implementation Libs.daggerAndroidSupport
+    kapt AnnoProcs.dagger
+    kapt AnnoProcs.daggerAndroid
 
     implementation Libs.rxJava
     implementation Libs.rxAndroid
@@ -92,8 +95,6 @@ dependencies {
     implementation project(":featurefusion")
     implementation project(":style")
 
-    kapt AnnoProcs.dagger
-    kapt AnnoProcs.daggerAndroid
 
     debugImplementation Libs.leakCanary
     releaseImplementation Libs.leakCanaryNoOp
@@ -103,6 +104,4 @@ dependencies {
     androidTestImplementation AndroidTestingLibs.espressoCore
     androidTestImplementation AndroidTestingLibs.runner
     androidTestImplementation AndroidTestingLibs.rules
-
-    androidTestImplementation project(path: ':database')
 }

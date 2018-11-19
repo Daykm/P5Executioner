@@ -1,14 +1,16 @@
-package com.daykm.p5executioner.sandbox
+package com.daykm.p5executioner.sandbox.main
 
 import android.Manifest
 import android.arch.persistence.room.RoomDatabase
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
-import android.view.View
 import com.daykm.p5executioner.database.init
+import com.daykm.p5executioner.sandbox.R
+import com.daykm.p5executioner.sandbox.personas.PersonasSandboxActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import okio.buffer
@@ -24,8 +26,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val db = init(applicationContext)
-        findViewById<View>(R.id.dbdump).setOnClickListener {
-            dumpDb(this, db)
+
+        dbdump.setOnClickListener {
+            dumpDb(db)
+        }
+
+        list_butt.setOnClickListener {
+            startActivity(Intent(this@MainActivity, PersonasSandboxActivity::class.java))
         }
 
         GlobalScope.launch {
@@ -35,13 +42,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
     }
 }
 
 
-fun dumpDb(ctx: Context, db: RoomDatabase) {
+fun dumpDb(db: RoomDatabase) {
 
     val internalDb = File(db.openHelper.readableDatabase.path)
 

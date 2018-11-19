@@ -26,12 +26,14 @@ android {
 }
 
 dependencies {
-    implementation Kotlin.stdLIbJdk7
+    implementation Kotlin.stdLibJdk7
 
     implementation JetpackLibs.supportCompat
 
     implementation Libs.timber
     implementation Libs.okio
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
 
     implementation JetpackLibs.room
     kapt AnnoProcs.room

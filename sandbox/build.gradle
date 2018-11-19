@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion AndroidConfig.compileSdk
@@ -63,7 +64,7 @@ android {
 }
 
 dependencies {
-    implementation Kotlin.stdLIbJdk7
+    implementation Kotlin.stdLibJdk7
 
     implementation JetpackLibs.constraint
     implementation JetpackLibs.supportCompat
@@ -79,7 +80,9 @@ dependencies {
     implementation Libs.dagger
     implementation Libs.daggerAndroid
     implementation Libs.daggerAndroidSupport
-    implementation Libs.okio
+    kapt AnnoProcs.dagger
+    kapt AnnoProcs.daggerAndroid
+
 
     implementation Kotlin.coroutines
 
@@ -88,6 +91,8 @@ dependencies {
     implementation Libs.okio
 
     implementation project(":database")
+    implementation project(":featurepersonas")
+
 
     debugImplementation Libs.leakCanary
     releaseImplementation Libs.leakCanaryNoOp

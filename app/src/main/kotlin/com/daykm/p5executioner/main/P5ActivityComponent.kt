@@ -8,7 +8,7 @@ import com.daykm.p5executioner.fusion.FusionFragmentComponent
 import com.daykm.p5executioner.fusion.FusionModule
 import com.daykm.p5executioner.personas.PersonaListFragment
 import com.daykm.p5executioner.personas.PersonaListFragmentComponent
-import com.daykm.p5executioner.personas.PersonaListModule
+import com.daykm.p5executioner.personas.PersonaListFragmentModule
 import com.daykm.p5executioner.skills.P5SkillsFragment
 import com.daykm.p5executioner.skills.SkillsFragmentComponent
 import com.daykm.p5executioner.skills.SkillsModule
@@ -49,7 +49,7 @@ abstract class P5Module {
     @ContributesAndroidInjector(modules = [SkillsModule::class])
     abstract fun contributesSkillsFragment(): P5SkillsFragment
 
-    @ContributesAndroidInjector(modules = [PersonaListModule::class])
+    @ContributesAndroidInjector(modules = [PersonaListFragmentModule::class])
     abstract fun contributesPersonaListFragment(): PersonaListFragment
 }
 

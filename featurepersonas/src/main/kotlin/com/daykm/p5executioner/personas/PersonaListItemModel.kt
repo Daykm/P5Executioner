@@ -10,8 +10,9 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
+import com.daykm.p5executioner.database.Affinity
+import com.daykm.p5executioner.database.Persona
 import com.daykm.p5executioner.personas.databinding.PersonaListItemBinding
-import com.daykm.p5executioner.proto.Persona
 
 class PersonaListItemModel(
         val persona: Persona,
@@ -61,14 +62,13 @@ class PersonaListItemModel(
         holder.bindModel(this)
     }
 
-    private fun affinity(option: Persona.Affinities.AffinityOption): String = when (option) {
-        Persona.Affinities.AffinityOption.NONE -> ctx.getString(R.string.effect_none)
-        Persona.Affinities.AffinityOption.WEAK -> ctx.getString(R.string.effect_weak)
-        Persona.Affinities.AffinityOption.ABSORB -> ctx.getString(R.string.effect_drain)
-        Persona.Affinities.AffinityOption.RESIST -> ctx.getString(R.string.effect_strong)
-        Persona.Affinities.AffinityOption.NULL -> ctx.getString(R.string.effect_null)
-        Persona.Affinities.AffinityOption.REPEL -> ctx.getString(R.string.effect_repel)
-        Persona.Affinities.AffinityOption.UNRECOGNIZED -> throw RuntimeException("Invalid affinity")
+    private fun affinity(option: Affinity): String = when (option) {
+        Affinity.NONE -> ctx.getString(R.string.effect_none)
+        Affinity.WEAK -> ctx.getString(R.string.effect_weak)
+        Affinity.ABSORB -> ctx.getString(R.string.effect_drain)
+        Affinity.RESIST -> ctx.getString(R.string.effect_strong)
+        Affinity.NULL -> ctx.getString(R.string.effect_null)
+        Affinity.REPEL -> ctx.getString(R.string.effect_repel)
     }
 
     override fun getDefaultLayout(): Int = R.layout.persona_list_item

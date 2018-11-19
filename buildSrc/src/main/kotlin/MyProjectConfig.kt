@@ -1,5 +1,5 @@
 object Kotlin {
-    const val stdLIbJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.10"
+    const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.10"
     const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.10"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
 }

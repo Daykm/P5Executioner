@@ -1,6 +1,7 @@
-package com.daykm.p5executioner
+package com.daykm.p5executioner.di
 
 import android.content.Context
+import com.daykm.p5executioner.App
 import com.daykm.p5executioner.main.P5Activity
 import com.daykm.p5executioner.main.P5ActivityComponent
 import com.daykm.p5executioner.main.P5Module

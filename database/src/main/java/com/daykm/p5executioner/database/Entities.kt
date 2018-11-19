@@ -98,6 +98,7 @@ sealed class Type {
 data class Persona(
         @PrimaryKey val name: String,
         val arcana: Arcana,
+        val level: Int,
         @Embedded val stats: Stats,
         @Embedded val affinities: Affinities
 ) {

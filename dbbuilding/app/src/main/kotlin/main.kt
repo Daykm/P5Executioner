@@ -43,6 +43,7 @@ fun doStuff(db: Database) {
         personas?.forEach { (jsonName, deets) ->
             Personas.insert {
                 it[name] = jsonName
+                it[level] = deets.level
                 it[arcana] = deets.arcana
 
                 it[strength] = deets.stats[0]
