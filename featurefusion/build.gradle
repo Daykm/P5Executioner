@@ -43,7 +43,7 @@ dependencies {
     implementation Libs.epoxy
 
 
-    implementation project(":data")
+    implementation project(":database")
     implementation project(":style")
 
     testImplementation TestingLibs.junit

@@ -17,6 +17,7 @@ fun main(args: Array<String>) {
 
 fun doStuff(db: Database) {
     val moshi = Moshi.Builder().build()
+
     val combos = createArcanaCombos(moshi)
     val personas = createPersonas(moshi)
     val skills = createSkills(moshi)

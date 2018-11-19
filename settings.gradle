@@ -1,1 +1,1 @@
-include ':app', ':proto', ':transformer', ':data', ':template', ':featureskills', ':featurepersonas', ':featureinfo', ':featurefusion', ':style', ':database'
+include ':app', ':template', ':featureskills', ':featurepersonas', ':featureinfo', ':featurefusion', ':style', ':database', ':sandbox'

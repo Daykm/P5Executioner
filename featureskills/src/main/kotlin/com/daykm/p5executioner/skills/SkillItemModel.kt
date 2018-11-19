@@ -4,8 +4,6 @@ import android.content.Context
 import android.view.View
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.daykm.p5executioner.proto.Skill
-import com.daykm.p5executioner.proto.Skill.Element.PASSIVE
 import com.daykm.p5executioner.skills.databinding.SkillListItemBinding
 
 class SkillItemModel(

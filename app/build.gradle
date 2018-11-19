@@ -86,7 +86,6 @@ dependencies {
     implementation Libs.epoxy
     implementation Libs.proto
 
-    implementation project(":data")
     implementation project(":featureskills")
     implementation project(":featurepersonas")
     implementation project(":featureinfo")
@@ -105,5 +104,5 @@ dependencies {
     androidTestImplementation AndroidTestingLibs.runner
     androidTestImplementation AndroidTestingLibs.rules
 
-    androidTestImplementation project(path: ':data')
+    androidTestImplementation project(path: ':database')
 }

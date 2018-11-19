@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildTools
+
+    defaultConfig {
+        applicationId 'com.daykm.p5executioner.sandbox'
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode 1
+        versionName '1.0'
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        resConfig 'en'
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias 'debugging'
+            keyPassword 'debugging'
+            storeFile file('../signing/debug.jks')
+            storePassword 'debugging'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions 'dev'
+
+    productFlavors {
+        app {
+            dimension 'dev'
+        }
+    }
+
+    dexOptions {
+        // disable predexing in CI
+        preDexLibraries = getFlagFromProperties('shouldPreDex')
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+}
+
+dependencies {
+    implementation Kotlin.stdLIbJdk7
+
+    implementation JetpackLibs.constraint
+    implementation JetpackLibs.supportCompat
+    implementation JetpackLibs.supportFragment
+    implementation JetpackLibs.supportV7
+    implementation JetpackLibs.supportDesign
+    implementation JetpackLibs.room
+    implementation JetpackLibs.recyclerView
+
+    implementation JetpackLibs.coreCommon
+    implementation JetpackLibs.coreRuntime
+
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    implementation Libs.daggerAndroidSupport
+    implementation Libs.okio
+
+    implementation Kotlin.coroutines
+
+    implementation Libs.timber
+    implementation Libs.epoxy
+    implementation Libs.okio
+
+    implementation project(":database")
+
+    debugImplementation Libs.leakCanary
+    releaseImplementation Libs.leakCanaryNoOp
+    testImplementation Libs.leakCanaryNoOp
+    testImplementation TestingLibs.junit
+
+    androidTestImplementation AndroidTestingLibs.espressoCore
+    androidTestImplementation AndroidTestingLibs.runner
+    androidTestImplementation AndroidTestingLibs.rules
+
+    androidTestImplementation project(path: ':database')
+}

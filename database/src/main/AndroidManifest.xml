@@ -1,2 +1,2 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.daykm.p5executioner.skills"/>
+<manifest
+        package="com.daykm.p5executioner.database"/>

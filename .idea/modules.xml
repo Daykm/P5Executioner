@@ -5,16 +5,14 @@
       <module fileurl="file://$PROJECT_DIR$/P5Executioner.iml" filepath="$PROJECT_DIR$/P5Executioner.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/buildSrc/buildSrc.iml" filepath="$PROJECT_DIR$/buildSrc/buildSrc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/database/database.iml" filepath="$PROJECT_DIR$/database/database.iml" />
       <module fileurl="file://$PROJECT_DIR$/featurefusion/featurefusion.iml" filepath="$PROJECT_DIR$/featurefusion/featurefusion.iml" />
       <module fileurl="file://$PROJECT_DIR$/featureinfo/featureinfo.iml" filepath="$PROJECT_DIR$/featureinfo/featureinfo.iml" />
       <module fileurl="file://$PROJECT_DIR$/featurepersonas/featurepersonas.iml" filepath="$PROJECT_DIR$/featurepersonas/featurepersonas.iml" />
       <module fileurl="file://$PROJECT_DIR$/featureskills/featureskills.iml" filepath="$PROJECT_DIR$/featureskills/featureskills.iml" />
-      <module fileurl="file://$PROJECT_DIR$/proto/proto.iml" filepath="$PROJECT_DIR$/proto/proto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/sandbox/sandbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/style/style.iml" filepath="$PROJECT_DIR$/style/style.iml" />
       <module fileurl="file://$PROJECT_DIR$/template/template.iml" filepath="$PROJECT_DIR$/template/template.iml" />
-      <module fileurl="file://$PROJECT_DIR$/transformer/transformer.iml" filepath="$PROJECT_DIR$/transformer/transformer.iml" />
     </modules>
   </component>
 </project>

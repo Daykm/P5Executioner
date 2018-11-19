@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion AndroidConfig.compileSdk
@@ -10,6 +11,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
 
     sourceSets {
@@ -24,12 +31,10 @@ dependencies {
     implementation JetpackLibs.supportCompat
 
     implementation Libs.timber
-    implementation Libs.dagger
-    implementation Libs.rxJava
-    implementation Libs.rxAndroid
-    implementation Libs.rxKotlin
+    implementation Libs.okio
 
-    api project(":proto")
+    implementation JetpackLibs.room
+    kapt AnnoProcs.room
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner
