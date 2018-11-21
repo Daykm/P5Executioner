@@ -1,10 +1,11 @@
 package com.daykm.p5executioner.sandbox.personas.di
 
+import android.support.v7.app.AppCompatActivity
 import com.daykm.p5executioner.personas.PersonaListFragment
 import com.daykm.p5executioner.personas.PersonaListFragmentComponent
 import com.daykm.p5executioner.personas.PersonaListFragmentModule
-import com.daykm.p5executioner.sandbox.di.InjectedActivityModule
 import com.daykm.p5executioner.sandbox.personas.PersonasSandboxActivity
+import dagger.Binds
 import dagger.Module
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
@@ -15,10 +16,13 @@ import dagger.android.ContributesAndroidInjector
             PersonaListFragmentComponent::class
         ]
 )
-abstract class PersonasSandboxActivityModule : InjectedActivityModule<PersonasSandboxActivity>() {
+interface PersonasSandboxActivityModule {
+
+    @Binds
+    fun activity(activity: PersonasSandboxActivity): AppCompatActivity
 
     @ContributesAndroidInjector(modules = [PersonaListFragmentModule::class])
-    abstract fun contributesPersonaListFragment(): PersonaListFragment
+    fun contributesPersonaListFragment(): PersonaListFragment
 
 }
 

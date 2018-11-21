@@ -80,6 +80,7 @@ dependencies {
     implementation Libs.dagger
     implementation Libs.daggerAndroid
     implementation Libs.daggerAndroidSupport
+
     kapt AnnoProcs.dagger
     kapt AnnoProcs.daggerAndroid
 

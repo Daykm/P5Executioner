@@ -32,11 +32,13 @@ dependencies {
 
     implementation Libs.timber
     implementation Libs.okio
-    implementation Libs.dagger
-    implementation Libs.daggerAndroid
+    api Libs.dagger
+    api Libs.daggerAndroid
 
-    implementation JetpackLibs.room
+    api JetpackLibs.room
     kapt AnnoProcs.room
+    kapt AnnoProcs.dagger
+    kapt AnnoProcs.daggerAndroid
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner
