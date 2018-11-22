@@ -6,17 +6,23 @@ import android.support.v7.widget.RecyclerView.RecycledViewPool
 import android.view.ViewGroup
 import com.airbnb.epoxy.EpoxyModelWithView
 import com.airbnb.epoxy.TypedEpoxyController
+import com.daykm.p5executioner.database.Persona
 import javax.inject.Inject
 
 class P5FusionAdapter
 @Inject constructor(
-        firstPicker: PersonaPickerAdapter,
-        secondPicker: PersonaPickerAdapter,
         private val pool: RecycledViewPool
 ) : TypedEpoxyController<List<PersonaPickerAdapter>>() {
+    private val firstPicker = PersonaPickerAdapter()
+    private val secondPicker = PersonaPickerAdapter()
 
     init {
         setData(listOf(firstPicker, secondPicker))
+    }
+
+    fun setPickerData(data: List<Persona>) {
+        firstPicker.setData(data)
+        secondPicker.setData(data)
     }
 
     override fun buildModels(data: List<PersonaPickerAdapter>?) {
@@ -33,7 +39,6 @@ class PickerModel(
 
     override fun bind(view: RecyclerView) {
         view.adapter = picker.adapter
-        picker.bind()
     }
 
     override fun unbind(view: RecyclerView) {

@@ -82,6 +82,7 @@ dependencies {
     implementation Libs.daggerAndroid
     implementation Libs.daggerAndroidSupport
 
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     kapt AnnoProcs.dagger
     kapt AnnoProcs.daggerAndroid
 
@@ -94,6 +95,8 @@ dependencies {
 
     implementation project(":database")
     implementation project(":featurepersonas")
+    implementation project(":featureskills")
+    implementation project(":featurefusion")
 
 
     debugImplementation Libs.leakCanary

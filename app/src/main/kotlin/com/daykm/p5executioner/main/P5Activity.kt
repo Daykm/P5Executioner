@@ -12,18 +12,13 @@ import com.daykm.p5executioner.view.FragmentItemPagerAdapter
 import com.daykm.p5executioner.view.fragmentAdapterItem
 import dagger.android.support.DaggerAppCompatActivity
 import timber.log.Timber
-import javax.inject.Inject
 
 class P5Activity : DaggerAppCompatActivity() {
-
-    @Inject
-    lateinit var test: String
 
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.i(test)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         initBottomNav(binding)
         initPager(binding)

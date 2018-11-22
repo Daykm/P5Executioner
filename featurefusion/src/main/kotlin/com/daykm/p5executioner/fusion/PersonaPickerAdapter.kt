@@ -6,35 +6,27 @@ import android.view.View
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.airbnb.epoxy.TypedEpoxyController
-import com.daykm.p5executioner.data.DataRepo
+import com.daykm.p5executioner.database.Persona
 import com.daykm.p5executioner.fusion.databinding.PersonaCardBinding
-import com.daykm.p5executioner.proto.Persona
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.BehaviorSubject
 import timber.log.Timber
-import javax.inject.Inject
 
-class PersonaPickerAdapter
-@Inject constructor(
-        private val repo: DataRepo
-) : TypedEpoxyController<List<Persona>>() {
+class PersonaPickerAdapter : TypedEpoxyController<List<Persona>>() {
 
-    val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
+    private val selectedPersona: BehaviorSubject<Persona> = BehaviorSubject.create()
 
     override fun buildModels(data: List<Persona>?) {
         Timber.i("Building %d models", data?.size ?: 0)
         data?.forEach { PersonaModel(it, selectedPersona).addTo(this) }
     }
 
-    fun bind() {
-        repo.DATA.observeOn(AndroidSchedulers.mainThread()).subscribeBy { setData(it.personasList) }
-    }
 }
 
-data class PersonaModel(val persona: Persona, private val subject: BehaviorSubject<Persona>)
-    : EpoxyModelWithHolder<PersonaHolder>() {
+data class PersonaModel(
+        val persona: Persona,
+        private val subject: BehaviorSubject<Persona>
+) : EpoxyModelWithHolder<PersonaHolder>() {
 
     var selected = false
         private set

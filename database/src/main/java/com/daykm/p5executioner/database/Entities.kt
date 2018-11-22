@@ -5,7 +5,6 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import android.arch.persistence.room.TypeConverter
 
-
 enum class Arcana {
     STRENGTH,
     JUDGEMENT,
@@ -30,17 +29,22 @@ enum class Arcana {
     EMPRESS
 }
 
-enum class Elements {
-    PHYSICAL,
+enum class Element {
+    PHYS,
     GUN,
     FIRE,
     ICE,
     ELECTRIC,
     WIND,
-    PSYCHIC,
+    PSY,
     NUCLEAR,
     BLESS,
-    CURSE
+    CURSE,
+    HEALING,
+    AILMENT,
+    ALMIGHTY,
+    SUPPORT,
+    PASSIVE
 }
 
 enum class Affinity {
@@ -53,45 +57,38 @@ enum class Affinity {
 }
 
 object Converters {
+
     @TypeConverter
     @JvmStatic
-    fun parseAffinity(value: String?): Affinity {
-        return when (value) {
-            "rs" -> Affinity.RESIST
-            "nu" -> Affinity.NULL
-            "rp" -> Affinity.REPEL
-            "wk" -> Affinity.WEAK
-            "ab" -> Affinity.ABSORB
-            "-" -> Affinity.NONE
-            else -> Affinity.NONE
-        }
+    fun parseAffinity(value: String?): Affinity = when (value) {
+        "rs" -> Affinity.RESIST
+        "nu" -> Affinity.NULL
+        "rp" -> Affinity.REPEL
+        "wk" -> Affinity.WEAK
+        "ab" -> Affinity.ABSORB
+        "-" -> Affinity.NONE
+        else -> Affinity.NONE
     }
 
     @TypeConverter
     @JvmStatic
-    fun parseArcana(value: String): Arcana {
-        return Arcana.valueOf(value.toUpperCase())
-    }
+    fun parseArcana(value: String): Arcana = Arcana.valueOf(value.toUpperCase())
 
     @TypeConverter
     @JvmStatic
-    fun storeAffinity(value: Affinity): String {
-        return TODO()
-    }
+    fun parseElement(value: String): Element = Element.valueOf(value.toUpperCase())
 
     @TypeConverter
     @JvmStatic
-    fun storeArcana(value: Arcana): String {
-        return TODO()
-    }
-}
+    fun storeAffinity(value: Affinity): String = TODO("This database is read only")
 
-sealed class Type {
-    object Passive
-    class Action(
-            val affinity: Affinity,
-            val cost: Int
-    )
+    @TypeConverter
+    @JvmStatic
+    fun storeArcana(value: Arcana): String = TODO("This database is read only")
+    @TypeConverter
+    @JvmStatic
+    fun storeElement(value: Element): String = TODO("This database is read only")
+
 }
 
 @Entity(tableName = "personas")
@@ -127,5 +124,32 @@ data class Persona(
 @Entity(tableName = "skills")
 data class Skill(
         @PrimaryKey val name: String,
-        val effect: String
+        val effect: String,
+        val element: Element,
+        val cost: Int?
+) {
+
+    sealed class Cost(
+            val element: Element
+    ) {
+        class HP(element: Element, val cost: Int) : Cost(element)
+        class SP(element: Element, val cost: Int) : Cost(element)
+        object Passive : Cost(Element.PASSIVE)
+    }
+
+    fun adjustCost(): Cost = when {
+        element == Element.PASSIVE -> Cost.Passive
+        cost == null -> Cost.Passive
+        cost > 100 -> Cost.SP(element, cost)
+        cost < 100 -> Cost.HP(element, cost)
+        else -> throw IllegalStateException("$this is an invalid skill")
+    }
+
+}
+
+@Entity(tableName = "combos", primaryKeys = ["first", "second", "result"])
+data class Combo(
+        val first: Arcana,
+        val second: Arcana,
+        val result: Arcana
 )

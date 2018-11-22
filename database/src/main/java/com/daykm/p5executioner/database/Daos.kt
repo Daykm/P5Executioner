@@ -7,4 +7,7 @@ import android.arch.persistence.room.Query
 interface Dao {
     @Query("SELECT * FROM personas")
     fun personas(): List<Persona>
+
+    @Query("SELECT * FROM skills")
+    fun skills(): List<Skill>
 }

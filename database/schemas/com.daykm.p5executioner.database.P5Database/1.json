@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f94fbe4667c1ffae334f890806ec797a",
+    "identityHash": "780f029e2e1c73df11989f06e7a847e2",
     "entities": [
       {
         "tableName": "personas",
@@ -128,7 +128,7 @@
       },
       {
         "tableName": "skills",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `effect` TEXT NOT NULL, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `effect` TEXT NOT NULL, `element` TEXT NOT NULL, `cost` INTEGER, PRIMARY KEY(`name`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -141,6 +141,18 @@
             "columnName": "effect",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "element",
+            "columnName": "element",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cost",
+            "columnName": "cost",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -155,7 +167,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f94fbe4667c1ffae334f890806ec797a\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"780f029e2e1c73df11989f06e7a847e2\")"
     ]
   }
 }

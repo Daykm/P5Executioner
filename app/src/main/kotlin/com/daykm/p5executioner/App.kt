@@ -1,6 +1,7 @@
 package com.daykm.p5executioner
 
 import android.app.Application
+import com.daykm.p5executioner.di.DaggerAppComponent
 import com.squareup.leakcanary.LeakCanary
 import dagger.android.support.DaggerApplication
 import timber.log.Timber

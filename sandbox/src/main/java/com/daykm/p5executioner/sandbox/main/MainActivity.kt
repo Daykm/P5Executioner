@@ -8,7 +8,9 @@ import android.os.Environment
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import com.daykm.p5executioner.sandbox.R
+import com.daykm.p5executioner.sandbox.fusion.FusionSandboxActivity
 import com.daykm.p5executioner.sandbox.personas.PersonasSandboxActivity
+import com.daykm.p5executioner.sandbox.skills.SkillsSandboxActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -25,6 +27,14 @@ class MainActivity : AppCompatActivity() {
 
         list_butt.setOnClickListener {
             startActivity(Intent(this@MainActivity, PersonasSandboxActivity::class.java))
+        }
+
+        skills_butt.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SkillsSandboxActivity::class.java))
+        }
+
+        fusion_butt.setOnClickListener {
+            startActivity(Intent(this@MainActivity, FusionSandboxActivity::class.java))
         }
 
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)

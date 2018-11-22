@@ -35,9 +35,8 @@ class PersonaListFragment : DaggerFragment() {
     override fun onStart() {
         super.onStart()
 
-        Single.fromCallable {
-            dao.personas()
-        }.subscribeOn(Schedulers.computation())
+        Single.fromCallable(dao::personas)
+                .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy {
                     personaAdapter.setData(it)

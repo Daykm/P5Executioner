@@ -21,6 +21,10 @@
         </activity>
         <activity android:name=".personas.PersonasSandboxActivity">
         </activity>
+        <activity android:name=".skills.SkillsSandboxActivity">
+        </activity>
+        <activity android:name=".fusion.FusionSandboxActivity">
+        </activity>
     </application>
 
 </manifest>

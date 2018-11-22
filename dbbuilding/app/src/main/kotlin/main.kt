@@ -21,7 +21,7 @@ fun doStuff(db: Database) {
     val combos = createArcanaCombos(moshi)
     val personas = createPersonas(moshi)
     val skills = createSkills(moshi)
-    transaction {
+    transaction(db) {
         Combos.deleteAll()
         combos?.forEach { json ->
             Combos.insert {
