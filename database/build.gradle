@@ -28,8 +28,6 @@ android {
 dependencies {
     implementation Kotlin.stdLibJdk7
 
-    implementation JetpackLibs.supportCompat
-
     implementation Libs.timber
     implementation Libs.okio
     api Libs.dagger
