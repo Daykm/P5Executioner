@@ -1,0 +1,3 @@
+<resources>
+    <style name="CompatTextViewStyle" parent="android:Widget.Material.TextView"/>
+</resources>

@@ -1,2 +1,16 @@
 <resources>
+
+    <style name="AppTheme" parent="BaseTheme">
+        <item name="android:textViewStyle">@style/NoHyphenTextViewStyle</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="BaseTheme.NoActionBar">
+        <item name="android:textViewStyle">@style/NoHyphenTextViewStyle</item>
+    </style>
+
+    <style name="NoHyphenTextViewStyle" parent="CompatTextViewStyle">
+        <item name="android:hyphenationFrequency">none</item>
+    </style>
+
+    <style name="CompatTextViewStyle" parent="android:Widget.TextView"/>
 </resources>
