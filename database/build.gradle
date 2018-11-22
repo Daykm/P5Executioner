@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion AndroidConfig.compileSdk
+
+    defaultConfig {
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+}
+
+dependencies {
+    implementation Kotlin.stdLibJdk7
+
+    implementation Libs.timber
+    implementation Libs.okio
+    api Libs.dagger
+    api Libs.daggerAndroid
+
+    api JetpackLibs.room
+    kapt AnnoProcs.room
+    kapt AnnoProcs.dagger
+    kapt AnnoProcs.daggerAndroid
+
+    testImplementation TestingLibs.junit
+    androidTestImplementation AndroidTestingLibs.runner
+    androidTestImplementation AndroidTestingLibs.espressoCore
+}

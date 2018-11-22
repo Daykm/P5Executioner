@@ -5,9 +5,9 @@ import dagger.Subcomponent
 import dagger.android.AndroidInjector
 
 @Module
-abstract class PersonaListModule
+abstract class PersonaListFragmentModule
 
-@Subcomponent(modules = [(PersonaListModule::class)])
+@Subcomponent(modules = [(PersonaListFragmentModule::class)])
 abstract class PersonaListFragmentComponent : AndroidInjector<PersonaListFragment> {
 
     @Subcomponent.Builder

@@ -1,18 +1,19 @@
 object Kotlin {
-    const val stdLIbJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.0"
-    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.0"
+    const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.10"
+    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.10"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
 }
 
 object AndroidConfig {
     const val minSdk = 21
     const val targetSdk = 26
     const val compileSdk = 28
-    const val buildTools = "28.0.2"
+    const val buildTools = "28.0.3"
 }
 
 object BuildPlugins {
     const val android = "com.android.tools.build:gradle:3.2.1"
-    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.60"
+    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.10"
     const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:0.8.6"
 }
 
@@ -21,6 +22,7 @@ object AnnoProcs {
     const val daggerAndroid = "com.google.dagger:dagger-android-processor:2.16"
     const val butterknife = "com.jakewharton:butterknife-compiler:8.5.1"
     const val databinding = "com.android.databinding:compiler:3.2.0"
+    const val room = "android.arch.persistence.room:compiler:1.1.1"
 }
 
 object AnkoLibs {
@@ -35,6 +37,10 @@ object AnkoLibs {
 object JetpackLibs {
     const val constraint = "com.android.support.constraint:constraint-layout:1.1.2"
 
+    const val coreCommon = "android.arch.core:common:1.1.1"
+    const val coreRuntime = "android.arch.core:runtime:1.1.1"
+    const val coreUtils = "com.android.support:support-core-utils:27.1.1"
+
     const val supportCompat = "com.android.support:support-compat:27.1.1"
     const val supportFragment = "com.android.support:support-fragment:27.1.1"
     const val supportV7 = "com.android.support:appcompat-v7:27.1.1"
@@ -42,6 +48,7 @@ object JetpackLibs {
 
     const val cardView = "com.android.support:cardview-v7:27.1.1"
     const val recyclerView = "com.android.support:recyclerview-v7:27.1.1"
+    const val room = "android.arch.persistence.room:runtime:1.1.1"
 }
 
 object Libs {
@@ -56,6 +63,7 @@ object Libs {
     const val leakCanaryNoOp = "com.squareup.leakcanary:leakcanary-android-no-op:1.5"
 
     const val moshi = "com.squareup.moshi:moshi:1.6.0"
+    const val okio = "com.squareup.okio:okio:2.1.0"
 
     const val proto = "com.google.protobuf:protobuf-lite:3.0.0"
 
@@ -75,4 +83,3 @@ object AndroidTestingLibs {
     const val runner = "com.android.support.test:runner:1.0.2"
     const val rules = "com.android.support.test:rules:1.0.2"
 }
-

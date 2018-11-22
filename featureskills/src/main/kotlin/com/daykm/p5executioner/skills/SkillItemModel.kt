@@ -4,8 +4,7 @@ import android.content.Context
 import android.view.View
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.daykm.p5executioner.proto.Skill
-import com.daykm.p5executioner.proto.Skill.Element.PASSIVE
+import com.daykm.p5executioner.database.Skill
 import com.daykm.p5executioner.skills.databinding.SkillListItemBinding
 
 class SkillItemModel(
@@ -23,19 +22,17 @@ class SkillItemModel(
         holder.bindModel(this)
     }
 
-    fun skillCost(): String =
-            if (skill.element != PASSIVE) {
-                when {
-                    skill.cost < 100 -> {
-                        val cost: Int = skill.cost
-                        ctx.getString(R.string.skill_cost_hp, cost)
-                    }
-                    else -> {
-                        val cost: Int = skill.cost / 100
-                        ctx.getString(R.string.skill_cost_sp, cost)
-                    }
-                }
-            } else ctx.getString(R.string.skill_no_cost)
+    private fun skillCost(): String = when (val cost = skill.adjustCost()) {
+        is Skill.Cost.HP -> {
+            val c: Int = cost.cost
+            ctx.getString(R.string.skill_cost_hp, c)
+        }
+        is Skill.Cost.SP -> {
+            val c: Int = cost.cost / 100
+            ctx.getString(R.string.skill_cost_sp, c)
+        }
+        Skill.Cost.Passive -> ctx.getString(R.string.skill_no_cost)
+    }
 }
 
 class SkillItemHolder : EpoxyHolder() {

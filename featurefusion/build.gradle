@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    implementation Kotlin.stdLIbJdk7
+    implementation Kotlin.stdLibJdk7
 
     implementation JetpackLibs.supportCompat
     implementation JetpackLibs.supportFragment
@@ -43,7 +43,7 @@ dependencies {
     implementation Libs.epoxy
 
 
-    implementation project(":data")
+    implementation project(":database")
     implementation project(":style")
 
     testImplementation TestingLibs.junit
