@@ -22,9 +22,15 @@ class SkillItemModel(
         holder.bindModel(this)
     }
 
-    fun skillCost(): String = when (val cost = skill.adjustCost()) {
-        is Skill.Cost.HP -> ctx.getString(R.string.skill_cost_hp, cost.cost)
-        is Skill.Cost.SP -> ctx.getString(R.string.skill_cost_sp, cost.cost / 100)
+    private fun skillCost(): String = when (val cost = skill.adjustCost()) {
+        is Skill.Cost.HP -> {
+            val c: Int = cost.cost
+            ctx.getString(R.string.skill_cost_hp, c)
+        }
+        is Skill.Cost.SP -> {
+            val c: Int = cost.cost / 100
+            ctx.getString(R.string.skill_cost_sp, c)
+        }
         Skill.Cost.Passive -> ctx.getString(R.string.skill_no_cost)
     }
 }
