@@ -82,4 +82,3 @@ object AndroidTestingLibs {
     const val runner = "com.android.support.test:runner:1.0.2"
     const val rules = "com.android.support.test:rules:1.0.2"
 }
-
