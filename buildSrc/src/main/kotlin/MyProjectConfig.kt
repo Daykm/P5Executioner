@@ -5,7 +5,7 @@ object Kotlin {
 }
 
 object AndroidConfig {
-    const val minSdk = 21
+    const val minSdk = 23
     const val targetSdk = 26
     const val compileSdk = 28
     const val buildTools = "28.0.3"
