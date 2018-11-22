@@ -39,6 +39,7 @@ object JetpackLibs {
 
     const val coreCommon = "android.arch.core:common:1.1.1"
     const val coreRuntime = "android.arch.core:runtime:1.1.1"
+    const val coreUtils = "com.android.support:support-core-utils:27.1.1"
 
     const val supportCompat = "com.android.support:support-compat:27.1.1"
     const val supportFragment = "com.android.support:support-fragment:27.1.1"
