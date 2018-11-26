@@ -3,41 +3,34 @@ package com.daykm.p5executioner.main
 import android.support.v7.widget.RecyclerView
 import com.daykm.p5executioner.android.LoggingRecyclerPool
 import com.daykm.p5executioner.di.InjectedActivityModule
-import com.daykm.p5executioner.fusion.FusionFragment
-import com.daykm.p5executioner.fusion.FusionFragmentComponent
-import com.daykm.p5executioner.fusion.FusionModule
-import com.daykm.p5executioner.personas.PersonaListFragment
-import com.daykm.p5executioner.personas.PersonaListFragmentComponent
-import com.daykm.p5executioner.personas.PersonaListFragmentModule
-import com.daykm.p5executioner.skills.P5SkillsFragment
-import com.daykm.p5executioner.skills.SkillsFragmentComponent
-import com.daykm.p5executioner.skills.SkillsModule
+import com.daykm.p5executioner.fusion.di.FusionComponent
+import com.daykm.p5executioner.fusion.di.MatronFusionModule
+import com.daykm.p5executioner.personas.di.MatronPersonaListModule
+import com.daykm.p5executioner.personas.di.PersonaListComponent
+import com.daykm.p5executioner.skills.di.MatronSkillsModule
+import com.daykm.p5executioner.skills.di.SkillsComponent
 import dagger.Binds
 import dagger.Module
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
-import dagger.android.ContributesAndroidInjector
 
 @Module(
+        includes = [
+            MatronFusionModule::class,
+            MatronSkillsModule::class,
+            MatronPersonaListModule::class
+        ],
         subcomponents = [
-            FusionFragmentComponent::class,
-            SkillsFragmentComponent::class,
-            PersonaListFragmentComponent::class
+            FusionComponent::class,
+            SkillsComponent::class,
+            PersonaListComponent::class
         ]
 )
+
 abstract class P5Module : InjectedActivityModule<P5Activity>() {
 
     @Binds
     abstract fun pool(pool: LoggingRecyclerPool): RecyclerView.RecycledViewPool
-
-    @ContributesAndroidInjector(modules = [FusionModule::class])
-    abstract fun contributesFusionFragment(): FusionFragment
-
-    @ContributesAndroidInjector(modules = [SkillsModule::class])
-    abstract fun contributesSkillsFragment(): P5SkillsFragment
-
-    @ContributesAndroidInjector(modules = [PersonaListFragmentModule::class])
-    abstract fun contributesPersonaListFragment(): PersonaListFragment
 }
 
 @Subcomponent

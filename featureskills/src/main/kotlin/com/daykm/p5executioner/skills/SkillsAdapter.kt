@@ -6,7 +6,7 @@ import com.daykm.p5executioner.database.Skill
 import timber.log.Timber
 import javax.inject.Inject
 
-class P5SkillsAdapter
+class SkillsAdapter
 @Inject constructor(
         private val ctx: AppCompatActivity
 ) : TypedEpoxyController<List<Skill>>() {

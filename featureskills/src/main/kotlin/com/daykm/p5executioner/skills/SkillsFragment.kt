@@ -14,10 +14,10 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class P5SkillsFragment : DaggerFragment() {
+class SkillsFragment : DaggerFragment() {
 
     @Inject
-    lateinit var skillsAdapter: P5SkillsAdapter
+    lateinit var skillsAdapter: SkillsAdapter
 
     @Inject
     lateinit var dao: Dao

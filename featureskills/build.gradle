@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion AndroidConfig.compileSdk
@@ -33,12 +34,16 @@ dependencies {
     implementation JetpackLibs.supportDesign
 
     implementation Libs.timber
-    implementation Libs.dagger
-    implementation Libs.daggerAndroid
-    implementation Libs.daggerAndroidSupport
     implementation Libs.rxJava
     implementation Libs.rxAndroid
     implementation Libs.rxKotlin
+
+
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    implementation Libs.daggerAndroidSupport
+    kapt AnnoProcs.dagger
+    kapt AnnoProcs.daggerAndroid
 
     implementation Libs.epoxy
 
