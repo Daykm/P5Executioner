@@ -1,3 +1,5 @@
+private const val archVersion = "1.1.1"
+
 object Kotlin {
     const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.10"
     const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.10"
@@ -23,6 +25,8 @@ object AnnoProcs {
     const val butterknife = "com.jakewharton:butterknife-compiler:8.5.1"
     const val databinding = "com.android.databinding:compiler:3.2.0"
     const val room = "android.arch.persistence.room:compiler:1.1.1"
+
+    const val arch = "androidx.lifecycle:lifecycle-compiler:$archVersion"
 }
 
 object AnkoLibs {
@@ -37,8 +41,9 @@ object AnkoLibs {
 object JetpackLibs {
     const val constraint = "com.android.support.constraint:constraint-layout:1.1.2"
 
-    const val coreCommon = "android.arch.core:common:1.1.1"
-    const val coreRuntime = "android.arch.core:runtime:1.1.1"
+
+    const val coreCommon = "android.arch.core:common:$archVersion"
+    const val coreRuntime = "android.arch.core:runtime:$archVersion"
     const val coreUtils = "com.android.support:support-core-utils:27.1.1"
 
     const val supportCompat = "com.android.support:support-compat:27.1.1"
@@ -49,6 +54,8 @@ object JetpackLibs {
     const val cardView = "com.android.support:cardview-v7:27.1.1"
     const val recyclerView = "com.android.support:recyclerview-v7:27.1.1"
     const val room = "android.arch.persistence.room:runtime:1.1.1"
+
+    const val viewModel = "android.arch.lifecycle:viewmodel-ktx:$archVersion"
 }
 
 object Libs {
