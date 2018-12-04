@@ -6,7 +6,7 @@ import dagger.Subcomponent
 import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 
-@Module
+@Module(subcomponents = [PersonaListComponent::class])
 interface MatronPersonaListModule {
     @ContributesAndroidInjector(modules = [PersonaListModule::class])
     fun contributesPersonaListFragment(): PersonaListFragment

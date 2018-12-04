@@ -6,7 +6,7 @@ import dagger.Subcomponent
 import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 
-@Module
+@Module(subcomponents = [FusionComponent::class])
 interface MatronFusionModule {
     @ContributesAndroidInjector(modules = [FusionModule::class])
     fun contributesFusionFragment(): FusionFragment
