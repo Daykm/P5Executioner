@@ -32,6 +32,7 @@ dependencies {
     implementation JetpackLibs.recyclerView
     implementation JetpackLibs.constraint
     implementation JetpackLibs.supportDesign
+    api JetpackLibs.lifecycleExt
 
     implementation Libs.timber
     implementation Libs.rxJava
@@ -48,6 +49,7 @@ dependencies {
 
 
     api project(":database")
+    api project(":architecture")
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner

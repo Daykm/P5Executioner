@@ -11,31 +11,24 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
-            }
-        }
     }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
+
+    dataBinding {
+        enabled true
+    }
 }
 
 dependencies {
     implementation Kotlin.stdLibJdk7
-
-    implementation Libs.timber
-    implementation Libs.okio
-    api JetpackLibs.liveData
+    api JetpackLibs.lifecycleExt
     api Libs.dagger
     api Libs.daggerAndroid
-
-    api JetpackLibs.room
-    kapt AnnoProcs.room
+    api Libs.daggerAndroidSupport
     kapt AnnoProcs.dagger
     kapt AnnoProcs.daggerAndroid
 

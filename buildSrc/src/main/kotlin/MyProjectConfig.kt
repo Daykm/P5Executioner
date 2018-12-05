@@ -55,7 +55,9 @@ object JetpackLibs {
     const val recyclerView = "com.android.support:recyclerview-v7:27.1.1"
     const val room = "android.arch.persistence.room:runtime:1.1.1"
 
-    const val viewModel = "android.arch.lifecycle:viewmodel-ktx:$archVersion"
+    const val viewModel = "android.arch.lifecycle:viewmodel:$archVersion"
+    const val liveData = "android.arch.lifecycle:livedata:$archVersion"
+    const val lifecycleExt = "android.arch.lifecycle:extensions:$archVersion"
 }
 
 object Libs {

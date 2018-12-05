@@ -1,6 +1,8 @@
 package com.daykm.p5executioner.personas.di
 
+import com.daykm.p5executioner.arch.ViewModelModule
 import com.daykm.p5executioner.personas.PersonaListFragment
+import com.daykm.p5executioner.personas.PersonaViewModel
 import dagger.Module
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
@@ -13,7 +15,9 @@ interface MatronPersonaListModule {
 }
 
 @Module
-abstract class PersonaListModule
+abstract class PersonaListModule : ViewModelModule<PersonaViewModel>() {
+
+}
 
 @Subcomponent(modules = [(PersonaListModule::class)])
 abstract class PersonaListComponent : AndroidInjector<PersonaListFragment> {
