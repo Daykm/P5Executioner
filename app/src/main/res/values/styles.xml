@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="BaseTheme">
         <item name="android:textViewStyle">@style/NoHyphenTextViewStyle</item>
@@ -9,7 +9,7 @@
     </style>
 
     <style name="NoHyphenTextViewStyle" parent="CompatTextViewStyle">
-        <item name="android:hyphenationFrequency">none</item>
+        <item name="android:hyphenationFrequency" tools:targetApi="m">none</item>
     </style>
 
     <style name="CompatTextViewStyle" parent="android:Widget.TextView"/>
