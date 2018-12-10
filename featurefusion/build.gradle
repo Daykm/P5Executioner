@@ -26,12 +26,12 @@ android {
 dependencies {
     implementation Kotlin.stdLibJdk7
 
-    implementation JetpackLibs.supportCompat
-    implementation JetpackLibs.supportFragment
-    implementation JetpackLibs.supportV7
-    implementation JetpackLibs.recyclerView
-    implementation JetpackLibs.constraint
-    implementation JetpackLibs.supportDesign
+    api JetpackLibs.supportCompat
+    api JetpackLibs.supportFragment
+    api JetpackLibs.supportV7
+    api JetpackLibs.recyclerView
+    api JetpackLibs.constraint
+    api JetpackLibs.supportDesign
 
     implementation Libs.timber
     implementation Libs.rxJava
