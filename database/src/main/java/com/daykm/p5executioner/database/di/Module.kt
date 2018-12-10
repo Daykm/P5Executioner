@@ -18,6 +18,8 @@ class DataModule {
         val internalDb = ctx.getDatabasePath("db.sqlite")
 
         if (internalDb.exists().not()) {
+            internalDb.parentFile.mkdirs()
+            internalDb.createNewFile()
             val buff = ctx.assets.open("db.db").source()
             val sink = internalDb.sink()
 

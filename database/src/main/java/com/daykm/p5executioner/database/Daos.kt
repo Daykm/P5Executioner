@@ -14,4 +14,7 @@ interface Dao {
 
     @Query("SELECT * FROM skills")
     fun skills(): List<Skill>
+
+    @Query("SELECT * FROM skills")
+    fun skillsLiveData(): LiveData<List<Skill>>
 }

@@ -20,8 +20,11 @@ class P5FusionAdapter
         setData(listOf(firstPicker, secondPicker))
     }
 
-    fun setPickerData(data: List<Persona>) {
+    fun setFirstPickerData(data: List<Persona>) {
         firstPicker.setData(data)
+    }
+
+    fun setSecondPickerData(data: List<Persona>) {
         secondPicker.setData(data)
     }
 
@@ -52,7 +55,9 @@ class PickerModel(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         manager.recycleChildrenOnDetach = true
         recycler.layoutManager = manager
-        recycler.recycledViewPool = pool
+
+        recycler.setRecycledViewPool(pool)
+
         return recycler
     }
 }

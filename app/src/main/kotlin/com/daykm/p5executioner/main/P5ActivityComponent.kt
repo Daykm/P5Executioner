@@ -1,13 +1,13 @@
 package com.daykm.p5executioner.main
 
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
-import com.daykm.p5executioner.android.LoggingRecyclerPool
-import com.daykm.p5executioner.di.InjectedActivityModule
 import com.daykm.p5executioner.fusion.di.MatronFusionModule
 import com.daykm.p5executioner.personas.di.MatronPersonaListModule
 import com.daykm.p5executioner.skills.di.MatronSkillsModule
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
 
@@ -15,14 +15,19 @@ import dagger.android.AndroidInjector
         includes = [
             MatronFusionModule::class,
             MatronSkillsModule::class,
-            MatronPersonaListModule::class
+            MatronPersonaListModule::class,
+            P5Module.Bindings::class
         ]
 )
+class P5Module {
+    @Provides
+    fun pool(): RecyclerView.RecycledViewPool = RecyclerView.RecycledViewPool()
 
-abstract class P5Module : InjectedActivityModule<P5Activity>() {
-
-    @Binds
-    abstract fun pool(pool: LoggingRecyclerPool): RecyclerView.RecycledViewPool
+    @Module
+    interface Bindings {
+        @Binds
+        fun activity(activity: P5Activity): AppCompatActivity
+    }
 }
 
 @Subcomponent

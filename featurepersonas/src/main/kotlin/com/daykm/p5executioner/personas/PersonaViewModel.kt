@@ -10,4 +10,5 @@ class PersonaViewModel
 ) : ViewModel() {
 
     val personas = dao.personasLiveData()
+
 }

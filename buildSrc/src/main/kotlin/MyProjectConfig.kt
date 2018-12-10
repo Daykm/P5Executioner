@@ -7,7 +7,7 @@ object Kotlin {
 }
 
 object AndroidConfig {
-    const val minSdk = 23
+    const val minSdk = 22
     const val targetSdk = 26
     const val compileSdk = 28
     const val buildTools = "28.0.3"
@@ -40,19 +40,19 @@ object AnkoLibs {
 
 object JetpackLibs {
     const val constraint = "com.android.support.constraint:constraint-layout:1.1.2"
-
+    private const val supportLibVersion = "28.0.0"
 
     const val coreCommon = "android.arch.core:common:$archVersion"
     const val coreRuntime = "android.arch.core:runtime:$archVersion"
-    const val coreUtils = "com.android.support:support-core-utils:27.1.1"
+    const val coreUtils = "com.android.support:support-core-utils:$supportLibVersion"
 
-    const val supportCompat = "com.android.support:support-compat:27.1.1"
-    const val supportFragment = "com.android.support:support-fragment:27.1.1"
-    const val supportV7 = "com.android.support:appcompat-v7:27.1.1"
-    const val supportDesign = "com.android.support:design:27.1.1"
+    const val supportCompat = "com.android.support:support-compat:$supportLibVersion"
+    const val supportFragment = "com.android.support:support-fragment:$supportLibVersion"
+    const val supportV7 = "com.android.support:appcompat-v7:$supportLibVersion"
+    const val supportDesign = "com.android.support:design:$supportLibVersion"
 
-    const val cardView = "com.android.support:cardview-v7:27.1.1"
-    const val recyclerView = "com.android.support:recyclerview-v7:27.1.1"
+    const val cardView = "com.android.support:cardview-v7:$supportLibVersion"
+    const val recyclerView = "com.android.support:recyclerview-v7:$supportLibVersion"
     const val room = "android.arch.persistence.room:runtime:1.1.1"
 
     const val viewModel = "android.arch.lifecycle:viewmodel:$archVersion"
