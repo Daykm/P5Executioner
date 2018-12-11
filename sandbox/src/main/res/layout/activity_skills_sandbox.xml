@@ -15,6 +15,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:name="com.daykm.p5executioner.skills.P5SkillsFragment"/>
+            android:name="com.daykm.p5executioner.skills.SkillsFragment"/>
 
 </android.support.constraint.ConstraintLayout>

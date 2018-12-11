@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion AndroidConfig.compileSdk
@@ -25,25 +26,30 @@ android {
 dependencies {
     implementation Kotlin.stdLibJdk7
 
-    implementation JetpackLibs.supportCompat
-    implementation JetpackLibs.supportFragment
-    implementation JetpackLibs.supportV7
-    implementation JetpackLibs.recyclerView
-    implementation JetpackLibs.constraint
-    implementation JetpackLibs.supportDesign
+    api JetpackLibs.supportCompat
+    api JetpackLibs.supportFragment
+    api JetpackLibs.supportV7
+    api JetpackLibs.recyclerView
+    api JetpackLibs.constraint
+    api JetpackLibs.supportDesign
 
     implementation Libs.timber
-    implementation Libs.dagger
-    implementation Libs.daggerAndroid
-    implementation Libs.daggerAndroidSupport
     implementation Libs.rxJava
     implementation Libs.rxAndroid
     implementation Libs.rxKotlin
 
+
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    implementation Libs.daggerAndroidSupport
+    kapt AnnoProcs.dagger
+    kapt AnnoProcs.daggerAndroid
+
     implementation Libs.epoxy
 
 
-    implementation project(":database")
+    api project(":database")
+    api project(":architecture")
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner

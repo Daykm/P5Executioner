@@ -1,3 +1,5 @@
+private const val archVersion = "1.1.1"
+
 object Kotlin {
     const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.10"
     const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.10"
@@ -5,7 +7,7 @@ object Kotlin {
 }
 
 object AndroidConfig {
-    const val minSdk = 23
+    const val minSdk = 22
     const val targetSdk = 26
     const val compileSdk = 28
     const val buildTools = "28.0.3"
@@ -23,6 +25,8 @@ object AnnoProcs {
     const val butterknife = "com.jakewharton:butterknife-compiler:8.5.1"
     const val databinding = "com.android.databinding:compiler:3.2.0"
     const val room = "android.arch.persistence.room:compiler:1.1.1"
+
+    const val arch = "androidx.lifecycle:lifecycle-compiler:$archVersion"
 }
 
 object AnkoLibs {
@@ -36,19 +40,24 @@ object AnkoLibs {
 
 object JetpackLibs {
     const val constraint = "com.android.support.constraint:constraint-layout:1.1.2"
+    private const val supportLibVersion = "28.0.0"
 
-    const val coreCommon = "android.arch.core:common:1.1.1"
-    const val coreRuntime = "android.arch.core:runtime:1.1.1"
-    const val coreUtils = "com.android.support:support-core-utils:27.1.1"
+    const val coreCommon = "android.arch.core:common:$archVersion"
+    const val coreRuntime = "android.arch.core:runtime:$archVersion"
+    const val coreUtils = "com.android.support:support-core-utils:$supportLibVersion"
 
-    const val supportCompat = "com.android.support:support-compat:27.1.1"
-    const val supportFragment = "com.android.support:support-fragment:27.1.1"
-    const val supportV7 = "com.android.support:appcompat-v7:27.1.1"
-    const val supportDesign = "com.android.support:design:27.1.1"
+    const val supportCompat = "com.android.support:support-compat:$supportLibVersion"
+    const val supportFragment = "com.android.support:support-fragment:$supportLibVersion"
+    const val supportV7 = "com.android.support:appcompat-v7:$supportLibVersion"
+    const val supportDesign = "com.android.support:design:$supportLibVersion"
 
-    const val cardView = "com.android.support:cardview-v7:27.1.1"
-    const val recyclerView = "com.android.support:recyclerview-v7:27.1.1"
+    const val cardView = "com.android.support:cardview-v7:$supportLibVersion"
+    const val recyclerView = "com.android.support:recyclerview-v7:$supportLibVersion"
     const val room = "android.arch.persistence.room:runtime:1.1.1"
+
+    const val viewModel = "android.arch.lifecycle:viewmodel:$archVersion"
+    const val liveData = "android.arch.lifecycle:livedata:$archVersion"
+    const val lifecycleExt = "android.arch.lifecycle:extensions:$archVersion"
 }
 
 object Libs {

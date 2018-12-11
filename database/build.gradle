@@ -30,6 +30,7 @@ dependencies {
 
     implementation Libs.timber
     implementation Libs.okio
+    api JetpackLibs.liveData
     api Libs.dagger
     api Libs.daggerAndroid
 

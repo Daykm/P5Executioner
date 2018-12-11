@@ -58,6 +58,12 @@ android {
         preDexLibraries = getFlagFromProperties('shouldPreDex')
     }
 
+    packagingOptions {
+        exclude "/META-INF/*.kotlin_module"
+        exclude "**/kotlin/**"
+        exclude "**/kotlinx/**"
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
