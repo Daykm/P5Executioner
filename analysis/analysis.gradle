@@ -1,0 +1,15 @@
+android {
+    lintOptions {
+        quiet false
+        abortOnError true
+        ignoreWarnings false
+        warningsAsErrors true
+        xmlReport false
+        htmlReport true
+        checkGeneratedSources true
+        checkReleaseBuilds true
+        checkDependencies true
+        ignoreTestSources true
+        lintConfig file("$project.rootDir/analysis/lint.xml")
+    }
+}

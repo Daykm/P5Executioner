@@ -8,7 +8,7 @@
 
         <TextView
             app:layout_constraintStart_toStartOf="parent"
-            android:text="github.com/Daykm/P5Executioner"
+            android:text="@string/info_url"
             app:layout_constraintEnd_toEndOf="parent"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             app:layout_constraintTop_toTopOf="parent"

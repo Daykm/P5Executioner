@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Feature Info</string>
+    <string name="info_url">github.com/Daykm/P5Executioner</string>
 </resources>

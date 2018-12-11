@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="VectorPath">
+        <ignore path="*ic_settings_black_24dp.xml" />
+    </issue>
+
+    <issue id="RestrictedApi" severity="error">
+        <ignore path="build" />
+    </issue>
+
+</lint>

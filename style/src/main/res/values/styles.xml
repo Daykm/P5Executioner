@@ -14,28 +14,4 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="BaseTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-
-    <style name="BaseTheme.PopupOverlay" parent="ThemeOverlay.AppCompat"/>
-
-    <style name="StatName">
-        <item name="android:layout_width">44dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
-    </style>
-
-    <style name="StatValue">
-        <item name="android:layout_width">32dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Subhead</item>
-    </style>
-
-    <style name="StatBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:progressTint">@color/colorPrimary</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-    </style>
-
 </resources>

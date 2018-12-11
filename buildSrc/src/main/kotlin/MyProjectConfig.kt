@@ -80,7 +80,7 @@ object Libs {
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
     const val rxKotlin = "io.reactivex.rxjava2:rxkotlin:2.1.0"
 
-    const val timber = "com.jakewharton.timber:timber:4.5.1"
+    const val timber = "com.jakewharton.timber:timber:4.7.1"
 }
 
 object TestingLibs {
