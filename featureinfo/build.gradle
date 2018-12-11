@@ -42,8 +42,8 @@ dependencies {
 
     implementation Libs.epoxy
 
-
-    implementation project(":database")
+    api project(":database")
+    api project(":style")
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner

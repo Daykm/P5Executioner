@@ -38,7 +38,7 @@ jobs:
           destination: apk
       - run:
           name: Run Tests
-          command: ./gradlew lint test
+          command: ./gradlew :app:lintApp test
       - store_artifacts:
           path: app/build/reports
           destination: reports

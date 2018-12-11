@@ -1,37 +1,8 @@
 <resources>
     <string name="app_name">"P5Executioner "</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_p5">P5Activity</string>
     <string name="nav_fusion">Fusion</string>
-    <string name="nav_second">Second</string>
     <string name="nav_skills">Skills</string>
     <string name="nav_settings">Settings</string>
-
-    <string-array name="arcana">
-        <item>Fool</item>
-    </string-array>
-
-    <string name="test_colors">
-        <font fgcolor='#FE9A00'>Rpl</font>
-        <font fgcolor='#FE9A00'>Rpl</font>
-        <font fgcolor='#FE361B'>Rpl</font>
-        <font fgcolor='#00ACFD'>Rpl</font>
-        <font fgcolor='#FAFD31'>Rpl</font>
-        <font fgcolor='#21F32C'>Rpl</font>
-        <font fgcolor='#FC61FB'>Rpl</font>
-        <font fgcolor='#00FAFE'>Rpl</font>
-        <font fgcolor='#FDFC9F'>Rpl</font>
-        <font fgcolor='#FD0034'>Rpl</font>
-    </string>
-
-    <string name="test_stats">St 04 Ma 10 En 04 Ag 08 Lu 08</string>
     <string name="nav_by_persona">By Persona</string>
 
-    <string name="font_roboto_mono_thin">fonts/RobotoMono-Thin.ttf</string>
-    <string name="font_roboto_mono_bold">fonts/RobotoMono-Bold.ttf</string>
-    <string name="stat_strength">Str</string>
-    <string name="stats_magic">Mag</string>
-    <string name="stats_endurance">End</string>
-    <string name="stats_agility">Agl</string>
-    <string name="stats_luck">Lu</string>
 </resources>
