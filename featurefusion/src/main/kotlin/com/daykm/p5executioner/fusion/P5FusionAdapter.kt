@@ -1,9 +1,8 @@
 package com.daykm.p5executioner.fusion
 
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.RecycledViewPool
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.epoxy.EpoxyModelWithView
 import com.airbnb.epoxy.TypedEpoxyController
 import com.daykm.p5executioner.database.Persona
@@ -11,7 +10,7 @@ import javax.inject.Inject
 
 class P5FusionAdapter
 @Inject constructor(
-        private val pool: RecycledViewPool
+        private val pool: RecyclerView.RecycledViewPool
 ) : TypedEpoxyController<List<PersonaPickerAdapter>>() {
     private val firstPicker = PersonaPickerAdapter()
     private val secondPicker = PersonaPickerAdapter()
@@ -37,7 +36,7 @@ class P5FusionAdapter
 
 class PickerModel(
         private val picker: PersonaPickerAdapter,
-        private val pool: RecycledViewPool
+        private val pool: RecyclerView.RecycledViewPool
 ) : EpoxyModelWithView<RecyclerView>() {
 
     override fun bind(view: RecyclerView) {

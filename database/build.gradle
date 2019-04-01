@@ -30,14 +30,14 @@ dependencies {
 
     implementation Libs.timber
     implementation Libs.okio
-    api JetpackLibs.liveData
-    api Libs.dagger
-    api Libs.daggerAndroid
+    api Lifecycle.livedata
+    api Dagger.runtime
+    api Dagger.android
 
-    api JetpackLibs.room
-    kapt AnnoProcs.room
-    kapt AnnoProcs.dagger
-    kapt AnnoProcs.daggerAndroid
+    api Room.runtime
+    kapt Room.compiler
+    kapt Dagger.compiler
+    kapt Dagger.androidCompiler
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner

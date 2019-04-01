@@ -74,23 +74,23 @@ dependencies {
     implementation Kotlin.stdLibJdk7
 
     implementation JetpackLibs.constraint
-    implementation JetpackLibs.supportCompat
-    implementation JetpackLibs.supportFragment
-    implementation JetpackLibs.supportV7
-    implementation JetpackLibs.supportDesign
-    implementation JetpackLibs.room
+    implementation JetpackLibs.compat
+    implementation JetpackLibs.fragment
+    implementation JetpackLibs.compat
+    implementation JetpackLibs.design
+    implementation Room.runtime
     implementation JetpackLibs.recyclerView
 
     implementation JetpackLibs.coreCommon
     implementation JetpackLibs.coreRuntime
 
-    implementation Libs.dagger
-    implementation Libs.daggerAndroid
-    implementation Libs.daggerAndroidSupport
+    implementation Dagger.runtime
+    implementation Dagger.android
+    implementation Dagger.androidSupport
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    kapt AnnoProcs.dagger
-    kapt AnnoProcs.daggerAndroid
+    kapt Dagger.compiler
+    kapt Dagger.androidCompiler
 
 
     implementation Kotlin.coroutines

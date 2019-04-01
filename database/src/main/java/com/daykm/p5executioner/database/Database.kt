@@ -1,8 +1,8 @@
 package com.daykm.p5executioner.database
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 
 @Database(entities = [Persona::class, Skill::class], version = 1)
 @TypeConverters(Converters::class)

@@ -1,6 +1,6 @@
 package com.daykm.p5executioner.personas
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.epoxy.TypedEpoxyController
 import com.daykm.p5executioner.database.Persona
 import timber.log.Timber

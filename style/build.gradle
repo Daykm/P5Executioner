@@ -24,8 +24,8 @@ android {
 
 dependencies {
     implementation Kotlin.stdLibJdk7
-    api JetpackLibs.supportCompat
-    api JetpackLibs.supportDesign
+    api JetpackLibs.compat
+    api JetpackLibs.design
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner

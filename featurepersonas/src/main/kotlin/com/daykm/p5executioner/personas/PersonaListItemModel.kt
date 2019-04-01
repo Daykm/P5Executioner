@@ -2,12 +2,12 @@ package com.daykm.p5executioner.personas
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.support.annotation.ColorRes
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.view.View
+import androidx.annotation.ColorRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.daykm.p5executioner.database.Affinity
