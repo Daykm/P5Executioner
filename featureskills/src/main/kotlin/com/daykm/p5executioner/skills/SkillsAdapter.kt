@@ -1,6 +1,6 @@
 package com.daykm.p5executioner.skills
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.epoxy.TypedEpoxyController
 import com.daykm.p5executioner.database.Skill
 import timber.log.Timber

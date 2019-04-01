@@ -28,7 +28,7 @@ class SourceModel : EpoxyModelWithHolder<SourceModel.Holder>() {
     class Holder : EpoxyHolder() {
         var binding: InfoItemBinding? = null
 
-        override fun bindView(itemView: View?) {
+        override fun bindView(itemView: View) {
             binding = if (itemView == null) {
                 null
             } else {

@@ -1,8 +1,8 @@
 private const val archVersion = "1.1.1"
 
 object Kotlin {
-    const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.10"
-    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.10"
+    const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21"
+    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.21"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
 }
 
@@ -14,71 +14,105 @@ object AndroidConfig {
 }
 
 object BuildPlugins {
-    const val android = "com.android.tools.build:gradle:3.2.1"
-    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.10"
+    const val android = "com.android.tools.build:gradle:3.3.2"
+    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.21"
     const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:0.8.6"
 }
 
 object AnnoProcs {
-    const val dagger = "com.google.dagger:dagger-compiler:2.16"
-    const val daggerAndroid = "com.google.dagger:dagger-android-processor:2.16"
-    const val butterknife = "com.jakewharton:butterknife-compiler:8.5.1"
-    const val databinding = "com.android.databinding:compiler:3.2.0"
-    const val room = "android.arch.persistence.room:compiler:1.1.1"
-
-    const val arch = "androidx.lifecycle:lifecycle-compiler:$archVersion"
-}
-
-object AnkoLibs {
-    const val commons = "org.jetbrains.anko:anko-commons:0.10.1"
-    const val sdk21 = "org.jetbrains.anko:anko-sdk21:0.10.1"
-    const val compat = "org.jetbrains.anko:anko-appcompat-v7:0.10.1"
-    const val card = "org.jetbrains.anko:anko-cardview-v7:0.10.1"
-    const val recycle = "org.jetbrains.anko:anko-recyclerview-v7:0.10.1"
-    const val design = "org.jetbrains.anko:anko-design:0.10.1"
+    const val databinding = "com.android.databinding:compiler:3.3.1"
 }
 
 object JetpackLibs {
-    const val constraint = "com.android.support.constraint:constraint-layout:1.1.2"
-    private const val supportLibVersion = "28.0.0"
+    const val constraint = "androidx.constraintlayout:constraintlayout:1.1.2"
 
-    const val coreCommon = "android.arch.core:common:$archVersion"
-    const val coreRuntime = "android.arch.core:runtime:$archVersion"
-    const val coreUtils = "com.android.support:support-core-utils:$supportLibVersion"
+    private const val archVer = "2.0.1"
+    const val coreCommon = "androidx.arch.core:core-common:$archVer"
+    const val coreRuntime = "androidx.arch.core:core-runtime:$archVer"
+    //const val coreUtils = "com.android.support:support-core-utils:$supportLibVersion"
 
-    const val supportCompat = "com.android.support:support-compat:$supportLibVersion"
-    const val supportFragment = "com.android.support:support-fragment:$supportLibVersion"
-    const val supportV7 = "com.android.support:appcompat-v7:$supportLibVersion"
-    const val supportDesign = "com.android.support:design:$supportLibVersion"
+    private const val appCompat = "1.1.0-alpha03"
+    const val compat = "androidx.appcompat:appcompat:$appCompat"
+    const val fragment = "androidx.fragment:fragment:$appCompat"
 
-    const val cardView = "com.android.support:cardview-v7:$supportLibVersion"
-    const val recyclerView = "com.android.support:recyclerview-v7:$supportLibVersion"
-    const val room = "android.arch.persistence.room:runtime:1.1.1"
+    const val design = "com.google.android.material:material:1.0.0-rc01"
 
-    const val viewModel = "android.arch.lifecycle:viewmodel:$archVersion"
-    const val liveData = "android.arch.lifecycle:livedata:$archVersion"
-    const val lifecycleExt = "android.arch.lifecycle:extensions:$archVersion"
+    const val cardView = "androidx.cardview:cardview:1.0.0"
+    const val recyclerView = "androidx.recyclerview:recyclerview:1.0.0"
+    const val viewpager = "androidx.viewpager:viewpager:1.0.0"
+}
+
+object Lifecycle {
+
+    private const val lifecycle_version = "2.0.0"
+
+    // ViewModel and LiveData
+    const val extensions = "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    // alternatively - just ViewModel
+    const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version" // For Kotlin use lifecycle-viewmodel-ktx
+    // alternatively - just LiveData
+    const val livedata = "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // alternatively - Lifecycles only (no ViewModel or LiveData). Some UI
+    //     AndroidX libraries use this lightweight import for Lifecycle
+    const val runtime = "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+
+    const val compiler = "androidx.lifecycle:lifecycle-compiler:$lifecycle_version" // For Kotlin use kapt instead of annotationProcessor
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    const val java8 = "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // optional - ReactiveStreams support for LiveData
+    const val rx = "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version" // For Kotlin use lifecycle-reactivestreams-ktx
+    // optional - ReactiveStreams support for LiveData
+    const val rxKtx = "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version" // For Kotlin use lifecycle-reactivestreams-ktx
+
+    // optional - Test helpers for LiveData
+    const val test = "androidx.arch.core:core-testing:$lifecycle_version"
+
+}
+
+object Room {
+    private const val room_version = "2.1.0-alpha06"
+
+    const val runtime = "androidx.room:room-runtime:$room_version"
+    const val compiler = "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    const val ktx = "androidx.room:room-ktx:$room_version"
+
+    // optional - RxJava support for Room
+    const val rxjava2 = "androidx.room:room-rxjava2:$room_version"
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    const val guava = "androidx.room:room-guava:$room_version"
+
+    // Test helpers
+    const val test = "androidx.room:room-testing:$room_version"
+}
+
+object Dagger {
+    private const val version = "2.21"
+    const val compiler = "com.google.dagger:dagger-compiler:$version"
+    const val androidCompiler = "com.google.dagger:dagger-android-processor:$version"
+    const val runtime = "com.google.dagger:dagger:$version"
+    const val android = "com.google.dagger:dagger-android:$version"
+    const val androidSupport = "com.google.dagger:dagger-android-support:$version"
 }
 
 object Libs {
-    const val butterknife = "com.jakewharton:butterknife:8.5.1"
-    const val dagger = "com.google.dagger:dagger:2.16"
-    const val daggerAndroid = "com.google.dagger:dagger-android:2.16"
-    const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:2.16"
 
-    const val epoxy = "com.airbnb.android:epoxy:2.14.0"
+    const val epoxy = "com.airbnb.android:epoxy:3.3.0"
 
-    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:1.5"
-    const val leakCanaryNoOp = "com.squareup.leakcanary:leakcanary-android-no-op:1.5"
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:1.6.3"
+    const val leakCanaryNoOp = "com.squareup.leakcanary:leakcanary-android-no-op:1.6.3"
 
-    const val moshi = "com.squareup.moshi:moshi:1.6.0"
-    const val okio = "com.squareup.okio:okio:2.1.0"
+    const val moshi = "com.squareup.moshi:moshi:1.8.0"
+    const val okio = "com.squareup.okio:okio:2.2.0"
 
     const val proto = "com.google.protobuf:protobuf-lite:3.0.0"
 
-    const val rxJava = "io.reactivex.rxjava2:rxjava:2.0.8"
-    const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
-    const val rxKotlin = "io.reactivex.rxjava2:rxkotlin:2.1.0"
+    const val rxJava = "io.reactivex.rxjava2:rxjava:2.2.8"
+    const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
+    const val rxKotlin = "io.reactivex.rxjava2:rxkotlin:2.3.0"
 
     const val timber = "com.jakewharton.timber:timber:4.7.1"
 }

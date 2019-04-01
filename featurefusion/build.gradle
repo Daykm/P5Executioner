@@ -26,26 +26,25 @@ android {
 dependencies {
     implementation Kotlin.stdLibJdk7
 
-    api JetpackLibs.supportCompat
-    api JetpackLibs.supportFragment
-    api JetpackLibs.supportV7
+    api JetpackLibs.compat
+    api JetpackLibs.fragment
+    api JetpackLibs.compat
     api JetpackLibs.recyclerView
     api JetpackLibs.constraint
-    api JetpackLibs.supportDesign
+    api JetpackLibs.design
 
     implementation Libs.timber
     implementation Libs.rxJava
     implementation Libs.rxAndroid
     implementation Libs.rxKotlin
 
-    implementation Libs.dagger
-    implementation Libs.daggerAndroid
-    implementation Libs.daggerAndroidSupport
-    kapt AnnoProcs.dagger
-    kapt AnnoProcs.daggerAndroid
+    implementation Dagger.runtime
+    implementation Dagger.android
+    implementation Dagger.androidSupport
+    kapt Dagger.compiler
+    kapt Dagger.androidCompiler
 
     implementation Libs.epoxy
-
 
     api project(":database")
     api project(":style")

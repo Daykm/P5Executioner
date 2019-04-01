@@ -1,7 +1,7 @@
 package com.daykm.p5executioner.main
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.daykm.p5executioner.R
 import com.daykm.p5executioner.databinding.ActivityMainBinding
 import com.daykm.p5executioner.fusion.FusionFragment

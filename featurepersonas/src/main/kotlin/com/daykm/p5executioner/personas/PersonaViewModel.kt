@@ -1,6 +1,6 @@
 package com.daykm.p5executioner.personas
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.daykm.p5executioner.database.Dao
 import javax.inject.Inject
 

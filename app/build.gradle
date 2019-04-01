@@ -73,20 +73,18 @@ dependencies {
     implementation Kotlin.stdLibJdk7
 
     implementation JetpackLibs.constraint
-    implementation JetpackLibs.supportCompat
-    implementation JetpackLibs.supportFragment
-    implementation JetpackLibs.supportV7
-    implementation JetpackLibs.supportDesign
+    implementation JetpackLibs.compat
+    implementation JetpackLibs.fragment
+    implementation JetpackLibs.design
     implementation JetpackLibs.cardView
     implementation JetpackLibs.recyclerView
-    implementation JetpackLibs.room
-    implementation JetpackLibs.coreUtils
+    implementation Room.runtime
 
-    implementation Libs.dagger
-    implementation Libs.daggerAndroid
-    implementation Libs.daggerAndroidSupport
-    kapt AnnoProcs.dagger
-    kapt AnnoProcs.daggerAndroid
+    implementation Dagger.runtime
+    implementation Dagger.android
+    implementation Dagger.androidSupport
+    kapt Dagger.compiler
+    kapt Dagger.androidCompiler
 
     implementation Libs.rxJava
     implementation Libs.rxAndroid

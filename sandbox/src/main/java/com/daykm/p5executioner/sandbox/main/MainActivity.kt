@@ -1,12 +1,12 @@
 package com.daykm.p5executioner.sandbox.main
 
 import android.Manifest
-import android.arch.persistence.room.RoomDatabase
 import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
-import android.support.v4.app.ActivityCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.room.RoomDatabase
 import com.daykm.p5executioner.sandbox.R
 import com.daykm.p5executioner.sandbox.fusion.FusionSandboxActivity
 import com.daykm.p5executioner.sandbox.personas.PersonasSandboxActivity

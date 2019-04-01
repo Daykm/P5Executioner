@@ -1,7 +1,7 @@
 package com.daykm.p5executioner.database.di
 
-import android.arch.persistence.room.Room
 import android.content.Context
+import androidx.room.Room
 import com.daykm.p5executioner.database.Dao
 import com.daykm.p5executioner.database.P5Database
 import dagger.Module

@@ -1,6 +1,6 @@
 package com.daykm.p5executioner.sandbox
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import timber.log.Timber
 import javax.inject.Inject
 

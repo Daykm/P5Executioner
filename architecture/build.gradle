@@ -25,14 +25,13 @@ android {
 
 dependencies {
     implementation Kotlin.stdLibJdk7
-    api JetpackLibs.lifecycleExt
-    api Libs.dagger
-    api Libs.daggerAndroid
-    api Libs.daggerAndroidSupport
-    kapt AnnoProcs.dagger
-    kapt AnnoProcs.daggerAndroid
-    api JetpackLibs.supportV7
-    api JetpackLibs.coreUtils
+    api Lifecycle.extensions
+    api Dagger.runtime
+    api Dagger.android
+    api Dagger.androidSupport
+    kapt Dagger.compiler
+    kapt Dagger.androidCompiler
+    api JetpackLibs.compat
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner
