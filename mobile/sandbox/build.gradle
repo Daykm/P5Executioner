@@ -1,7 +1,8 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
 
 android {
     compileSdkVersion AndroidConfig.compileSdk
@@ -13,7 +14,6 @@ android {
         targetSdkVersion AndroidConfig.targetSdk
         versionCode 1
         versionName '1.0'
-        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         resConfig 'en'
     }
 
@@ -26,30 +26,20 @@ android {
         }
     }
 
-    dataBinding {
-        enabled true
+    buildFeatures {
+        dataBinding true
     }
 
     buildTypes {
         debug {
             minifyEnabled true
-            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
             shrinkResources true
-            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
-        }
-    }
-
-    flavorDimensions 'dev'
-
-    productFlavors {
-        app {
-            dimension 'dev'
         }
     }
 
@@ -88,7 +78,7 @@ dependencies {
     implementation Dagger.android
     implementation Dagger.androidSupport
 
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation JetpackLibs.constraint
     kapt Dagger.compiler
     kapt Dagger.androidCompiler
 
@@ -100,9 +90,9 @@ dependencies {
     implementation Libs.okio
 
     implementation project(":database")
-    implementation project(":featurepersonas")
-    implementation project(":featureskills")
-    implementation project(":featurefusion")
+    implementation project(":mobile:featurepersonas")
+    implementation project(":mobile:featureskills")
+    implementation project(":mobile:featurefusion")
 
 
     debugImplementation Libs.leakCanary
