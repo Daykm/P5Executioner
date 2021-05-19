@@ -1,21 +1,22 @@
 private const val archVersion = "1.1.1"
+private const val kotlinVersion = "1.5.0"
 
 object Kotlin {
-    const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21"
-    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:1.3.21"
-    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
+    const val stdLibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.05.0-RC"
 }
 
 object AndroidConfig {
     const val minSdk = 22
     const val targetSdk = 26
-    const val compileSdk = 28
-    const val buildTools = "28.0.3"
+    const val compileSdk = 30
+    const val buildTools = "29.0.3"
 }
 
 object BuildPlugins {
-    const val android = "com.android.tools.build:gradle:3.3.2"
-    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.21"
+    const val android = "com.android.tools.build:gradle:7.0.0-beta01"
+    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:0.8.6"
 }
 
@@ -35,7 +36,7 @@ object JetpackLibs {
     const val compat = "androidx.appcompat:appcompat:$appCompat"
     const val fragment = "androidx.fragment:fragment:$appCompat"
 
-    const val design = "com.google.android.material:material:1.0.0-rc01"
+    const val design = "com.google.android.material:material:1.0.0"
 
     const val cardView = "androidx.cardview:cardview:1.0.0"
     const val recyclerView = "androidx.recyclerview:recyclerview:1.0.0"

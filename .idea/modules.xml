@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/P5Executioner.iml" filepath="$PROJECT_DIR$/.idea/P5Executioner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/P5Executioner.iml" filepath="$PROJECT_DIR$/P5Executioner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/architecture/architecture.iml" filepath="$PROJECT_DIR$/architecture/architecture.iml" />
-      <module fileurl="file://$PROJECT_DIR$/buildSrc/buildSrc.iml" filepath="$PROJECT_DIR$/buildSrc/buildSrc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/database/database.iml" filepath="$PROJECT_DIR$/database/database.iml" />
-      <module fileurl="file://$PROJECT_DIR$/featurefusion/featurefusion.iml" filepath="$PROJECT_DIR$/featurefusion/featurefusion.iml" />
-      <module fileurl="file://$PROJECT_DIR$/featureinfo/featureinfo.iml" filepath="$PROJECT_DIR$/featureinfo/featureinfo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/featurepersonas/featurepersonas.iml" filepath="$PROJECT_DIR$/featurepersonas/featurepersonas.iml" />
-      <module fileurl="file://$PROJECT_DIR$/featureskills/featureskills.iml" filepath="$PROJECT_DIR$/featureskills/featureskills.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/sandbox/sandbox.iml" />
-      <module fileurl="file://$PROJECT_DIR$/style/style.iml" filepath="$PROJECT_DIR$/style/style.iml" />
-      <module fileurl="file://$PROJECT_DIR$/template/template.iml" filepath="$PROJECT_DIR$/template/template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/P5Uni.iml" filepath="$PROJECT_DIR$/.idea/modules/P5Uni.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/P5Uni.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/P5Uni.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/database/P5Uni.database.iml" filepath="$PROJECT_DIR$/.idea/modules/database/P5Uni.database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/P5Uni.mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/P5Uni.mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/app/P5Uni.mobile.app.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/app/P5Uni.mobile.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/architecture/P5Uni.mobile.architecture.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/architecture/P5Uni.mobile.architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/featurefusion/P5Uni.mobile.featurefusion.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/featurefusion/P5Uni.mobile.featurefusion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/featureinfo/P5Uni.mobile.featureinfo.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/featureinfo/P5Uni.mobile.featureinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/featurepersonas/P5Uni.mobile.featurepersonas.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/featurepersonas/P5Uni.mobile.featurepersonas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/featureskills/P5Uni.mobile.featureskills.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/featureskills/P5Uni.mobile.featureskills.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/sandbox/P5Uni.mobile.sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/sandbox/P5Uni.mobile.sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/style/P5Uni.mobile.style.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/style/P5Uni.mobile.style.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile/template/P5Uni.mobile.template.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile/template/P5Uni.mobile.template.iml" />
     </modules>
   </component>
 </project>

@@ -49,7 +49,7 @@ dependencies {
 
 
     api project(":database")
-    api project(":architecture")
+    api project(":mobile:architecture")
 
     testImplementation TestingLibs.junit
     androidTestImplementation AndroidTestingLibs.runner

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply from: '../analysis/analysis.gradle'
+apply from: '../../analysis/analysis.gradle'
 
 android {
     compileSdkVersion AndroidConfig.compileSdk
@@ -94,11 +94,11 @@ dependencies {
     implementation Libs.epoxy
     implementation Libs.proto
 
-    implementation project(":featureskills")
-    implementation project(":featurepersonas")
-    implementation project(":featureinfo")
-    implementation project(":featurefusion")
-    implementation project(":style")
+    implementation project(":mobile:featureskills")
+    implementation project(":mobile:featurepersonas")
+    implementation project(":mobile:featureinfo")
+    implementation project(":mobile:featurefusion")
+    implementation project(":mobile:style")
 
 
     debugImplementation Libs.leakCanary
